@@ -1,0 +1,5 @@
+
+http://ws45lnx:8080/portal/server.pt
+
+Log: bjbrown1
+Pass: Apple123
