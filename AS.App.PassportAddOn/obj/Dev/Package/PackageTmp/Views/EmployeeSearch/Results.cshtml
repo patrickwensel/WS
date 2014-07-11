@@ -1,0 +1,374 @@
+﻿@using AS.App.PassportAddOn.ViewModels.EmployeeSearch
+@using WS.Framework.Objects.LDAP
+@model AS.App.PassportAddOn.ViewModels.EmployeeSearch.SearchViewModel
+
+@*@{
+    Layout = null;
+}*@
+@Styles.Render("~/Content/as_screen.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.common.min.css")
+@Styles.Render("~/Content/kendo.algecoscotsman.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.default.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.dataviz.default.min.css")
+
+@Scripts.Render("~/Scripts/jquery-1.9.1.js")
+@Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+@Scripts.Render("~/Scripts/kendo/2014.1.415/kendo.web.min.js")
+@Scripts.Render("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")
+@Scripts.Render("~/Scripts/additional-methods.js")
+
+
+<style type="text/css">
+    .table1 {
+        border: 3px solid black;
+    }
+
+    .table2 {
+        border: 2px solid red;
+    }
+
+    .table3 {
+        border: 3px solid green;
+    }
+
+    .andor {
+        text-align: left;
+        color: #0055a4;
+        font-size: .8em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .nav { 
+        display: inline-block;
+        vertical-align: 11px;
+    }
+    .top { 
+        vertical-align: top;
+    }
+    .k-grid {
+        font-size: 10px;
+    }
+    .k-grid td {
+        line-height: 2em;
+}
+</style>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchForm", name = "searchForm" }))
+{
+
+    <table class="employeeSearch">
+        <tr>
+            <td width="155">@(Html.LabelFor(m => m.Keyword))</td>
+            <td width="175">@(Html.LabelFor(m => m.CountryCode))</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="155">
+                @Html.TextBoxFor(model => model.Keyword, new { @class = "empSearch", style = "width:150px" })
+            </td>
+            <td width="175">
+                @(Html.Kendo().DropDownListFor(m => m.CountryCode)
+                      .Name("countryCode")
+                      .OptionLabel("Select ...")
+                      .DataTextField("Text")
+                      .DataValueField("Value")
+                      .HtmlAttributes(new { style = "width:175px" })
+                      .BindTo(ViewData["countries"] as SelectList))
+            </td>
+            <td colspan="2">
+                <span id="searchButton" class="k-button">Search</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="errors"></div>
+            </td>
+        </tr>
+    </table>
+}
+<ul>
+    <img id="plusMinus" src="@Url.Content("~/Content/images/plus.png")">
+    <a id="advancedSearchLink" href="#" class="k-button nav">Advanced Search</a>
+</ul>
+<br/>
+<div id="advancedSearch" style="display: none;">
+    <div id="forms">
+        @Html.HiddenFor(model => model.Advanced)
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "advancedSearchForm", name = "advancedSearchForm" }))
+        {
+            <table class="form">
+                <tr>
+                    <td width="150px">@(Html.LabelFor(m => m.FirstName))</td>
+                    <td width="150px">@(Html.LabelFor(m => m.LastName))</td>
+                    <td width="100px">&nbsp;</td>
+                    <td width="100px">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="150px">@Html.TextBoxFor(model => model.FirstName, new { @class = "mygroup", style = "width:150px" })</td>
+                    <td width="150px">@Html.TextBoxFor(model => model.LastName, new { @class = "mygroup", style = "width:150px" })</td>
+                    <td width="100px">&nbsp;</td>
+                    <td width="100px">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><div id="advancedErrors"></div></td>
+                </tr>
+                <tr>
+                    <td width="150px">@(Html.LabelFor(m => m.CountryCode))</td>
+                    <td width="150px">@(Html.LabelFor(m => m.Location))</td>
+                    <td width="150px">@(Html.LabelFor(m => m.PositionTitle))</td>
+                    <td width="150px">@(Html.LabelFor(m => m.FunctionalArea))</td>
+                </tr>
+                <tr>
+                    <td width="150px">
+                        @(Html.Kendo().DropDownListFor(m => m.CountryCode)
+                              .Name("countryCodeAdvanced")
+                              .OptionLabel("Select ...")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .HtmlAttributes(new { @class = "location2", style = "width:175px" })
+                              .BindTo(ViewData["countries"] as SelectList))
+                    </td>
+                    <td width="150px">
+                        @(Html.Kendo().DropDownListFor(m => m.Location)
+                              .Name("location")
+                              .OptionLabel("Select ...")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .HtmlAttributes(new { @class = "location2", style = "width:175px" })
+                              .BindTo(ViewData["sites"] as SelectList))
+                    </td>
+                    <td width="175px">
+                        @Html.TextBoxFor(model => model.PositionTitle, new { @class = "location2", style = "width:175px" })
+                    </td>
+                    <td width="150px">
+                        @(Html.Kendo().DropDownListFor(m => m.FunctionalArea)
+                              .Name("funcationalArea")
+                              .OptionLabel("Select ...")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .HtmlAttributes(new { @class = "location2", style = "width:175px" })
+                              .BindTo(ViewData["services"] as SelectList))
+                    </td>
+                </tr>
+                <tr>
+                    <td width="150">&nbsp;</td>
+                    <td width="150">&nbsp;</td>
+                    <td width="150">&nbsp;</td>
+                    <td width="150">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><span id="advanceSearchButton" class="k-button">Search</span></td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>
+
+@(Html.Kendo().Grid<User>()
+    .Name("entiyGrid")
+    .Columns(columns =>
+        {
+            columns.Bound(p => p.FirstName);
+            columns.Bound(p => p.LastName);
+            columns.Bound(p => p.CountryCode);
+            columns.Bound(p => p.Location);
+            columns.Bound(p => p.PositionTitle);
+            columns.Bound(p => p.FunctionalArea);
+            columns.Bound(p => p.TelephoneNumber).Sortable(false);
+            columns.Bound(p => p.Extension).Sortable(false);
+            columns.Bound(p => p.Email).Sortable(false);
+        })
+        .Pageable(paging => paging
+            .Input(false)
+            .Numeric(true)
+            .PreviousNext(true)
+            .PageSizes(new[] { 10, 25, 50 })
+            .Refresh(true))
+        .Sortable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Read(read => read.Action("SearchResultsRead", "EmployeeSearch").Data("readEmployeeSearchAdditionalData"))
+        )
+)
+
+<script type="text/javascript">
+
+    $("#searchButton")
+    .bind("click", function () {
+        refreshSearch();
+    });
+
+    $("#advanceSearchButton")
+        .bind("click", function () {
+            refreshAdvancedSearch();
+        });
+    
+    function refreshSearch() {
+        if ($('#searchForm').valid()) {
+
+            $("#FirstName").val("");
+            $("#LastName").val("");
+            $("#countryCodeAdvanced").data("kendoDropDownList").value(null);
+            $("#location").data("kendoDropDownList").value(null);
+            $("#PositionTitle").val("");
+            $("#funcationalArea").data("kendoDropDownList").value(null);
+
+            refreshGrid();
+        }
+    }
+    
+    function refreshAdvancedSearch() {
+        if ($('#advancedSearchForm').valid()) {
+            
+            $("#Keyword").val("");
+            $("#countryCode").data("kendoDropDownList").value(null);
+
+            refreshGrid();
+        }
+    }
+
+    function refreshGrid() {
+        var grid = $("#entiyGrid").data("kendoGrid");
+        grid.dataSource.read();
+    }
+
+    function readEmployeeSearchAdditionalData() {
+        return {
+            Keyword: $("#Keyword").val(),
+            CountryCode1: $("#countryCode").data("kendoDropDownList").value(),
+            FirstName: $("#FirstName").val(),
+            LastName: $("#LastName").val(),
+            CountryCode2: $("#countryCodeAdvanced").data("kendoDropDownList").value(),
+            Location: $("#location").data("kendoDropDownList").value(),
+            PositionTitle: $("#PositionTitle").val(),
+            FunctionalArea: $("#funcationalArea").data("kendoDropDownList").value()
+        };
+    }
+
+    $(document).ready(function () {
+
+        $('#advancedSearchLink').click(function (event) {
+            event.preventDefault();
+            change('#plusMinus', '#advancedSearch');
+        });
+
+        $('#plusMinus').click(function (event) {
+            event.preventDefault();
+            change('#plusMinus', '#advancedSearch');
+        });
+
+    });
+
+    function change(imgId, divId) {
+
+        var vis = ($(divId).css('display') == 'none') ? false : true;
+
+        $(divId).slideUp(function () { });
+
+        $(imgId).attr('src', '@Url.Content("~/Content/images/plus.png")');
+
+        if (!vis) {
+            $(imgId).attr('src', '@Url.Content("~/Content/images/minus.png")');
+            $(divId).slideDown(function () { });
+        }
+    }
+
+    $(document).ready(function () {
+        var advanced = $("#Advanced").val();
+        if (advanced == 1) {
+            change('#plusMinus', '#advancedSearch');
+        }
+    });
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+    $('#searchForm').validate({
+        errorLabelContainer: '#errors',
+        rules: {
+            Keyword: {
+                maxlength: 70,
+                alphanumeric: true
+            }
+        }
+    });
+
+    $('#advancedSearchForm').validate({
+        rules: {
+            FirstName: {
+                alphanumeric: true
+            },
+            LastName: {
+                alphanumeric: true
+            },
+            PositionTitle: {
+                alphanumeric: true
+            }
+        }
+    });
+
+
+    jQuery.validator.addMethod("skip_or_fill_only_x", function (value, element, options) {
+        var numberRequired = options[0];
+        var selector = options[1];
+        var numberFilled = $(selector, element.form).filter(function () {
+            return $(this).val();
+        }).length;
+        var valid = numberFilled === numberRequired || numberFilled === 0;
+        if (!$(element).data('being_validated')) {
+            var fields = $(selector, element.form);
+            fields.data('being_validated', true);
+            fields.validate();
+            fields.data('being_validated', false);
+        }
+        return valid;
+    }, jQuery.format("Please either skip these fields or only fill {0} of them."));
+
+    $(document).ready(function () {
+        $('#Keyword').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                refreshSearch();
+            }
+        });
+    });
+    
+    $(document).ready(function () {
+        $('#FirstName').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                refreshAdvancedSearch();
+            }
+        });
+    });
+    
+    $(document).ready(function () {
+        $('#LastName').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                refreshAdvancedSearch();
+            }
+        });
+    });
+
+</script>

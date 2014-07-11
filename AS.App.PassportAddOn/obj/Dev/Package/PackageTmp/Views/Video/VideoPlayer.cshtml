@@ -1,0 +1,38 @@
+﻿@model AS.App.PassportAddOn.ViewModels.Video.VideoPlayerViewModel
+
+@{
+                //Layout = "~/Views/Shared/_ASLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Video</title>
+</head>
+<body>
+    <div>
+        <div style="display: none">
+        </div>
+
+        <script language="JavaScript" type="text/javascript" src="~/Scripts/BrightcoveExpereince.js"></script>
+
+        <object id="myExperience2836324886001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="2810882002001" />
+            <param name="playerKey" value="AQ~~,AAACbZTjlpE~,8zoTOFpOgAiTJ1UDRoQvrBanwRVGwo2w" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+
+            <param name="videoID" value="@Model.ReferenceID" />
+        </object>
+
+        <script type="text/javascript">brightcove.createExperiences();</script>
+
+    </div>
+</body>
+</html>

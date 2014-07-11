@@ -1,0 +1,114 @@
+﻿@using AS.App.PassportAddOn.ViewModels.Video
+@using Kendo.Mvc.UI.Fluent
+@{
+    ViewBag.Title = "Company";
+    var webService = ViewData["webService"];
+    var user = ViewData["user"];
+}
+
+<script src="~/Scripts/AC_OETags.js"></script>
+
+<style>
+    div#tree {
+        position: relative;
+        height: 200px;
+        width: 640px;
+        top: 0px;
+        left: 0px;
+    }
+
+    div#player {
+        position: absolute;
+        height: 100px;
+        width: 400px;
+        top: 0px;
+        left: 0px;
+    }
+
+    .k-window div.k-window-content {
+        overflow: hidden;
+    }
+</style>
+
+<div id="tree">
+
+
+    @(
+        Html.Kendo().TreeView()
+        .Name("treeview-right")
+        .Events(events => events.Select("onSelect"))
+        .BindTo((IEnumerable<AreaViewModel>)Model.AreaViewModels, (NavigationBindingFactory<TreeViewItem> mappings) =>
+            {
+                mappings.For<AreaViewModel>(binding => binding.ItemDataBound((item, area) =>
+                    {
+                        item.Text = area.Name;
+                    })
+                                                              .Children(a => a.GroupViewModels));
+
+                mappings.For<GroupViewModel>(binding => binding.ItemDataBound((item, group) =>
+                    {
+                        item.Text = group.Name;
+                    })
+                                                               .Children(g => g.VideoViewModels));
+
+                mappings.For<VideoViewModel>(binding => binding.ItemDataBound((item, video) =>
+                    {
+                        item.Text = video.Name;
+                        item.HtmlAttributes["data-id"] = video.ID;
+                        item.HtmlAttributes["data-type"] = video.Type;
+
+                    }));
+            })
+          )
+
+</div>
+
+@(
+ Html.Kendo().Window()
+        .Name("wnd")
+        .Title("Video")
+        .Visible(false)
+        .Iframe(true)
+        .Draggable()
+        .Resizable()
+        .Width(580)
+        .Height(370)
+        .Events(events => events
+            .Deactivate("onDeactivate"))
+            
+
+)
+
+
+<script type="text/javascript">
+
+    var requiredMajorVersion = 10;
+    var requiredMinorVersion = 2;
+    var requiredRevision = 0;
+    
+    function onSelect(e) {
+        var dataItem = this.dataItem(e.node);
+        var type = $(e.node).data("type");
+        if (type == "video") {
+            var hasReqestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+            if (hasReqestedVersion) {
+                var user = '@ViewData["user"]';
+                var videoID = dataItem.id;
+                var url = '@ViewData["webService"]' + videoID + '|' + user;
+                var wnd = $("#wnd").data("kendoWindow");
+                wnd.title(dataItem.text);
+                wnd.refresh(url);
+                wnd.center().open();
+
+            } else {
+                alert("The version of flash player you are using is too low to play the video.");
+            }
+        }
+    }
+    
+    function onDeactivate(e) {
+        var wnd = $("#wnd").data("kendoWindow");
+        wnd.content(" ");
+    }
+
+</script>

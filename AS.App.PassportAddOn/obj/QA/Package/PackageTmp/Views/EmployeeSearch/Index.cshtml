@@ -1,0 +1,165 @@
+﻿@model AS.App.PassportAddOn.ViewModels.EmployeeSearch.SearchViewModel
+
+@{
+    Layout = null;
+}
+
+@Styles.Render("~/Content/kendo.algecoscotsman.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.common.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.default.min.css")
+@Styles.Render("~/Content/kendo/2014.1.415/kendo.dataviz.default.min.css")
+@Scripts.Render("~/Scripts/jquery-1.9.1.js")
+@Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+@Scripts.Render("~/Scripts/kendo/2014.1.415/kendo.web.min.js")
+@Scripts.Render("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="subContentContainer">
+    <div class="round-1 mainContent-round-1 subRound-1">
+        <!-- -->
+    </div>
+    <div class="round-2 mainContent-round-2 subRound-2">
+        <!-- -->
+    </div>
+    <div class="round-3 mainContent-round-3 subRound-3">
+        <!-- -->
+    </div>
+    <div class="round-4 mainContent-round-4 subRound-4">
+        <!-- -->
+    </div>
+    <div class="subContent">
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "searchForm", name = "searchForm" }))
+        {
+            <h2 id="empSearch">Employee Search</h2>
+            <table class="employeeSearch">
+                <tr>
+                    <td>@(Html.LabelFor(m => m.Keyword))</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Keyword, new { @class = "empSearch", style = "width:150px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.Keyword)</td>
+                </tr>
+                <tr>
+                    <td>@(Html.LabelFor(m => m.CountryCode))</td>
+                    <td>
+                        @(Html.Kendo().DropDownListFor(m => m.CountryCode)
+                              .OptionLabel("Select ...")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .HtmlAttributes(new { style = "width:175px" })
+                              .BindTo(ViewData["countries"] as SelectList))
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">@Html.ValidationMessageFor(m => m.CountryCode)</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span id="searchButton" class="k-button">Search</span></td>
+                   @* <td colspan="2"><span id="searchButton" class="findBtn">Search</span></td>*@
+                </tr>
+                <tr>
+                    <td colspan="2"><span id="advancedSearch" class="findBtn">Advanced Search</span></td>
+                </tr>
+            </table>
+
+        }
+
+    </div>
+    <div class="round-4 mainContent-round-4 subRound-4 bottomFade">
+        <!-- -->
+    </div>
+    <div class="round-3 mainContent-round-3 subRound-3 bottomFade">
+        <!-- -->
+    </div>
+    <div class="round-2 mainContent-round-2 subRound-2 bottomFade">
+        <!-- -->
+    </div>
+    <div class="round-1 mainContent-round-1 subRound-1">
+        <!-- -->
+    </div>
+</div>
+
+@(
+ Html.Kendo().Window()
+        .Name("wnd")
+        .Title("Search")
+        .Visible(false)
+        .Iframe(true)
+        .Draggable()
+        .Resizable()
+        .Width(900)
+        .Height(600)
+        //.Events(events => events.Deactivate("onDeactivate"))
+)
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#Keyword').keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                openWindow();
+            }
+            //alert(e.keyCode);
+        });
+    });
+
+
+    $(document).ready(function () {$("#searchButton")
+        .bind("click", function () {
+            if ($('#searchForm').valid()) {
+
+                openWindow();
+
+            }
+
+        });
+    });
+    
+    function openWindow() {
+        var keyword = $("#Keyword").val();
+        var countryCode = $("#CountryCode").data("kendoDropDownList").value();
+
+        var wnd = $("#wnd").data("kendoWindow");
+        wnd.refresh('http://localhost:63764/EmployeeSearch/results/' + keyword + '|' + countryCode);
+        wnd.center().open();
+    }
+
+    $(document).ready(function() {
+    
+        $("#advancedSearch")
+            .bind("click", function() {
+
+                var keyword = $("#Keyword").val();
+                var countryCode = $("#CountryCode").data("kendoDropDownList").value();
+
+                var wnd = $("#wnd").data("kendoWindow");
+                wnd.refresh('http://localhost:63764/EmployeeSearch/results/' + keyword + '|' + countryCode);
+                wnd.center().open();
+
+            });
+        
+    });
+    
+    $('#searchForm').validate({
+        rules: {
+            Keyword: 'required'
+        }
+    });
+
+</script>
+
+
