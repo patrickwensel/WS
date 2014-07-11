@@ -1,0 +1,296 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >
+@model WS.App.Internet.ViewModels.PaperlessInvoice.Request
+@{
+    ViewBag.Title = "Request Paperless Invoice";
+    Layout = null;
+}
+
+@Styles.Render("~/Content/screen.css")
+@Styles.Render("~/Content/kendo/2013.2.716/kendo.common.min.css")
+@Styles.Render("~/Content/kendo/2013.2.716/kendo.willscot.min.css")
+@Scripts.Render("~/Scripts/jquery-1.9.1.js")
+@Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
+@Scripts.Render("~/Scripts/additional-methods.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+@Scripts.Render("~/Scripts/kendo/2013.2.716/kendo.web.min.js")
+@Scripts.Render("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")
+
+<style>
+    html, body {
+        padding: 0;
+        margin: 0;
+    }
+</style>
+
+
+<div class="span-11 pagetitle">
+
+    <span class="phoneright">Toll Free: 888-378-9084</span>
+    <h1>Paperless Invoicing</h1>
+</div>
+<div class="span-7">
+    <p>Please use this form to request paperless invoicing for current units on rent.</p>
+    <div class="form">
+
+        <div id="message" class="message"></div>
+        <div>&nbsp;</div>
+        <h2 class="greybar">General Information</h2>
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "paperlessForm", name = "paperlessForm" }))
+        {
+            <div>
+
+                <div class="span-3">
+                    @Html.LabelFor(model => model.FirstName)
+                    @Html.TextBoxFor(model => model.FirstName, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+                <div class="span-3">
+                    @Html.LabelFor(model => model.LastName)
+                    @Html.TextBoxFor(model => model.LastName, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+                <div class="span-3">
+                    @Html.LabelFor(model => model.RequesterEmail)
+                    @Html.TextBoxFor(model => model.RequesterEmail, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.RequesterEmail)
+                </div>
+                <div class="span-3">
+                    @Html.LabelFor(model => model.PhoneNumer)
+                    @Html.TextBoxFor(model => model.PhoneNumer, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.PhoneNumer)
+                </div>
+                <div class="clear"></div>
+
+                <div>&nbsp;</div>
+
+                <h2 class="greybar">Account Details</h2>
+
+                <div class="span-7">
+                    @Html.LabelFor(model => model.AccountNumber)
+                    @Html.TextBoxFor(model => model.AccountNumber, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.AccountNumber)
+                </div>
+
+                <div><span id="findAccount" class="k-button">Search for Units</span></div>
+
+                <div>&nbsp;</div>
+
+                <div class="clear"></div>
+
+                <p>Below is a list of current units on rent for this account#. Please select those that you wish to convert to Paperless Invoicing. </p>
+
+
+
+                <p>To select all orders, click the check box next to Order# </p>
+
+
+                @(Html.Kendo().Grid(Model.Units)
+                                      .Name("UnitGrid")
+                                      .Columns(columns =>
+                                          {
+                                              columns.Bound(p => p.OrderNumber)
+                                                     .ClientTemplate("<input name=\"selectedIds\" type=\"checkbox\" value=\"#=OrderNumber#\" />")
+                                                     .HeaderTemplate("<input type=\"checkbox\" class=\"selectAll\" />")
+                                                     .Width(30)
+                                                     .Sortable(false)
+                                                     .Filterable(false);
+                                              columns.Bound(p => p.OrderNumber);
+                                              columns.Bound(p => p.Attention);
+                                              columns.Bound(p => p.UnitNumber);
+                                              columns.Bound(p => p.City);
+                                              columns.Bound(p => p.State);
+                                              columns.Bound(p => p.Zip);
+                                          })
+                                      .Sortable()
+                                      .Scrollable()
+                                      .DataSource(dataSource => dataSource
+                                                                    .Ajax()
+                                                                    .Read(read => read.Action("ReadUnits", "PaperlessInvoice").Data("readAdditionalData"))
+                                                                    //.Events(events => events
+                                                                    //        .Change("dataSourceChange"))
+                                                                    )
+                                      )
+
+                <div>&nbsp;</div>
+
+                <div class="span-6">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+
+                <div class="span-6">
+                    @Html.LabelFor(model => model.ConfirmEmail)
+                    @Html.TextBoxFor(model => model.ConfirmEmail, new { @class = "textarea7" })
+                    @Html.ValidationMessageFor(m => m.ConfirmEmail)
+                </div>
+
+                <div class="clear"></div>
+
+                To avoid being blocked by a SPAM filter and ensure receiving e-mails from Williams Scotsman, Inc. in your inbox, please add InvoiceReturns@willscot.com to your electronic address book. 
+
+                                <div>&nbsp;</div>
+
+                <div class="span-2"><span id="submitToServer" class="button">Submit Request</span></div> <div id="divLoading" class="message span-4"></div>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+
+            </div>
+        }
+
+        <div class="clear"></div>
+
+    </div>
+</div>
+
+
+<div class="span-4 last">
+
+    <div class="image-inset">
+
+        <h4>Have you considered adding a Storage Container to your jobsite?</h4>
+
+
+
+        <img src="http://www.willscot.com/images/_files/storage-container-form-banner.jpg" alt="Storage Container" width="292" height="202" border="0">
+
+
+
+        <ul>
+
+            <li>Nearly <a href="http://www.willscot.com/locations/index.php">80 locations</a> throughout the United States and Canada</li>
+
+            <li>Fully opening double doors at one or both ends for improved accessibility</li>
+
+            <li>High-security locking systems with free door lock rental</li>
+
+            <li>Large inventory available for immediate delivery</li>
+
+            <li>Convenient, ground-level entry and loading</li>
+
+            <li>Short-term and long-term leases or purchase options are available</li>
+
+            <li>Weather-resistant</li>
+
+        </ul>
+
+
+
+        <a href="http://www.willscot.com/forms/request-a-quote.php" class="link">Request a Quote</a>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    //function dataSourceChange(e) {
+    //    alert("1");
+
+    //    if (e.sender._data.length == 0) {
+            
+    //        $(e.sender.table).hide();
+
+    //    }
+    //}
+
+    function readAdditionalData() {
+
+        var account = $("#AccountNumber").val();
+
+        if (!account.length) {
+            account = -1;
+        }
+        return {
+            accountNumber: account
+        };
+    }
+
+    $(document).ready(function () {
+        var grid = $("#UnitGrid").data("kendoGrid");
+
+        $('#UnitGrid').on("change", ".selectAll", function () {
+            $("tr", grid.table).find('td:first input').prop("checked", $('#UnitGrid .selectAll').is(':checked'));
+        });
+    });
+
+    $("#findAccount")
+        .bind("click", function () {
+            var grid = $("#UnitGrid").data("kendoGrid");
+            grid.dataSource.read();
+        });
+
+    
+    $("#submitToServer")
+        .bind("click", function () {
+            if ($('#paperlessForm').valid()) {
+
+                $("#divLoading").html('<img src=@Url.Content("~/Content/images/ajax-loader.gif") /> Working.... ');
+
+                var orders = new Array();
+                var grid = $("#UnitGrid").data("kendoGrid");
+
+                grid.tbody
+                    .find(":checked")
+                    .each(function (idx) {
+                        orders[idx] = $(this).val();
+                    });
+
+                var request = {
+                    FirstName: $("#FirstName").val(),
+                    LastName: $("#LastName").val(),
+                    RequesterEmail: $("#RequesterEmail").val(),
+                    PhoneNumer: $("#PhoneNumer").val(),
+                    AccountNumber: $("#AccountNumber").val(),
+                    Email: $("#Email").val(),
+                    Orders: orders
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddPaperlessRequest", "PaperlessInvoice")',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(request),
+                    dataType: "json",
+                    success: function (data) {
+                        $("#message").html("Thank You!!  Your request has been submitted");
+                        $("#divLoading").html("Thank You!!  Your request has been submitted");
+                    },
+                    error: function (data) {
+                        $("#message").html("No units were selected");
+                        $("#divLoading").html("No units were selected");
+                    }
+                });
+
+
+            }
+        });
+
+
+        $('#paperlessForm').validate({
+            rules: {
+                FirstName: 'required',
+                LastName: 'required',
+                RequesterEmail: {
+                    required: true,
+                    email: true
+                },
+                PhoneNumer: { required: true, phoneUS: true },
+                AccountNumber: 'required',
+                Email: {
+                    required: true,
+                    email: true
+                },
+                ConfirmEmail: {
+                    equalTo: '#Email',
+                    required: true,
+                    email: true
+                }
+            }
+        });
+
+</script>

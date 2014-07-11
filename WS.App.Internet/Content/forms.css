@@ -1,0 +1,157 @@
+.clearTopPadding {
+	padding-top: 0px;
+}
+.promo-form span.req {
+	position: relative;
+	float: left;
+	bottom: 4px;
+}
+.promo-form label.desc {
+	height: 24px;
+}
+select.span-5 {
+	width:178px!important; margin-top: 0px; padding-top: 2px;height: 24px;
+}
+.clearBottomPadding {
+	padding-bottom: 0px !important;
+}
+.left {
+	/*border: 1px solid red;*/
+}
+.left .products label {
+	width: 120px;
+}
+.promo-form label.choice {
+	margin:2px 15px 2px 5px;
+}
+input.radio {
+	float: left;
+	margin-left: 20px;
+}
+.optIn-checkbox {
+	float: left;
+	margin-right: 5px;
+}
+.optIn-choice {
+	display: block;
+	height: 20px;
+	width: 500px;
+	margin-top: 3px;
+	padding-left: 5px;
+	float: left;
+}
+.buttonPadding {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.clearNow {
+	clear: both !important;
+}
+.quoteZipError p.error {
+	width: 90px;
+}
+.form-note {
+	float: left;
+	width: 115px;
+	margin: 0px;
+	margin-left: 10px;
+	margin-top: 4px;
+}
+.specialistFieldHeight {
+	height: 70px;
+}
+.indentOther {
+	padding-left: 30px !important;
+}
+.removeMarginRight {
+	margin-right: 0px !important;
+}
+/* INVOICE FORMS */
+.invoiceNumberDiv .invoiceNumber {
+	padding: 3px !important;
+	width: 110px !important;
+	float: left;
+}
+.invoiceDate {
+	padding: 3px !important;
+	float: left;
+}
+.andTextDiv {
+	float: left;
+	margin-top: 9px;
+	margin-left: 1px;
+	width: 43px;
+}
+.date-picker {
+	margin-top: 8px;
+	padding-left: 2px;
+	float: left;
+}
+.invoiceInformation {
+	margin-left: 10px;
+	width: 350px;
+	float: left;
+}
+.invoiceImage {
+	float: left;
+	width: 76px;
+	height: 100px;
+	margin-top: 25px;
+}
+a#findInvoiceImage {
+	display: block;
+	background:url(/payments/images/small-invoice.jpg) no-repeat scroll center 0px;
+	width: 142px;
+	padding-top: 105px;
+}
+.clearPadding {
+	padding: 0px !important;
+}
+
+/* LOCATION STUFF */
+.or-bar {
+	background: url(/images/locations/or-seperator.jpg) no-repeat scroll center center;
+	height: 9px;
+	width: 228px;
+	float: left;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+.location-desc {
+	height: 17px !important;
+}
+.location-country {
+	font-size: 0.9em;
+}
+.location-radio {
+	margin-left: 20px;
+}
+ul.location-extras {
+	list-style-type: none;
+}
+.location-extras li {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.location-btn {
+	padding-right: 10px;
+}
+h2.location-header {
+	font-size: 1.3em !important;
+}
+.location-promo {
+	height: 167px;
+	background-color: #F3F3F3;
+}
+.location-promo div.sidebar-quote {
+	height: 147px;
+	padding-bottom: 0px !important;
+}
+.location-promo div.sidebar-quote p.quote-author {
+	padding-bottom: 0px !important;
+}
+.larger-btn {
+	width:160px
+}
