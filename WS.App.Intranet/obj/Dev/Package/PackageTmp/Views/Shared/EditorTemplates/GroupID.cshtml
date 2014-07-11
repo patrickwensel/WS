@@ -1,0 +1,12 @@
+﻿@model int
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel("Select Group...")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource =>
+                      dataSource.Read(read => read.Action("ReadAllGroupsByAreaID", "Video").Data("filterGroup")).ServerFiltering(true))
+                  .CascadeFrom("AreaId")
+            )
+@Html.ValidationMessageFor(m => m)

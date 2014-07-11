@@ -1,0 +1,56 @@
+﻿@using Kendo.Mvc.UI
+@using WS.App.Intranet.ViewModels.APIAdmin
+
+@(Html.Kendo().Grid<RequestSourceViewModel>()
+    .Name("requestSourceGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID);
+        columns.Bound(p => p.Name);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                //model.Field(p => p.ID).Editable(false);
+            })
+        .Create(update => update.Action("RequestSourceCreate", "APIAdmin"))
+        .Read(read => read.Action("RequestSourceRead", "APIAdmin"))
+        .Update(update => update.Action("RequestSourceUpdate", "APIAdmin"))
+        .Destroy(update => update.Action("RequestSourceDestroy", "APIAdmin"))
+    )
+      )
+<br>
+
+<script type="text/javascript">
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+</script>

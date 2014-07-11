@@ -1,0 +1,144 @@
+﻿@using WS.App.Intranet.ViewModels
+@model WS.App.Intranet.ViewModels.SecurityWebViewModel
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<div>
+    <h2>@Model.EmployeeViewModel.FirstName @Model.EmployeeViewModel.LastName</h2>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index",
+                     ViewBag.RouteDicForList as RouteValueDictionary)
+</p>
+
+<div id="StudentTableContainer">
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#StudentTableContainer').jtable({
+            title: 'Student List',
+            paging: true,
+            pageSize: 10,
+            sorting: true,
+            defaultSorting: 'Name ASC',
+            actions: {
+                listAction: '@Url.Action("StudentList")',
+            },
+            fields: {
+                StudentId: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+                Name: {
+                    title: 'Name',
+                    width: '23%'
+                },
+                EmailAddress: {
+                    title: 'Email address',
+                    list: false
+                },
+                Password: {
+                    title: 'User Password',
+                    type: 'password',
+                    list: false
+                },
+                Gender: {
+                    title: 'Gender',
+                    width: '13%',
+                    options: { 'M': 'Male', 'F': 'Female' }
+                },
+                CityId: {
+                    title: 'City',
+                    width: '12%',
+                    options: '@Url.Action("GetCityOptions")'
+                },
+                BirthDate: {
+                    title: 'Birth date',
+                    width: '15%',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd'
+                },
+                Education: {
+                    title: 'Education',
+                    list: false,
+                    type: 'radiobutton',
+                    options: { '1': 'Primary school', '2': 'High school', '3': 'University' }
+                },
+                About: {
+                    title: 'About this person',
+                    type: 'textarea',
+                    list: false
+                },
+                IsActive: {
+                    title: 'Status',
+                    width: '12%',
+                    type: 'checkbox',
+                    values: { 'false': 'Passive', 'true': 'Active' },
+                    defaultValue: 'true'
+                },
+                RecordDate: {
+                    title: 'Record date',
+                    width: '15%',
+                    type: 'date',
+                    displayFormat: 'dd.mm.yy',
+                    create: false,
+                    edit: false,
+                    sorting: false //This column is not sortable!
+                }
+            }
+        });
+
+        $('#StudentTableContainer').jtable('load');
+    });
+
+</script>
+
+@*@using (Html.BeginForm())
+{
+    <div>
+
+        <table>
+            <tr>
+                <td class="header">Name</td>
+                <td class="content">
+                    @Model.EmployeeViewModel.FirstName @Model.EmployeeViewModel.LastName
+                </td>
+                    @Html.HiddenFor(model => model.EmployeeViewModel.ID)
+    @Html.HiddenFor(model => model.EmployeeViewModel.FirstName)
+    @Html.HiddenFor(model => model.EmployeeViewModel.LastName)
+    @Html.HiddenFor(model => model.EmployeeViewModel.Title)
+    @Html.HiddenFor(model => model.EmployeeViewModel.EmployeeStatusID)
+            </tr>
+        </table>
+        <table style="border: 2px">
+            <tr>
+                <td>Application Name</td>
+                <td>Pin #</td>
+                <td>Security Level</td>
+            </tr>
+        </table>
+        <div>
+            @foreach (SecurityApplicationViewModel securityApplicationViewModel in Model.SecurityApplicationViewModels)
+            {
+                Html.RenderPartial("Applications", securityApplicationViewModel);
+            }
+        </div>
+        <div>
+            <input type="submit" name="submitButton" value="Add Another Application">
+            <input type="submit" name="submitButton" value="Save Changes">
+        </div>
+
+    </div>
+}*@
+
+
+
+

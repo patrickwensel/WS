@@ -1,0 +1,21 @@
+﻿@model WS.App.Intranet.ViewModels.MWOToolsViewModel    
+
+@{
+    ViewBag.Title = "Mobile Work Order Tools";
+}
+
+<h2>Mobile Work Order Tools</h2>
+@using (Html.BeginForm())
+{
+    <div class="mwo-items">
+        <div class="mwo-items-title">
+            Re-run Mobile Work Order JDE business Function 
+        </div>
+        <div>
+            Enter the Work Order Number @Html.TextBoxFor(m => m.WorkOrderNumber, new{@style = "width: 100px;"}) <input type="submit" name="submitButton" value="Run">
+        </div>
+        <div>
+            @Html.ValidationMessageFor(m=>m.WorkOrderNumber)
+        </div>
+    </div>
+}

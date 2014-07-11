@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+@{
+    var jTableStyle = "metro/blue/jtable.css";
+    if (!string.IsNullOrEmpty(Request["jTableStyle"]))
+    {
+        jTableStyle = Request["jTableStyle"];
+    }
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - algeco scotsman</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/Content/as_screen.css")
+    @Styles.Render("~/Content/kendo/2013.2.716/kendo.common.min.css")
+    @Styles.Render("~/Content/kendo/2013.2.716/kendo.algecoscotsman.min.css")
+
+    @Scripts.Render("~/Scripts/jquery-1.9.1.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/Scripts/kendo/2013.2.716/kendo.web.min.js")
+    @Scripts.Render("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")
+    
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header span-11 add-bottom-margin-5">
+                <div class="logoDiv">
+                    <a href="http://ws/version2/index.asp" class="logoHeader">Williams Scotsman</a>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                    </section>
+                </div>
+            </div>
+            <div class="span-11 pagetitle">
+
+             
+                <h1>AS Video Application</h1>
+            </div>
+            <div class="span-12">
+
+                <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - algeco scotsman</p>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+            </div>
+
+            <div class="span-4 last">
+            </div>
+            <div class="span-11 landingFooter">
+
+                <p class="company">Williams Scotsman, Inc. Corporate Headquarters </p>
+                <p class="address">901 S Bond Street Suite 600&nbsp;&nbsp;.&nbsp;&nbsp;Baltimore, MD&nbsp;&nbsp;.&nbsp;&nbsp;21231&nbsp;&nbsp;.&nbsp;&nbsp;Toll Free:  800.782.1500</p>
+                <p class="copyright">©2013 Williams Scotsman, Inc., All Rights Reserved.</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model decimal?
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel(" ")
+                  .DataTextField("Description")
+                  .DataValueField("LevelID")
+                  .HtmlAttributes(new { data_value_primitive = true })
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("GetSecurityLevelsFilteredByApplicationID", "Employee").Data("filterSecurityLevels")).ServerFiltering(true))
+                  .CascadeFrom("ApplicationID")
+            )
+@Html.ValidationMessageFor(m => m)

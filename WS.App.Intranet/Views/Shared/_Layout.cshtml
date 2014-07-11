@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+@{
+    var jTableStyle = "metro/blue/jtable.css";
+    if (!string.IsNullOrEmpty(Request["jTableStyle"]))
+    {
+        jTableStyle = Request["jTableStyle"];
+    }
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - williams scotsman</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/themes/redmond/jquery-ui-1.8.16.custom.css")
+    @Styles.Render("~/Scripts/jtable/themes/" + jTableStyle)
+    @Styles.Render("~/Content/validationEngine.jquery.css")
+
+
+    @Scripts.Render("~/Scripts/spin.min.js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/jtable/jquery.jtable.js")
+
+    <!--This CSS entry was added by the Kendo UI VS Extensions for compatibility reasons-->
+    <link href="@Url.Content("~/Content/kendo.compatibility.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.415/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    @*	<script src="@Url.Content("~/Scripts/kendo/2014.1.415/jquery.min.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.415/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("williams scotsman", "Index", "Home")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    <span>@Html.Action("_LoggedInAs", "Shared")</span>
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("User Management", "Index", "Employee")</li>
+                        @*<li>@Html.ActionLink("Application Logging", "Index", "Logging")</li>*@
+                        <li>@Html.ActionLink("MWO Tools", "Index", "MWOTools")</li>
+                        <li>@Html.ActionLink("Hyperion Tools", "Index", "HyperionTools")</li>
+                        <li>@Html.ActionLink("API Admin", "Index", "APIAdmin")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - williams scotsman</p>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

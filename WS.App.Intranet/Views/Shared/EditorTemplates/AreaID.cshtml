@@ -1,0 +1,10 @@
+﻿@model int
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel("Select Area...")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllAreas", "Video")).ServerFiltering(true))
+            )
+@Html.ValidationMessageFor(m => m)

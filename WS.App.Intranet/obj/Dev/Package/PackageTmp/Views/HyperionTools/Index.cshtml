@@ -1,0 +1,98 @@
+﻿@model WS.App.Intranet.ViewModels.HyperionToolsViewModel
+
+@{
+    ViewBag.Title = "Hyperion Tools";
+}
+
+<style type="text/css">
+    #loading
+    {
+        display:none;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(255,255,255,0.8);
+        z-index:1000;
+    }
+  
+    #loadingcontent
+    {
+        display:table;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+    }
+  
+    #loadingspinner
+    {
+        display: table-cell;
+        vertical-align:middle;
+        width: 100%;
+        text-align: center;
+        font-size:larger;
+        padding-top:80px;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        $("#submitbtn").click(function () {
+            $("#loading").fadeIn();
+            var opts = {
+                lines: 12, // The number of lines to draw
+                length: 7, // The length of each line
+                width: 4, // The line thickness
+                radius: 10, // The radius of the inner circle
+                color: '#000', // #rgb or #rrggbb
+                speed: 1, // Rounds per second
+                trail: 60, // Afterglow percentage
+                shadow: false, // Whether to render a shadow
+                hwaccel: false // Whether to use hardware acceleration
+            };
+            var target = document.getElementById('loading');
+            var spinner = new Spinner(opts).spin(target);
+        });
+    });
+</script>
+
+<div id="loading">
+    <div id="loadingcontent">
+        <p id="loadingspinner">
+            Working...
+        </p>
+    </div>
+</div>
+
+<h2>Hyperion Tools</h2>
+@using (Html.BeginForm())
+{
+    <div class="mwo-items">
+        <div class="mwo-items-title">
+            Export GL
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Month)
+            @Html.DropDownListFor(m => m.Month, new SelectList(Model.Months, "Value", "Text"))
+            @Html.ValidationMessageFor(model => model.Month)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Year)
+            @Html.DropDownListFor(m => m.Year, new SelectList(Model.Years, "Value", "Text"))
+            @Html.ValidationMessageFor(model => model.Month)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.LedgerType)
+            @Html.DropDownListFor(m => m.LedgerType, new SelectList(Model.LedgerTypes, "Value", "Text"))
+            @Html.ValidationMessageFor(model => model.Month)
+        </div>
+        <div>
+            <input id="submitbtn" type="submit" name="submitButton" value="Run">
+        </div>
+    </div>
+    
+
+}

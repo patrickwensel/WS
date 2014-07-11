@@ -1,0 +1,37 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "API Admin";
+}
+
+<h2>API Admin</h2>
+
+@(Html.Kendo().TabStrip()
+          .Name("tabstrip")
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("Requests")
+                  .Selected(true)
+                  .Content(@<text>@Html.Partial("_Request")</text>);
+              tabstrip.Add().Text("Source").Content(@<text>@Html.Partial("_Source")</text>);
+              tabstrip.Add().Text("Request Source")
+                      .Content(@<text>@Html.Partial("_RequestSource")</text>);
+              tabstrip.Add().Text("Request Data Key")
+                      .Content(@<text>@Html.Partial("_RequestDataKey")</text>);
+              tabstrip.Add().Text("Request Data Key Class")
+                      .Content(@<text>@Html.Partial("_RequestDataKeyClass")</text>);
+          })
+      )
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var ts = $(tabstrip).data().kendoTabStrip;
+
+        ts.tabGroup.on('click', 'li', function (e) {
+            ts.reload($(this));
+        });
+    });
+
+</script>

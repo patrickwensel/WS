@@ -1,0 +1,156 @@
+﻿@model WS.Framework.WSJDEData.Employee
+
+<div>
+    <form>
+        <label>Name: <input type="text" name="name" id="name" /></label>
+        <label>Status: @Html.DropDownList("employeeStatusID", (IEnumerable<SelectListItem>)ViewBag.EmployeeStatuses, new { id = "employeeStatusID", @class="filtering" })</label>
+        <button type="submit" id="LoadRecordsButton">Load records</button>
+    </form>
+</div>
+<br/>
+
+<div id="EmployeeTableContainer">
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#EmployeeTableContainer').jtable({
+            title: 'Employee List',
+            paging: true,
+            pageSize: 10,
+            sorting: true,
+            defaultSorting: 'LastName ASC',
+            actions: {
+                listAction: '@Url.Action("EmployeeList")'
+            },
+            fields: {
+                ID: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+                Security: {
+                    title: '',
+                    width: '5%',
+                    sorting: false,
+                    edit: false,
+                    create: false,
+                    listClass: 'child-opener-image-column',
+                    display: function (employeeData) {
+                        var $img = $('<img class="child-opener-image" src="@Url.Content("~/Content/images/Misc/note.png")" title="Edit Application Security" />');
+                        $img.click(function () {
+                            $('#EmployeeTableContainer').jtable('openChildTable',
+                                    $img.closest('tr'), 
+                                    {
+                                        title: employeeData.record.FirstName + " " +employeeData.record.LastName + ' - Application Security',
+                                        actions: {
+                                            listAction: '@Url.Action("SecurityList")?EmployeeId=' + employeeData.record.ID,
+                                            deleteAction: '@Url.Action("DeleteSecurity")',
+                                            updateAction: '@Url.Action("UpdateSecurity")',
+                                            createAction: '@Url.Action("CreateSecurity")'
+                                    },
+                                        fields: {
+                                            ID: {
+                                                key: true,
+                                                create: false,
+                                                edit: false,
+                                                list: false
+                                            },
+                                            EmployeeID: {
+                                                type: 'hidden',
+                                                defaultValue: employeeData.record.ID
+                                            },
+                                            ActiveSession: {
+                                                type: 'hidden'
+                                            },
+                                            ChangeFlag: {
+                                                type: 'hidden'
+                                            },
+                                            ApplicationID: {
+                                                title: 'ApplicationID',
+                                                width: '40%',
+                                                options: '@Url.Action("GetApplications")'
+                                            },
+                                            SecurityLevel: {
+                                                title: 'Security Level',
+                                                width: '40%',
+                                                dependsOn: 'ApplicationID',
+                                                options: function(data) {
+                                                    return '@Url.Action("GetSecurityLevels")?applicationId=' + data.dependedValues.ApplicationID;
+                                                }
+                                            },
+                                            Password: {
+                                                title: 'Password',
+                                                width: '20%',
+                                                inputClass: 'validate[required, custom[onlyNumberSp], minSize[4], maxSize[4] '
+                                            },
+                                            CreateDate: {
+                                                type: 'hidden'
+                                            },
+                                            MaintenanceDate: {
+                                                type: 'hidden'
+                                            },
+                                            CreateID: {
+                                                type: 'hidden'
+                                            },
+                                            MaintenanceID: {
+                                                type: 'hidden'
+                                            }
+                                        },
+                                        formCreated: function (event, data) {
+                                            data.form.validationEngine();
+                                        },
+                                        formSubmitting: function (event, data) {
+                                            return data.form.validationEngine('validate');
+                                        },
+                                        formClosed: function (event, data) {
+                                            data.form.validationEngine('hide');
+                                            data.form.validationEngine('detach');
+                                        }
+                                    }, function (data) {
+                                        data.childTable.jtable('load');
+                                    });
+                        });
+                        return $img;
+                    }
+                },
+                EmployeeNumber: {
+                    title: 'Number',
+                    width: '10%'
+                },
+                FirstName: {
+                    title: 'First Name',
+                    width: '20%'
+                },
+                LastName: {
+                    title: 'Last Name',
+                    width: '20%'
+                },
+                Title: {
+                    title: 'Title',
+                    width: '20%'
+                },
+                EmployeeStatusID: {
+                    title: 'Status',
+                    width: '20%',
+                    sorting: false
+                }
+            }
+        });
+
+        $('#StudentTableContainer').jtable('load');
+
+        $('#LoadRecordsButton').click(function (e) {
+            e.preventDefault();
+            $('#EmployeeTableContainer').jtable('load', {
+                name: $('#name').val(),
+                employeeStatusID: $('#employeeStatusID').val()
+            });
+        });
+
+        $('#LoadRecordsButton').click();
+    });
+
+</script>

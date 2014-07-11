@@ -1,0 +1,97 @@
+﻿@using Kendo.Mvc.UI
+@using WS.App.Intranet.ViewModels.APIAdmin
+
+@(Html.Kendo().Grid<RequestViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+        {
+        columns.Bound(p => p.CreateDate)
+            .Width(100);
+        columns.ForeignKey(p => p.APISourceID, (System.Collections.IEnumerable)ViewData["sources"], "ID", "Name")
+            .Title("Source")
+            .Sortable(true)
+            .Width(100);
+        //columns.Bound(p => p.APIRequestSourceID);
+        columns.ForeignKey(p => p.APIRequestSourceID, (System.Collections.IEnumerable)ViewData["requestSources"], "ID", "Name")
+            .Title("Request Source")
+            .Sortable(true)
+            .Width(150);
+        columns.Bound(p => p.FirstName).Width(100);
+        columns.Bound(p => p.LastName).Width(100);
+        columns.Bound(p => p.Company).Width(100);
+    })
+    .Pageable(paging => paging
+        .Input(false)
+        .Numeric(true)
+        .PreviousNext(true)
+        .PageSizes(new[] { 10, 25, 50 })
+        .Refresh(true))
+    .Sortable(sortable => sortable
+        .AllowUnsort(true)
+        .SortMode(GridSortMode.MultipleColumn))
+    .Filterable()
+    .ClientDetailTemplateId("template")
+    .Events(events => events.DataBound("dataBound"))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Sort(sort => sort.Add("CreateDate").Descending())
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Read(read => read.Action("RequestRead", "APIAdmin"))
+        
+
+    )
+      )
+
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo().Grid<RequestDataViewModel>()
+            .Name("grid_#=ID#")
+            .Columns(columns =>
+            {
+                //columns.ForeignKey(p => p.APIRequestDataKeyID, (System.Collections.IEnumerable)ViewData["requestDataKeys"], "ID", "Description")
+                //    .Title("Data Key")
+                //    .Sortable(true)
+                //    .Width(200);
+                columns.Bound(o => o.Name);//.Width(10);
+                columns.Bound(o => o.Value);
+            })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(10)
+                .Read(read => read.Action("GetRequestDataByRequestID", "APIAdmin", new { requestID = "#=ID#" }))
+            )
+    .Pageable(paging => paging
+        .Input(false)
+        .Numeric(true)
+        .PreviousNext(true)
+        .PageSizes(new[] { 10, 25, 50 })
+        .Refresh(true))
+    .Sortable(sortable => sortable
+        .AllowUnsort(true)
+        .SortMode(GridSortMode.MultipleColumn))
+            .ToClientTemplate()
+    )
+</script>
+<script>
+    function dataBound() {
+        this.expandRow(this.tbody.find("tr.k-master-row").first());
+    }
+</script>
+
+<script type="text/javascript">
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>
