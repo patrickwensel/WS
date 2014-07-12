@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:tns1="urn:FormsIQWebService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://ws89nt/formsiq/services/FormsIQWebService" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:intf="http://ws89nt/formsiq/services/FormsIQWebService" targetNamespace="http://ws89nt/formsiq/services/FormsIQWebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:FormsIQWebService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Attribute">
+        <xsd:sequence>
+          <xsd:element name="name" nillable="true" type="xsd:string" />
+          <xsd:element name="value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FieldIdentifier">
+        <xsd:sequence>
+          <xsd:element name="fieldSequence" type="xsd:int" />
+          <xsd:element name="parameterName" nillable="true" type="xsd:string" />
+          <xsd:element name="referenceName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FormFieldEx">
+        <xsd:sequence>
+          <xsd:element name="attributes" nillable="true" type="intf:ArrayOf_tns1_Attribute" />
+          <xsd:element name="identifier" nillable="true" type="tns1:FieldIdentifier" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Row">
+        <xsd:sequence>
+          <xsd:element name="columns" nillable="true" type="intf:ArrayOf_tns1_FormFieldEx" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListField">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:FormFieldEx">
+            <xsd:sequence>
+              <xsd:element name="rows" nillable="true" type="intf:ArrayOf_tns1_Row" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="FormInfo">
+        <xsd:sequence>
+          <xsd:element name="attributes" nillable="true" type="intf:ArrayOf_tns1_Attribute" />
+          <xsd:element name="dataSource" nillable="true" type="xsd:string" />
+          <xsd:element name="formId" type="xsd:int" />
+          <xsd:element name="formName" nillable="true" type="xsd:string" />
+          <xsd:element name="formSetId" type="xsd:int" />
+          <xsd:element name="preformFields" nillable="true" type="intf:ArrayOf_tns1_FormFieldEx" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FormsIQExternalData">
+        <xsd:sequence>
+          <xsd:element name="fieldList" nillable="true" type="intf:ArrayOf_tns1_FormFieldEx" />
+          <xsd:element name="formInfo" nillable="true" type="tns1:FormInfo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SingleField">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns1:FormFieldEx">
+            <xsd:sequence>
+              <xsd:element name="value" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws89nt/formsiq/services/FormsIQWebService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_tns1_Attribute">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:Attribute[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_FormFieldEx">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:FormFieldEx[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns1_Row">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="tns1:Row[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="submitFormRequest1">
+    <wsdl:part name="form" type="tns1:FormsIQExternalData" />
+  </wsdl:message>
+  <wsdl:message name="submitFormRequest">
+    <wsdl:part name="form" type="tns1:FormsIQExternalData" />
+    <wsdl:part name="theFieldName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="validateXMLRequest">
+    <wsdl:part name="contents" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="submitFormResponse1">
+    <wsdl:part name="submitFormReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="submitFormResponse">
+    <wsdl:part name="submitFormReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="validateXMLResponse">
+    <wsdl:part name="validateXMLReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="FormsIQException">
+    <wsdl:part name="fault" type="xsd:anyType" />
+  </wsdl:message>
+  <wsdl:portType name="FormsIQWebService">
+    <wsdl:operation name="validateXML" parameterOrder="contents">
+      <wsdl:input name="validateXMLRequest" message="intf:validateXMLRequest" />
+      <wsdl:output name="validateXMLResponse" message="intf:validateXMLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="submitForm" parameterOrder="form theFieldName">
+      <wsdl:input name="submitFormRequest" message="intf:submitFormRequest" />
+      <wsdl:output name="submitFormResponse" message="intf:submitFormResponse" />
+      <wsdl:fault name="FormsIQException" message="intf:FormsIQException" />
+    </wsdl:operation>
+    <wsdl:operation name="submitForm" parameterOrder="form">
+      <wsdl:input name="submitFormRequest1" message="intf:submitFormRequest1" />
+      <wsdl:output name="submitFormResponse1" message="intf:submitFormResponse1" />
+      <wsdl:fault name="FormsIQException" message="intf:FormsIQException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FormsIQWebServiceSoapBinding" type="intf:FormsIQWebService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="validateXML">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="validateXMLRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices.formsiq.feith.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="validateXMLResponse">
+        <wsdlsoap:body use="encoded" namespace="http://ws89nt/formsiq/services/FormsIQWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitForm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="submitFormRequest">
+        <wsdlsoap:body use="encoded" namespace="http://webservices.formsiq.feith.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="submitFormResponse">
+        <wsdlsoap:body use="encoded" namespace="http://ws89nt/formsiq/services/FormsIQWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="FormsIQException">
+        <wsdlsoap:fault use="encoded" namespace="http://ws89nt/formsiq/services/FormsIQWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="submitForm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="submitFormRequest1">
+        <wsdlsoap:body use="encoded" namespace="http://webservices.formsiq.feith.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="submitFormResponse1">
+        <wsdlsoap:body use="encoded" namespace="http://ws89nt/formsiq/services/FormsIQWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="FormsIQException">
+        <wsdlsoap:fault use="encoded" namespace="http://ws89nt/formsiq/services/FormsIQWebService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FormsIQWebServiceService">
+    <wsdl:port name="FormsIQWebService" binding="intf:FormsIQWebServiceSoapBinding">
+      <wsdlsoap:address location="http://ws89nt/formsiq/services/FormsIQWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\ws124nt\c$\inetpub\wwwroot\CCT</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/AjaxPro.2.dll">
+      <publishTime>11/02/2006 16:40:00</publishTime>
+    </File>
+    <File Include="bin/Devart.Data.dll">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="bin/Devart.Data.Oracle.dll">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="bin/include/style.css">
+      <publishTime>07/07/2014 10:09:24</publishTime>
+    </File>
+    <File Include="bin/Resources/licenses.licx">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="bin/WS20.CCT.dll">
+      <publishTime>07/10/2014 10:10:59</publishTime>
+    </File>
+    <File Include="bin/WS20.CCT.pdb">
+      <publishTime>07/10/2014 10:10:59</publishTime>
+    </File>
+    <File Include="bin/WS20.Framework.dll">
+      <publishTime>07/07/2014 13:16:07</publishTime>
+    </File>
+    <File Include="bin/WS20.Framework.pdb">
+      <publishTime>07/07/2014 13:16:07</publishTime>
+    </File>
+    <File Include="CybersourceSearch.aspx">
+      <publishTime>07/07/2014 13:13:32</publishTime>
+    </File>
+    <File Include="downloadFile.aspx">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/03/2014 14:52:49</publishTime>
+    </File>
+    <File Include="images/cal.gif">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="images/cct.gif">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="images/tabregular.png">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="images/tabselected.png">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/boa.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/cctStyle.css">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/common.js">
+      <publishTime>07/08/2014 13:07:17</publishTime>
+    </File>
+    <File Include="include/credit.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/cyber.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/edit.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/getDate.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/printStyle.css">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/search.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/sorttable.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/style.css">
+      <publishTime>07/07/2014 10:09:24</publishTime>
+    </File>
+    <File Include="include/tabstyle.css">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/trans.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/ws-lib.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="include/wsTabs.js">
+      <publishTime>06/19/2014 10:46:19</publishTime>
+    </File>
+    <File Include="index.aspx">
+      <publishTime>07/07/2014 17:31:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/09/2014 10:52:37</publishTime>
+    </File>
+    <File Include="WSFooter.ascx">
+      <publishTime>07/07/2014 13:24:31</publishTime>
+    </File>
+    <File Include="WSHeader.ascx">
+      <publishTime>07/09/2014 16:08:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

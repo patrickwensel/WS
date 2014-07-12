@@ -1,0 +1,13 @@
+C:\Code\WS\Trunk\WS20.CCT\bin\WS20.CCT.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\AjaxControlToolkit.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\AjaxPro.2.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\WS20.Framework.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\WS20.Framework.pdb
+C:\Code\WS\Trunk\WS20.CCT\obj\QA\WS20.CCT.csprojResolveAssemblyReference.cache
+C:\Code\WS\Trunk\WS20.CCT\obj\QA\WS20.CCT.Properties.Resources.resources
+C:\Code\WS\Trunk\WS20.CCT\obj\QA\WS20.CCT.csproj.GenerateResource.Cache
+C:\Code\WS\Trunk\WS20.CCT\obj\QA\WS20.CCT.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\Devart.Data.dll
+C:\Code\WS\Trunk\WS20.CCT\bin\Devart.Data.Oracle.dll
+C:\Code\WS\Trunk\WS20.CCT\obj\QA\WS20.CCT.dll.licenses
+C:\Code\WS\Trunk\WS20.CCT\bin\include\style.css

@@ -1,0 +1,12 @@
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\WS20.Framework.dll.config
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\WS20.Framework.dll
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\WS20.Framework.pdb
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\AjaxPro.2.dll
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\Devart.Data.dll
+C:\Code\WS\Trunk\WS20.Framework\bin\Debug\Devart.Data.Oracle.dll
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.Properties.Resources.resources
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.csproj.GenerateResource.Cache
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.dll.licenses
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.dll
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.pdb
+C:\Code\WS\Trunk\WS20.Framework\obj\Debug\WS20.Framework.csprojResolveAssemblyReference.cache

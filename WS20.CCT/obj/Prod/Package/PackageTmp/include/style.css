@@ -1,0 +1,296 @@
+
+/* General Stuff */
+html, body
+{
+	background:			#ffffff;
+	margin:				0px;
+	padding:			0px;
+	font:				11px Verdana;	
+}
+
+div, span, html, body, td, th, input, tr, table
+{
+	cursor:				default;	
+}
+
+span.star
+{
+	font:               11px Verdana;
+	color:              #EA3737;
+}
+
+a
+{
+	color:		       	#035E89; 
+	border-bottom:      1px #035E89;
+	text-decoration:	none;
+	cursor:				pointer;
+}
+
+a:hover
+{
+    text-decoration:	none;
+}
+
+.flat
+{
+	border:				1px solid #ACACAC;
+	font:				11px Verdana;
+}
+
+.flat_readonly
+{
+	border:				1px solid #ACACAC;
+	font:				11px Verdana;
+	background:			#e3e3e3;
+}
+
+.button
+{
+	width:				75px;
+	height:				21px;
+	font:				11px Verdana;
+}
+
+td
+{
+	text-align:			left;
+}
+
+
+td.center
+{
+	text-align: center;
+	font: 11px Verdana;
+	color: red;
+	padding: 4px;
+}
+
+td.label
+{
+	font:				bold 11px Verdana;
+	color:				#000000;
+	text-align:			right;
+	padding:			4px;
+}
+
+td.input
+{
+	font:				11px Verdana;
+	color:				#000000;
+	text-align:			left;
+	padding:			4px;
+	white-space:nowrap;
+}
+
+	  
+td.error
+{
+	font:				bold 11px Verdana;
+	color:				#ea3737;
+	text-align:			center;
+}
+
+
+div#top_loading
+{
+	position:			absolute;
+	padding:			3px;
+	top:				0px;
+	right:				10px;
+	background:			#666666;
+	font:				bold 11px Tahoma;
+	color:				white;
+	z-index:			900;
+	filter:             progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=40);
+	opacity:            .4;
+}
+
+
+
+/*page layout stuff */
+
+div.main_header
+{
+	height: 80px;
+	width: 794px;
+	border-bottom: 1px solid #acacac;
+	margin-left: 6px;
+	margin-top: 10px;
+}
+
+div.main_header div.app_title
+{
+	position:			absolute;
+	top:				73px;
+	left:				149px;
+	width:				600px;
+	background:			#ffffff;
+	font:				bold 11px Verdana;
+	color:				#666666;
+	height:				20px;
+	padding-left:		0px;
+}
+div.main_header div.app_menu
+{
+	text-align:			center;	
+	width:				776px;
+	height:				28px;
+}
+
+div.main_header div.app_pagename
+{
+	text-align:			center;
+	font:				bold 16px Verdana;
+	color:				#000000;
+	margin-top:			6px;
+	margin-bottom:		4px;
+	width:				100%;
+}
+
+div.main_header div.app_subhead
+{
+	position:			absolute;
+	left:				656px;
+	width:				150px;
+	text-align:			right;
+	font:				9px Verdana;
+	color:				#666666;
+}
+
+div.main_header div.app_top_link
+{
+	position:			absolute;
+	left:				656px;
+	top:				130px;
+	width:				150px;
+	text-align:			right;
+	font:				11px Verdana;
+}
+
+div.main_body, div#main_loading
+{
+	padding-top:		10px;
+	padding-bottom:		10px;
+	margin-left:		6px;
+	width:				794px;
+	text-align:			center;
+}
+
+div#main_loading
+{
+	font:				bold 15px Verdana;
+	color:				#666666;
+	text-align:			center;
+}
+
+div.main_footer
+{
+	width:				794px;
+	border-top:			1px solid #acacac;
+	text-align:			center;
+	margin-left: 		6px;
+	padding-top:		5px;
+	font:               11px Verdana;
+	color:              #666666;
+}
+
+div.footer_links
+{
+	width:              800px;
+	text-align:         center;
+	margin:				10px;
+}
+
+div.main_footer a, div.footer_links a
+{
+	font-size:          13px;
+}	
+
+
+
+/* main menu blocks */
+div.menu_block
+{
+	width:				325px;	
+	padding-bottom:		3px;
+	font:				11px Verdana;
+	text-align:         left;
+}
+
+div.menu_block ul
+{
+	margin-top:			2px;
+	margin-bottom:      2px;
+}
+
+div.menu_block li
+{
+	padding-top:		2px;
+	padding-bottom:		2px;
+}
+
+div.menu_block div.menu_block_head,
+div.menu_block div.menu_block_head_gray,
+div.menu_block div.menu_block_head_blue,
+div.menu_block div.menu_block_head_red
+{
+	width:				100%;
+	padding-left:		3px;
+	padding-top:		3px;
+	padding-bottom:		3px;
+	font:				bold 13px Verdana;
+	color:				#666666;
+	background:			#EFEFEF;
+	border-top:			1px solid #666666;
+}
+
+
+div.menu_block li
+{
+	font:				13px Verdana;
+}
+
+/*misc */
+
+
+
+#top_error_msg
+{
+	margin:				10px;
+	font:				bold 11px Verdana;
+	color:				#ea3737;
+	text-align:			center;
+}
+
+#top_msg
+{
+	margin-top: 		10px;
+	font:				bold 11px Verdana;
+	color:				#035E89;
+	text-align:			center;
+}
+
+#mHelperDiv
+{
+	float:			right;		
+	width:			200px;
+	border:			1px dashed #acacac;
+	padding:		8px;
+	font:			11px Verdana;
+	color:			#666666;
+	line-height:	17px;
+	background:		#f9f9f9;
+	z-index:		50;
+}
+
+#mHelperDiv img
+{
+	vertical-align:bottom;
+}
+
+#mHelperDiv span
+{
+	padding-left:	5px;
+}
+

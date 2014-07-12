@@ -1,0 +1,12 @@
+﻿@model decimal?
+
+                    @(Html.Kendo().DropDownListFor(m => m)
+                          .AutoBind(false)
+                          .OptionLabel("Choose Class ...  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllRequestDataKeyClasses", "Admin"))
+                          )
+                          )
+

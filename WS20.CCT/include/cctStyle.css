@@ -1,0 +1,420 @@
+﻿/*boa code*/
+a.selectedPageLink{
+	font-weight : bold;
+	text-decoration: underline;
+}
+/*end boa code*/
+
+
+/* Main Menu */
+#mMainMenu
+{
+	height: 220px;
+}
+
+div.MainMenuFont
+{
+	font:				bold 15px Verdana;	
+	white-space:nowrap;
+
+}
+
+a.MainMenuFont
+{
+	text-decoration:	none;
+	color:				#666666;
+	width:				100%;
+	display:			block;
+	padding:			10px;
+	border:				0px;
+	white-space:nowrap;
+}
+
+span.MainMenuFont
+{
+	font:				11px Verdana;
+	white-space:nowrap;
+}
+
+div.NavMenuFont
+{
+	font:				bold 10px Verdana;	
+	white-space:nowrap;
+}
+
+a.NavMenuFont
+{
+	text-decoration:	none;
+	color:				#666666;
+	width:				100%;
+	display:			block;
+	padding:			3px;
+	border:				0px;
+	white-space:nowrap;
+}
+
+span.NavMenuFont
+{
+	font:				9px Verdana;
+	white-space:nowrap;
+}
+
+#mMenuTrans
+{
+	position:			absolute;
+	top:				180px;
+	left:				332px;
+	height: 70;
+	width: 130px; 
+	border-right: #9fb5d2 thin solid;
+	border-top: #9fb5d2 thin solid;
+	border-left: #9fb5d2 thin solid;
+	border-bottom: #9fb5d2 thin solid;
+}
+
+
+
+#mMenuTrans a:hover, #mMenuTrans a.selected
+{
+	background-color: #e4edf8;
+	/*background:			url(../images/linkbg1_hover.png);
+	background-repeat:	no-repeat;*/
+}
+
+#mMenuSearch
+{	
+	position:			absolute;
+	top:				275px;
+	left:				144px;
+	height: 70;
+	width: 130px;
+	border-right: #92cda9 thin solid;
+	border-top: #92cda9 thin solid;
+	border-left: #92cda9 thin solid;
+	border-bottom: #92cda9 thin solid;
+	/*background:			url(../images/linkbg2.png);
+	background-repeat:	no-repeat;*/
+}	
+
+#mMenuSearch a:hover, 
+#mMenuSearch a.selected
+{
+	background-color: #e4f8ec;
+	/*background:			url(../images/linkbg2_hover.png);
+	background-repeat:	no-repeat;*/
+}
+
+#mMenuCredit
+{
+	
+	position:			absolute;
+	top:				275px;
+	left:				520px;
+	height: 70;
+	width:				130px;
+	border-right: #cd9492 thin solid;
+	border-top: #cd9492 thin solid;
+	border-left: #cd9492 thin solid;
+	border-bottom: #cd9492 thin solid;
+	/*background:			url(../images/linkbg3.png);
+	background-repeat:	no-repeat;*/
+}	
+
+#mMenuCredit a:hover, 
+#mMenuCredit a.selected
+{
+	background-color: #f8e6e4;
+	/*background:			url(../images/linkbg3_hover.png);
+	background-repeat:	no-repeat;*/
+}
+/* Main Menu End */
+
+
+div.resultCT
+{
+	text-align: left;
+	font-weight: bold;
+}
+
+/* History Style */
+iframe#grayedOutIframe
+{
+	position:absolute;
+	z-index:			949;
+	filter:				alpha(opacity=50);
+}
+
+div#grayedOutDiv
+{
+	position:absolute;
+	background:			#545454;
+	filter:				alpha(opacity=50);
+	z-index:			950;
+}
+div#historyHead
+{
+	position:absolute;
+	background:			#ffffff;
+	z-index:			951;
+	width:800px;
+	font-weight:bold;
+	font-size:15px;
+}
+div#historyDiv
+{
+	position:absolute;
+	background:			#ffffff;
+	z-index:			951;
+	width:800px;
+	height: expression((this.scrollHeight+30)+"px");
+	overflow:auto;
+}
+
+td.cell
+{
+	border-right:	1px solid #d6d6d6;
+	border-bottom:	1px solid #d6d6d6;
+	white-space:nowrap;
+	empty-cells:show;
+}
+td.leftCell
+{
+	border-right:	1px solid #d6d6d6;
+	border-bottom:	1px solid #d6d6d6;
+	border-left:	1px solid #d6d6d6;
+	white-space:nowrap;
+	empty-cells:show;
+}
+td.cellBorder
+{
+	border-top:	1px solid #5c5c5c;
+	border-left:	1px solid #5c5c5c;
+	border-right:	1px solid #5c5c5c;
+	background-color: #f3f3f3;
+	white-space:nowrap;
+}
+td.cellBottom
+{
+	border-bottom:	1px solid #5c5c5c;
+	border-right:	1px solid #d6d6d6;
+	white-space:nowrap;
+}
+td.right
+{
+	text-align:right;
+}
+ 
+th.headLeft
+{
+	text-align:			center;
+	font:				bold 12px Verdana;
+	color:				#000000;
+	background-color: #f3f3f3;
+	border-right:	1px solid #5c5c5c;
+	border-bottom:	1px solid #5c5c5c;
+	border-top:	1px solid #5c5c5c;
+	border-left:	1px solid #5c5c5c;
+	white-space:nowrap;
+}
+th.head
+{
+	text-align:			center;
+	font:				bold 12px Verdana;
+	color:				#000000;
+	background-color: #f3f3f3;
+	border-right:	1px solid #5c5c5c;
+	border-bottom:	1px solid #5c5c5c;
+	border-top:	1px solid #5c5c5c;
+	white-space:nowrap;
+}
+
+/* History Style End */
+
+.printLink{
+	font: bold 11px Verdana;
+	color: #000000;
+	float: right;
+	text-align:right;
+	height: 20px;
+}
+
+div.loadingDiv{
+	font:				bold 14px Verdana;
+	color:				#666666;
+	text-align:			center;
+}
+
+/*widths needs to be width of table display under to center correctly*/
+div.errorDiv
+{
+	font: bold 14px Verdana;
+	color: highlight;
+	text-align: center;
+}
+
+div.searchHead
+{
+	border-right: 1px solid #999999;
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	width: 700px;
+}
+
+/* table width is width of widest value of all col's + width of all borders  */
+.transTable { width: 1057px; }
+.searchTable { width: 1031px; }
+.creditTable { width: 1097px; }
+div.scrollHead div
+{
+	text-align: center;
+	font: bold 12px Verdana;
+	color: #000000;
+	background-color: #f3f3f3;
+	border-right: 1px solid #5c5c5c;
+	border-bottom: 1px solid #5c5c5c;
+	border-top: 1px solid #5c5c5c;
+	float: left;
+	height: 20px;
+}
+div.scrollRow div
+{
+	border-right:	1px solid #d6d6d6;
+	border-bottom:	1px solid #d6d6d6;
+	float:left;
+	height:25px; 
+}
+
+.headCK { border-left: 1px solid #5c5c5c; width: 25px; }
+.rowCK  { border-left: 1px solid #d6d6d6; width: 25px; }
+
+.headID { border-left: 1px solid #5c5c5c; width: 50px; }
+.rowID  { border-left: 1px solid #d6d6d6; width: 50px; }
+.scrollID { width: 50px; }
+.scrollHeadID { width: 50px; } /*need because i hide the check box on print and I need to set a different border for the head*/
+
+.scrollType   { width: 70px; }
+.scrollOrder  { width: 75px; }
+.scrollDCT    { width: 40px; }
+.scrollDOC    { width: 75px; }
+.scrollKCO    { width: 75px; }
+.scrollEmail  { width: 180px; }
+
+.scrollAmt       { width: 100px; text-align:right; }
+.scrollCreditAmt { width: 100px; }
+
+.scrollReason    { width: 65px; }
+.scrollNotes     { width: 50px; }
+.scrollCardType  { width: 75px; }
+
+/* the expression compares the height of the table to the height of ScollTable + height of the header and footer
+   if it is greater than max height of scrollTable + header and footer then expands the last column
+   to cover the scroll bar
+*/
+.headStatus { width: expression(this.parentNode.parentNode.parentNode.scrollHeight > 440 ? "163px" : "140px"); }
+.scrollStatus  { width: 140px; }
+
+/* the expression compares the height of the table to the height of ScollTable + height of the header and footer
+   if it is greater than max height of scrollTable + header and footer then expands the last column
+   to cover the scroll bar
+*/
+.headCreditEnd { width: expression(this.parentNode.parentNode.parentNode.scrollHeight > 440 ? "88px" : "65px"); }
+.rowCreditEnd  { width: 65px; }
+
+/* the expression is used to work like max-height which doesn't work in ie */
+div.ScrollTable
+{ 
+	height: expression(this.scrollHeight > 400 ? "400px" : "auto");
+	max-height: 400px;
+	overflow: auto;
+	width:100%;
+}
+
+
+	/* expanded row */
+	/* width is the width of the table - 23 for the scroll bar */
+	div.transDetailRowDiv table{
+		float:left;
+		width:1034px;
+	}
+	div.searchDetailRowDiv table{
+		float:left;
+		width:1008px;
+	}
+	div.creditDetailRowDiv table{
+		float:left;
+		width:1074px;
+	}
+	.detailRow {
+		background:		#f3f3f3;
+		border-bottom:	1px solid #5c5c5c;
+		border-left:	1px solid #5c5c5c;
+		border-right:	1px solid #5c5c5c;
+	}
+	/* changes the bottom border of all the divs above the expanded row*/
+	div.scrollExpandedRow div
+	{
+		border-right:	1px solid #d6d6d6;
+		border-bottom:	1px solid #5c5c5c;
+		float:left;
+		height:25px; 
+	}
+	/* had to make it !important because for some reaons the class didn't override the 
+	   inherited class*/
+	.expLeft
+	{
+		width: 50px;
+		border-right:	1px solid #5c5c5c ! important;
+		border-left:	1px solid #d6d6d6;
+	}
+	.expTransLeft
+	{
+		width: 50px;
+		border-right:	1px solid #5c5c5c ! important;
+	}
+	/* had to make it !important because for some reaons the class didn't override the 
+	   inherited class*/
+	.expCenter
+	{
+		width: 70px;
+		font-weight:	bold;
+		background:		#f3f3f3;
+		border-top:		1px solid #5c5c5c;
+		border-right:	1px solid #5c5c5c ! important;
+		border-bottom:	1px solid #f3f3f3 ! important;
+	}
+
+	/* expanded row end */
+
+	/* Footer */
+	div.scrollFoot div
+	{
+		float: left;
+		text-align: right;
+		height: 20px;
+		font-weight:bold;
+	}
+	/* width needs to be width of all col's up to and included where this div needs to be displayed + border widths*/
+	div.scrollFootLabel
+	{
+		width: 572px;
+	}
+	div.scrollTransFootLabel
+	{
+		width: 598px;
+	}
+	/* needs to be same with as border */
+	div.scrollFootSpace
+	{
+		width: 1px;
+	}
+	/* Footer End*/
+	
+	/*notes only visable when printing*/
+	div.hiddenNotes
+	{
+		display:none;
+		width:100%;
+	}
+
+/*scroll table end */

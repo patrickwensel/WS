@@ -1,0 +1,100 @@
+﻿
+/* Hide buttons / menu / etc*/
+.app_menu {	display:none; }
+#mMainMenu { display:none; }
+#mSubmitTransUS { display:none; }
+#mRefreshUSTrans { display:none; }
+#mSubmitTransCA { display:none; }
+#mRefreshCATrans { display:none; }
+#transUSButtons { display:none; }
+#transCAButtons { display:none; }
+#transFileSel {	display:none; }
+#creditFileSel { display:none; }
+#searchUSButtons { display:none; }
+#searchCAButtons { display:none; }
+#creditFileSel { display:none; }
+.printLink { display:none; }
+.headCreditEnd { display:none; }
+.rowCreditEnd  { display:none; }
+#mSearchUSUpdateButton { display:none; }
+#mSearchCAUpdateButton { display:none; }
+#mCreditUSUpdateButton { display:none; }
+#mCreditCAUpdateButton { display:none; }
+
+/* Hide table columns and show notes*/
+div.searchHead { display:none; }
+div.scrollEmail { display:none; }
+div.scrollNotes { display:none; }
+
+.headCK { display:none; }
+.rowCK  { display:none; }
+
+/*table width-230
+.transTable {	width: 827px;}
+.searchTable { width: 801px; }*/
+/*table width-296
+.creditTable { width: 801px; }*/
+
+.transTable {	width:auto;}
+.searchTable {width:auto;}
+.creditTable { width:auto; }
+
+
+/* width needs to be width of all col's up to and included where this div needs to be displayed + border widths*/
+div.scrollFootLabel
+{
+	width: 389px;
+}
+div.scrollTransFootLabel
+{
+	width: 389px;
+}
+
+.headStatus { width:  140px ! important; }
+.headCreditEnd { width: 65px ! important; }
+
+
+div.hiddenNotes 
+{
+	display:block; 
+	text-align:left;
+	border-bottom: 1px solid #d6d6d6;
+	border-right: 1px solid #d6d6d6;
+	border-left: 1px solid #d6d6d6;
+	width:774px;
+	float:left;
+}
+
+/* Hide tabs*/
+a.wsTabHead, a.wsTabHead_selected { display:none; }
+div.wsTabPage
+{
+	border:					0px;
+	z-index:				2;
+	clear:					both;
+	padding:				6px;
+	font:					11px Verdana;
+}
+
+/* Make whole table visable*/
+div.ScrollTable
+{ 
+	height: 100%;
+	overflow:visible;
+	width: 801px;
+	float:left;
+}
+
+	
+
+div.printHelper
+{
+	width: 801px;
+}
+div.scrollFoot
+{
+	width: 801px;
+}
+
+.scrollHeadID { border-left: 1px solid #5c5c5c; width: 50px; }
+.scrollID {border-left: 1px solid #d6d6d6; width: 50px; }

@@ -1,0 +1,56 @@
+/* Style Sheet for tabs */
+
+
+div.wsTabSet
+{
+	width:					700px;		
+}
+
+a.wsTabHead, a.wsTabHead_selected
+{
+	font:					bold 11px Verdana;
+	color:					#000000;
+	display:				inline;
+	margin:					0px 0px 0px 4px;
+	padding:				2px 1px 2px 1px;
+	background:				url(../images/tabregular.png);
+	background-repeat:		no-repeat;
+	text-decoration:		none;
+	cursor:					default;
+	z-index:				1;
+	float:					left;		
+	width:					130px;
+	overflow:				hidden;
+	text-align:				center;
+}
+
+a.wsTabHead:hover
+{
+	background:				url(../images/tabselected.png);
+	background-repeat:		no-repeat;
+	color:					#ffffff;
+	filter:					gray();
+}
+
+a.wsTabHead_selected
+{
+	background:				url(../images/tabselected.png);
+	background-repeat:		no-repeat;
+	color:					#ffffff;
+}
+
+a.wsTabHead_selected:hover
+{
+/*	background:				url(../images/tabselected.png);
+	background-repeat:		no-repeat;
+	color:					#ffffff; */
+}	
+
+div.wsTabPage
+{
+	border:					1px solid #999999;
+	z-index:				2;
+	clear:					both;
+	padding:				6px;
+	font:					11px Verdana;
+}

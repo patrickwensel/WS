@@ -1,0 +1,10 @@
+C:\Code\WS\Trunk\WS20.SafetyAudit\obj\Debug\WS20.SafetyAudit.csprojResolveAssemblyReference.cache
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\WS20.SafetyAudit.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\WS20.SafetyAudit.pdb
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\AjaxControlToolkit.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\System.Web.Extensions.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\WS20.Framework.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\System.Web.Extensions.Design.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\bin\WS20.Framework.pdb
+C:\Code\WS\Trunk\WS20.SafetyAudit\obj\Debug\WS20.SafetyAudit.dll
+C:\Code\WS\Trunk\WS20.SafetyAudit\obj\Debug\WS20.SafetyAudit.pdb

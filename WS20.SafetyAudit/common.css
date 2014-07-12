@@ -1,0 +1,50 @@
+a.selectedPageLink{
+	font-weight : bold;
+	text-decoration: underline;
+}
+td.centerTD{
+    text-align:center;
+}
+span.msgSpan{
+    font-weight:bold;
+}
+div.menu
+{
+	position:absolute;
+	vertical-align:middle;
+	text-align:center;
+	top:130px;
+	font-weight:bold;
+}
+
+#mWSHeader_mAppHeader
+{
+	height: 200px;
+}
+
+div.menuUpdate{
+	
+	border:  #000000 thin solid;
+	background-color: #e4edf8;
+}
+div.menuBranch{
+	left:309px;
+	border:  #000000 thin solid;
+	background-color: #e4f8ec;
+}
+div.menuConst{
+	left:438px; 
+	border:  #000000 thin solid;
+	background-color: #f8e6e4;
+}
+div.menuAdd{
+	left:150px;
+	border:  #000000 thin solid;
+	background-color: #cccccc;
+}
+
+div.menuCC{
+	left:570px;
+	border:  #000000 thin solid;
+	background-color: #fedcba;
+}

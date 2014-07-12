@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\ws15nt\Computer_Operations\Development\WS\Staging</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="admin.aspx">
+      <publishTime>06/04/2014 12:39:03</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/AjaxPro.2.dll">
+      <publishTime>06/07/2006 11:40:46</publishTime>
+    </File>
+    <File Include="bin/Devart.Data.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/Devart.Data.Oracle.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/idk.dll">
+      <publishTime>06/04/2014 12:39:03</publishTime>
+    </File>
+    <File Include="bin/openfoundation.dll">
+      <publishTime>06/04/2014 12:39:03</publishTime>
+    </File>
+    <File Include="bin/openkernel.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/openlog-framework.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/PIP.dll">
+      <publishTime>06/24/2014 10:46:19</publishTime>
+    </File>
+    <File Include="bin/PIP.pdb">
+      <publishTime>06/24/2014 10:46:19</publishTime>
+    </File>
+    <File Include="bin/pmb.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/ptrat.dll">
+      <publishTime>06/04/2014 12:39:04</publishTime>
+    </File>
+    <File Include="bin/Resources/licenses.licx">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="bin/WS30.Framework.dll">
+      <publishTime>06/24/2014 10:45:17</publishTime>
+    </File>
+    <File Include="bin/WS30.Framework.pdb">
+      <publishTime>06/24/2014 10:45:17</publishTime>
+    </File>
+    <File Include="downloadFile.aspx">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="drag.js">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="images/bullet.gif">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/header-background.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerCZE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerESP.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/headerFRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerGER.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerNLD.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/headerPOR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1CZE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1ENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1FRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1GER.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status1NLD.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status1POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status2CZE.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status2ENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status2ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status2FRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status2GER.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status2NLD.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status2POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3CZE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3ENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3FRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3GER.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3NLD.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status3POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4CZE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4ENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4FRE.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status4GER.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4NLD.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status4POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5CZE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5ENG.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5FRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5GER.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status5NLD.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status5POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status6CZE.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status6ENG.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status6ESP.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status6FRE.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status6GER.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="images/status6NLD.jpg">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="images/status6POR.jpg">
+      <publishTime>06/04/2014 12:39:06</publishTime>
+    </File>
+    <File Include="index.aspx">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="index.js">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="main.aspx">
+      <publishTime>06/04/2014 12:39:03</publishTime>
+    </File>
+    <File Include="parsedate.js">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="printStyle.css">
+      <publishTime>06/04/2014 12:39:05</publishTime>
+    </File>
+    <File Include="style.css">
+      <publishTime>06/04/2014 12:39:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/24/2014 10:46:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
