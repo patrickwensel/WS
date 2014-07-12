@@ -1,0 +1,54 @@
+﻿@using WS.App.Payment.ViewModels
+@model PaymentViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.date').datepicker({
+            dateFormat: "mm/dd/yy"
+        });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    <div class="span-7">
+                        <div class="form">
+        
+                        
+                            <p class="note">Please enter the invoice number(s) and date(s) below. The invoice number and date are located in the top right-hand corner of your invoice.</p>
+                            <h2 class="greybar">Invoice Information</h2>
+
+                            <div style="margin-bottom: -15px">
+                                <table>
+                                    <tr>
+                                        <td class="label2" width="100px">Invoice Number</td>
+                                        <td class="label2">Invoice Date</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            
+                                <div>
+        @foreach (InvoiceViewModel invoiceViewModel in Model.InvoiceViewModels)
+        {
+            Html.RenderPartial("_InvoiceLookup", invoiceViewModel);
+        }
+                  
+                            <div>
+                                <span style="display: inline-block; vertical-align: middle">
+                                    <input type="submit" class="button" name="submitButton" value="Add Another Invoice">
+                                    <input type="submit" class="button" name="submitButton" value="Next">
+                                    @Html.ValidationMessageFor(model => model.AnyInvoicesEntered)
+                                    <div>&nbsp;</div>
+                                </span>
+                            </div>
+                        </div>
+                            </div>
+                    </div>
+             
+  
+}

@@ -1,0 +1,12 @@
+﻿@model  WS.App.Payment.ViewModels.ConfirmationViewModel
+
+
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Confirmation</h2>
+
+<div class="span-11">
+    @Html.TextAreaFor(m => m.Message, new { @readonly = "readonly", style = "width:954px", @class = "textbox2", cols = 35, @rows = 4 })
+</div>

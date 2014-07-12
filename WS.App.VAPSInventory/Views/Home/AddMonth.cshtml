@@ -1,0 +1,149 @@
+﻿@model WS.App.VAPSInventory.ViewModels.AddMonthViewModel
+
+@{
+    ViewBag.Title = "AddMonthTest";
+    Layout = "~/Views/Shared/_WindowLayout.cshtml";
+}
+
+@using (Html.BeginForm(new { id = "addForm", name = "addForm" }))
+{
+    <table>
+        <tr>
+            <td>Branch</td>
+            <td>@(Html.Kendo().DropDownListFor(m => m.LocationNumber)
+                    .OptionLabel("Select Branch...")
+                      .Name("LocationNumber")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .DataSource(source => source.Read(read => read.Action("GetBranches", "Home")))
+                      )</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">@Html.ValidationMessageFor(m => m.LocationNumber)</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>@(Html.Kendo().DropDownListFor(m => m.Year)
+                      .Name("Year")
+                      .OptionLabel("Select year...")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .DataSource(source => source.Read(read => read.Action("GetAddMonthYear", "Home").Data("filterYears")).ServerFiltering(true))
+                      .CascadeFrom("LocationNumber")
+                      .AutoBind(false)
+                      )</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.ValidationMessageFor(m => m.Year)</td>
+        </tr>
+        <tr>
+            <td>Month</td>
+            <td>@(Html.Kendo().DropDownListFor(m => m.Month)
+                      .Name("Month")
+                      .OptionLabel("Select month...")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .DataSource(source => source.Read(read => read.Action("GetAddMonthMonth", "Home").Data("filterMonths")).ServerFiltering(true))
+                      .CascadeFrom("Year")
+                      .AutoBind(false)
+                      .Enable(false)
+                      )</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.ValidationMessageFor(m => m.Month)</td>
+        </tr>
+        <tr>
+            <td>
+                @* <button type="button" id="save">Add</button>*@
+                <span id="addInventory" class="k-button">Add</span>
+            </td>
+        </tr>
+
+    </table>
+
+}
+<script>
+
+    function filterYears() {
+        return {
+            locationNumber: $("#LocationNumber").val()
+        };
+    }
+
+    function filterMonths() {
+        return {
+            locationNumber: $("#LocationNumber").val(),
+            year: $("#Year").val()
+        };
+    }
+
+    $("#save").on("click", function () {
+        alert("valid: " + $("form").valid());
+    });
+
+    $(document).ready(function () {
+        $("#addInventory")
+            .bind("click", function() {
+                if ($("form").valid()) {
+
+                    var addMonthViewModel = {
+                        LocationNumber: parseInt($("#LocationNumber").data("kendoDropDownList").value()),
+                        Year: parseInt($("#Year").data("kendoDropDownList").value()),
+                        Month: parseInt($("#Month").data("kendoDropDownList").value())
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("AddMonth", "Home")',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(addMonthViewModel),
+                        dataType: "json",
+                        success: function(data) {
+
+                            var newLocationNumber = $("#LocationNumber").data("kendoDropDownList").value();
+                            var gridLocationNumber = window.parent.$("#locationNumber").data("kendoDropDownList");
+                            gridLocationNumber.value(newLocationNumber);
+
+                            var newYear = $("#Year").data("kendoDropDownList").value();
+                            var gridYear = window.parent.$("#year").data("kendoDropDownList");
+                            gridYear.value(newYear);
+
+                            var newMonth = $("#Month").data("kendoDropDownList").value();
+                            var gridMonth = window.parent.$("#month").data("kendoDropDownList");
+                            gridMonth.value(newMonth);
+
+                            var grid = window.parent.$("#Grid").data("kendoGrid");
+                            grid.dataSource.read();
+
+                            var win = window.parent.$("#addMonthWindowDiv").data("kendoWindow");
+                            win.close();
+
+                        },
+                        error: function(request, status, error) {
+
+                            onError(error);
+                        }
+                    });
+                }
+            });
+    });
+    
+    function onError(e, status) {
+        if (e.errors) {
+            var message = "The following errors have occurred:\n";
+
+            $.each(e.errors, function (key, value) {
+                if (value.errors) {
+                    message += value.errors.join("\n");
+                }
+            });
+
+            var gridProd = $("#ProductGrid").data("kendoGrid");
+            gridProd.dataSource.read();
+
+            alert(message);
+        }
+    }
+
+</script>

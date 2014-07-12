@@ -1,0 +1,19 @@
+﻿@model WS.App.Payment.ViewModels.InvoiceViewModel
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.date').inputmask("mm/dd/yyyy");
+    });
+
+</script>
+<div>
+    @using (Html.BeginCollectionItem("InvoiceViewModels"))
+    {
+        <div style="white-space: nowrap; overflow: hidden;">
+            @Html.TextBoxFor(model => model.Number, new { style = "width:103px" })
+            @Html.TextBoxFor(model => model.Date, new { @class = "date" })
+            @Html.ValidationMessageFor(m => m.Number)
+            @Html.ValidationMessageFor(m => m.Date)
+        </div>
+    }
+</div>

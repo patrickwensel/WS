@@ -1,0 +1,70 @@
+﻿@model WS.App.VAPSInventory.ViewModels.CategoryAdminViewModel
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>Category</h2>
+
+@Html.Partial("_AdminMenu")
+
+@(Html.Kendo().Grid(Model.ProductCategoryViewModels)
+           .Name("ProductCategoryGrid")
+           .Scrollable(s => s.Height("auto"))
+           .Columns(columns =>
+               {
+                   columns.Bound(p => p.Name).Width(200);
+                   columns.Bound(p => p.Description);
+                   columns.ForeignKey(p => p.Status, (System.Collections.IEnumerable)ViewData["productCategoryStatuses"], "ID", "Status")
+                          .Title("Status")
+                          .Width(75);
+                   columns.Command(command => command.Edit()).Width(200);
+               })
+               .ToolBar(toolbar => toolbar.Create())
+               .Editable(editable => editable.Mode(GridEditMode.InLine))
+               .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true)
+           )
+           .AutoBind(true)
+           .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+           .Filterable()
+           .DataSource(dataSource => dataSource
+                                         .Ajax()
+                                         .Model(model =>
+                                             {
+                                                 model.Id(p => p.ID);
+                                                 model.Field(p => p.Status).DefaultValue(1);
+                                             })
+                                         .Sort(sort => sort.Add(p => p.Name))
+                                         .PageSize(50)
+                                         .Events(events => events.Error("onError"))
+                                         .Read(read => read.Action("ReadProductCategory", "Admin"))
+                                         .Create(update => update.Action("CreateProductCategory", "Admin"))
+                                         .Update(update => update.Action("UpdateProductCategory", "Admin"))
+
+           )
+    )
+
+
+<script>
+    function onError(e, status) {
+        if (e.errors) {
+            var message = "The following errors have occurred:\n";
+
+            $.each(e.errors, function (key, value) {
+                if (value.errors) {
+                    message += value.errors.join("\n");
+                }
+            });
+
+            var gridCat = $("#ProductCategoryGrid").data("kendoGrid");
+            gridCat.dataSource.read();
+
+            alert(message);
+        }
+    }
+</script>

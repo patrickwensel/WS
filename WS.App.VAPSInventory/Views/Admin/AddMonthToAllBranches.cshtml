@@ -1,0 +1,89 @@
+﻿@model WS.App.VAPSInventory.ViewModels.YearMonthViewModel
+
+@{
+    ViewBag.Title = "AddMonthToAllBranches";
+}
+
+<h2>Add a Month To All Branches</h2>
+
+<br />
+
+@Html.Partial("_AdminMenu")
+
+@using (Html.BeginForm(new { id = "addForm" }))
+{
+    @Html.Label("Year")  @(Html.Kendo().DropDownListFor(m => m.Year)
+                      .OptionLabel("Select year...")
+                      .Name("Year")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .DataSource(source => source.Read(read => read.Action("GetYear", "Home")))
+                      )
+    <br />
+    @Html.ValidationMessageFor(m => m.Year)
+    <br />
+    @Html.Label("Month")  @(Html.Kendo().DropDownListFor(m => m.Month)
+                      .OptionLabel("Select month...")
+                      .Name("Month")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .DataSource(source => source.Read(read => read.Action("GetMonth", "Home")))
+                      )
+    <br />
+    @Html.ValidationMessageFor(m => m.Month)
+    <br />
+    <span id="addInventory" class="k-button">Add</span>
+    <br />
+    <br />
+    <div id="divLoading">
+    </div>
+    
+}
+
+<script>
+
+    $(document).ready(function () {
+        $("#addInventory")
+            .bind("click", function () {
+                if ($("form").valid()) {
+
+                    $("#divLoading").html('<img src=@Url.Content("~/Content/images/ajax-loader.gif") /> Working.... This may take a minute or two.');
+
+                    var yearMonthViewModel = {
+                        Year: parseInt($("#Year").data("kendoDropDownList").value()),
+                        Month: parseInt($("#Month").data("kendoDropDownList").value())
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("AddNewMonthToAllBranchsByYearMonth", "Admin")',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(yearMonthViewModel),
+                        dataType: "json",
+                        success: function (data) {
+                            $("#divLoading").html("Complete");
+                        },
+                        error: function (request, status, error) {
+                            $("#divLoading").html("Error");
+                            error_handler(error);
+                        }
+                    });
+                }
+            });
+    });
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>

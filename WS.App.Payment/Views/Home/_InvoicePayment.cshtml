@@ -1,0 +1,102 @@
+﻿@model WS.App.Payment.ViewModels.InvoiceViewModel
+
+<div>
+    @using (Html.BeginCollectionItem("InvoiceViewModels"))
+    {
+        <table class="tblchild">
+            @Html.HiddenFor(model => model.DisplayType)
+            @Html.HiddenFor(model => model.DisplayMessage)
+            @Html.HiddenFor(model => model.AddressNumberParent)
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Number, new { @readonly = "readonly", style = "width:100px", @class = "textarea2", TabIndex = -1 })
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.Date, new { @readonly = "readonly", style = "width:175px", @class = "textarea2", TabIndex = -1 })
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    @if (@Model.DisplayType != 3)
+                    {
+                        @Html.Label("Amount to Pay")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(model => model.Number, new { @readonly = "readonly", style = "width:100px", @class = "textarea2", TabIndex = -1 })
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Date, "{0:MM/dd/yyyy}", new { @readonly = "readonly", style = "width:175px", @class = "textarea2", TabIndex = -1 })
+                </td>
+                @if (@Model.DisplayType == 1)
+                {
+                    <td>@Html.LabelFor(model => model.AmountGross)</td>
+                    <td>
+                        @Html.TypedTextBoxFor(model => model.AmountGross, new { @readonly = "readonly", style = "width:100px", @class = "textarea3", TabIndex = -1 })
+                    </td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountToPayGross, new { @class = "textarea4" })
+                        @Html.ValidationMessageFor(m => m.AmountToPayGross)
+                    </td>
+                }
+                @if (@Model.DisplayType == 2)
+                {
+                    <td style="width: 175px"><strong>Outstanding Balance</strong></td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountGross, new { @readonly = "readonly", style = "width:100px", @class = "textarea3", TabIndex = -1 })
+                    </td>
+                    <td>
+                        @Html.TypedTextBoxFor(model => model.AmountToPayGross, new { @class = "textarea4" })
+                        @Html.ValidationMessageFor(m => m.AmountToPayGross)
+                    </td>
+                
+                }
+                @if (@Model.DisplayType == 3)
+                {
+                    <td>
+                        @Html.TextAreaFor(model => model.DisplayMessage, new { @readonly = "readonly", @class = "textbox2", TabIndex = -1 })
+                    </td>
+                }
+            </tr>
+
+            @if (@Model.DisplayType == 1)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>@Html.LabelFor(model => model.AmountTax)</td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountTax, new { @readonly = "readonly", style = "width:100px", @class = "textarea3", TabIndex = -1 })
+                    </td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountToPayTax, new { @class = "textarea4" })
+                        @Html.ValidationMessageFor(m => m.AmountToPayTax)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>@Html.LabelFor(model => model.AmountTotal)</td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountTotal, new { @readonly = "readonly", style = "width:100px", @class = "textarea3", TabIndex = -1 })
+                    </td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountToPayTotal, new { @readonly = "readonly", style = "width:150px", @class = "textarea3", TabIndex = -1 })
+                        @Html.ValidationMessageFor(m => m.AmountToPayTotal)
+                    </td>
+                </tr>
+                
+            }
+            @if (@Model.DisplayType == 2)
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>@Html.LabelFor(model => model.AmountTotal)</td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountTotal, new { @readonly = "readonly", style = "width:100px", @class = "textarea3", TabIndex = -1 })
+                    </td>
+                    <td>@Html.TypedTextBoxFor(model => model.AmountToPayTotal, new { @readonly = "readonly", style = "width:150px", @class = "textarea3", TabIndex = -1 })
+                        @Html.ValidationMessageFor(m => m.AmountToPayTotal)
+                    </td>
+                </tr>
+            }
+        </table>
+        <hr />
+    }
+</div>

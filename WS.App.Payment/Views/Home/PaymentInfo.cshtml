@@ -1,0 +1,313 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd" >
+@using WS.App.Payment.ViewModels
+@model PaymentViewModel
+
+@{
+    ViewBag.Title = "PaymentInfo";
+    Layout = null;
+}
+
+@Styles.Render("~/Content/themes/base/jquery.ui.datepicker.css")
+@Styles.Render("~/Content/css/screen.css")
+
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery-1.9.1.js")
+@Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.js")
+@Scripts.Render("~/Scripts/MVCControlToolkit.Controls-2.4.0.js")
+@Scripts.Render("~/Scripts/MVCControlToolkit.Controls.Core-2.4.0.js")
+@Scripts.Render("~/Scripts/jquery.global.js")
+
+<!--[if lt IE 8]><link rel="stylesheet" href="//www.willscot.com/_css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<!--[if lt IE 7]>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta3)/IE7.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        calculate_all();
+
+        $('[id*="AmountToPayGross_hidden"]').change(function () {
+            
+            var this_now = $(this).val();
+
+            if (this_now == "") {
+                this_now = "0";
+                $(this).val(0);
+            }
+
+            if ($(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').length > 0) {
+
+                var value1 = $(this).parent().parent().parent().find('[id*="AmountToPayGross_hidden"]').val();
+                value1 = value1.replace("$", "");
+                value1 = value1.replace(",", "");
+                value1 = parseFloat(value1);
+
+                var value2 = "0";
+                if ($(this).parent().parent().parent().find('[id*="AmountToPayTax_hidden"]').length > 0) {
+
+                    value2 = $(this).parent().parent().parent().find('[id*="AmountToPayTax_hidden"]').val();
+                }
+
+                value2 = value2.replace("$", "");
+                value2 = value2.replace(",", "");
+                value2 = parseFloat(value2);
+
+                var entry_total = value1 + value2;
+                entry_total = entry_total.toFixed(2);
+                $(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').val(entry_total);
+            }
+            calculate_all();
+
+        });
+
+        $('[id*="AmountToPayTax_hidden"]').change(function () {
+
+
+            var this_now = $(this).val();
+
+            if (this_now == "") {
+                this_now = "0";
+                $(this).val(0);
+            }
+
+            if ($(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').length > 0) {
+
+                var value1 = $(this).parent().parent().parent().find('[id*="AmountToPayGross_hidden"]').val();
+                value1 = value1.replace("$", "");
+                value1 = value1.replace(",", "");
+                value1 = parseFloat(value1);
+
+                var value2 = $(this).parent().parent().parent().find('[id*="AmountToPayTax_hidden"]').val();
+                value2 = value2.replace("$", "");
+                value2 = value2.replace(",", "");
+                value2 = parseFloat(value2);
+
+                var entry_total = value1 + value2;
+                entry_total = entry_total.toFixed(2);
+                $(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').val(entry_total);
+
+            }
+
+            calculate_all();
+        });
+
+        $('[id*="AmountToPayGross_hidden"]').focusout(function () {
+
+            if ($(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').length > 0) {
+
+                var x = $(this).parent().parent().parent().find('[id*="AmountToPayTotal_hidden"]').val();
+                eval(function (p, a, c, k, e, d) { while (c--) { if (k[c]) { p = p.replace(new RegExp('\\b' + c + '\\b', 'g'), k[c]);
+                                                                 } } return p;
+                }('0=0.1("$","");0=0.1(",","");0="$"+0;0=0.4().1(/\\5(?=(\\2{3})+(?!\\2))/6,",");', 7, 7, 'x|replace|d||toString|B|g'.split('|')));
+                $(this).parent().parent().parent().find('[id*="AmountToPayTotal_hidden"]').val(x);
+
+            }
+        });
+
+        $('[id*="AmountToPayTax_hidden"]').focusout(function () {
+
+            if ($(this).parent().parent().parent().find('[id*="AmountToPayTotal"]').length > 0) {
+
+                var x = $(this).parent().parent().parent().find('[id*="AmountToPayTotal_hidden"]').val();
+                eval(function (p, a, c, k, e, d) { while (c--) { if (k[c]) { p = p.replace(new RegExp('\\b' + c + '\\b', 'g'), k[c]);
+                                                                 } } return p;
+                }('0=0.1("$","");0=0.1(",","");0="$"+0;0=0.4().1(/\\5(?=(\\2{3})+(?!\\2))/6,",");', 7, 7, 'x|replace|d||toString|B|g'.split('|')));
+                $(this).parent().parent().parent().find('[id*="AmountToPayTotal_hidden"]').val(x);
+
+            }
+        });
+
+    });
+
+
+    function calculate_gross() {
+
+        var total_gross = 0;
+
+        $('[id*="AmountToPayGross"]').each(function (index) {
+            total_gross = parseFloat(total_gross) + parseFloat($(this).val());
+        });
+
+        $('#SubTotal').val(total_gross);
+    }
+
+
+    function re_control(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function calculate_tax() {
+
+        var total_gross = 0;
+
+        $('[id*="AmountToPayTax"]').each(function (index) {
+            total_gross = parseFloat(total_gross) + parseFloat($(this).val());
+        });
+
+        $('#TaxTotal').val(total_gross);
+
+    }
+
+
+    function calculate_all() {
+
+        var total_tax = 0;
+
+        $('[id*="AmountToPayTax_hidden"]').each(function (index) {
+            var value2 = $(this).val();
+
+            value2 = value2.replace("$", "");
+            value2 = value2.replace(",", "");
+            value2 = parseFloat(value2);
+            total_tax = parseFloat(total_tax) + value2;
+        });
+
+        total_tax = total_tax.toFixed(2);
+        $('#TaxTotal').val(total_tax);
+        $('#TaxTotal_hidden').val("$" + re_control(total_tax));
+
+        var total_gross = 0;
+
+        $('[id*="AmountToPayGross_hidden"]').each(function (index) {
+            var value2 = $(this).val();
+
+            value2 = value2.replace("$", "");
+            value2 = value2.replace(",", "");
+            value2 = parseFloat(value2);
+            total_gross = parseFloat(total_gross) + value2;
+        });
+
+        total_gross = total_gross.toFixed(2);
+        $('#SubTotal').val(total_gross);
+        $('#SubTotal_hidden').val("$" + re_control(total_gross));
+
+        var final = parseFloat(total_tax) + parseFloat(total_gross);
+        final = final.toFixed(2);
+
+        $('#PaymentTotal').val(final);
+        $('#PaymentTotal_hidden').val("$" + re_control(final));
+
+    }
+
+    var tryNumber = 0;
+    jQuery('input[type=submit]').click(function (event) {
+        var self = $(this);
+
+        if (self.closest('form').valid()) {
+            if (tryNumber > 0) {
+                tryNumber++;
+                return false;
+            }
+            else {
+                tryNumber++;
+            }
+        };
+    });
+
+</script>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header span-11 add-bottom-margin-5">
+                <div class="logoDiv">
+                    <a href="http://www.willscot.com" class="logoHeader">Williams Scotsman</a>
+                </div>
+            </div>
+            <div class="span-11 pagetitle">
+
+                <span class="phoneright">Toll Free: 888-378-9084</span>
+                <h1>Pay an Invoice Online Application</h1>
+            </div>
+            <div class="span-11">
+                
+                <div class="form">
+                    <div>&nbsp;</div>
+                    <h2 class="greybar">Enter Invoice Ammount:</h2>
+
+@using (Html.BeginForm())
+{        
+    <table id="tblData">
+        <tr>
+            <td>
+                @foreach (InvoiceViewModel invoiceViewModel in Model.InvoiceViewModels)
+                {
+                    Html.RenderPartial("_InvoicePayment", invoiceViewModel);
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.SubTotal)
+                @Html.TypedTextBoxFor(model => model.SubTotal, new { @readonly = "readonly", @class = "textarea2", TabIndex = -1 })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.TaxTotal)
+                @Html.TypedTextBoxFor(model => model.TaxTotal, new { @readonly = "readonly", @class = "textarea2", TabIndex = -1 })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.PaymentTotal)
+                @Html.TypedTextBoxFor(model => model.PaymentTotal, new { @readonly = "readonly", @class = "textarea2", TabIndex = -1 })
+                @Html.ValidationMessageFor(model => model.PaymentTotal)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.PaymentMethod)
+                @Html.DropDownListFor(
+                                        model => model.PaymentMethod,
+                                        new SelectList(
+                                            new List<Object>
+                                                {
+                                                    new {Value = "1", Text = "ATM/Debit/Credit Card"},
+                                                    new {Value = "2", Text = "Banking Account"}
+                                                },
+                                            "value",
+                                            "text",
+                                            Model.PaymentMethod
+                                            ), "Select Payment Method")
+                @Html.ValidationMessageFor(model => model.PaymentMethod)
+
+            </td>
+        </tr>
+        <tr>
+            <td class="td-vert">
+                @Html.LabelFor(m => m.ConformationEmailAddress)
+                @Html.TextBoxFor(model => model.ConformationEmailAddress, new { style = "width:250px" })
+                @Html.ValidationMessageFor(model => model.ConformationEmailAddress)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="button" name="submitButton" value="Back">
+                <input type="submit" class="button" name="submitButton" value="Next">
+    </table>
+            
+}
+                    </div>
+            </div>
+             <div class="span-11 landingFooter">
+                
+                <p class="company">Williams Scotsman, Inc. Corporate Headquarters </p>
+                <p class="address">901 S Bond Street Suite 600&nbsp;&nbsp;.&nbsp;&nbsp;Baltimore, MD&nbsp;&nbsp;.&nbsp;&nbsp;21231&nbsp;&nbsp;.&nbsp;&nbsp;Toll Free:  888.378.9084</p>
+                <p class="copyright">©2013 Williams Scotsman, Inc., All Rights Reserved.</p>
+                
+            </div>
+        </div>
+        </div>
+    
+    <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-404314-1']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+</body>
+
+
+
+

@@ -1,0 +1,326 @@
+﻿@using WS.App.VAPSInventory.ViewModels
+@model WS.App.VAPSInventory.ViewModels.InventoryViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="Pdfwindow"></div>
+<div id="AddMonthWindow"></div>
+
+<style type="text/css">
+    .k-window div.k-window-content {
+        overflow: hidden;
+    }
+</style>
+
+<table>
+    <tr>
+        <td>Branch</td>
+        <td>Year</td>
+        <td>Month</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            @(Html.Kendo().DropDownListFor(m => m.LocationNumber)
+                        .Name("locationNumber")
+                        .OptionLabel("Select Branch...")
+                        .DataTextField("Name")
+                        .DataValueField("ID")
+                        .DataSource(source => source.Read(read => read.Action("GetBranches", "Home")))
+                        .Events(e => e.Change("refresh"))
+                        )
+        </td>
+        <td>
+            @(Html.Kendo().DropDownListFor(m => m.Year)
+                        .Name("year")
+                        .OptionLabel("Select Year...")
+                        .DataTextField("Name")
+                        .DataValueField("ID")
+                        .DataSource(source => source.Read(read => read.Action("GetYear", "Home")))
+                    .Events(e => e.Change("refresh"))
+                        )
+        </td>
+        <td>
+            @(Html.Kendo().DropDownListFor(m => m.Month)
+                        .Name("month")
+                        .OptionLabel("Select Month...")
+                        .DataTextField("Name")
+                        .DataValueField("ID")
+                        .DataSource(source => source.Read(read => read.Action("GetMonth", "Home")))
+                    .Events(e => e.Change("refresh"))
+                        )
+        </td>
+        <td>
+            <span id="viewPDFList" class="k-button">Print Inventory Sheet</span>
+        </td>
+        <td>
+            <span id="viewReport" class="k-button">View Report</span>
+        </td>
+        <td>
+            <span id="addInventory" class="k-button">Add New Month</span>
+        </td>
+    </tr>
+</table>
+
+@(Html.Kendo().Grid(Model.InventoryProductViewModels)
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ProductCategory).Width(130);
+        columns.Bound(p => p.Product).Width(390);
+        columns.Bound(p => p.Usable).Width(75).EditorTemplateName("PositiveInteger");
+        columns.Bound(p => p.Repairable).Width(75).EditorTemplateName("PositiveInteger");
+    })
+    .Pageable(paging => paging
+                        .Input(false)
+                        .Numeric(true)
+                        .PreviousNext(true)
+                        .PageSizes(new[] { 10, 25, 50 })
+                        .Refresh(true))
+    .Editable(editable => editable.Mode(GridEditMode.InCell))
+    .Events(e =>
+        {
+            e.Save("update");
+            e.Edit("edit");
+            
+        })
+    .Sortable(sortable => sortable
+            .AllowUnsort(true)
+            .SortMode(GridSortMode.MultipleColumn))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(50)
+        .Sort(sort =>
+            {
+                sort.Add(p => p.ProductCategory);
+                sort.Add(p => p.Product);
+            })
+        .Events(events => events.Error("error_handler"))
+        .Update(update => update.Action("UpdateInventoryProducts", "Home"))
+        .Read(read => read.Action("ReadInventoryProducts", "Home").Data("readInventoryProductAdditionalData"))
+                .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ProductCategory).Editable(false);
+                model.Field(p => p.Product).Editable(false);
+            })
+    )
+)
+
+<div class="add-top-margin-1"></div>
+
+<div class="float-right"><span id="exit" class="k-button">Complete</span></div>
+
+<script>
+
+    $(document).ready(function() {
+        $("#addInventory")
+            .bind("click", function() {
+                
+                $("#AddMonthWindow").html('');
+
+                var locationNumber = parseInt($("#locationNumber").data("kendoDropDownList").value());
+
+                var url = @Html.Raw(Json.Encode(Url.Action("AddMonth", "Home", new { id = "val" })));
+                url = url.replace("val", locationNumber);
+                var divName = 'addMonthWindowDiv';
+                $("#AddMonthWindow").append('<div id=' + divName + '></div>');
+                var kendoWindow = $("#" + divName).kendoWindow({
+                    title: "Add",
+                    width: "300px",
+                    height: "350px",
+                    visible: true,
+                    modal: true,
+                    resizable: false,
+                    actions: ["Close"],
+                    close: function () {
+                        this.destroy();
+                    }
+                }).data("kendoWindow");
+                    
+                kendoWindow.center();
+
+                kendoWindow.refresh({
+                    url: url,
+                    iframe: true
+                });
+
+                kendoWindow.open();
+            });
+       });
+
+    function readInventoryProductAdditionalData() {
+        return {
+            LocationNumber: parseInt($("#locationNumber").data("kendoDropDownList").value()),
+            Year: parseInt($("#year").data("kendoDropDownList").value()),
+            Month: parseInt($("#month").data("kendoDropDownList").value())
+        };
+    }
+
+    function refresh(e) {
+        var grid = $("#Grid").data("kendoGrid");
+        grid.dataSource.read();
+    }
+    
+    function update(e) {
+        setTimeout(function () {
+            $('#Grid').data('kendoGrid').dataSource.sync();
+        });
+    }
+
+    function edit(e) {
+        var input = e.container.find("input:last");
+        input.focus(function (e) {
+            var that = this;
+            setTimeout(function () {
+                that.select();
+            });
+        });
+        input.focus();
+    }
+
+    //$("#Grid table").on("keydown", "tr td:nth-child(3)", function (e) {
+    //    if (e.which == 9) {
+    //        //$(this).find("input[name='Usable']").data("kendoNumericTextBox").trigger("change");
+    //        $(this).find("input").trigger("change");
+    //        e.preventDefault();
+    //        e.stopPropagation();
+
+    //        var next = $(this).next();
+    //        next.click().find("input:last").focus(function () {
+    //            var that = this;
+    //            setTimeout(function () {
+    //                that.select();
+    //            });
+    //        });
+    //        next.focus();
+    //    }
+    //});
+
+    //$("#Grid table").on("keydown", "tr td:nth-child(4)", function (e) {
+    //    if (e.which == 9) {
+    //        $(this).find("input[name='Repairable']").data("kendoNumericTextBox").trigger("change");
+    //        e.preventDefault();
+    //        e.stopPropagation();
+
+    //        var next = $(this).closest("tr").next().find("td:eq(2)");
+    //        var input = next.click().find("input:last");
+    //        input.focus(function () {
+    //            var that = this;
+    //            setTimeout(function () {
+    //                that.select();
+    //            });
+    //        });
+    //        input.focus();
+    //    }
+    //});
+
+
+    //function focusHiglight(e) {
+    //    alert("1");
+    //    var inputName = e.container.find('input').attr("name");
+    //    alert(inputName);
+        
+    //    if (inputName == "Usable") {
+    //        alert("2");
+    //        var myInput1 = e.container.find('input[name="Usable"]');
+    //        setTimeout(function () {
+    //            myInput1.select();
+    //        });
+    //    }
+    //    if (inputName == "Repairable") {
+    //        var myInput2 = e.container.find('input[name="Repairable"]');
+    //        setTimeout(function () {
+    //            myInput2.select();
+    //        });
+    //    }
+    //}
+
+    $(document).ready(function () {
+        $("#viewPDFList")
+            .bind("click", function () {
+
+                $("#Pdfwindow").html('');
+
+                var url = @Html.Raw(Json.Encode(Url.Action("InventorySheet", "Home")));
+                var divName = 'pdfWindowDiv';
+                $("#Pdfwindow").append('<div id=' + divName + '></div>');
+                var kendoWindow = $("#" + divName).kendoWindow({
+                    title: "Inventory Sheet",
+                    width: "425px",
+                    height: "565px",
+                    visible: true,
+                    resizable: false,
+                    actions: ["Close", "Maximize"],
+                    close: function () {
+                        this.destroy();
+                    }
+                }).data("kendoWindow");
+                    
+                kendoWindow.center();
+
+                kendoWindow.refresh({
+                    url: url,
+                    iframe: true
+                });
+
+                kendoWindow.open();
+            });
+    });
+
+    $(document).ready(function () {
+        $("#viewReport")
+            .bind("click", function () {
+                
+                var reportMonthViewModel = {
+                    LocationNumber: parseInt($("#locationNumber").data("kendoDropDownList").value()),
+                    Year: parseInt($("#year").data("kendoDropDownList").value()),
+                    Month: parseInt($("#month").data("kendoDropDownList").value())
+                };
+                
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetReportPath", "Home")',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(reportMonthViewModel),
+                    dataType: "json",
+                    success: function (data) {
+                        var win=window.open(data, '_blank');
+                        win.focus();
+                    },
+                    error: function (request, status, error) {
+                        alert("Error");
+                    }
+                 });
+            });
+    });
+    
+    $(document).ready(function () {
+        $("#exit")
+            .bind("click", function () {
+                
+                document.location = 'http://ws/version2/index.asp';
+                
+            });
+        });
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>
+

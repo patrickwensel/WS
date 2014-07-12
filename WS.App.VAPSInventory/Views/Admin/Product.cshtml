@@ -1,0 +1,78 @@
+﻿@model WS.App.VAPSInventory.ViewModels.ProductAdminViewModel
+
+
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>Product</h2>
+
+@Html.Partial("_AdminMenu")
+
+@(Html.Kendo().Grid(Model.ProductViewModels)
+           .Name("ProductGrid")
+           .Scrollable(s => s.Height("auto"))
+           .Columns(columns =>
+               {
+                   //columns.Bound(p => p.ProductCategoryID);
+                   columns.ForeignKey(p => p.ProductCategoryID, (System.Collections.IEnumerable)ViewData["productCategories"], "ID", "Name")
+                       .Title("Category")
+                       .Width(150)
+                       .EditorTemplateName("ProductCategoryID");
+                   columns.Bound(p => p.Name).Width(200);
+                   columns.Bound(p => p.Description);
+                   columns.ForeignKey(p => p.Status, (System.Collections.IEnumerable)ViewData["productStatuses"], "ID", "Status")
+                          .Title("Status")
+                          .Width(75);
+                   columns.Command(command => command.Edit()).Width(200);
+               })
+               .ToolBar(toolbar => toolbar.Create())
+               .Editable(editable => editable.Mode(GridEditMode.InLine))
+               .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true)
+           )
+           .AutoBind(true)
+           .Sortable(s => s.SortMode(GridSortMode.SingleColumn))
+           .Filterable()
+           .DataSource(dataSource => dataSource
+                                         .Ajax()
+                                         .Model(model =>
+                                             {
+                                                 model.Id(p => p.ID);
+                                                 model.Field(p => p.ProductCategoryID);
+                                                 model.Field(p => p.Status).DefaultValue(1);
+                                             })
+                                        .Sort(sort => sort.Add(p => p.Name))
+                                         .PageSize(50)
+                                         .Events(events => events.Error("onError"))
+                                         .Read(read => read.Action("ReadProduct", "Admin"))
+                                         .Create(update => update.Action("CreateProduct", "Admin"))
+                                         .Update(update => update.Action("UpdateProduct", "Admin"))
+
+           )
+    )
+
+
+
+<script>
+    function onError(e, status) {
+        if (e.errors) {
+            var message = "The following errors have occurred:\n";
+
+            $.each(e.errors, function (key, value) {
+                if (value.errors) {
+                    message += value.errors.join("\n");
+                }
+            });
+
+            var gridProd = $("#ProductGrid").data("kendoGrid");
+            gridProd.dataSource.read();
+
+            alert(message);
+        }
+    }
+</script>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        @Styles.Render("~/Content/css/screen.css")
+        @Styles.Render("~/Content/themes/base/jquery.ui.datepicker.css")
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/inputmask")
+        @Scripts.Render("~/Scripts/MVCControlToolkit.Controls-2.4.0.js")
+        @Scripts.Render("~/Scripts/MVCControlToolkit.Controls.Core-2.4.0.js")
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="header span-11 add-bottom-margin-5">
+                    <div class="logoDiv">
+                        <a href="http://www.willscot.com" class="logoHeader">Williams Scotsman</a>
+                    </div>
+                    <div class="float-right">
+                        <section id="login">
+                        
+                        </section>
+                    </div>
+                </div>
+                <div class="span-11 pagetitle">
+
+                    <span class="phoneright">@Html.Action("_FirstName", "Shared")</span>
+                    <h1>Pay an Invoice Online Application</h1>
+                </div>                    
+                        <div id="body">
+                                @RenderBody()
+                        </div>
+                        <footer>
+                            <div class="content-wrapper">
+                            </div>
+                        </footer>
+        
+                        @RenderSection("scripts", required: false)
+                    
+                        <div class="clear"></div>
+
+
+                <div class="span-4 last">
+
+                
+
+                </div>
+                <div class="span-11 landingFooter">
+                
+                    <p class="company">Williams Scotsman, Inc. Corporate Headquarters </p>
+                    <p class="address">901 S Bond Street Suite 600&nbsp;&nbsp;.&nbsp;&nbsp;Baltimore, MD&nbsp;&nbsp;.&nbsp;&nbsp;21231&nbsp;&nbsp;.&nbsp;&nbsp;Toll Free:  800.782.1500</p>
+                    <p class="copyright">©2013 Williams Scotsman, Inc., All Rights Reserved.</p>
+                
+                </div>
+            </div>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+﻿@model WS.App.VAPSInventory.ViewModels.InventorySheetViewModel
+
+@{
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";
+}
+
+<paragraph style="font-family: Helvetica; font-size: 18; font-style: italic;">
+    <chunk style="font-weight:bold;">VAPS Inventory Sheet</chunk>
+</paragraph>
+<table width="100%" cellpadding="1.0" cellspacing="1.0"  widths="5;10;3;3">
+    <row>
+        <cell borderwidth="0.5" left="false" right="false" top="false" bottom="true">Category</cell>
+        <cell borderwidth="0.5" left="false" right="false" top="false" bottom="true">Product</cell>
+        <cell borderwidth="0.5" left="false" right="false" top="false" bottom="true">Usable</cell>
+        <cell borderwidth="0.5" left="false" right="false" top="false" bottom="true">Repairable</cell>
+    </row>
+    
+    @foreach (var inventorySheetRowViewModel in Model.InventorySheetRowViewModels)
+    {
+        <row>
+            <cell>
+                <chunk style="">@inventorySheetRowViewModel.ProductCategory</chunk>
+            </cell>
+            <cell>
+                <chunk style="">@inventorySheetRowViewModel.Product</chunk>
+            </cell>
+            <cell>
+                <chunk style="">_______</chunk>
+            </cell>
+            <cell>
+                <chunk style="">_______</chunk>
+            </cell>
+        </row>
+        
+    }
+</table>
+

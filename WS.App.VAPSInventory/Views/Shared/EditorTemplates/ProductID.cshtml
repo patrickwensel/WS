@@ -1,0 +1,10 @@
+﻿@model int
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel("Select Product...")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("GetProducts", "Home")).ServerFiltering(true))
+                  .CascadeFrom("ProductCategoryID")
+            )
