@@ -1,0 +1,2509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WSJDEModel.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Oracle, 9.2.0.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="WSJDEModelStoreContainer">
+    <EntitySet Name="API_REQUEST" EntityType="WSJDEModel.Store.API_REQUEST" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_REQUEST_DATA" EntityType="WSJDEModel.Store.API_REQUEST_DATA" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_REQUEST_DATA_KEY" EntityType="WSJDEModel.Store.API_REQUEST_DATA_KEY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_REQUEST_DATA_KEY_CLASS" EntityType="WSJDEModel.Store.API_REQUEST_DATA_KEY_CLASS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_REQUEST_SOURCE" EntityType="WSJDEModel.Store.API_REQUEST_SOURCE" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_SF_PRODUCT" EntityType="WSJDEModel.Store.API_SF_PRODUCT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="API_SOURCE" EntityType="WSJDEModel.Store.API_SOURCE" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="MWO_FEITH_IMAGES" EntityType="WSJDEModel.Store.MWO_FEITH_IMAGES" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="PAPERLESS_REQUEST" EntityType="WSJDEModel.Store.PAPERLESS_REQUEST" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="PAPERLESS_REQUEST_ORDER" EntityType="WSJDEModel.Store.PAPERLESS_REQUEST_ORDER" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="TEMP_WO_NUMBER" EntityType="WSJDEModel.Store.TEMP_WO_NUMBER" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_INVENTORY" EntityType="WSJDEModel.Store.VI_INVENTORY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_INVENTORY_PRODUCT" EntityType="WSJDEModel.Store.VI_INVENTORY_PRODUCT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_PRODUCT" EntityType="WSJDEModel.Store.VI_PRODUCT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_PRODUCT_CATEGORY" EntityType="WSJDEModel.Store.VI_PRODUCT_CATEGORY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_PRODUCT_CATEGORY_STATUS" EntityType="WSJDEModel.Store.VI_PRODUCT_CATEGORY_STATUS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VI_PRODUCT_STATUS" EntityType="WSJDEModel.Store.VI_PRODUCT_STATUS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="WEB_APPLICATION" EntityType="WSJDEModel.Store.WEB_APPLICATION" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="WEB_SECURITY" EntityType="WSJDEModel.Store.WEB_SECURITY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="WEB_SECURITY_LEVELS" EntityType="WSJDEModel.Store.WEB_SECURITY_LEVELS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="T_HR_EMPLOYEE" EntityType="WSJDEModel.Store.T_HR_EMPLOYEE" store:Type="Tables" Schema="OLI" />
+    <EntitySet Name="T_LOCATIONDIR" EntityType="WSJDEModel.Store.T_LOCATIONDIR" store:Type="Tables" Schema="OLI" />
+    <EntitySet Name="OMB_FLEET_CATEGORY" EntityType="WSJDEModel.Store.OMB_FLEET_CATEGORY" store:Type="Tables" Schema="SISR" />
+    <EntitySet Name="OMB_LOOKUP" EntityType="WSJDEModel.Store.OMB_LOOKUP" store:Type="Tables" Schema="SISR" />
+    <EntitySet Name="OMB_ORDER_HEADER" EntityType="WSJDEModel.Store.OMB_ORDER_HEADER" store:Type="Tables" Schema="SISR" />
+    <EntitySet Name="OMB_UNIT" EntityType="WSJDEModel.Store.OMB_UNIT" store:Type="Tables" Schema="SISR" />
+    <EntitySet Name="F0004" EntityType="WSJDEModel.Store.F0004" store:Type="Tables" Schema="TESTCTL" />
+    <EntitySet Name="F0005" EntityType="WSJDEModel.Store.F0005" store:Type="Tables" Schema="TESTCTL" />
+    <EntitySet Name="F0006" EntityType="WSJDEModel.Store.F0006" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F0101" EntityType="WSJDEModel.Store.F0101" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F1201" EntityType="WSJDEModel.Store.F1201" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F1217" EntityType="WSJDEModel.Store.F1217" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F3111" EntityType="WSJDEModel.Store.F3111" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F3112" EntityType="WSJDEModel.Store.F3112" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F31171" EntityType="WSJDEModel.Store.F31171" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F31172" EntityType="WSJDEModel.Store.F31172" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4101" EntityType="WSJDEModel.Store.F4101" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4102" EntityType="WSJDEModel.Store.F4102" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4105" EntityType="WSJDEModel.Store.F4105" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4801" EntityType="WSJDEModel.Store.F4801" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4801T" EntityType="WSJDEModel.Store.F4801T" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F4802" EntityType="WSJDEModel.Store.F4802" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F551201" EntityType="WSJDEModel.Store.F551201" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F551217" EntityType="WSJDEModel.Store.F551217" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F553003" EntityType="WSJDEModel.Store.F553003" store:Type="Tables" Schema="TESTDTA" />
+    <EntitySet Name="F5548OMB" EntityType="WSJDEModel.Store.F5548OMB" store:Type="Tables" Schema="TESTDTA" />
+    <AssociationSet Name="JDE_WEB_API_REQ_DATA_KEY_CLASS_FK" Association="WSJDEModel.Store.JDE_WEB_API_REQ_DATA_KEY_CLASS_FK">
+      <End Role="API_REQUEST_DATA_KEY_CLASS" EntitySet="API_REQUEST_DATA_KEY_CLASS" />
+      <End Role="API_REQUEST_DATA_KEY" EntitySet="API_REQUEST_DATA_KEY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_API_REQ_DATA_KEY_FK" Association="WSJDEModel.Store.JDE_WEB_API_REQ_DATA_KEY_FK">
+      <End Role="API_REQUEST_DATA_KEY" EntitySet="API_REQUEST_DATA_KEY" />
+      <End Role="API_REQUEST_DATA" EntitySet="API_REQUEST_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_API_REQUEST_DATA_FK" Association="WSJDEModel.Store.JDE_WEB_API_REQUEST_DATA_FK">
+      <End Role="API_REQUEST" EntitySet="API_REQUEST" />
+      <End Role="API_REQUEST_DATA" EntitySet="API_REQUEST_DATA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_API_REQUEST_SRC_REQUEST_FK" Association="WSJDEModel.Store.JDE_WEB_API_REQUEST_SRC_REQUEST_FK">
+      <End Role="API_REQUEST_SOURCE" EntitySet="API_REQUEST_SOURCE" />
+      <End Role="API_REQUEST" EntitySet="API_REQUEST" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_API_SF_PROD_REQ_DATA_KEY" Association="WSJDEModel.Store.JDE_WEB_API_SF_PROD_REQ_DATA_KEY">
+      <End Role="API_SF_PRODUCT" EntitySet="API_SF_PRODUCT" />
+      <End Role="API_REQUEST_DATA_KEY" EntitySet="API_REQUEST_DATA_KEY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_API_SOURCE__REQUEST_FK" Association="WSJDEModel.Store.JDE_WEB_API_SOURCE__REQUEST_FK">
+      <End Role="API_SOURCE" EntitySet="API_SOURCE" />
+      <End Role="API_REQUEST" EntitySet="API_REQUEST" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_FK_WEB_SECURITY_001" Association="WSJDEModel.Store.JDE_WEB_FK_WEB_SECURITY_001">
+      <End Role="WEB_APPLICATION" EntitySet="WEB_APPLICATION" />
+      <End Role="WEB_SECURITY" EntitySet="WEB_SECURITY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_PAPERLESS_REQUEST_FK" Association="WSJDEModel.Store.JDE_WEB_PAPERLESS_REQUEST_FK">
+      <End Role="PAPERLESS_REQUEST" EntitySet="PAPERLESS_REQUEST" />
+      <End Role="PAPERLESS_REQUEST_ORDER" EntitySet="PAPERLESS_REQUEST_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_VI_INVENTORY_ID_FK" Association="WSJDEModel.Store.JDE_WEB_VI_INVENTORY_ID_FK">
+      <End Role="VI_INVENTORY" EntitySet="VI_INVENTORY" />
+      <End Role="VI_INVENTORY_PRODUCT" EntitySet="VI_INVENTORY_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_VI_PRODUCT_CAT_STATUS_ID_FK" Association="WSJDEModel.Store.JDE_WEB_VI_PRODUCT_CAT_STATUS_ID_FK">
+      <End Role="VI_PRODUCT_CATEGORY_STATUS" EntitySet="VI_PRODUCT_CATEGORY_STATUS" />
+      <End Role="VI_PRODUCT_CATEGORY" EntitySet="VI_PRODUCT_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_VI_PRODUCT_CATAGORY_ID_FK" Association="WSJDEModel.Store.JDE_WEB_VI_PRODUCT_CATAGORY_ID_FK">
+      <End Role="VI_PRODUCT_CATEGORY" EntitySet="VI_PRODUCT_CATEGORY" />
+      <End Role="VI_PRODUCT" EntitySet="VI_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_VI_PRODUCT_ID_FK" Association="WSJDEModel.Store.JDE_WEB_VI_PRODUCT_ID_FK">
+      <End Role="VI_PRODUCT" EntitySet="VI_PRODUCT" />
+      <End Role="VI_INVENTORY_PRODUCT" EntitySet="VI_INVENTORY_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_VI_PRODUCT_STATUS_ID_FK" Association="WSJDEModel.Store.JDE_WEB_VI_PRODUCT_STATUS_ID_FK">
+      <End Role="VI_PRODUCT_STATUS" EntitySet="VI_PRODUCT_STATUS" />
+      <End Role="VI_PRODUCT" EntitySet="VI_PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_WEB_SECURITY_LEVELS_FK" Association="WSJDEModel.Store.JDE_WEB_WEB_SECURITY_LEVELS_FK">
+      <End Role="WEB_SECURITY_LEVELS" EntitySet="WEB_SECURITY_LEVELS" />
+      <End Role="WEB_SECURITY" EntitySet="WEB_SECURITY" />
+    </AssociationSet>
+    <AssociationSet Name="SISR_SYS_C0013005" Association="WSJDEModel.Store.SISR_SYS_C0013005">
+      <End Role="OMB_ORDER_HEADER" EntitySet="OMB_ORDER_HEADER" />
+      <End Role="OMB_UNIT" EntitySet="OMB_UNIT" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="API_REQUEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="API_SOURCE_ID" Type="decimal" Nullable="false" />
+    <Property Name="API_REQUEST_SOURCE_ID" Type="decimal" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="LAST_NAME" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="COMPANY" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="ADDRESS1" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="ADDRESS2" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CITY" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="STATE" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="ZIP" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="PHONE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="EMAIL" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+  </EntityType>
+  <EntityType Name="API_REQUEST_DATA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="API_REQUEST_ID" Type="decimal" Nullable="false" />
+    <Property Name="API_REQUEST_DATA_KEY_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="300" />
+    <Property Name="VALUE" Type="VARCHAR2" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="API_REQUEST_DATA_KEY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="API_REQ_DATA_KEY_CLASS_ID" Type="decimal" />
+    <Property Name="API_SF_PRODUCT_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="300" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="300" />
+    <Property Name="VALUE_REQUIRED" Type="bool" />
+  </EntityType>
+  <EntityType Name="API_REQUEST_DATA_KEY_CLASS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="API_REQUEST_SOURCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="API_SF_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="ORDER" Type="decimal" />
+  </EntityType>
+  <EntityType Name="API_SOURCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TOKEN" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="CODE" Type="VARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="MWO_FEITH_IMAGES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WORK_ORDER_ID" Type="decimal" Nullable="false" />
+    <Property Name="MWO_IMAGE_ID" Type="VARCHAR2" Nullable="false" MaxLength="200" />
+    <Property Name="HR_EMPLOYEE_NUMBER" Type="VARCHAR2" MaxLength="20" />
+    <Property Name="UNITNUMBER" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="COMPLEXUNITNUMBER" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="OMBORDERINBOUND" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="LOCATION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="DAMAGED" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="DATE_ADDED" Type="DATE" />
+    <Property Name="WORK_ORDER_GUID" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="IMAGE_TYPE_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="PAPERLESS_REQUEST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ACCOUNT_NUMBER" Type="decimal" />
+    <Property Name="FIRST_NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="LAST_NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="REQUESTER_EMAIL" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="PHONE_NUMBER" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="SEND_TO_EMAIL" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+  </EntityType>
+  <EntityType Name="PAPERLESS_REQUEST_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PAPERLESS_REQUEST_ID" Type="decimal" />
+    <Property Name="ORDER_NUMBER" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="ATTENTION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="UNIT_NUMBER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CITY" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="STATE" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="ZIP" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TEMP_WO_NUMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WO_GUID" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="TIME_STAMP" Type="TIMESTAMP" Precision="6" />
+  </EntityType>
+  <EntityType Name="VI_INVENTORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOCATION_CC" Type="decimal" Nullable="false" />
+    <Property Name="MONTH" Type="decimal" Nullable="false" />
+    <Property Name="YEAR" Type="decimal" Nullable="false" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="MODIFIED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CREATED_TIME" Type="TIMESTAMP" Precision="6" />
+    <Property Name="MODIFIED_TIME" Type="TIMESTAMP" Precision="6" />
+  </EntityType>
+  <EntityType Name="VI_INVENTORY_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="INVENTORY_ID" Type="decimal" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="decimal" />
+    <Property Name="USABLE" Type="decimal" />
+    <Property Name="REPAIRABLE" Type="decimal" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="MODIFIED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CREATED_TIME" Type="TIMESTAMP" Precision="6" />
+    <Property Name="MODIFIED_TIME" Type="TIMESTAMP" Precision="6" />
+  </EntityType>
+  <EntityType Name="VI_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="PRODUCT_CATEGORY_ID" Type="decimal" Nullable="false" />
+    <Property Name="PRODUCT_STATUS_ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" Nullable="false" MaxLength="200" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" Nullable="false" MaxLength="30" />
+    <Property Name="MODIFIED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CREATED_TIME" Type="TIMESTAMP" Nullable="false" Precision="6" />
+    <Property Name="MODIFIED_TIME" Type="TIMESTAMP" Precision="6" />
+  </EntityType>
+  <EntityType Name="VI_PRODUCT_CATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_CATEGORY_STATUS_ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" Nullable="false" MaxLength="200" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" Nullable="false" MaxLength="30" />
+    <Property Name="MODIFIED_BY_USER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CREATED_TIME" Type="TIMESTAMP" Nullable="false" Precision="6" />
+    <Property Name="MODIFIED_TIME" Type="TIMESTAMP" Precision="6" />
+  </EntityType>
+  <EntityType Name="VI_PRODUCT_CATEGORY_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="STATUS" Type="VARCHAR2" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="VI_PRODUCT_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="STATUS" Type="VARCHAR2" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="WEB_APPLICATION">
+    <Key>
+      <PropertyRef Name="APPLICATION_ID" />
+    </Key>
+    <Property Name="APPLICATION_ID" Type="decimal" Nullable="false" />
+    <Property Name="APPLICATION_NAME" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="STATUS" Type="decimal" />
+  </EntityType>
+  <EntityType Name="WEB_SECURITY">
+    <Key>
+      <PropertyRef Name="SECURITY_ID" />
+    </Key>
+    <Property Name="SECURITY_ID" Type="decimal" Nullable="false" />
+    <Property Name="EMP_KEY" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="PASSWORD" Type="VARCHAR2" MaxLength="20" />
+    <Property Name="SECURITY_LEVEL" Type="decimal" />
+    <Property Name="ACTIVE_SESSION" Type="decimal" Nullable="false" />
+    <Property Name="CHANGE_FLAG" Type="CHAR" />
+    <Property Name="APPLICATION_ID" Type="decimal" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+    <Property Name="MAINT_DATE" Type="DATE" />
+    <Property Name="CREATE_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="MAINT_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="SECURITY_LEVEL_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="WEB_SECURITY_LEVELS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="APPLICATION_ID" Type="decimal" />
+    <Property Name="SECURITY_LEVEL" Type="decimal" />
+    <Property Name="LEVEL_DESC" Type="VARCHAR2" MaxLength="500" />
+    <Property Name="SUB_APPLICATION_ID" Type="decimal" />
+    <Property Name="ID" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_HR_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_KEY" />
+    </Key>
+    <Property Name="FIRST_NAME" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="MIDDLE_NAME" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="PREFERRED_NAME" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="NEW_PWD" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="TITLE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="EMP_NUM" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="COST_CENTER" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="NT_USER_ID" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="EMPLOYMENT_STATUS" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="EXEMPT_STATUS" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="EMPLOYEE_KEY" Type="VARCHAR2" Nullable="false" MaxLength="10" />
+    <Property Name="REPORT_LOC_NUMERIC" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="BIRTHDAY" Type="DATE" />
+    <Property Name="HIRE_DATE" Type="DATE" />
+    <Property Name="DEPT_CODE" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="REPORTS_TO_NUM" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="REPORTS_TO_KEY" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="TITLE_CODE" Type="CHAR" MaxLength="8" />
+    <Property Name="TERM_DATE" Type="DATE" />
+    <Property Name="EMPLOYEE_TYPE" Type="VARCHAR2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="T_LOCATIONDIR">
+    <Key>
+      <PropertyRef Name="LOC_ID" />
+    </Key>
+    <Property Name="LOC_ID" Type="decimal" Nullable="false" />
+    <Property Name="LOC_NAME" Type="VARCHAR2" Nullable="false" MaxLength="100" />
+    <Property Name="LOC_CC" Type="decimal" />
+    <Property Name="LOC_CODE" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="UPLEVELID" Type="decimal" />
+    <Property Name="TYPE_ID" Type="decimal" Nullable="false" />
+    <Property Name="STATUS_ID" Type="decimal" Nullable="false" />
+    <Property Name="ADDR1" Type="VARCHAR2" MaxLength="250" />
+    <Property Name="ADDR2" Type="VARCHAR2" MaxLength="250" />
+    <Property Name="CITY" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="STATE" Type="VARCHAR2" MaxLength="5" />
+    <Property Name="ZIP" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="MPHONE_ID" Type="decimal" />
+    <Property Name="FPHONE_ID" Type="decimal" />
+    <Property Name="SYSTEM" Type="decimal" />
+    <Property Name="LOC_DESC" Type="VARCHAR2" MaxLength="1000" />
+    <Property Name="MGR_ID" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="MGR_OFFSITE" Type="decimal" />
+    <Property Name="CNTCT_ID" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="EMPL_ADD" Type="VARCHAR2" MaxLength="1000" />
+    <Property Name="EMPL_HID" Type="VARCHAR2" MaxLength="1000" />
+    <Property Name="RPT_INCLUDE" Type="decimal" />
+    <Property Name="RPT_ORDER" Type="decimal" />
+    <Property Name="COMPANY_ID" Type="decimal" />
+    <Property Name="LAST_MOD" Type="DATE" />
+    <Property Name="LAST_MOD_EMP" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="LOC_ID_ADDR" Type="decimal" />
+    <Property Name="LOC_ID_PHONE" Type="decimal" />
+    <Property Name="LOC_ID_NET" Type="decimal" />
+    <Property Name="BRANCH_LEVEL" Type="decimal" />
+    <Property Name="AREA_LOC_ID" Type="decimal" />
+    <Property Name="REGION_LOC_ID" Type="decimal" />
+    <Property Name="RPT_LEVEL" Type="decimal" />
+    <Property Name="COUNTRY_ID" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="LATITUDE" Type="decimal" />
+    <Property Name="LONGITUDE" Type="decimal" />
+    <Property Name="INTERNET_FLAG" Type="CHAR" />
+    <Property Name="INTERNET_DISPLAY_NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="OMB_FLEET_CATEGORY">
+    <Key>
+      <PropertyRef Name="DTRT" />
+    </Key>
+    <Property Name="DTSY" Type="CHAR" MaxLength="4" />
+    <Property Name="DTRT" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="FLAG" Type="CHAR" />
+    <Property Name="SORT_SEQ" Type="decimal" />
+  </EntityType>
+  <EntityType Name="OMB_LOOKUP">
+    <Key>
+      <PropertyRef Name="LOOKUP_SKEY" />
+    </Key>
+    <Property Name="LOOKUP_SKEY" Type="decimal" Nullable="false" />
+    <Property Name="CATEGORY_SKEY" Type="decimal" />
+    <Property Name="MEMBER_CODE" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="MEMBER_DESC" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="SORT_SEQ" Type="decimal" />
+    <Property Name="MEMBER_CATEGORY_CODE" Type="VARCHAR2" MaxLength="5" />
+    <Property Name="MEMBER_CATEGORY_CODE_2" Type="VARCHAR2" MaxLength="5" />
+    <Property Name="MEMBER_CATEGORY_CODE_3" Type="VARCHAR2" MaxLength="5" />
+    <Property Name="MEMBER_CATEGORY_CODE_4" Type="VARCHAR2" MaxLength="5" />
+    <Property Name="SFDC_REF_ID" Type="VARCHAR2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="OMB_ORDER_HEADER">
+    <Key>
+      <PropertyRef Name="ORDER_SKEY" />
+    </Key>
+    <Property Name="ORDER_SKEY" Type="decimal" Nullable="false" />
+    <Property Name="SEQ_NUM" Type="decimal" Nullable="false" />
+    <Property Name="SIS_ORDER_KEY" Type="VARCHAR2" MaxLength="12" />
+    <Property Name="ORDER_TYPE_ID" Type="decimal" />
+    <Property Name="Q_STATUS_ID" Type="decimal" Nullable="false" />
+    <Property Name="BILL_GROUP_SKEY" Type="decimal" />
+    <Property Name="OE_COMPANY" Type="CHAR" MaxLength="5" />
+    <Property Name="OE_LOCATION" Type="CHAR" MaxLength="12" />
+    <Property Name="TMP_BILL_PHONE" Type="VARCHAR2" MaxLength="20" />
+    <Property Name="TMP_BILL_ADDR1" Type="VARCHAR2" MaxLength="40" />
+    <Property Name="TMP_BILL_ADDR2" Type="VARCHAR2" MaxLength="40" />
+    <Property Name="TMP_BILL_ADDR3" Type="VARCHAR2" MaxLength="40" />
+    <Property Name="TMP_BILL_CITY" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="TMP_BILL_STATE" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="TMP_BILL_ZIP" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="TMP_BILL_COUNTRY" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="SITE_CONTACT_IDLN" Type="decimal" />
+    <Property Name="SHIP_AN8" Type="decimal" />
+    <Property Name="SIC_CODE" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="SOURCE_SKEY" Type="decimal" />
+    <Property Name="PURCHASING_AGENT_IDLN" Type="decimal" />
+    <Property Name="REVENUE_LOCATION" Type="CHAR" MaxLength="12" />
+    <Property Name="BILL_IN_ARREARS" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="INVOICE_IN_ADVANCE" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="Q_DATE_TIME" Type="DATE" />
+    <Property Name="THIRD_PARTY_ID" Type="decimal" />
+    <Property Name="DEALER_ID" Type="decimal" />
+    <Property Name="BILL_THRU_DATE" Type="DATE" />
+    <Property Name="JDE_MP_JOB_NBR" Type="CHAR" MaxLength="12" />
+    <Property Name="CREDIT_CARD_NO" Type="VARCHAR2" MaxLength="16" />
+    <Property Name="CREDIT_CARD_EXPIRATION_DATE" Type="CHAR" MaxLength="4" />
+    <Property Name="EXEMPT_LICENSE_FEE_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="WS_QUOTE_NUM" Type="decimal" />
+    <Property Name="WS_QUOTE_REVISION_NUM" Type="decimal" />
+    <Property Name="EXEMPT_RRI_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="CERTIFICATE" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="FREE_MONTH" Type="DATE" />
+    <Property Name="BILL_DAY" Type="decimal" />
+    <Property Name="BOND_NUM" Type="VARCHAR2" MaxLength="20" />
+    <Property Name="BOND_AMT" Type="decimal" />
+    <Property Name="NATL_ACCT_JOB_NBR" Type="VARCHAR2" MaxLength="25" />
+    <Property Name="DELIVERY_DIRECTIONS" Type="VARCHAR2" />
+    <Property Name="SITE_WORK_MATERIALS" Type="VARCHAR2" MaxLength="255" />
+    <Property Name="ACQ_CODE" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="NBR_OF_INVOICES" Type="decimal" />
+    <Property Name="CANCEL_REASON_DESC" Type="VARCHAR2" MaxLength="150" />
+    <Property Name="MARKETING_USE_ID" Type="decimal" />
+    <Property Name="CREDIT_STATUS" Type="CHAR" MaxLength="10" />
+    <Property Name="CREDIT_STATUS_REASON_ID" Type="decimal" />
+    <Property Name="CREDIT_UPDATED_BY" Type="CHAR" MaxLength="10" />
+    <Property Name="CREDIT_UPDATED_DATE" Type="DATE" />
+    <Property Name="BRANCH_COMMENT" Type="VARCHAR2" MaxLength="255" />
+    <Property Name="CREDIT_COMMENT" Type="VARCHAR2" MaxLength="255" />
+    <Property Name="ARTICLES_OF_INC_FLAG" Type="CHAR" />
+    <Property Name="LETTER_OF_GOOD_STD_FLAG" Type="CHAR" />
+    <Property Name="CREDIT_RQMTS_FLAG" Type="CHAR" />
+    <Property Name="CREDIT_REQUESTED_DATE" Type="DATE" />
+    <Property Name="INIT_CHARGES_FLAG" Type="CHAR" />
+    <Property Name="FINAL_CHARGES_FLAG" Type="CHAR" />
+    <Property Name="ENTIRE_CONTRACT_FLAG" Type="CHAR" />
+    <Property Name="LAST_MONTH_FLAG" Type="CHAR" />
+    <Property Name="NBR_MONTHS_UPFRONT" Type="decimal" />
+    <Property Name="INIT_INVOICE_COD_FLAG" Type="CHAR" />
+    <Property Name="SALES_PERCENT_DOWN" Type="decimal" />
+    <Property Name="SALES_PERCENT_PRE_DELIVERY" Type="decimal" />
+    <Property Name="SALES_PERCENT_NET" Type="decimal" />
+    <Property Name="SALES_PERCENT_NET_DAYS" Type="decimal" />
+    <Property Name="COST_PER_SQFT" Type="decimal" />
+    <Property Name="EXEMPT_PPT_ID" Type="decimal" />
+    <Property Name="EXEMPT_PPT_USER_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="TAX_NOTES" Type="VARCHAR2" MaxLength="250" />
+    <Property Name="PPT_RATE" Type="decimal" />
+    <Property Name="AFFILIATE_PROGRAM_ID" Type="decimal" />
+    <Property Name="BRANCH_RRI_EXEMPT_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="BRANCH_RRI_EXEMPT_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="BILL_NOTES" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="SPECIAL_NOTES" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="INVOICE_HANDLE_ID" Type="decimal" />
+    <Property Name="SPECIAL_PROJECT_FLAG" Type="CHAR" />
+    <Property Name="MODULAR_BUILDING_FLAG" Type="CHAR" />
+    <Property Name="BILL_IDLN" Type="decimal" />
+    <Property Name="BILL_RCK7" Type="decimal" />
+    <Property Name="SITE_CONTACT_RCK7" Type="decimal" />
+    <Property Name="PURCHASING_AGENT_RCK7" Type="decimal" />
+    <Property Name="EOY_EXCLUSION" Type="CHAR" />
+    <Property Name="BRANCH_RRI_EXEMPT_DATE" Type="DATE" />
+    <Property Name="USE_CREDIT_CARD_ID" Type="decimal" />
+    <Property Name="TAX_FREQUENCY_ID" Type="decimal" />
+    <Property Name="SHIP_IDLN" Type="decimal" />
+    <Property Name="SHIP_RCK7" Type="decimal" />
+    <Property Name="WS_MKT_PROM_REF" Type="decimal" />
+    <Property Name="SFA_UPDATES_COMPLETE_FLAG" Type="CHAR" />
+    <Property Name="INSURANCE_REQUESTED_DATE" Type="DATE" />
+    <Property Name="LEASE_AGREEMENT_ID" Type="decimal" />
+    <Property Name="REQUEST_INS_CERT_ID" Type="decimal" />
+    <Property Name="UCC1_FILING_ID" Type="decimal" />
+    <Property Name="ADVANCE_BILL_ID" Type="decimal" />
+    <Property Name="PURCHASE_OPTION_ID" Type="decimal" />
+    <Property Name="BYPASS_DOCUMENT_FLAG" Type="CHAR" />
+    <Property Name="CONTRACT_NOTE" Type="VARCHAR2" />
+    <Property Name="EDIT_VALIDATION_FLAG" Type="CHAR" />
+    <Property Name="FINAL_PACKAGE_FLAG" Type="CHAR" />
+    <Property Name="FEDERAL_ID" Type="VARCHAR2" MaxLength="20" />
+    <Property Name="MAINT_USER_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="MAINT_DATE" Type="DATE" />
+    <Property Name="CREATE_USER_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+    <Property Name="CREDIT_CARD_CRYPT" Type="RAW" MaxLength="225" />
+    <Property Name="CREDIT_CARD_SUFFIX" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="WS_BUS_SECTOR_REF" Type="decimal" />
+    <Property Name="WS_PURCH_AGREEMENT" Type="decimal" />
+    <Property Name="PROJECT_NBR" Type="decimal" />
+    <Property Name="ACH_ACCOUNT_SUFFIX" Type="decimal" />
+    <Property Name="CC_ENRID" Type="decimal" />
+    <Property Name="CC_GROUP_ID" Type="decimal" />
+    <Property Name="ORIG_REVENUE_LOCATION" Type="CHAR" MaxLength="12" />
+    <Property Name="DELIV_REVENUE_LOCATION" Type="CHAR" MaxLength="12" />
+    <Property Name="INIT_BILL_DATE" Type="DATE" />
+    <Property Name="DELIV_MODEL_CODE" Type="VARCHAR2" MaxLength="25" />
+    <Property Name="DELIV_UNIT_COUNT" Type="decimal" />
+    <Property Name="INSURANCE_NOTE" Type="VARCHAR2" MaxLength="1000" />
+    <Property Name="CYBERSOURCE_SUBSCRIPTIONID" Type="decimal" />
+    <Property Name="ATTENTION_TO_IDLN" Type="decimal" />
+    <Property Name="SFDC_OPPORTUNITY_ID" Type="VARCHAR2" MaxLength="18" />
+    <Property Name="SFDC_QUOTE_ID" Type="VARCHAR2" MaxLength="18" />
+    <Property Name="SFDC_PRIMARY_QUOTE_PROD_ID" Type="VARCHAR2" MaxLength="18" />
+    <Property Name="NAICS_CODE" Type="CHAR" MaxLength="18" />
+    <Property Name="ORIGINATING_SYSTEM" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="TMP_BILL_ATTENTION" Type="VARCHAR2" MaxLength="40" />
+    <Property Name="MILEAGE" Type="decimal" />
+    <Property Name="BM_QUOTE_NUMBER" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="PREPARED_BY" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="BM_SEQ_NUM" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="INIT_BILL_GL_DATE" Type="DATE" />
+    <Property Name="SUBLEASED_ITEMS" Type="CHAR" />
+    <Property Name="BM_QUOTE_PROD_ID" Type="VARCHAR2" MaxLength="18" />
+    <Property Name="GSA_FLAG" Type="CHAR" />
+    <Property Name="DELIV_DT_AT_BILLING" Type="DATE" />
+    <Property Name="CC_SUBSCRIPTION" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="FINAL_BILL_DATE" Type="DATE" />
+  </EntityType>
+  <EntityType Name="OMB_UNIT">
+    <Key>
+      <PropertyRef Name="ORDER_SKEY" />
+      <PropertyRef Name="ITEM_SKEY" />
+    </Key>
+    <Property Name="ORDER_SKEY" Type="decimal" Nullable="false" />
+    <Property Name="ITEM_SKEY" Type="decimal" Nullable="false" />
+    <Property Name="FANUMB" Type="decimal" />
+    <Property Name="NEW_USED_FLAG" Type="CHAR" />
+    <Property Name="DELIVERY_DATE" Type="DATE" />
+    <Property Name="MIN_LEASE" Type="decimal" />
+    <Property Name="ACT_LEASE" Type="decimal" />
+    <Property Name="LEASE_PURCHASE_AMT" Type="decimal" />
+    <Property Name="REPLACEMENT_VALUE" Type="decimal" />
+    <Property Name="SELL_PRICE" Type="decimal" />
+    <Property Name="RETURN_BRANCH" Type="CHAR" MaxLength="12" />
+    <Property Name="CARRIER" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="TRANSPORT_EFF_DATE" Type="DATE" />
+    <Property Name="TRANSPORT_EXP_DATE" Type="DATE" />
+    <Property Name="RRI_CODE" Type="CHAR" MaxLength="3" />
+    <Property Name="RENT_RECAP_PERCENT" Type="decimal" />
+    <Property Name="UNIT_STATUS_ID" Type="decimal" />
+    <Property Name="UNIT_NBR" Type="VARCHAR2" MaxLength="12" />
+    <Property Name="TMP_MODEL_TYPE" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="TMP_MODEL_WIDTH" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="TMP_MODEL_LENGTH" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="TMP_MODEL_DESCRIPTION" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="TMP_BOX_LENGTH" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="TMP_UNIT_COUNT" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="THIRD_PARTY_VENDOR_AN8" Type="decimal" />
+    <Property Name="PURCHASE_OPTION_STATUS_ID" Type="decimal" />
+    <Property Name="COMMISSION_OVERRIDE_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="COMMISSION_OVERRIDE_REQUESTOR" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="COMMISSION_OVERRIDE_REASON" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="COMMISSION_OVERRIDE_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_Q_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_ADD_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_CHG_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_ADD_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_CHG_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_Q_STATUS_ID" Type="decimal" />
+    <Property Name="OFF_RENT_Q_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_REQUEST_CONTACT" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="OFF_RENT_REQUEST_PHONE" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="OFF_RENT_REQUEST_RECD_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_REQUEST_PICKUP_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_SCHEDULED_PICKUP_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_ACTUAL_PICKUP_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_NOTE" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="ON_SITE_TAKEOVER_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="EARLY_TERM_REASON" Type="VARCHAR2" MaxLength="255" />
+    <Property Name="MAKE_AVAILABLE_FLAG" Type="VARCHAR2" MaxLength="1" />
+    <Property Name="BILL_THRU_DATE" Type="DATE" />
+    <Property Name="PICKUP_BRANCH" Type="CHAR" MaxLength="12" />
+    <Property Name="VENDOR_PICKUP" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="OFF_RENT_INSTRUCTION" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="INSURANCE_MESSAGE_CODE" Type="CHAR" MaxLength="3" />
+    <Property Name="LAST_RRI_DATE" Type="DATE" />
+    <Property Name="MAINT_DATE" Type="DATE" />
+    <Property Name="MAINT_USER_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+    <Property Name="CREATE_USER_ID" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="UNIT_NOTES" Type="VARCHAR2" MaxLength="2000" />
+    <Property Name="EARLY_TERM_REASON_ID" Type="decimal" />
+    <Property Name="OFF_RENT_UNBILLED_AMT" Type="decimal" />
+    <Property Name="OFF_RENT_MIN_SETTLE_AMT" Type="decimal" />
+    <Property Name="OFF_RENT_ACT_SETTLE_AMT" Type="decimal" />
+    <Property Name="OFF_RENT_UNDEP_TIMA_AMT" Type="decimal" />
+    <Property Name="OFF_RENT_SUSPEND_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_DEFAULT_BT_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_INV_INSTRUCT" Type="CHAR" />
+    <Property Name="RELOCATION" Type="CHAR" />
+    <Property Name="RELOCATION_CHG_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="RELOCATION_CHG_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_CONF_USER" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_CONF_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_CONF_METHOD" Type="CHAR" />
+    <Property Name="OFF_RENT_CONF_EMAIL" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="OFF_RENT_CONF_FAX" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="OFF_RENT_CONF_FAX_MSG" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="OFF_RENT_CONF_SITE_TYPE" Type="CHAR" />
+    <Property Name="OFF_RENT_CONF_SITE_HOURS" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="OFF_RENT_CONF_KNOCKDOWN" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_CONF_FREIGHT" Type="VARCHAR2" MaxLength="10" />
+    <Property Name="OFF_RENT_CONF_INSTRUCTIONS" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="DELIVERY_CONFIRMATION" Type="CHAR" />
+    <Property Name="DELIVERY_CONFIRMATION_DATE" Type="DATE" />
+    <Property Name="DELIVERY_CONFIRMATION_NOTES" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="OFF_RENT_MT_BILL_THRU_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_MT_INV_FROM_DATE" Type="DATE" />
+    <Property Name="OFF_RENT_MT_INV_THRU_DATE" Type="DATE" />
+    <Property Name="ORIG_TMP_MODEL_TYPE" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="ORIG_MODEL_CODE" Type="VARCHAR2" MaxLength="25" />
+    <Property Name="ORIG_UNIT_COUNT" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="PRE_OR_CALLER" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="PRE_OR_CALLER_PHONE" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="PRE_OR_CONTACT" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="PRE_OR_CONTACT_EMAIL" Type="VARCHAR2" MaxLength="50" />
+    <Property Name="PRE_OR_CONTACT_PHONE" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="PRE_OR_CONTACT_FAX" Type="VARCHAR2" MaxLength="15" />
+    <Property Name="PRE_OR_REQUESTED_PU" Type="DATE" />
+    <Property Name="PRE_OR_COMMENTS" Type="VARCHAR2" MaxLength="300" />
+    <Property Name="QUOTED_LENGTH" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="QUOTED_WIDTH" Type="VARCHAR2" MaxLength="4" />
+    <Property Name="QUOTED_MODEL" Type="VARCHAR2" MaxLength="3" />
+    <Property Name="QUOTED_NEW_USED" Type="CHAR" />
+    <Property Name="PHYSICAL_DELIVERY_DATE" Type="DATE" />
+    <Property Name="TMP_STORIES" Type="VARCHAR2" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="F0004">
+    <Key>
+      <PropertyRef Name="DTSY" />
+      <PropertyRef Name="DTRT" />
+    </Key>
+    <Property Name="DTSY" Type="CHAR" Nullable="false" MaxLength="4" />
+    <Property Name="DTRT" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="DTDL01" Type="CHAR" MaxLength="30" />
+    <Property Name="DTUSEQ" Type="decimal" />
+    <Property Name="DTUCD1" Type="CHAR" MaxLength="3" />
+    <Property Name="DTCDL" Type="decimal" />
+    <Property Name="DTLN2" Type="CHAR" />
+    <Property Name="DTCNUM" Type="CHAR" />
+    <Property Name="DTMRCT" Type="CHAR" />
+    <Property Name="DTMRTY" Type="CHAR" MaxLength="2" />
+    <Property Name="DTUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="DTPID" Type="CHAR" MaxLength="10" />
+    <Property Name="DTUPMJ" Type="int" />
+    <Property Name="DTJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="DTUPMT" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F0005">
+    <Key>
+      <PropertyRef Name="DRSY" />
+      <PropertyRef Name="DRRT" />
+      <PropertyRef Name="DRKY" />
+    </Key>
+    <Property Name="DRSY" Type="CHAR" Nullable="false" MaxLength="4" />
+    <Property Name="DRRT" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="DRKY" Type="CHAR" Nullable="false" MaxLength="10" />
+    <Property Name="DRDL01" Type="CHAR" MaxLength="30" />
+    <Property Name="DRDL02" Type="CHAR" MaxLength="30" />
+    <Property Name="DRSPHD" Type="CHAR" MaxLength="10" />
+    <Property Name="DRUDCO" Type="CHAR" />
+    <Property Name="DRHRDC" Type="CHAR" />
+    <Property Name="DRUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="DRPID" Type="CHAR" MaxLength="10" />
+    <Property Name="DRUPMJ" Type="int" />
+    <Property Name="DRJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="DRUPMT" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F0006">
+    <Key>
+      <PropertyRef Name="MCMCU" />
+    </Key>
+    <Property Name="MCMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="MCSTYL" Type="CHAR" MaxLength="2" />
+    <Property Name="MCDC" Type="CHAR" MaxLength="40" />
+    <Property Name="MCLDM" Type="CHAR" />
+    <Property Name="MCCO" Type="CHAR" MaxLength="5" />
+    <Property Name="MCAN8" Type="decimal" />
+    <Property Name="MCAN8O" Type="decimal" />
+    <Property Name="MCCNTY" Type="CHAR" MaxLength="3" />
+    <Property Name="MCADDS" Type="CHAR" MaxLength="3" />
+    <Property Name="MCFMOD" Type="CHAR" />
+    <Property Name="MCDL01" Type="CHAR" MaxLength="30" />
+    <Property Name="MCDL02" Type="CHAR" MaxLength="30" />
+    <Property Name="MCDL03" Type="CHAR" MaxLength="30" />
+    <Property Name="MCDL04" Type="CHAR" MaxLength="30" />
+    <Property Name="MCRP01" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP02" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP03" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP04" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP05" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP06" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP07" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP08" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP09" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP10" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP11" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP12" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP13" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP14" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP15" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP16" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP17" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP18" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP19" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP20" Type="CHAR" MaxLength="3" />
+    <Property Name="MCRP21" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP22" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP23" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP24" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP25" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP26" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP27" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP28" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP29" Type="CHAR" MaxLength="10" />
+    <Property Name="MCRP30" Type="CHAR" MaxLength="10" />
+    <Property Name="MCTA" Type="CHAR" MaxLength="10" />
+    <Property Name="MCTXJS" Type="decimal" />
+    <Property Name="MCTXA1" Type="CHAR" MaxLength="10" />
+    <Property Name="MCEXR1" Type="CHAR" MaxLength="2" />
+    <Property Name="MCTC01" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC02" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC03" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC04" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC05" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC06" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC07" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC08" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC09" Type="CHAR" MaxLength="4" />
+    <Property Name="MCTC10" Type="CHAR" MaxLength="4" />
+    <Property Name="MCND01" Type="CHAR" />
+    <Property Name="MCND02" Type="CHAR" />
+    <Property Name="MCND03" Type="CHAR" />
+    <Property Name="MCND04" Type="CHAR" />
+    <Property Name="MCND05" Type="CHAR" />
+    <Property Name="MCND06" Type="CHAR" />
+    <Property Name="MCND07" Type="CHAR" />
+    <Property Name="MCND08" Type="CHAR" />
+    <Property Name="MCND09" Type="CHAR" />
+    <Property Name="MCND10" Type="CHAR" />
+    <Property Name="MCCC01" Type="CHAR" />
+    <Property Name="MCCC02" Type="CHAR" />
+    <Property Name="MCCC03" Type="CHAR" />
+    <Property Name="MCCC04" Type="CHAR" />
+    <Property Name="MCCC05" Type="CHAR" />
+    <Property Name="MCCC06" Type="CHAR" />
+    <Property Name="MCCC07" Type="CHAR" />
+    <Property Name="MCCC08" Type="CHAR" />
+    <Property Name="MCCC09" Type="CHAR" />
+    <Property Name="MCCC10" Type="CHAR" />
+    <Property Name="MCPECC" Type="CHAR" />
+    <Property Name="MCALS" Type="CHAR" />
+    <Property Name="MCISS" Type="CHAR" />
+    <Property Name="MCGLBA" Type="CHAR" MaxLength="8" />
+    <Property Name="MCALCL" Type="CHAR" MaxLength="2" />
+    <Property Name="MCLMTH" Type="CHAR" />
+    <Property Name="MCLF" Type="decimal" />
+    <Property Name="MCOBJ1" Type="CHAR" MaxLength="6" />
+    <Property Name="MCOBJ2" Type="CHAR" MaxLength="6" />
+    <Property Name="MCOBJ3" Type="CHAR" MaxLength="6" />
+    <Property Name="MCSUB1" Type="CHAR" MaxLength="8" />
+    <Property Name="MCTOU" Type="decimal" />
+    <Property Name="MCSBLI" Type="CHAR" />
+    <Property Name="MCANPA" Type="decimal" />
+    <Property Name="MCCT" Type="CHAR" MaxLength="4" />
+    <Property Name="MCCERT" Type="CHAR" />
+    <Property Name="MCMCUS" Type="CHAR" MaxLength="12" />
+    <Property Name="MCBTYP" Type="CHAR" />
+    <Property Name="MCPC" Type="decimal" />
+    <Property Name="MCPCA" Type="decimal" />
+    <Property Name="MCPCC" Type="decimal" />
+    <Property Name="MCINTA" Type="CHAR" MaxLength="4" />
+    <Property Name="MCINTL" Type="CHAR" MaxLength="4" />
+    <Property Name="MCD1J" Type="int" />
+    <Property Name="MCD2J" Type="int" />
+    <Property Name="MCD3J" Type="int" />
+    <Property Name="MCD4J" Type="int" />
+    <Property Name="MCD5J" Type="int" />
+    <Property Name="MCD6J" Type="int" />
+    <Property Name="MCFPDJ" Type="int" />
+    <Property Name="MCCAC" Type="decimal" />
+    <Property Name="MCPAC" Type="decimal" />
+    <Property Name="MCEEO" Type="CHAR" />
+    <Property Name="MCERC" Type="CHAR" MaxLength="2" />
+    <Property Name="MCUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="MCPID" Type="CHAR" MaxLength="10" />
+    <Property Name="MCUPMJ" Type="int" />
+    <Property Name="MCJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="MCUPMT" Type="decimal" />
+    <Property Name="MCBPTP" Type="CHAR" MaxLength="15" />
+    <Property Name="MCAPSB" Type="CHAR" />
+    <Property Name="MCTSBU" Type="CHAR" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="F0101">
+    <Key>
+      <PropertyRef Name="ABAN8" />
+    </Key>
+    <Property Name="ABAN8" Type="decimal" Nullable="false" />
+    <Property Name="ABALKY" Type="CHAR" MaxLength="20" />
+    <Property Name="ABTAX" Type="CHAR" MaxLength="20" />
+    <Property Name="ABALPH" Type="CHAR" MaxLength="40" />
+    <Property Name="ABDC" Type="CHAR" MaxLength="40" />
+    <Property Name="ABMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="ABSIC" Type="CHAR" MaxLength="10" />
+    <Property Name="ABLNGP" Type="CHAR" MaxLength="2" />
+    <Property Name="ABAT1" Type="CHAR" MaxLength="3" />
+    <Property Name="ABCM" Type="CHAR" MaxLength="2" />
+    <Property Name="ABTAXC" Type="CHAR" />
+    <Property Name="ABAT2" Type="CHAR" />
+    <Property Name="ABAT3" Type="CHAR" />
+    <Property Name="ABAT4" Type="CHAR" />
+    <Property Name="ABAT5" Type="CHAR" />
+    <Property Name="ABATP" Type="CHAR" />
+    <Property Name="ABATR" Type="CHAR" />
+    <Property Name="ABATPR" Type="CHAR" />
+    <Property Name="ABAB3" Type="CHAR" />
+    <Property Name="ABATE" Type="CHAR" />
+    <Property Name="ABSBLI" Type="CHAR" />
+    <Property Name="ABEFTB" Type="int" />
+    <Property Name="ABAN81" Type="decimal" />
+    <Property Name="ABAN82" Type="decimal" />
+    <Property Name="ABAN83" Type="decimal" />
+    <Property Name="ABAN84" Type="decimal" />
+    <Property Name="ABAN86" Type="decimal" />
+    <Property Name="ABAN85" Type="decimal" />
+    <Property Name="ABAC01" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC02" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC03" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC04" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC05" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC06" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC07" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC08" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC09" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC10" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC11" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC12" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC13" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC14" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC15" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC16" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC17" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC18" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC19" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC20" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC21" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC22" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC23" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC24" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC25" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC26" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC27" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC28" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC29" Type="CHAR" MaxLength="3" />
+    <Property Name="ABAC30" Type="CHAR" MaxLength="3" />
+    <Property Name="ABGLBA" Type="CHAR" MaxLength="8" />
+    <Property Name="ABPTI" Type="decimal" />
+    <Property Name="ABPDI" Type="int" />
+    <Property Name="ABMSGA" Type="CHAR" />
+    <Property Name="ABRMK" Type="CHAR" MaxLength="30" />
+    <Property Name="ABTXCT" Type="CHAR" MaxLength="20" />
+    <Property Name="ABTX2" Type="CHAR" MaxLength="20" />
+    <Property Name="ABALP1" Type="CHAR" MaxLength="40" />
+    <Property Name="ABURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="ABURDT" Type="int" />
+    <Property Name="ABURAT" Type="decimal" />
+    <Property Name="ABURAB" Type="decimal" />
+    <Property Name="ABURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="ABUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="ABPID" Type="CHAR" MaxLength="10" />
+    <Property Name="ABUPMJ" Type="int" />
+    <Property Name="ABJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="ABUPMT" Type="decimal" />
+    <Property Name="ABPRGF" Type="CHAR" />
+    <Property Name="ABSCCLTP" Type="CHAR" MaxLength="2" />
+    <Property Name="ABTICKER" Type="CHAR" MaxLength="10" />
+    <Property Name="ABEXCHG" Type="CHAR" MaxLength="10" />
+    <Property Name="ABDUNS" Type="CHAR" MaxLength="13" />
+    <Property Name="ABCLASS01" Type="CHAR" MaxLength="3" />
+    <Property Name="ABCLASS02" Type="CHAR" MaxLength="3" />
+    <Property Name="ABCLASS03" Type="CHAR" MaxLength="3" />
+    <Property Name="ABCLASS04" Type="CHAR" MaxLength="3" />
+    <Property Name="ABCLASS05" Type="CHAR" MaxLength="3" />
+    <Property Name="ABNOE" Type="decimal" />
+    <Property Name="ABGROWTHR" Type="decimal" />
+    <Property Name="ABYEARSTAR" Type="CHAR" MaxLength="15" />
+    <Property Name="ABAEMPGP" Type="CHAR" MaxLength="5" />
+    <Property Name="ABACTIN" Type="CHAR" />
+    <Property Name="ABREVRNG" Type="CHAR" MaxLength="5" />
+    <Property Name="ABSYNCS" Type="decimal" />
+    <Property Name="ABPERRS" Type="decimal" />
+    <Property Name="ABCAAD" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F1201">
+    <Key>
+      <PropertyRef Name="FANUMB" />
+    </Key>
+    <Property Name="FACO" Type="CHAR" MaxLength="5" />
+    <Property Name="FANUMB" Type="decimal" Nullable="false" />
+    <Property Name="FAAPID" Type="CHAR" MaxLength="12" />
+    <Property Name="FAAAID" Type="decimal" />
+    <Property Name="FAASID" Type="CHAR" MaxLength="25" />
+    <Property Name="FASEQ" Type="decimal" />
+    <Property Name="FAACL1" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL2" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL3" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL4" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL5" Type="CHAR" MaxLength="3" />
+    <Property Name="FAMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="FADL01" Type="CHAR" MaxLength="30" />
+    <Property Name="FADL02" Type="CHAR" MaxLength="30" />
+    <Property Name="FADL03" Type="CHAR" MaxLength="30" />
+    <Property Name="FADSCC" Type="CHAR" MaxLength="40" />
+    <Property Name="FADAJ" Type="int" />
+    <Property Name="FADSP" Type="int" />
+    <Property Name="FAEQST" Type="CHAR" MaxLength="2" />
+    <Property Name="FANORU" Type="CHAR" />
+    <Property Name="FAAESV" Type="decimal" />
+    <Property Name="FAARPC" Type="decimal" />
+    <Property Name="FAALRC" Type="decimal" />
+    <Property Name="FAAMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="FAAOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="FAASUB" Type="CHAR" MaxLength="8" />
+    <Property Name="FADMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="FADOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="FADSUB" Type="CHAR" MaxLength="8" />
+    <Property Name="FAXMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="FAXOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="FAXSUB" Type="CHAR" MaxLength="8" />
+    <Property Name="FARMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="FAROBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="FARSUB" Type="CHAR" MaxLength="8" />
+    <Property Name="FAARCQ" Type="decimal" />
+    <Property Name="FAAROQ" Type="decimal" />
+    <Property Name="FATXJS" Type="decimal" />
+    <Property Name="FAAITY" Type="decimal" />
+    <Property Name="FAAITP" Type="decimal" />
+    <Property Name="FAFINC" Type="CHAR" />
+    <Property Name="FAITCO" Type="CHAR" />
+    <Property Name="FAPURO" Type="CHAR" />
+    <Property Name="FAAPUR" Type="decimal" />
+    <Property Name="FAPURP" Type="decimal" />
+    <Property Name="FAAPOM" Type="decimal" />
+    <Property Name="FALANO" Type="decimal" />
+    <Property Name="FAJCD" Type="int" />
+    <Property Name="FADEXJ" Type="int" />
+    <Property Name="FAAMF" Type="decimal" />
+    <Property Name="FARMK" Type="CHAR" MaxLength="30" />
+    <Property Name="FARMK2" Type="CHAR" MaxLength="30" />
+    <Property Name="FAINSP" Type="CHAR" MaxLength="25" />
+    <Property Name="FAINSC" Type="CHAR" MaxLength="25" />
+    <Property Name="FAINSM" Type="decimal" />
+    <Property Name="FAINSA" Type="decimal" />
+    <Property Name="FAAIV" Type="decimal" />
+    <Property Name="FAINSI" Type="decimal" />
+    <Property Name="FAUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="FALCT" Type="int" />
+    <Property Name="FALOC" Type="CHAR" MaxLength="12" />
+    <Property Name="FAADDS" Type="CHAR" MaxLength="3" />
+    <Property Name="FAPID" Type="CHAR" MaxLength="10" />
+    <Property Name="FAEFTB" Type="int" />
+    <Property Name="FADER" Type="int" />
+    <Property Name="FAMSGA" Type="CHAR" />
+    <Property Name="FAEX" Type="CHAR" MaxLength="30" />
+    <Property Name="FAEXR" Type="CHAR" MaxLength="30" />
+    <Property Name="FAAN8" Type="decimal" />
+    <Property Name="FAACL6" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL7" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL8" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL9" Type="CHAR" MaxLength="3" />
+    <Property Name="FAACL0" Type="CHAR" MaxLength="3" />
+    <Property Name="FASFC" Type="decimal" />
+    <Property Name="FADADC" Type="CHAR" MaxLength="12" />
+    <Property Name="FADADO" Type="CHAR" MaxLength="6" />
+    <Property Name="FADADS" Type="CHAR" MaxLength="8" />
+    <Property Name="FAUNIT" Type="CHAR" MaxLength="8" />
+    <Property Name="FAKIT" Type="decimal" />
+    <Property Name="FAKITL" Type="CHAR" MaxLength="25" />
+    <Property Name="FAAFE" Type="CHAR" MaxLength="12" />
+    <Property Name="FAJBCD" Type="CHAR" MaxLength="6" />
+    <Property Name="FAJBST" Type="CHAR" MaxLength="4" />
+    <Property Name="FAUN" Type="CHAR" MaxLength="6" />
+    <Property Name="FASBLI" Type="CHAR" />
+    <Property Name="FAUPMJ" Type="int" />
+    <Property Name="FAJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="FAUPMT" Type="decimal" />
+    <Property Name="FAFA0" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA1" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA2" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA3" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA4" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA5" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA6" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA7" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA8" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA9" Type="CHAR" MaxLength="3" />
+    <Property Name="FAFA21" Type="CHAR" MaxLength="10" />
+    <Property Name="FAFA22" Type="CHAR" MaxLength="10" />
+    <Property Name="FAFA23" Type="CHAR" MaxLength="10" />
+    <Property Name="FAWOYN" Type="CHAR" />
+    <Property Name="FACRTL" Type="decimal" />
+    <Property Name="FAWRFL" Type="CHAR" />
+    <Property Name="FAWARJ" Type="int" />
+  </EntityType>
+  <EntityType Name="F1217">
+    <Key>
+      <PropertyRef Name="WRNUMB" />
+    </Key>
+    <Property Name="WRNUMB" Type="decimal" Nullable="false" />
+    <Property Name="WRCTR" Type="CHAR" MaxLength="3" />
+    <Property Name="WRCOOWN" Type="CHAR" />
+    <Property Name="WRMMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WRDOCO" Type="decimal" />
+    <Property Name="WRDCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WRKCOO" Type="CHAR" MaxLength="5" />
+    <Property Name="WRLNID" Type="decimal" />
+    <Property Name="WRORDJ" Type="int" />
+    <Property Name="WRSHPJ" Type="int" />
+    <Property Name="WRADDJ" Type="int" />
+    <Property Name="WRSHAN" Type="decimal" />
+    <Property Name="WRPA8" Type="decimal" />
+    <Property Name="WRSLSM" Type="decimal" />
+    <Property Name="WRANOB" Type="decimal" />
+    <Property Name="WRRORN" Type="CHAR" MaxLength="8" />
+    <Property Name="WRRCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WRSTRX" Type="int" />
+    <Property Name="WRVEND" Type="decimal" />
+    <Property Name="WROORN" Type="CHAR" MaxLength="8" />
+    <Property Name="WROCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WROKCO" Type="CHAR" MaxLength="5" />
+    <Property Name="WRSFXO" Type="CHAR" MaxLength="3" />
+    <Property Name="WROGNO" Type="decimal" />
+    <Property Name="WRPRODF" Type="CHAR" MaxLength="8" />
+    <Property Name="WRPRODM" Type="CHAR" MaxLength="8" />
+    <Property Name="WRPRODC" Type="CHAR" MaxLength="10" />
+    <Property Name="WRCMOD" Type="CHAR" MaxLength="25" />
+    <Property Name="WRSYEM" Type="CHAR" MaxLength="36" />
+    <Property Name="WRVINNU" Type="CHAR" MaxLength="30" />
+    <Property Name="WRREFN" Type="CHAR" MaxLength="30" />
+    <Property Name="WRZE01" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE02" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE03" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE04" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE05" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE06" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE07" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE08" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE09" Type="CHAR" MaxLength="10" />
+    <Property Name="WRZE10" Type="CHAR" MaxLength="10" />
+    <Property Name="WRURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="WRURDT" Type="int" />
+    <Property Name="WRURAT" Type="decimal" />
+    <Property Name="WRURAB" Type="decimal" />
+    <Property Name="WRURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="WRCRTU" Type="CHAR" MaxLength="10" />
+    <Property Name="WRUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WRPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WRJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WRUPMJ" Type="int" />
+    <Property Name="WRUPMT" Type="decimal" />
+    <Property Name="WRLOTN" Type="CHAR" MaxLength="30" />
+    <Property Name="WRLOCN" Type="CHAR" MaxLength="20" />
+    <Property Name="WRWOD" Type="decimal" />
+    <Property Name="WRBREV" Type="CHAR" MaxLength="3" />
+    <Property Name="WREFFF" Type="int" />
+    <Property Name="WRAN8DL" Type="decimal" />
+    <Property Name="WRAN8AS" Type="decimal" />
+    <Property Name="WRTERMYN" Type="CHAR" />
+    <Property Name="WRSATYP" Type="CHAR" MaxLength="3" />
+    <Property Name="WRINSDTE" Type="int" />
+    <Property Name="WRMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WRMRRYN" Type="CHAR" />
+    <Property Name="WRREGSTS" Type="CHAR" MaxLength="3" />
+    <Property Name="WRVMRS31" Type="CHAR" MaxLength="2" />
+    <Property Name="WRVMRS32" Type="CHAR" MaxLength="8" />
+    <Property Name="WRVMRS34" Type="CHAR" MaxLength="10" />
+    <Property Name="WRAN8DR" Type="decimal" />
+    <Property Name="WREQPN" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F3111">
+    <Key>
+      <PropertyRef Name="WMUKID" />
+    </Key>
+    <Property Name="WMDOCO" Type="decimal" />
+    <Property Name="WMDCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WMSFXO" Type="CHAR" MaxLength="3" />
+    <Property Name="WMTBM" Type="CHAR" MaxLength="3" />
+    <Property Name="WMFORQ" Type="CHAR" />
+    <Property Name="WMITC" Type="CHAR" />
+    <Property Name="WMCOBY" Type="CHAR" />
+    <Property Name="WMCOTY" Type="CHAR" />
+    <Property Name="WMCPNT" Type="decimal" />
+    <Property Name="WMFRMP" Type="decimal" />
+    <Property Name="WMTHRP" Type="decimal" />
+    <Property Name="WMFRGD" Type="CHAR" MaxLength="3" />
+    <Property Name="WMTHGD" Type="CHAR" MaxLength="3" />
+    <Property Name="WMRKCO" Type="CHAR" MaxLength="5" />
+    <Property Name="WMRORN" Type="CHAR" MaxLength="8" />
+    <Property Name="WMRCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WMRLLN" Type="decimal" />
+    <Property Name="WMOPSQ" Type="decimal" />
+    <Property Name="WMBSEQ" Type="decimal" />
+    <Property Name="WMRSCP" Type="decimal" />
+    <Property Name="WMSCRP" Type="decimal" />
+    <Property Name="WMREWP" Type="decimal" />
+    <Property Name="WMASIP" Type="decimal" />
+    <Property Name="WMCPYP" Type="decimal" />
+    <Property Name="WMSTPP" Type="decimal" />
+    <Property Name="WMLOVD" Type="decimal" />
+    <Property Name="WMCPIT" Type="decimal" />
+    <Property Name="WMCPIL" Type="CHAR" MaxLength="25" />
+    <Property Name="WMCPIA" Type="CHAR" MaxLength="25" />
+    <Property Name="WMCMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WMDSC1" Type="CHAR" MaxLength="30" />
+    <Property Name="WMDSC2" Type="CHAR" MaxLength="30" />
+    <Property Name="WMLOCN" Type="CHAR" MaxLength="20" />
+    <Property Name="WMLOTN" Type="CHAR" MaxLength="30" />
+    <Property Name="WMAN8" Type="decimal" />
+    <Property Name="WMLNTY" Type="CHAR" MaxLength="2" />
+    <Property Name="WMSERN" Type="CHAR" MaxLength="30" />
+    <Property Name="WMTRDJ" Type="int" />
+    <Property Name="WMDRQJ" Type="int" />
+    <Property Name="WMUORG" Type="decimal" />
+    <Property Name="WMTRQT" Type="decimal" />
+    <Property Name="WMSOCN" Type="decimal" />
+    <Property Name="WMSOBK" Type="decimal" />
+    <Property Name="WMCTS1" Type="decimal" />
+    <Property Name="WMQNTA" Type="decimal" />
+    <Property Name="WMUM" Type="CHAR" MaxLength="2" />
+    <Property Name="WMEA" Type="decimal" />
+    <Property Name="WMRTG" Type="CHAR" />
+    <Property Name="WMMTST" Type="CHAR" MaxLength="2" />
+    <Property Name="WMDCT" Type="CHAR" MaxLength="2" />
+    <Property Name="WMSHNO" Type="CHAR" MaxLength="10" />
+    <Property Name="WMMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WMOMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WMOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="WMSUB" Type="CHAR" MaxLength="8" />
+    <Property Name="WMCMRV" Type="CHAR" MaxLength="3" />
+    <Property Name="WMSTRX" Type="int" />
+    <Property Name="WMPARS" Type="CHAR" MaxLength="8" />
+    <Property Name="WMCOMM" Type="CHAR" />
+    <Property Name="WMURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="WMURDT" Type="int" />
+    <Property Name="WMURAT" Type="decimal" />
+    <Property Name="WMURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="WMURAB" Type="decimal" />
+    <Property Name="WMUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WMPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WMJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WMUPMJ" Type="int" />
+    <Property Name="WMTDAY" Type="decimal" />
+    <Property Name="WMUKID" Type="decimal" Nullable="false" />
+    <Property Name="WMVEND" Type="decimal" />
+    <Property Name="WMPOC" Type="CHAR" />
+    <Property Name="WMCTS4" Type="decimal" />
+    <Property Name="WMCTS7" Type="decimal" />
+    <Property Name="WMCTS8" Type="decimal" />
+    <Property Name="WMGLD" Type="int" />
+    <Property Name="WMSBFL" Type="CHAR" />
+    <Property Name="WMAING" Type="CHAR" />
+    <Property Name="WMSSTQ" Type="decimal" />
+    <Property Name="WMUOM2" Type="CHAR" MaxLength="2" />
+    <Property Name="WMAPSC" Type="CHAR" />
+    <Property Name="WMPSN" Type="decimal" />
+    <Property Name="WMDLEJ" Type="int" />
+    <Property Name="WMCOST" Type="CHAR" MaxLength="3" />
+    <Property Name="WMCHPP" Type="CHAR" />
+    <Property Name="WMCPNB" Type="decimal" />
+    <Property Name="WMBSEQAN" Type="CHAR" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="F3112">
+    <Key>
+      <PropertyRef Name="WLDOCO" />
+      <PropertyRef Name="WLMCU" />
+      <PropertyRef Name="WLOPSQ" />
+      <PropertyRef Name="WLOPSC" />
+    </Key>
+    <Property Name="WLDOCO" Type="decimal" Nullable="false" />
+    <Property Name="WLDCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WLSFXO" Type="CHAR" MaxLength="3" />
+    <Property Name="WLTRT" Type="CHAR" MaxLength="3" />
+    <Property Name="WLKIT" Type="decimal" />
+    <Property Name="WLKITL" Type="CHAR" MaxLength="25" />
+    <Property Name="WLKITA" Type="CHAR" MaxLength="25" />
+    <Property Name="WLMMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WLLINE" Type="CHAR" MaxLength="12" />
+    <Property Name="WLMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="WLALD" Type="CHAR" MaxLength="4" />
+    <Property Name="WLDSC1" Type="CHAR" MaxLength="30" />
+    <Property Name="WLOPSQ" Type="decimal" Nullable="false" />
+    <Property Name="WLOPSC" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="WLOPST" Type="CHAR" MaxLength="2" />
+    <Property Name="WLINPE" Type="CHAR" MaxLength="2" />
+    <Property Name="WLTIMB" Type="CHAR" />
+    <Property Name="WLLAMC" Type="CHAR" />
+    <Property Name="WLBFPF" Type="CHAR" />
+    <Property Name="WLPPRF" Type="CHAR" />
+    <Property Name="WLJBCD" Type="CHAR" MaxLength="6" />
+    <Property Name="WLAN8" Type="decimal" />
+    <Property Name="WLCRTR" Type="decimal" />
+    <Property Name="WLSLTR" Type="decimal" />
+    <Property Name="WLTRDJ" Type="int" />
+    <Property Name="WLDRQJ" Type="int" />
+    <Property Name="WLSTRT" Type="int" />
+    <Property Name="WLSTRX" Type="int" />
+    <Property Name="WLRSFT" Type="CHAR" />
+    <Property Name="WLSSFT" Type="CHAR" />
+    <Property Name="WLCSFT" Type="CHAR" />
+    <Property Name="WLLTPC" Type="decimal" />
+    <Property Name="WLPOVR" Type="decimal" />
+    <Property Name="WLOPYP" Type="decimal" />
+    <Property Name="WLCPYP" Type="decimal" />
+    <Property Name="WLNXOP" Type="decimal" />
+    <Property Name="WLSETC" Type="decimal" />
+    <Property Name="WLMOVD" Type="decimal" />
+    <Property Name="WLQUED" Type="decimal" />
+    <Property Name="WLRUNM" Type="decimal" />
+    <Property Name="WLRUNL" Type="decimal" />
+    <Property Name="WLSETL" Type="decimal" />
+    <Property Name="WLMACA" Type="decimal" />
+    <Property Name="WLLABA" Type="decimal" />
+    <Property Name="WLSETA" Type="decimal" />
+    <Property Name="WLOPSR" Type="decimal" />
+    <Property Name="WLUORG" Type="decimal" />
+    <Property Name="WLSOCN" Type="decimal" />
+    <Property Name="WLSOQS" Type="decimal" />
+    <Property Name="WLQMTO" Type="decimal" />
+    <Property Name="WLPWRT" Type="decimal" />
+    <Property Name="WLUOM" Type="CHAR" MaxLength="2" />
+    <Property Name="WLCTS2" Type="decimal" />
+    <Property Name="WLCTS3" Type="decimal" />
+    <Property Name="WLCTS4" Type="decimal" />
+    <Property Name="WLCTS5" Type="decimal" />
+    <Property Name="WLCTS6" Type="decimal" />
+    <Property Name="WLAPID" Type="CHAR" MaxLength="12" />
+    <Property Name="WLSHNO" Type="CHAR" MaxLength="10" />
+    <Property Name="WLOMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WLOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="WLSUB" Type="CHAR" MaxLength="8" />
+    <Property Name="WLVEND" Type="decimal" />
+    <Property Name="WLRKCO" Type="CHAR" MaxLength="5" />
+    <Property Name="WLRORN" Type="CHAR" MaxLength="8" />
+    <Property Name="WLRCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WLRLLN" Type="decimal" />
+    <Property Name="WLDCT" Type="CHAR" MaxLength="2" />
+    <Property Name="WLURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="WLURDT" Type="int" />
+    <Property Name="WLURAT" Type="decimal" />
+    <Property Name="WLURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="WLURAB" Type="decimal" />
+    <Property Name="WLUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WLPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WLJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WLUPMJ" Type="int" />
+    <Property Name="WLTDAY" Type="decimal" />
+    <Property Name="WLLOCN" Type="CHAR" MaxLength="20" />
+    <Property Name="WLRUC" Type="decimal" />
+    <Property Name="WLCAPU" Type="CHAR" MaxLength="2" />
+    <Property Name="WLWMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WLCMHR" Type="decimal" />
+    <Property Name="WLCLHR" Type="decimal" />
+    <Property Name="WLCSHR" Type="decimal" />
+    <Property Name="WLCOST" Type="CHAR" MaxLength="3" />
+    <Property Name="WLACTB" Type="CHAR" MaxLength="10" />
+    <Property Name="WLNUMB" Type="decimal" />
+    <Property Name="WLCTS7" Type="decimal" />
+    <Property Name="WLCTS8" Type="decimal" />
+    <Property Name="WLCTS9" Type="decimal" />
+    <Property Name="WLLABP" Type="decimal" />
+    <Property Name="WLMACR" Type="decimal" />
+    <Property Name="WLSETR" Type="decimal" />
+    <Property Name="WLAPSC" Type="CHAR" />
+    <Property Name="WLSEST" Type="decimal" />
+    <Property Name="WLSEET" Type="decimal" />
+    <Property Name="WLTMCO" Type="decimal" />
+    <Property Name="WLD2J" Type="int" />
+    <Property Name="WLSTTI" Type="decimal" />
+    <Property Name="WLCMPE" Type="CHAR" MaxLength="3" />
+    <Property Name="WLCMPC" Type="CHAR" MaxLength="10" />
+    <Property Name="WLCPLVLFR" Type="decimal" />
+    <Property Name="WLCPLVLTO" Type="decimal" />
+    <Property Name="WLCMRQ" Type="CHAR" />
+    <Property Name="WLANSA" Type="decimal" />
+    <Property Name="WLANPA" Type="decimal" />
+    <Property Name="WLANP" Type="decimal" />
+    <Property Name="WLWSCHF" Type="CHAR" />
+    <Property Name="WLTRAF" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="F31171">
+    <Key>
+      <PropertyRef Name="WSUKID" />
+    </Key>
+    <Property Name="WSUKID" Type="decimal" Nullable="false" />
+    <Property Name="WSESUNC" Type="decimal" />
+    <Property Name="WSESUNB" Type="decimal" />
+    <Property Name="WSESUNP" Type="decimal" />
+    <Property Name="WSEPAAP" Type="decimal" />
+    <Property Name="WSAMTO" Type="decimal" />
+    <Property Name="WSEBILL" Type="decimal" />
+    <Property Name="WSACUNC" Type="decimal" />
+    <Property Name="WSACUNB" Type="decimal" />
+    <Property Name="WSACUNP" Type="decimal" />
+    <Property Name="WSAMTA" Type="decimal" />
+    <Property Name="WSTOTB" Type="decimal" />
+    <Property Name="WSPAAP" Type="decimal" />
+    <Property Name="WSCLAMT" Type="decimal" />
+    <Property Name="WSVEND" Type="decimal" />
+    <Property Name="WSPAYAB" Type="CHAR" />
+    <Property Name="WSBILL" Type="CHAR" />
+    <Property Name="WSDTPAY" Type="int" />
+    <Property Name="WSDTBIL" Type="int" />
+    <Property Name="WSCOST" Type="CHAR" MaxLength="3" />
+    <Property Name="WSGLCNC" Type="CHAR" MaxLength="4" />
+    <Property Name="WSGLCCV" Type="CHAR" MaxLength="4" />
+    <Property Name="WSENTCK" Type="CHAR" MaxLength="3" />
+    <Property Name="WSVR02" Type="CHAR" MaxLength="25" />
+    <Property Name="WSUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WSPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WSJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WSUPMJ" Type="int" />
+    <Property Name="WSTDAY" Type="decimal" />
+    <Property Name="WSASN4" Type="CHAR" MaxLength="8" />
+    <Property Name="WSASN2" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPCOVR" Type="decimal" />
+    <Property Name="WSMTHPR" Type="CHAR" />
+    <Property Name="WSSAID" Type="decimal" />
+    <Property Name="WSPRODF" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPRODM" Type="CHAR" MaxLength="8" />
+    <Property Name="WSCOVGR" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPMTHP" Type="CHAR" />
+    <Property Name="WSPYPRT" Type="CHAR" />
+    <Property Name="WSCRDC" Type="CHAR" MaxLength="3" />
+    <Property Name="WSBCRCD" Type="CHAR" MaxLength="3" />
+    <Property Name="WSBCRR" Type="decimal" />
+    <Property Name="WSBCRRM" Type="CHAR" />
+    <Property Name="WSFESUNB" Type="decimal" />
+    <Property Name="WSFEBILL" Type="decimal" />
+    <Property Name="WSFACUNB" Type="decimal" />
+    <Property Name="WSFTOTB" Type="decimal" />
+    <Property Name="WSPCRCD" Type="CHAR" MaxLength="3" />
+    <Property Name="WSPCRR" Type="decimal" />
+    <Property Name="WSPCRRM" Type="CHAR" />
+    <Property Name="WSFESUNP" Type="decimal" />
+    <Property Name="WSFEPAAP" Type="decimal" />
+    <Property Name="WSFACUNP" Type="decimal" />
+    <Property Name="WSFPAAP" Type="decimal" />
+    <Property Name="WSFAILCD" Type="CHAR" MaxLength="8" />
+    <Property Name="WSRETPOL" Type="CHAR" />
+    <Property Name="WSDTSUB" Type="int" />
+    <Property Name="WSTMSUB" Type="decimal" />
+    <Property Name="WSCSLPRT" Type="decimal" />
+    <Property Name="WSVMRS33" Type="CHAR" MaxLength="10" />
+    <Property Name="WSSRVEND" Type="decimal" />
+    <Property Name="WSRLOT" Type="CHAR" MaxLength="30" />
+    <Property Name="WSMCUCSL" Type="CHAR" MaxLength="12" />
+    <Property Name="WSTAX1" Type="CHAR" />
+    <Property Name="WSUKIDP" Type="decimal" />
+    <Property Name="WSVMRS31" Type="CHAR" MaxLength="2" />
+    <Property Name="WSVMRS32" Type="CHAR" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="F31172">
+    <Key>
+      <PropertyRef Name="WSDOCO" />
+      <PropertyRef Name="WSOPSQ" />
+      <PropertyRef Name="WSOPSC" />
+      <PropertyRef Name="WSMCU" />
+    </Key>
+    <Property Name="WSDOCO" Type="decimal" Nullable="false" />
+    <Property Name="WSOPSQ" Type="decimal" Nullable="false" />
+    <Property Name="WSOPSC" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="WSMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="WSPAYAB" Type="CHAR" />
+    <Property Name="WSBILL" Type="CHAR" />
+    <Property Name="WSACRTB" Type="decimal" />
+    <Property Name="WSACRTP" Type="decimal" />
+    <Property Name="WSEBILL" Type="decimal" />
+    <Property Name="WSAMTA" Type="decimal" />
+    <Property Name="WSAMTO" Type="decimal" />
+    <Property Name="WSESRTB" Type="decimal" />
+    <Property Name="WSESRTP" Type="decimal" />
+    <Property Name="WSEPAAP" Type="decimal" />
+    <Property Name="WSTOTB" Type="decimal" />
+    <Property Name="WSCLAMT" Type="decimal" />
+    <Property Name="WSDTBIL" Type="int" />
+    <Property Name="WSDTPAY" Type="int" />
+    <Property Name="WSPAAP" Type="decimal" />
+    <Property Name="WSLBR1" Type="decimal" />
+    <Property Name="WSD2J" Type="int" />
+    <Property Name="WSSTTI" Type="decimal" />
+    <Property Name="WSEPETM" Type="decimal" />
+    <Property Name="WSCOST" Type="CHAR" MaxLength="3" />
+    <Property Name="WSENTCK" Type="CHAR" MaxLength="3" />
+    <Property Name="WSGLCNC" Type="CHAR" MaxLength="4" />
+    <Property Name="WSGLCCV" Type="CHAR" MaxLength="4" />
+    <Property Name="WSUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WSPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WSJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WSUPMJ" Type="int" />
+    <Property Name="WSTDAY" Type="decimal" />
+    <Property Name="WSASN4" Type="CHAR" MaxLength="8" />
+    <Property Name="WSASN2" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPCOVR" Type="decimal" />
+    <Property Name="WSMTHPR" Type="CHAR" />
+    <Property Name="WSSAID" Type="decimal" />
+    <Property Name="WSPRODF" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPRODM" Type="CHAR" MaxLength="8" />
+    <Property Name="WSCOVGR" Type="CHAR" MaxLength="8" />
+    <Property Name="WSPMTHP" Type="CHAR" />
+    <Property Name="WSPYPRT" Type="CHAR" />
+    <Property Name="WSCRDC" Type="CHAR" MaxLength="3" />
+    <Property Name="WSBCRCD" Type="CHAR" MaxLength="3" />
+    <Property Name="WSBCRR" Type="decimal" />
+    <Property Name="WSBCRRM" Type="CHAR" />
+    <Property Name="WSFESUNB" Type="decimal" />
+    <Property Name="WSFEBILL" Type="decimal" />
+    <Property Name="WSFACUNB" Type="decimal" />
+    <Property Name="WSFTOTB" Type="decimal" />
+    <Property Name="WSPCRCD" Type="CHAR" MaxLength="3" />
+    <Property Name="WSPCRR" Type="decimal" />
+    <Property Name="WSPCRRM" Type="CHAR" />
+    <Property Name="WSFESUNP" Type="decimal" />
+    <Property Name="WSFEPAAP" Type="decimal" />
+    <Property Name="WSFACUNP" Type="decimal" />
+    <Property Name="WSFPAAP" Type="decimal" />
+    <Property Name="WSDTSUB" Type="int" />
+    <Property Name="WSTMSUB" Type="decimal" />
+    <Property Name="WSCSLPRT" Type="decimal" />
+    <Property Name="WSINVREQ" Type="CHAR" />
+    <Property Name="WSINVREC" Type="CHAR" />
+    <Property Name="WSVMRS32" Type="CHAR" MaxLength="8" />
+    <Property Name="WSMCUCSL" Type="CHAR" MaxLength="12" />
+    <Property Name="WSRLOT" Type="CHAR" MaxLength="30" />
+    <Property Name="WSSRVEND" Type="decimal" />
+    <Property Name="WSUKIDP" Type="decimal" />
+    <Property Name="WSFAILCD" Type="CHAR" MaxLength="8" />
+    <Property Name="WSVMRS31" Type="CHAR" MaxLength="2" />
+    <Property Name="WSVMRS33" Type="CHAR" MaxLength="10" />
+    <Property Name="WSLSRCE" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="F4101">
+    <Key>
+      <PropertyRef Name="IMITM" />
+    </Key>
+    <Property Name="IMITM" Type="decimal" Nullable="false" />
+    <Property Name="IMLITM" Type="CHAR" MaxLength="25" />
+    <Property Name="IMAITM" Type="CHAR" MaxLength="25" />
+    <Property Name="IMDSC1" Type="CHAR" MaxLength="30" />
+    <Property Name="IMDSC2" Type="CHAR" MaxLength="30" />
+    <Property Name="IMSRTX" Type="CHAR" MaxLength="30" />
+    <Property Name="IMALN" Type="CHAR" MaxLength="30" />
+    <Property Name="IMSRP1" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSRP2" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSRP3" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSRP4" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSRP5" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSRP6" Type="CHAR" MaxLength="6" />
+    <Property Name="IMSRP7" Type="CHAR" MaxLength="6" />
+    <Property Name="IMSRP8" Type="CHAR" MaxLength="6" />
+    <Property Name="IMSRP9" Type="CHAR" MaxLength="6" />
+    <Property Name="IMSRP0" Type="CHAR" MaxLength="6" />
+    <Property Name="IMPRP1" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRP2" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRP3" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRP4" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRP5" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRP6" Type="CHAR" MaxLength="6" />
+    <Property Name="IMPRP7" Type="CHAR" MaxLength="6" />
+    <Property Name="IMPRP8" Type="CHAR" MaxLength="6" />
+    <Property Name="IMPRP9" Type="CHAR" MaxLength="6" />
+    <Property Name="IMPRP0" Type="CHAR" MaxLength="6" />
+    <Property Name="IMCDCD" Type="CHAR" MaxLength="15" />
+    <Property Name="IMPDGR" Type="CHAR" MaxLength="3" />
+    <Property Name="IMDSGP" Type="CHAR" MaxLength="3" />
+    <Property Name="IMPRGR" Type="CHAR" MaxLength="8" />
+    <Property Name="IMRPRC" Type="CHAR" MaxLength="8" />
+    <Property Name="IMORPR" Type="CHAR" MaxLength="8" />
+    <Property Name="IMBUYR" Type="decimal" />
+    <Property Name="IMDRAW" Type="CHAR" MaxLength="20" />
+    <Property Name="IMRVNO" Type="CHAR" MaxLength="2" />
+    <Property Name="IMDSZE" Type="CHAR" />
+    <Property Name="IMVCUD" Type="decimal" />
+    <Property Name="IMCARS" Type="decimal" />
+    <Property Name="IMCARP" Type="decimal" />
+    <Property Name="IMSHCN" Type="CHAR" MaxLength="3" />
+    <Property Name="IMSHCM" Type="CHAR" MaxLength="3" />
+    <Property Name="IMUOM1" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM2" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM3" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM4" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM6" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM8" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUOM9" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUWUM" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUVM1" Type="CHAR" MaxLength="2" />
+    <Property Name="IMSUTM" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMVW" Type="CHAR" />
+    <Property Name="IMCYCL" Type="CHAR" MaxLength="3" />
+    <Property Name="IMGLPT" Type="CHAR" MaxLength="4" />
+    <Property Name="IMPLEV" Type="CHAR" />
+    <Property Name="IMPPLV" Type="CHAR" />
+    <Property Name="IMCLEV" Type="CHAR" />
+    <Property Name="IMPRPO" Type="CHAR" />
+    <Property Name="IMCKAV" Type="CHAR" />
+    <Property Name="IMBPFG" Type="CHAR" />
+    <Property Name="IMSRCE" Type="CHAR" />
+    <Property Name="IMOT1Y" Type="CHAR" />
+    <Property Name="IMOT2Y" Type="CHAR" />
+    <Property Name="IMSTDP" Type="decimal" />
+    <Property Name="IMFRMP" Type="decimal" />
+    <Property Name="IMTHRP" Type="decimal" />
+    <Property Name="IMSTDG" Type="CHAR" MaxLength="3" />
+    <Property Name="IMFRGD" Type="CHAR" MaxLength="3" />
+    <Property Name="IMTHGD" Type="CHAR" MaxLength="3" />
+    <Property Name="IMCOTY" Type="CHAR" />
+    <Property Name="IMSTKT" Type="CHAR" />
+    <Property Name="IMLNTY" Type="CHAR" MaxLength="2" />
+    <Property Name="IMCONT" Type="CHAR" />
+    <Property Name="IMBACK" Type="CHAR" />
+    <Property Name="IMIFLA" Type="CHAR" MaxLength="2" />
+    <Property Name="IMTFLA" Type="CHAR" MaxLength="2" />
+    <Property Name="IMINMG" Type="CHAR" MaxLength="10" />
+    <Property Name="IMABCS" Type="CHAR" />
+    <Property Name="IMABCM" Type="CHAR" />
+    <Property Name="IMABCI" Type="CHAR" />
+    <Property Name="IMOVR" Type="CHAR" />
+    <Property Name="IMWARR" Type="CHAR" MaxLength="8" />
+    <Property Name="IMCMCG" Type="CHAR" MaxLength="8" />
+    <Property Name="IMSRNR" Type="CHAR" />
+    <Property Name="IMPMTH" Type="CHAR" />
+    <Property Name="IMFIFO" Type="CHAR" />
+    <Property Name="IMLOTS" Type="CHAR" />
+    <Property Name="IMSLD" Type="decimal" />
+    <Property Name="IMANPL" Type="decimal" />
+    <Property Name="IMMPST" Type="CHAR" />
+    <Property Name="IMPCTM" Type="decimal" />
+    <Property Name="IMMMPC" Type="decimal" />
+    <Property Name="IMPTSC" Type="CHAR" MaxLength="2" />
+    <Property Name="IMSNS" Type="CHAR" />
+    <Property Name="IMLTLV" Type="decimal" />
+    <Property Name="IMLTMF" Type="decimal" />
+    <Property Name="IMLTCM" Type="decimal" />
+    <Property Name="IMOPC" Type="CHAR" />
+    <Property Name="IMOPV" Type="decimal" />
+    <Property Name="IMACQ" Type="decimal" />
+    <Property Name="IMMLQ" Type="decimal" />
+    <Property Name="IMLTPU" Type="decimal" />
+    <Property Name="IMMPSP" Type="CHAR" />
+    <Property Name="IMMRPP" Type="CHAR" />
+    <Property Name="IMITC" Type="CHAR" />
+    <Property Name="IMORDW" Type="CHAR" />
+    <Property Name="IMMTF1" Type="decimal" />
+    <Property Name="IMMTF2" Type="decimal" />
+    <Property Name="IMMTF3" Type="decimal" />
+    <Property Name="IMMTF4" Type="decimal" />
+    <Property Name="IMMTF5" Type="decimal" />
+    <Property Name="IMEXPD" Type="decimal" />
+    <Property Name="IMDEFD" Type="decimal" />
+    <Property Name="IMSFLT" Type="decimal" />
+    <Property Name="IMMAKE" Type="CHAR" />
+    <Property Name="IMCOBY" Type="CHAR" />
+    <Property Name="IMLLX" Type="decimal" />
+    <Property Name="IMCMGL" Type="CHAR" />
+    <Property Name="IMCOMH" Type="decimal" />
+    <Property Name="IMURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="IMURDT" Type="int" />
+    <Property Name="IMURAT" Type="decimal" />
+    <Property Name="IMURAB" Type="decimal" />
+    <Property Name="IMURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="IMUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="IMPID" Type="CHAR" MaxLength="10" />
+    <Property Name="IMJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="IMUPMJ" Type="int" />
+    <Property Name="IMTDAY" Type="decimal" />
+    <Property Name="IMUPCN" Type="CHAR" MaxLength="13" />
+    <Property Name="IMSCC0" Type="CHAR" MaxLength="14" />
+    <Property Name="IMUMUP" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMDF" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS0" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS1" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS2" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS3" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS4" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS5" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS6" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS7" Type="CHAR" MaxLength="2" />
+    <Property Name="IMUMS8" Type="CHAR" MaxLength="2" />
+    <Property Name="IMPOC" Type="CHAR" />
+    <Property Name="IMAVRT" Type="decimal" />
+    <Property Name="IMEQTY" Type="CHAR" MaxLength="5" />
+    <Property Name="IMWTRQ" Type="CHAR" />
+    <Property Name="IMTMPL" Type="CHAR" MaxLength="20" />
+    <Property Name="IMSEG1" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG2" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG3" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG4" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG5" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG6" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG7" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG8" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG9" Type="CHAR" MaxLength="10" />
+    <Property Name="IMSEG0" Type="CHAR" MaxLength="10" />
+    <Property Name="IMMIC" Type="CHAR" />
+    <Property Name="IMAING" Type="CHAR" />
+    <Property Name="IMBBDD" Type="decimal" />
+    <Property Name="IMCMDM" Type="CHAR" />
+    <Property Name="IMLECM" Type="CHAR" />
+    <Property Name="IMLEDD" Type="decimal" />
+    <Property Name="IMPEFD" Type="decimal" />
+    <Property Name="IMSBDD" Type="decimal" />
+    <Property Name="IMU1DD" Type="decimal" />
+    <Property Name="IMU2DD" Type="decimal" />
+    <Property Name="IMU3DD" Type="decimal" />
+    <Property Name="IMU4DD" Type="decimal" />
+    <Property Name="IMU5DD" Type="decimal" />
+    <Property Name="IMDLTL" Type="decimal" />
+    <Property Name="IMDPPO" Type="CHAR" />
+    <Property Name="IMDUAL" Type="CHAR" />
+    <Property Name="IMXDCK" Type="CHAR" />
+    <Property Name="IMLAF" Type="CHAR" />
+    <Property Name="IMLTFM" Type="CHAR" />
+    <Property Name="IMRWLA" Type="CHAR" />
+    <Property Name="IMLNPA" Type="CHAR" />
+    <Property Name="IMLOTC" Type="CHAR" MaxLength="3" />
+    <Property Name="IMAPSC" Type="CHAR" />
+    <Property Name="IMAUOM" Type="CHAR" MaxLength="9" />
+    <Property Name="IMCONB" Type="CHAR" />
+    <Property Name="IMGCMP" Type="CHAR" />
+    <Property Name="IMPRI1" Type="decimal" />
+    <Property Name="IMPRI2" Type="decimal" />
+    <Property Name="IMASHL" Type="CHAR" />
+    <Property Name="IMVMINV" Type="CHAR" />
+    <Property Name="IMCMETH" Type="CHAR" />
+    <Property Name="IMEXPI" Type="CHAR" />
+    <Property Name="IMOPTH" Type="decimal" />
+    <Property Name="IMCUTH" Type="decimal" />
+    <Property Name="IMUMTH" Type="CHAR" MaxLength="3" />
+    <Property Name="IMLMFG" Type="CHAR" />
+    <Property Name="IMLINE" Type="CHAR" MaxLength="12" />
+    <Property Name="IMDFTPCT" Type="decimal" />
+    <Property Name="IMKBIT" Type="CHAR" />
+    <Property Name="IMDFENDITM" Type="CHAR" />
+    <Property Name="IMKANEXLL" Type="CHAR" />
+    <Property Name="IMSCPSELL" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="F4102">
+    <Key>
+      <PropertyRef Name="IBITM" />
+      <PropertyRef Name="IBMCU" />
+    </Key>
+    <Property Name="IBITM" Type="decimal" Nullable="false" />
+    <Property Name="IBLITM" Type="CHAR" MaxLength="25" />
+    <Property Name="IBAITM" Type="CHAR" MaxLength="25" />
+    <Property Name="IBMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="IBSRP1" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSRP2" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSRP3" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSRP4" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSRP5" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSRP6" Type="CHAR" MaxLength="6" />
+    <Property Name="IBSRP7" Type="CHAR" MaxLength="6" />
+    <Property Name="IBSRP8" Type="CHAR" MaxLength="6" />
+    <Property Name="IBSRP9" Type="CHAR" MaxLength="6" />
+    <Property Name="IBSRP0" Type="CHAR" MaxLength="6" />
+    <Property Name="IBPRP1" Type="CHAR" MaxLength="3" />
+    <Property Name="IBPRP2" Type="CHAR" MaxLength="3" />
+    <Property Name="IBPRP3" Type="CHAR" MaxLength="3" />
+    <Property Name="IBPRP4" Type="CHAR" MaxLength="3" />
+    <Property Name="IBPRP5" Type="CHAR" MaxLength="3" />
+    <Property Name="IBPRP6" Type="CHAR" MaxLength="6" />
+    <Property Name="IBPRP7" Type="CHAR" MaxLength="6" />
+    <Property Name="IBPRP8" Type="CHAR" MaxLength="6" />
+    <Property Name="IBPRP9" Type="CHAR" MaxLength="6" />
+    <Property Name="IBPRP0" Type="CHAR" MaxLength="6" />
+    <Property Name="IBCDCD" Type="CHAR" MaxLength="15" />
+    <Property Name="IBPDGR" Type="CHAR" MaxLength="3" />
+    <Property Name="IBDSGP" Type="CHAR" MaxLength="3" />
+    <Property Name="IBVEND" Type="decimal" />
+    <Property Name="IBANPL" Type="decimal" />
+    <Property Name="IBBUYR" Type="decimal" />
+    <Property Name="IBGLPT" Type="CHAR" MaxLength="4" />
+    <Property Name="IBORIG" Type="CHAR" MaxLength="3" />
+    <Property Name="IBROPI" Type="decimal" />
+    <Property Name="IBROQI" Type="decimal" />
+    <Property Name="IBRQMX" Type="decimal" />
+    <Property Name="IBRQMN" Type="decimal" />
+    <Property Name="IBWOMO" Type="decimal" />
+    <Property Name="IBSERV" Type="decimal" />
+    <Property Name="IBSAFE" Type="decimal" />
+    <Property Name="IBSLD" Type="decimal" />
+    <Property Name="IBCKAV" Type="CHAR" />
+    <Property Name="IBSRCE" Type="CHAR" />
+    <Property Name="IBLOTS" Type="CHAR" />
+    <Property Name="IBOT1Y" Type="CHAR" />
+    <Property Name="IBOT2Y" Type="CHAR" />
+    <Property Name="IBSTDP" Type="decimal" />
+    <Property Name="IBFRMP" Type="decimal" />
+    <Property Name="IBTHRP" Type="decimal" />
+    <Property Name="IBSTDG" Type="CHAR" MaxLength="3" />
+    <Property Name="IBFRGD" Type="CHAR" MaxLength="3" />
+    <Property Name="IBTHGD" Type="CHAR" MaxLength="3" />
+    <Property Name="IBCOTY" Type="CHAR" />
+    <Property Name="IBMMPC" Type="decimal" />
+    <Property Name="IBPRGR" Type="CHAR" MaxLength="8" />
+    <Property Name="IBRPRC" Type="CHAR" MaxLength="8" />
+    <Property Name="IBORPR" Type="CHAR" MaxLength="8" />
+    <Property Name="IBBACK" Type="CHAR" />
+    <Property Name="IBIFLA" Type="CHAR" MaxLength="2" />
+    <Property Name="IBABCS" Type="CHAR" />
+    <Property Name="IBABCM" Type="CHAR" />
+    <Property Name="IBABCI" Type="CHAR" />
+    <Property Name="IBOVR" Type="CHAR" />
+    <Property Name="IBSHCM" Type="CHAR" MaxLength="3" />
+    <Property Name="IBCARS" Type="decimal" />
+    <Property Name="IBCARP" Type="decimal" />
+    <Property Name="IBSHCN" Type="CHAR" MaxLength="3" />
+    <Property Name="IBSTKT" Type="CHAR" />
+    <Property Name="IBLNTY" Type="CHAR" MaxLength="2" />
+    <Property Name="IBFIFO" Type="CHAR" />
+    <Property Name="IBCYCL" Type="CHAR" MaxLength="3" />
+    <Property Name="IBINMG" Type="CHAR" MaxLength="10" />
+    <Property Name="IBWARR" Type="CHAR" MaxLength="8" />
+    <Property Name="IBSRNR" Type="CHAR" />
+    <Property Name="IBPCTM" Type="decimal" />
+    <Property Name="IBCMCG" Type="CHAR" MaxLength="8" />
+    <Property Name="IBFUF1" Type="CHAR" />
+    <Property Name="IBTX" Type="CHAR" />
+    <Property Name="IBTAX1" Type="CHAR" />
+    <Property Name="IBMPST" Type="CHAR" />
+    <Property Name="IBMRPD" Type="CHAR" />
+    <Property Name="IBMRPC" Type="CHAR" />
+    <Property Name="IBUPC" Type="decimal" />
+    <Property Name="IBSNS" Type="CHAR" />
+    <Property Name="IBMERL" Type="CHAR" MaxLength="3" />
+    <Property Name="IBLTLV" Type="decimal" />
+    <Property Name="IBLTMF" Type="decimal" />
+    <Property Name="IBLTCM" Type="decimal" />
+    <Property Name="IBOPC" Type="CHAR" />
+    <Property Name="IBOPV" Type="decimal" />
+    <Property Name="IBACQ" Type="decimal" />
+    <Property Name="IBMLQ" Type="decimal" />
+    <Property Name="IBLTPU" Type="decimal" />
+    <Property Name="IBMPSP" Type="CHAR" />
+    <Property Name="IBMRPP" Type="CHAR" />
+    <Property Name="IBITC" Type="CHAR" />
+    <Property Name="IBECO" Type="CHAR" MaxLength="12" />
+    <Property Name="IBECTY" Type="CHAR" MaxLength="2" />
+    <Property Name="IBECOD" Type="int" />
+    <Property Name="IBMTF1" Type="decimal" />
+    <Property Name="IBMTF2" Type="decimal" />
+    <Property Name="IBMTF3" Type="decimal" />
+    <Property Name="IBMTF4" Type="decimal" />
+    <Property Name="IBMTF5" Type="decimal" />
+    <Property Name="IBMOVD" Type="decimal" />
+    <Property Name="IBQUED" Type="decimal" />
+    <Property Name="IBSETL" Type="decimal" />
+    <Property Name="IBSRNK" Type="decimal" />
+    <Property Name="IBSRKF" Type="CHAR" />
+    <Property Name="IBTIMB" Type="CHAR" />
+    <Property Name="IBBQTY" Type="decimal" />
+    <Property Name="IBORDW" Type="CHAR" />
+    <Property Name="IBEXPD" Type="decimal" />
+    <Property Name="IBDEFD" Type="decimal" />
+    <Property Name="IBMULT" Type="decimal" />
+    <Property Name="IBSFLT" Type="decimal" />
+    <Property Name="IBMAKE" Type="CHAR" />
+    <Property Name="IBLFDJ" Type="int" />
+    <Property Name="IBLLX" Type="decimal" />
+    <Property Name="IBCMGL" Type="CHAR" />
+    <Property Name="IBURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="IBURDT" Type="int" />
+    <Property Name="IBURAT" Type="decimal" />
+    <Property Name="IBURAB" Type="decimal" />
+    <Property Name="IBURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="IBUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="IBPID" Type="CHAR" MaxLength="10" />
+    <Property Name="IBJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="IBUPMJ" Type="int" />
+    <Property Name="IBTDAY" Type="decimal" />
+    <Property Name="IBTFLA" Type="CHAR" MaxLength="2" />
+    <Property Name="IBCOMH" Type="decimal" />
+    <Property Name="IBAVRT" Type="decimal" />
+    <Property Name="IBPOC" Type="CHAR" />
+    <Property Name="IBAING" Type="CHAR" />
+    <Property Name="IBBBDD" Type="decimal" />
+    <Property Name="IBCMDM" Type="CHAR" />
+    <Property Name="IBLECM" Type="CHAR" />
+    <Property Name="IBLEDD" Type="decimal" />
+    <Property Name="IBMLOT" Type="CHAR" />
+    <Property Name="IBPEFD" Type="decimal" />
+    <Property Name="IBSBDD" Type="decimal" />
+    <Property Name="IBU1DD" Type="decimal" />
+    <Property Name="IBU2DD" Type="decimal" />
+    <Property Name="IBU3DD" Type="decimal" />
+    <Property Name="IBU4DD" Type="decimal" />
+    <Property Name="IBU5DD" Type="decimal" />
+    <Property Name="IBXDCK" Type="CHAR" />
+    <Property Name="IBLAF" Type="CHAR" />
+    <Property Name="IBLTFM" Type="CHAR" />
+    <Property Name="IBRWLA" Type="CHAR" />
+    <Property Name="IBLNPA" Type="CHAR" />
+    <Property Name="IBLOTC" Type="CHAR" MaxLength="3" />
+    <Property Name="IBAPSC" Type="CHAR" />
+    <Property Name="IBPRI1" Type="decimal" />
+    <Property Name="IBPRI2" Type="decimal" />
+    <Property Name="IBLTCV" Type="decimal" />
+    <Property Name="IBASHL" Type="CHAR" />
+    <Property Name="IBOPTH" Type="decimal" />
+    <Property Name="IBCUTH" Type="decimal" />
+    <Property Name="IBUMTH" Type="CHAR" MaxLength="3" />
+    <Property Name="IBLMFG" Type="CHAR" />
+    <Property Name="IBLINE" Type="CHAR" MaxLength="12" />
+    <Property Name="IBDFTPCT" Type="decimal" />
+    <Property Name="IBKBIT" Type="CHAR" />
+    <Property Name="IBDFENDITM" Type="CHAR" />
+    <Property Name="IBKANEXLL" Type="CHAR" />
+    <Property Name="IBSCPSELL" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="F4105">
+    <Key>
+      <PropertyRef Name="COITM" />
+      <PropertyRef Name="COMCU" />
+      <PropertyRef Name="COLOCN" />
+      <PropertyRef Name="COLOTN" />
+      <PropertyRef Name="COLEDG" />
+    </Key>
+    <Property Name="COITM" Type="decimal" Nullable="false" />
+    <Property Name="COLITM" Type="CHAR" MaxLength="25" />
+    <Property Name="COAITM" Type="CHAR" MaxLength="25" />
+    <Property Name="COMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="COLOCN" Type="CHAR" Nullable="false" MaxLength="20" />
+    <Property Name="COLOTN" Type="CHAR" Nullable="false" MaxLength="30" />
+    <Property Name="COLOTG" Type="CHAR" MaxLength="3" />
+    <Property Name="COLEDG" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="COUNCS" Type="decimal" />
+    <Property Name="COCSPO" Type="CHAR" />
+    <Property Name="COCSIN" Type="CHAR" />
+    <Property Name="COURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="COURDT" Type="int" />
+    <Property Name="COURAT" Type="decimal" />
+    <Property Name="COURAB" Type="decimal" />
+    <Property Name="COURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="COUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="COPID" Type="CHAR" MaxLength="10" />
+    <Property Name="COJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="COUPMJ" Type="int" />
+    <Property Name="COTDAY" Type="decimal" />
+    <Property Name="COCCFL" Type="CHAR" />
+    <Property Name="COCRCS" Type="decimal" />
+    <Property Name="COOSTC" Type="decimal" />
+    <Property Name="COSTOC" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F4801">
+    <Key>
+      <PropertyRef Name="WADOCO" />
+    </Key>
+    <Property Name="WADCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WADOCO" Type="decimal" Nullable="false" />
+    <Property Name="WASFXO" Type="CHAR" MaxLength="3" />
+    <Property Name="WARCTO" Type="CHAR" MaxLength="2" />
+    <Property Name="WARORN" Type="CHAR" MaxLength="8" />
+    <Property Name="WALNID" Type="decimal" />
+    <Property Name="WAPTWO" Type="decimal" />
+    <Property Name="WAPARS" Type="CHAR" MaxLength="8" />
+    <Property Name="WATYPS" Type="CHAR" />
+    <Property Name="WAPRTS" Type="CHAR" />
+    <Property Name="WADL01" Type="CHAR" MaxLength="30" />
+    <Property Name="WASTCM" Type="CHAR" MaxLength="30" />
+    <Property Name="WACO" Type="CHAR" MaxLength="5" />
+    <Property Name="WAMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WAMMCU" Type="CHAR" MaxLength="12" />
+    <Property Name="WALOCN" Type="CHAR" MaxLength="20" />
+    <Property Name="WAAISL" Type="CHAR" MaxLength="8" />
+    <Property Name="WABIN" Type="CHAR" MaxLength="8" />
+    <Property Name="WASRST" Type="CHAR" MaxLength="2" />
+    <Property Name="WADCG" Type="int" />
+    <Property Name="WASUB" Type="CHAR" MaxLength="8" />
+    <Property Name="WAAN8" Type="decimal" />
+    <Property Name="WAANO" Type="decimal" />
+    <Property Name="WAANSA" Type="decimal" />
+    <Property Name="WAANPA" Type="decimal" />
+    <Property Name="WAANP" Type="decimal" />
+    <Property Name="WADPL" Type="int" />
+    <Property Name="WAANT" Type="decimal" />
+    <Property Name="WANAN8" Type="decimal" />
+    <Property Name="WATRDJ" Type="int" />
+    <Property Name="WASTRT" Type="int" />
+    <Property Name="WADRQJ" Type="int" />
+    <Property Name="WASTRX" Type="int" />
+    <Property Name="WADAP" Type="int" />
+    <Property Name="WADAT" Type="int" />
+    <Property Name="WAPPDT" Type="int" />
+    <Property Name="WAWR01" Type="CHAR" MaxLength="4" />
+    <Property Name="WAWR02" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR03" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR04" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR05" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR06" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR07" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR08" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR09" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR10" Type="CHAR" MaxLength="3" />
+    <Property Name="WAVR01" Type="CHAR" MaxLength="25" />
+    <Property Name="WAVR02" Type="CHAR" MaxLength="25" />
+    <Property Name="WAAMTO" Type="decimal" />
+    <Property Name="WASETC" Type="decimal" />
+    <Property Name="WABRT" Type="decimal" />
+    <Property Name="WAPAYT" Type="CHAR" MaxLength="5" />
+    <Property Name="WAAMTC" Type="decimal" />
+    <Property Name="WAHRSO" Type="decimal" />
+    <Property Name="WAHRSC" Type="decimal" />
+    <Property Name="WAAMTA" Type="decimal" />
+    <Property Name="WAHRSA" Type="decimal" />
+    <Property Name="WAITM" Type="decimal" />
+    <Property Name="WAAITM" Type="CHAR" MaxLength="25" />
+    <Property Name="WALITM" Type="CHAR" MaxLength="25" />
+    <Property Name="WANUMB" Type="decimal" />
+    <Property Name="WAAPID" Type="CHAR" MaxLength="12" />
+    <Property Name="WAUORG" Type="decimal" />
+    <Property Name="WASOBK" Type="decimal" />
+    <Property Name="WASOCN" Type="decimal" />
+    <Property Name="WASOQS" Type="decimal" />
+    <Property Name="WAQTYT" Type="decimal" />
+    <Property Name="WAUOM" Type="CHAR" MaxLength="2" />
+    <Property Name="WASHNO" Type="CHAR" MaxLength="10" />
+    <Property Name="WAPBTM" Type="decimal" />
+    <Property Name="WATBM" Type="CHAR" MaxLength="3" />
+    <Property Name="WATRT" Type="CHAR" MaxLength="3" />
+    <Property Name="WASHTY" Type="CHAR" />
+    <Property Name="WAPEC" Type="CHAR" />
+    <Property Name="WAPPFG" Type="CHAR" />
+    <Property Name="WABM" Type="CHAR" />
+    <Property Name="WARTG" Type="CHAR" />
+    <Property Name="WASPRT" Type="CHAR" />
+    <Property Name="WAUNCD" Type="CHAR" />
+    <Property Name="WAINDC" Type="CHAR" />
+    <Property Name="WARESC" Type="decimal" />
+    <Property Name="WAMOH" Type="decimal" />
+    <Property Name="WATDT" Type="int" />
+    <Property Name="WAPOU" Type="decimal" />
+    <Property Name="WAPC" Type="decimal" />
+    <Property Name="WALTLV" Type="decimal" />
+    <Property Name="WALTCM" Type="decimal" />
+    <Property Name="WACTS1" Type="decimal" />
+    <Property Name="WALOTN" Type="CHAR" MaxLength="30" />
+    <Property Name="WALOTP" Type="decimal" />
+    <Property Name="WALOTG" Type="CHAR" MaxLength="3" />
+    <Property Name="WARAT1" Type="decimal" />
+    <Property Name="WARAT2" Type="decimal" />
+    <Property Name="WADCT" Type="CHAR" MaxLength="2" />
+    <Property Name="WASBLI" Type="CHAR" />
+    <Property Name="WARKCO" Type="CHAR" MaxLength="5" />
+    <Property Name="WABREV" Type="CHAR" MaxLength="3" />
+    <Property Name="WARREV" Type="CHAR" MaxLength="3" />
+    <Property Name="WADRWC" Type="CHAR" />
+    <Property Name="WARTCH" Type="CHAR" />
+    <Property Name="WAPNRQ" Type="CHAR" />
+    <Property Name="WAREAS" Type="CHAR" MaxLength="2" />
+    <Property Name="WAPHSE" Type="CHAR" MaxLength="3" />
+    <Property Name="WAXDSP" Type="CHAR" MaxLength="3" />
+    <Property Name="WABOMC" Type="CHAR" />
+    <Property Name="WAURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="WAURDT" Type="int" />
+    <Property Name="WAURAT" Type="decimal" />
+    <Property Name="WAURAB" Type="decimal" />
+    <Property Name="WAURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="WAUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="WAPID" Type="CHAR" MaxLength="10" />
+    <Property Name="WAJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="WAUPMJ" Type="int" />
+    <Property Name="WATDAY" Type="decimal" />
+    <Property Name="WAAAID" Type="decimal" />
+    <Property Name="WANTST" Type="CHAR" MaxLength="2" />
+    <Property Name="WAXRTO" Type="decimal" />
+    <Property Name="WAESDN" Type="decimal" />
+    <Property Name="WAACDN" Type="decimal" />
+    <Property Name="WASAID" Type="decimal" />
+    <Property Name="WAMPOS" Type="decimal" />
+    <Property Name="WAAPRT" Type="CHAR" MaxLength="3" />
+    <Property Name="WAAMLC" Type="decimal" />
+    <Property Name="WAAMMC" Type="decimal" />
+    <Property Name="WAAMOT" Type="decimal" />
+    <Property Name="WALBAM" Type="decimal" />
+    <Property Name="WAMTAM" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F4801T">
+    <Key>
+      <PropertyRef Name="WADOCO" />
+    </Key>
+    <Property Name="WADOCO" Type="decimal" Nullable="false" />
+    <Property Name="WALINE" Type="CHAR" MaxLength="12" />
+    <Property Name="WAMWDH" Type="CHAR" />
+    <Property Name="WASCSP" Type="decimal" />
+    <Property Name="WASHFT" Type="CHAR" />
+    <Property Name="WASRCN" Type="CHAR" />
+    <Property Name="WALEDG" Type="CHAR" MaxLength="2" />
+    <Property Name="WACTS4" Type="decimal" />
+    <Property Name="WACTS7" Type="decimal" />
+    <Property Name="WACTS8" Type="decimal" />
+    <Property Name="WAAID" Type="CHAR" MaxLength="8" />
+    <Property Name="WAALSE" Type="CHAR" />
+    <Property Name="WAASID" Type="CHAR" MaxLength="25" />
+    <Property Name="WAATST" Type="int" />
+    <Property Name="WABSEQ" Type="decimal" />
+    <Property Name="WACHPR" Type="CHAR" />
+    <Property Name="WACRCD" Type="CHAR" MaxLength="3" />
+    <Property Name="WACRCE" Type="CHAR" MaxLength="3" />
+    <Property Name="WACRCF" Type="CHAR" MaxLength="3" />
+    <Property Name="WAD5J" Type="int" />
+    <Property Name="WAD6J" Type="int" />
+    <Property Name="WADRAW" Type="CHAR" MaxLength="20" />
+    <Property Name="WADUAL" Type="CHAR" />
+    <Property Name="WAMPCE" Type="CHAR" />
+    <Property Name="WAMPRC" Type="CHAR" />
+    <Property Name="WAOBJ" Type="CHAR" MaxLength="6" />
+    <Property Name="WAOTAM" Type="decimal" />
+    <Property Name="WAPRJM" Type="decimal" />
+    <Property Name="WAPRRP" Type="CHAR" />
+    <Property Name="WASHPP" Type="CHAR" />
+    <Property Name="WASQOR" Type="decimal" />
+    <Property Name="WASRKF" Type="CHAR" />
+    <Property Name="WASRNK" Type="decimal" />
+    <Property Name="WASSOQ" Type="decimal" />
+    <Property Name="WATRAF" Type="CHAR" />
+    <Property Name="WAUOM2" Type="CHAR" MaxLength="2" />
+    <Property Name="WAWR11" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR12" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR13" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR14" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR15" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR16" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR17" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR18" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR19" Type="CHAR" MaxLength="3" />
+    <Property Name="WAWR20" Type="CHAR" MaxLength="3" />
+    <Property Name="WAJBCD" Type="CHAR" MaxLength="6" />
+    <Property Name="WAVFWO" Type="CHAR" />
+    <Property Name="WAPMTN" Type="CHAR" MaxLength="12" />
+    <Property Name="WAISSUE" Type="CHAR" MaxLength="80" />
+    <Property Name="WAPRODM" Type="CHAR" MaxLength="8" />
+    <Property Name="WAWHO2" Type="CHAR" MaxLength="40" />
+    <Property Name="WAAR1" Type="CHAR" MaxLength="6" />
+    <Property Name="WAPHN1" Type="CHAR" MaxLength="20" />
+    <Property Name="WATMCO" Type="decimal" />
+    <Property Name="WAMTHPR" Type="CHAR" />
+    <Property Name="WAENTCK" Type="CHAR" MaxLength="3" />
+    <Property Name="WARYIN" Type="CHAR" />
+    <Property Name="WARSTM" Type="decimal" />
+    <Property Name="WACTR" Type="CHAR" MaxLength="3" />
+    <Property Name="WAREGION" Type="CHAR" MaxLength="3" />
+    <Property Name="WATXA1" Type="CHAR" MaxLength="10" />
+    <Property Name="WAEXR1" Type="CHAR" MaxLength="2" />
+    <Property Name="WALNGP" Type="CHAR" MaxLength="2" />
+    <Property Name="WAGLCCV" Type="CHAR" MaxLength="4" />
+    <Property Name="WAGLCNC" Type="CHAR" MaxLength="4" />
+    <Property Name="WACOVGR" Type="CHAR" MaxLength="8" />
+    <Property Name="WAASN4" Type="CHAR" MaxLength="8" />
+    <Property Name="WAASN2" Type="CHAR" MaxLength="8" />
+    <Property Name="WASEST" Type="decimal" />
+    <Property Name="WASEET" Type="decimal" />
+    <Property Name="WADSAVNAME" Type="CHAR" MaxLength="10" />
+    <Property Name="WATIMEZONES" Type="CHAR" MaxLength="2" />
+    <Property Name="WAPRODF" Type="CHAR" MaxLength="8" />
+    <Property Name="WACSLPRT" Type="decimal" />
+    <Property Name="WAMCUCSL" Type="CHAR" MaxLength="12" />
+    <Property Name="WARLOT" Type="CHAR" MaxLength="30" />
+    <Property Name="WAFAILCD" Type="CHAR" MaxLength="8" />
+    <Property Name="WAFAILDT" Type="int" />
+    <Property Name="WAFAILTM" Type="decimal" />
+    <Property Name="WAREPDT" Type="int" />
+    <Property Name="WAREPTM" Type="decimal" />
+    <Property Name="WAVEND" Type="decimal" />
+    <Property Name="WAAN8AS" Type="decimal" />
+    <Property Name="WAAN8SRM" Type="decimal" />
+    <Property Name="WASRYN" Type="CHAR" />
+    <Property Name="WAENTCKS" Type="CHAR" MaxLength="3" />
+    <Property Name="WACURBALM1" Type="decimal" />
+    <Property Name="WACURBALM2" Type="decimal" />
+    <Property Name="WACURBALM3" Type="decimal" />
+    <Property Name="WACRDC" Type="CHAR" MaxLength="3" />
+    <Property Name="WACRRM" Type="CHAR" />
+    <Property Name="WACRR" Type="decimal" />
+    <Property Name="WAVMRS31" Type="CHAR" MaxLength="2" />
+    <Property Name="WAVMRS32" Type="CHAR" MaxLength="8" />
+    <Property Name="WASEQN" Type="decimal" />
+    <Property Name="WAPLMR" Type="decimal" />
+    <Property Name="WAPLLB" Type="decimal" />
+    <Property Name="WAPLOS" Type="decimal" />
+    <Property Name="WABGTC" Type="decimal" />
+    <Property Name="WATOEM" Type="decimal" />
+    <Property Name="WATOPL" Type="decimal" />
+    <Property Name="WAPLSA" Type="decimal" />
+    <Property Name="WAPLSU" Type="decimal" />
+    <Property Name="WAESSA" Type="decimal" />
+    <Property Name="WAESSU" Type="decimal" />
+    <Property Name="WAACSA" Type="decimal" />
+    <Property Name="WAACSU" Type="decimal" />
+    <Property Name="WAOACM" Type="decimal" />
+    <Property Name="WARACM" Type="decimal" />
+    <Property Name="WAHPLF" Type="CHAR" />
+    <Property Name="WAVMRS33" Type="CHAR" MaxLength="10" />
+    <Property Name="WASCALL" Type="CHAR" />
+    <Property Name="WAISNO" Type="decimal" />
+    <Property Name="WARMTHD" Type="CHAR" />
+    <Property Name="WADOC" Type="decimal" />
+    <Property Name="WADCT" Type="CHAR" MaxLength="2" />
+    <Property Name="WAKCO" Type="CHAR" MaxLength="5" />
+    <Property Name="WACOCH" Type="CHAR" MaxLength="3" />
+    <Property Name="WALNID" Type="decimal" />
+    <Property Name="WACRTU" Type="CHAR" MaxLength="10" />
+    <Property Name="WAXEVT" Type="CHAR" />
+    <Property Name="WAMCULT" Type="CHAR" MaxLength="12" />
+    <Property Name="WAWSCHF" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="F4802">
+    <Key>
+      <PropertyRef Name="WBDOCO" />
+      <PropertyRef Name="WBDCTO" />
+      <PropertyRef Name="WBSFXO" />
+      <PropertyRef Name="WBTYPR" />
+      <PropertyRef Name="WBLINS" />
+    </Key>
+    <Property Name="WBDOCO" Type="decimal" Nullable="false" />
+    <Property Name="WBDCTO" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="WBSFXO" Type="CHAR" Nullable="false" MaxLength="3" />
+    <Property Name="WBTYPR" Type="CHAR" Nullable="false" />
+    <Property Name="WBLINS" Type="decimal" Nullable="false" />
+    <Property Name="WBDAA" Type="int" />
+    <Property Name="WBSRDS" Type="CHAR" MaxLength="60" />
+    <Property Name="WBANM1" Type="CHAR" MaxLength="10" />
+    <Property Name="WBANM2" Type="CHAR" MaxLength="10" />
+    <Property Name="WBANM3" Type="CHAR" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="F551201">
+    <Key>
+      <PropertyRef Name="ATNUMB" />
+    </Key>
+    <Property Name="ATNUMB" Type="decimal" Nullable="false" />
+    <Property Name="ATCDTL" Type="int" />
+    <Property Name="AT#COLC" Type="CHAR" MaxLength="3" />
+    <Property Name="ATLPOA" Type="CHAR" MaxLength="12" />
+    <Property Name="ATACDT" Type="int" />
+    <Property Name="AT#WSFEECD" Type="CHAR" MaxLength="10" />
+    <Property Name="ATSAXMPT" Type="CHAR" />
+    <Property Name="ATSCHUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="ATSCHJBSTDT" Type="int" />
+    <Property Name="ATSCHJBENDT" Type="int" />
+    <Property Name="ATPRNAME" Type="CHAR" MaxLength="50" />
+    <Property Name="AT#WSQNM" Type="decimal" />
+    <Property Name="AT#WSQRN" Type="decimal" />
+    <Property Name="AT#WSBLSQN" Type="decimal" />
+    <Property Name="ATHOURS" Type="decimal" />
+    <Property Name="ATDSTX" Type="CHAR" MaxLength="50" />
+    <Property Name="ATGS5B" Type="CHAR" MaxLength="50" />
+    <Property Name="ATPOA" Type="decimal" />
+    <Property Name="ATAG" Type="decimal" />
+    <Property Name="ATNAMT" Type="decimal" />
+    <Property Name="ATBLTD" Type="decimal" />
+    <Property Name="ATAN8" Type="decimal" />
+    <Property Name="ATOLPTD" Type="decimal" />
+    <Property Name="ATOLYTD" Type="decimal" />
+    <Property Name="ATAA1" Type="decimal" />
+    <Property Name="ATAA2" Type="decimal" />
+    <Property Name="ATEXPFAMT" Type="decimal" />
+    <Property Name="ATTOTD" Type="decimal" />
+    <Property Name="ATCACU" Type="decimal" />
+    <Property Name="ATANBT" Type="decimal" />
+    <Property Name="ATCFAM" Type="decimal" />
+    <Property Name="ATBY01" Type="decimal" />
+    <Property Name="ATBY02" Type="decimal" />
+    <Property Name="ATLIST" Type="decimal" />
+    <Property Name="ATTAWE1" Type="decimal" />
+    <Property Name="ATDFAM" Type="decimal" />
+    <Property Name="ATMATH01" Type="decimal" />
+    <Property Name="ATMATH02" Type="decimal" />
+    <Property Name="ATMATH03" Type="decimal" />
+    <Property Name="ATMATH04" Type="decimal" />
+    <Property Name="ATMATH05" Type="decimal" />
+    <Property Name="ATA301" Type="CHAR" MaxLength="3" />
+    <Property Name="ATGNUM1" Type="decimal" />
+    <Property Name="ATGNUM2" Type="decimal" />
+    <Property Name="ATGNUM3" Type="decimal" />
+    <Property Name="ATGNUM4" Type="decimal" />
+    <Property Name="ATGNUM5" Type="decimal" />
+    <Property Name="ATGNUM6" Type="decimal" />
+    <Property Name="ATINSDTE" Type="int" />
+    <Property Name="ATECAMT" Type="decimal" />
+    <Property Name="ATUPMB" Type="CHAR" MaxLength="10" />
+    <Property Name="ATMUPM" Type="int" />
+    <Property Name="ATUPMJ" Type="int" />
+    <Property Name="ATUPMT" Type="decimal" />
+    <Property Name="ATPID" Type="CHAR" MaxLength="10" />
+    <Property Name="ATJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="ATUSER" Type="CHAR" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="F551217">
+    <Key>
+      <PropertyRef Name="CANUMB" />
+      <PropertyRef Name="CASY" />
+      <PropertyRef Name="CART" />
+      <PropertyRef Name="CAKY" />
+    </Key>
+    <Property Name="CANUMB" Type="decimal" Nullable="false" />
+    <Property Name="CASY" Type="CHAR" Nullable="false" MaxLength="4" />
+    <Property Name="CART" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="CAKY" Type="CHAR" Nullable="false" MaxLength="10" />
+    <Property Name="CADL" Type="VARCHAR2" MaxLength="300" />
+    <Property Name="CAEV01" Type="CHAR" />
+    <Property Name="CAUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="CAPID" Type="CHAR" MaxLength="10" />
+    <Property Name="CAUPMJ" Type="int" />
+    <Property Name="CAUPMT" Type="decimal" />
+  </EntityType>
+  <EntityType Name="F553003">
+    <Key>
+      <PropertyRef Name="LALITM" />
+      <PropertyRef Name="LAMMCU" />
+      <PropertyRef Name="LAMCU" />
+      <PropertyRef Name="LAAITM" />
+      <PropertyRef Name="LAURCD" />
+    </Key>
+    <Property Name="LALITM" Type="CHAR" Nullable="false" MaxLength="25" />
+    <Property Name="LAMMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="LAMCU" Type="CHAR" Nullable="false" MaxLength="12" />
+    <Property Name="LAOPSC" Type="CHAR" MaxLength="2" />
+    <Property Name="LADSC1" Type="CHAR" MaxLength="30" />
+    <Property Name="LAEFFF" Type="int" />
+    <Property Name="LAEFFT" Type="int" />
+    <Property Name="LACOST" Type="CHAR" MaxLength="3" />
+    <Property Name="LAAITM" Type="CHAR" Nullable="false" MaxLength="25" />
+    <Property Name="LARUNL" Type="decimal" />
+    <Property Name="LASETC" Type="decimal" />
+    <Property Name="LAURCD" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="LAURDT" Type="int" />
+    <Property Name="LAURAT" Type="decimal" />
+    <Property Name="LAURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="LAURAB" Type="decimal" />
+    <Property Name="LAPID" Type="CHAR" MaxLength="10" />
+    <Property Name="LAJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="LAUPMJ" Type="int" />
+    <Property Name="LATDAY" Type="decimal" />
+    <Property Name="LAUSER" Type="CHAR" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="F5548OMB">
+    <Key>
+      <PropertyRef Name="OMDOCO" />
+      <PropertyRef Name="OMDCTO" />
+    </Key>
+    <Property Name="OMDOCO" Type="decimal" Nullable="false" />
+    <Property Name="OMDCTO" Type="CHAR" Nullable="false" MaxLength="2" />
+    <Property Name="OMRORN" Type="CHAR" MaxLength="8" />
+    <Property Name="OMPTWO" Type="decimal" />
+    <Property Name="OMURCD" Type="CHAR" MaxLength="2" />
+    <Property Name="OMURDT" Type="int" />
+    <Property Name="OMURAT" Type="decimal" />
+    <Property Name="OMURRF" Type="CHAR" MaxLength="15" />
+    <Property Name="OMUKURAB" Type="decimal" />
+    <Property Name="OMPID" Type="CHAR" MaxLength="10" />
+    <Property Name="OMJOBN" Type="CHAR" MaxLength="10" />
+    <Property Name="OMUPMJ" Type="int" />
+    <Property Name="OMTDAY" Type="decimal" />
+    <Property Name="OMUSER" Type="CHAR" MaxLength="10" />
+    <Property Name="OMAN8" Type="decimal" />
+    <Property Name="OMMC01" Type="CHAR" MaxLength="250" />
+  </EntityType>
+  <Association Name="JDE_WEB_API_REQ_DATA_KEY_CLASS_FK">
+    <End Role="API_REQUEST_DATA_KEY_CLASS" Type="WSJDEModel.Store.API_REQUEST_DATA_KEY_CLASS" Multiplicity="0..1" />
+    <End Role="API_REQUEST_DATA_KEY" Type="WSJDEModel.Store.API_REQUEST_DATA_KEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_REQUEST_DATA_KEY_CLASS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST_DATA_KEY">
+        <PropertyRef Name="API_REQ_DATA_KEY_CLASS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_API_REQ_DATA_KEY_FK">
+    <End Role="API_REQUEST_DATA_KEY" Type="WSJDEModel.Store.API_REQUEST_DATA_KEY" Multiplicity="0..1" />
+    <End Role="API_REQUEST_DATA" Type="WSJDEModel.Store.API_REQUEST_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_REQUEST_DATA_KEY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST_DATA">
+        <PropertyRef Name="API_REQUEST_DATA_KEY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_API_REQUEST_DATA_FK">
+    <End Role="API_REQUEST" Type="WSJDEModel.Store.API_REQUEST" Multiplicity="1" />
+    <End Role="API_REQUEST_DATA" Type="WSJDEModel.Store.API_REQUEST_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_REQUEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST_DATA">
+        <PropertyRef Name="API_REQUEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_API_REQUEST_SRC_REQUEST_FK">
+    <End Role="API_REQUEST_SOURCE" Type="WSJDEModel.Store.API_REQUEST_SOURCE" Multiplicity="1" />
+    <End Role="API_REQUEST" Type="WSJDEModel.Store.API_REQUEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_REQUEST_SOURCE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST">
+        <PropertyRef Name="API_REQUEST_SOURCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_API_SF_PROD_REQ_DATA_KEY">
+    <End Role="API_SF_PRODUCT" Type="WSJDEModel.Store.API_SF_PRODUCT" Multiplicity="0..1" />
+    <End Role="API_REQUEST_DATA_KEY" Type="WSJDEModel.Store.API_REQUEST_DATA_KEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_SF_PRODUCT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST_DATA_KEY">
+        <PropertyRef Name="API_SF_PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_API_SOURCE__REQUEST_FK">
+    <End Role="API_SOURCE" Type="WSJDEModel.Store.API_SOURCE" Multiplicity="1" />
+    <End Role="API_REQUEST" Type="WSJDEModel.Store.API_REQUEST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="API_SOURCE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="API_REQUEST">
+        <PropertyRef Name="API_SOURCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_FK_WEB_SECURITY_001">
+    <End Role="WEB_APPLICATION" Type="WSJDEModel.Store.WEB_APPLICATION" Multiplicity="0..1" />
+    <End Role="WEB_SECURITY" Type="WSJDEModel.Store.WEB_SECURITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_APPLICATION">
+        <PropertyRef Name="APPLICATION_ID" />
+      </Principal>
+      <Dependent Role="WEB_SECURITY">
+        <PropertyRef Name="APPLICATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_PAPERLESS_REQUEST_FK">
+    <End Role="PAPERLESS_REQUEST" Type="WSJDEModel.Store.PAPERLESS_REQUEST" Multiplicity="0..1" />
+    <End Role="PAPERLESS_REQUEST_ORDER" Type="WSJDEModel.Store.PAPERLESS_REQUEST_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAPERLESS_REQUEST">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PAPERLESS_REQUEST_ORDER">
+        <PropertyRef Name="PAPERLESS_REQUEST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_VI_INVENTORY_ID_FK">
+    <End Role="VI_INVENTORY" Type="WSJDEModel.Store.VI_INVENTORY" Multiplicity="1" />
+    <End Role="VI_INVENTORY_PRODUCT" Type="WSJDEModel.Store.VI_INVENTORY_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VI_INVENTORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VI_INVENTORY_PRODUCT">
+        <PropertyRef Name="INVENTORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_VI_PRODUCT_CAT_STATUS_ID_FK">
+    <End Role="VI_PRODUCT_CATEGORY_STATUS" Type="WSJDEModel.Store.VI_PRODUCT_CATEGORY_STATUS" Multiplicity="1" />
+    <End Role="VI_PRODUCT_CATEGORY" Type="WSJDEModel.Store.VI_PRODUCT_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VI_PRODUCT_CATEGORY_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VI_PRODUCT_CATEGORY">
+        <PropertyRef Name="PRODUCT_CATEGORY_STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_VI_PRODUCT_CATAGORY_ID_FK">
+    <End Role="VI_PRODUCT_CATEGORY" Type="WSJDEModel.Store.VI_PRODUCT_CATEGORY" Multiplicity="1" />
+    <End Role="VI_PRODUCT" Type="WSJDEModel.Store.VI_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VI_PRODUCT_CATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VI_PRODUCT">
+        <PropertyRef Name="PRODUCT_CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_VI_PRODUCT_ID_FK">
+    <End Role="VI_PRODUCT" Type="WSJDEModel.Store.VI_PRODUCT" Multiplicity="0..1" />
+    <End Role="VI_INVENTORY_PRODUCT" Type="WSJDEModel.Store.VI_INVENTORY_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VI_PRODUCT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VI_INVENTORY_PRODUCT">
+        <PropertyRef Name="PRODUCT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_VI_PRODUCT_STATUS_ID_FK">
+    <End Role="VI_PRODUCT_STATUS" Type="WSJDEModel.Store.VI_PRODUCT_STATUS" Multiplicity="1" />
+    <End Role="VI_PRODUCT" Type="WSJDEModel.Store.VI_PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VI_PRODUCT_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VI_PRODUCT">
+        <PropertyRef Name="PRODUCT_STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_WEB_SECURITY_LEVELS_FK">
+    <End Role="WEB_SECURITY_LEVELS" Type="WSJDEModel.Store.WEB_SECURITY_LEVELS" Multiplicity="0..1" />
+    <End Role="WEB_SECURITY" Type="WSJDEModel.Store.WEB_SECURITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WEB_SECURITY_LEVELS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WEB_SECURITY">
+        <PropertyRef Name="SECURITY_LEVEL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SISR_SYS_C0013005">
+    <End Role="OMB_ORDER_HEADER" Type="WSJDEModel.Store.OMB_ORDER_HEADER" Multiplicity="1" />
+    <End Role="OMB_UNIT" Type="WSJDEModel.Store.OMB_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OMB_ORDER_HEADER">
+        <PropertyRef Name="ORDER_SKEY" />
+      </Principal>
+      <Dependent Role="OMB_UNIT">
+        <PropertyRef Name="ORDER_SKEY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="FN_GL_EXTRACT_HYP" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="JDE_PKG">
+    <Parameter Name="D_MONTH_I" Type="decimal" Mode="In" />
+    <Parameter Name="D_YEAR_I" Type="decimal" Mode="In" />
+    <Parameter Name="D_LEDGER_I" Type="VARCHAR2" Mode="In" />
+    <Parameter Name="N_CALL_I" Type="decimal" Mode="In" />
+  </Function>
+</Schema>

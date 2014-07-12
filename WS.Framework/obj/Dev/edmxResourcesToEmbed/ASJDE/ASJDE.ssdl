@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ASJDEModel.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Oracle, 9.2.0.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ASJDEModelStoreContainer">
+    <EntitySet Name="AS_BRANCH" EntityType="ASJDEModel.Store.AS_BRANCH" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_BUSINESS_UNIT" EntityType="ASJDEModel.Store.AS_BUSINESS_UNIT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_COMPANY" EntityType="ASJDEModel.Store.AS_COMPANY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_COUNTRY" EntityType="ASJDEModel.Store.AS_COUNTRY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_CURRENCY" EntityType="ASJDEModel.Store.AS_CURRENCY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_DEPOT" EntityType="ASJDEModel.Store.AS_DEPOT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_ENTITY" EntityType="ASJDEModel.Store.AS_ENTITY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_ENTITY_STATUS" EntityType="ASJDEModel.Store.AS_ENTITY_STATUS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_HOURS_WORKED" EntityType="ASJDEModel.Store.AS_HOURS_WORKED" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_LOCATION" EntityType="ASJDEModel.Store.AS_LOCATION" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_LOCATION_STATUS" EntityType="ASJDEModel.Store.AS_LOCATION_STATUS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_OP_BUSINESS_UNIT" EntityType="ASJDEModel.Store.AS_OP_BUSINESS_UNIT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_CAUSE" EntityType="ASJDEModel.Store.AS_S_I_CAUSE" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_CAUSE_CATEGORY" EntityType="ASJDEModel.Store.AS_S_I_CAUSE_CATEGORY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_EMPLOYEE_TYPE" EntityType="ASJDEModel.Store.AS_S_I_EMPLOYEE_TYPE" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_OUTCOME" EntityType="ASJDEModel.Store.AS_S_I_OUTCOME" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_SITE_CATEGORY" EntityType="ASJDEModel.Store.AS_S_I_SITE_CATEGORY" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_STATUS" EntityType="ASJDEModel.Store.AS_S_I_STATUS" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_TYPE" EntityType="ASJDEModel.Store.AS_S_I_TYPE" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_S_I_UNSAFE_ACT" EntityType="ASJDEModel.Store.AS_S_I_UNSAFE_ACT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_SAFETY_INCIDENT" EntityType="ASJDEModel.Store.AS_SAFETY_INCIDENT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="AS_STRATEGIC_BUSINESS_UNIT" EntityType="ASJDEModel.Store.AS_STRATEGIC_BUSINESS_UNIT" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VIDEO_AREA" EntityType="ASJDEModel.Store.VIDEO_AREA" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VIDEO_GROUP" EntityType="ASJDEModel.Store.VIDEO_GROUP" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VIDEO_LOG" EntityType="ASJDEModel.Store.VIDEO_LOG" store:Type="Tables" Schema="JDE_WEB" />
+    <EntitySet Name="VIDEO_VIDEO" EntityType="ASJDEModel.Store.VIDEO_VIDEO" store:Type="Tables" Schema="JDE_WEB" />
+    <AssociationSet Name="JDE_WEB_AS_BRANCH_DEPOT_FK" Association="ASJDEModel.Store.JDE_WEB_AS_BRANCH_DEPOT_FK">
+      <End Role="AS_BRANCH" EntitySet="AS_BRANCH" />
+      <End Role="AS_DEPOT" EntitySet="AS_DEPOT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_BU_BRANCH_FK" Association="ASJDEModel.Store.JDE_WEB_AS_BU_BRANCH_FK">
+      <End Role="AS_BUSINESS_UNIT" EntitySet="AS_BUSINESS_UNIT" />
+      <End Role="AS_BRANCH" EntitySet="AS_BRANCH" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_CAUSECAT_CAUSE_FK" Association="ASJDEModel.Store.JDE_WEB_AS_CAUSECAT_CAUSE_FK">
+      <End Role="AS_S_I_CAUSE_CATEGORY" EntitySet="AS_S_I_CAUSE_CATEGORY" />
+      <End Role="AS_S_I_CAUSE" EntitySet="AS_S_I_CAUSE" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_COMPANY_SBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_COMPANY_SBU_FK">
+      <End Role="AS_COMPANY" EntitySet="AS_COMPANY" />
+      <End Role="AS_STRATEGIC_BUSINESS_UNIT" EntitySet="AS_STRATEGIC_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_COUNTRY_HOURS_FK" Association="ASJDEModel.Store.JDE_WEB_AS_COUNTRY_HOURS_FK">
+      <End Role="AS_COUNTRY" EntitySet="AS_COUNTRY" />
+      <End Role="AS_HOURS_WORKED" EntitySet="AS_HOURS_WORKED" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_COUNTRY_LOC_FK" Association="ASJDEModel.Store.JDE_WEB_AS_COUNTRY_LOC_FK">
+      <End Role="AS_COUNTRY" EntitySet="AS_COUNTRY" />
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_COUNTRY_SAFETY_FK" Association="ASJDEModel.Store.JDE_WEB_AS_COUNTRY_SAFETY_FK">
+      <End Role="AS_COUNTRY" EntitySet="AS_COUNTRY" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_CURRENCY_LOC_FK" Association="ASJDEModel.Store.JDE_WEB_AS_CURRENCY_LOC_FK">
+      <End Role="AS_CURRENCY" EntitySet="AS_CURRENCY" />
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENT_STATUS_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENT_STATUS_FK">
+      <End Role="AS_ENTITY_STATUS" EntitySet="AS_ENTITY_STATUS" />
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_BRANCH_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_BRANCH_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_BRANCH" EntitySet="AS_BRANCH" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_BU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_BU_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_BUSINESS_UNIT" EntitySet="AS_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_COMPANY_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_COMPANY_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_COMPANY" EntitySet="AS_COMPANY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_DEPOT_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_DEPOT_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_DEPOT" EntitySet="AS_DEPOT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_OBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_OBU_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_OP_BUSINESS_UNIT" EntitySet="AS_OP_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_ENTITY_SBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_ENTITY_SBU_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_STRATEGIC_BUSINESS_UNIT" EntitySet="AS_STRATEGIC_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_Hours_Entity_FK" Association="ASJDEModel.Store.JDE_WEB_AS_Hours_Entity_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_HOURS_WORKED" EntitySet="AS_HOURS_WORKED" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_LOC_ENTY_FK" Association="ASJDEModel.Store.JDE_WEB_AS_LOC_ENTY_FK">
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_LOC_STATUS_LOC_FK" Association="ASJDEModel.Store.JDE_WEB_AS_LOC_STATUS_LOC_FK">
+      <End Role="AS_LOCATION_STATUS" EntitySet="AS_LOCATION_STATUS" />
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_LOCATION_HOURS_FK" Association="ASJDEModel.Store.JDE_WEB_AS_LOCATION_HOURS_FK">
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+      <End Role="AS_HOURS_WORKED" EntitySet="AS_HOURS_WORKED" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_LOCATION_SAFETY_FK" Association="ASJDEModel.Store.JDE_WEB_AS_LOCATION_SAFETY_FK">
+      <End Role="AS_LOCATION" EntitySet="AS_LOCATION" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_OBU_BU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_OBU_BU_FK">
+      <End Role="AS_OP_BUSINESS_UNIT" EntitySet="AS_OP_BUSINESS_UNIT" />
+      <End Role="AS_BUSINESS_UNIT" EntitySet="AS_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SBU_OBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SBU_OBU_FK">
+      <End Role="AS_STRATEGIC_BUSINESS_UNIT" EntitySet="AS_STRATEGIC_BUSINESS_UNIT" />
+      <End Role="AS_OP_BUSINESS_UNIT" EntitySet="AS_OP_BUSINESS_UNIT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_CATEGORY_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_CATEGORY_FK">
+      <End Role="AS_S_I_SITE_CATEGORY" EntitySet="AS_S_I_SITE_CATEGORY" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_CAUSE_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_CAUSE_FK">
+      <End Role="AS_S_I_CAUSE" EntitySet="AS_S_I_CAUSE" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_CAUSECAT_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_CAUSECAT_FK">
+      <End Role="AS_S_I_CAUSE_CATEGORY" EntitySet="AS_S_I_CAUSE_CATEGORY" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_EMPLOYEE_TYPE_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_EMPLOYEE_TYPE_FK">
+      <End Role="AS_S_I_EMPLOYEE_TYPE" EntitySet="AS_S_I_EMPLOYEE_TYPE" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_Entity_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_Entity_FK">
+      <End Role="AS_ENTITY" EntitySet="AS_ENTITY" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_OUTCOME_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_OUTCOME_FK">
+      <End Role="AS_S_I_OUTCOME" EntitySet="AS_S_I_OUTCOME" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_STATUS_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_STATUS_FK">
+      <End Role="AS_S_I_STATUS" EntitySet="AS_S_I_STATUS" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_TYPE_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_TYPE_FK">
+      <End Role="AS_S_I_TYPE" EntitySet="AS_S_I_TYPE" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_SI_UNSAFE_FK" Association="ASJDEModel.Store.JDE_WEB_AS_SI_UNSAFE_FK">
+      <End Role="AS_S_I_UNSAFE_ACT" EntitySet="AS_S_I_UNSAFE_ACT" />
+      <End Role="AS_SAFETY_INCIDENT" EntitySet="AS_SAFETY_INCIDENT" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_BRANCH_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_BRANCH_FK">
+      <End Role="AS_BRANCH" EntitySet="AS_BRANCH" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_BU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_BU_FK">
+      <End Role="AS_BUSINESS_UNIT" EntitySet="AS_BUSINESS_UNIT" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_CO_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_CO_FK">
+      <End Role="AS_COMPANY" EntitySet="AS_COMPANY" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_DEPOT_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_DEPOT_FK">
+      <End Role="AS_DEPOT" EntitySet="AS_DEPOT" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_GROUP_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_GROUP_FK">
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+      <End Role="VIDEO_GROUP" EntitySet="VIDEO_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_OBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_OBU_FK">
+      <End Role="AS_OP_BUSINESS_UNIT" EntitySet="AS_OP_BUSINESS_UNIT" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_AREA_SBU_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_AREA_SBU_FK">
+      <End Role="AS_STRATEGIC_BUSINESS_UNIT" EntitySet="AS_STRATEGIC_BUSINESS_UNIT" />
+      <End Role="VIDEO_AREA" EntitySet="VIDEO_AREA" />
+    </AssociationSet>
+    <AssociationSet Name="JDE_WEB_AS_VIDEO_GROUP_VIDEO_FK" Association="ASJDEModel.Store.JDE_WEB_AS_VIDEO_GROUP_VIDEO_FK">
+      <End Role="VIDEO_GROUP" EntitySet="VIDEO_GROUP" />
+      <End Role="VIDEO_VIDEO" EntitySet="VIDEO_VIDEO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AS_BRANCH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_BUSINESS_UNIT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OPERATIONAL_BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_COUNTRY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="CODE" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AS_CURRENCY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="CODE" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AS_DEPOT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_ENTITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOCATION_ID" Type="decimal" />
+    <Property Name="STATUS_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CODE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="COST_CENTER" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AS_ENTITY_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AS_HOURS_WORKED">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="COUNTRY_ID" Type="decimal" />
+    <Property Name="LOCATION_ID" Type="decimal" />
+    <Property Name="MONTH" Type="decimal" />
+    <Property Name="YEAR" Type="decimal" />
+    <Property Name="HOURS" Type="decimal" />
+    <Property Name="CREATED_BY" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATED_BY_USER_NAME" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="CREATED_BY_DATE" Type="DATE" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+    <Property Name="EDITED_BY_USER_NAME" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="EDITED_BY_DATE" Type="DATE" />
+    <Property Name="EDITED_BY_NAME" Type="VARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AS_LOCATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LOCATION_STATUS_ID" Type="decimal" />
+    <Property Name="CURRENCY_ID" Type="decimal" />
+    <Property Name="COUNTRY_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="ADDRESS_1" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="ADDRESS_2" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="CITY" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="STATE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="POSTAL_CODE" Type="VARCHAR2" MaxLength="30" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" />
+  </EntityType>
+  <EntityType Name="AS_LOCATION_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_OP_BUSINESS_UNIT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="STRATEGIC_BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_S_I_CAUSE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="CASUE_CATEGORY_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AS_S_I_CAUSE_CATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_S_I_EMPLOYEE_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_S_I_OUTCOME">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_S_I_SITE_CATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AS_S_I_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AS_S_I_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_S_I_UNSAFE_ACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="AS_SAFETY_INCIDENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="STATUS_ID" Type="decimal" />
+    <Property Name="EMPLOYEE_TYPE_ID" Type="decimal" />
+    <Property Name="SITE_CATEGORY_ID" Type="decimal" />
+    <Property Name="TYPE_ID" Type="decimal" />
+    <Property Name="OUTCOME_ID" Type="decimal" />
+    <Property Name="UNSAFE_ACT_ID" Type="decimal" />
+    <Property Name="CAUSE_CATEGORY_ID" Type="decimal" />
+    <Property Name="CAUSE_ID" Type="decimal" />
+    <Property Name="DATE_OF_INCIDENT" Type="DATE" />
+    <Property Name="EMPLOYEE_NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="TITLE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="WORK_RELATED" Type="CHAR" />
+    <Property Name="LOCATION_SITE" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="VARCHAR2" />
+    <Property Name="DAYS_AWAY_FROM_WORK" Type="decimal" />
+    <Property Name="DAYS_TRANSFERRED_RESTRICTED" Type="decimal" />
+    <Property Name="RETURN_TO_WORK" Type="CHAR" />
+    <Property Name="DATE_RETURNED_TO_WORK" Type="DATE" />
+    <Property Name="ROOT_CAUSE" Type="VARCHAR2" />
+    <Property Name="CORRECTIVE_ACTION" Type="VARCHAR2" />
+    <Property Name="RESPONSIBLE_PERSON" Type="VARCHAR2" MaxLength="100" />
+    <Property Name="DEADLINE" Type="DATE" />
+    <Property Name="COMPLETE" Type="CHAR" />
+    <Property Name="RECORDABLE" Type="CHAR" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="CREATED_DATE" Type="DATE" />
+    <Property Name="CREATED_BY_USER_NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="DATE_RETURN_TO_WORK_RESTRICTED" Type="DATE" />
+    <Property Name="PIBID" Type="decimal" />
+    <Property Name="COUNTRY_ID" Type="decimal" />
+    <Property Name="LOCATION_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="AS_STRATEGIC_BUSINESS_UNIT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANY_ID" Type="decimal" />
+    <Property Name="ENTITY_ID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="VIDEO_AREA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANY_ID" Type="decimal" />
+    <Property Name="STATEGIC_BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="OPERATIONAL_BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="BUSINESS_UNIT_ID" Type="decimal" />
+    <Property Name="BRANCH_ID" Type="decimal" />
+    <Property Name="DEPOT_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="VIDEO_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VIDEO_AREA_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="VIDEO_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VIDEO_VIDEO_ID" Type="decimal" />
+    <Property Name="USER" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="TIMESTAMP" Type="DATE" />
+  </EntityType>
+  <EntityType Name="VIDEO_VIDEO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VIDEO_GROUP_ID" Type="decimal" />
+    <Property Name="NAME" Type="VARCHAR2" MaxLength="200" />
+    <Property Name="REFERENCE_ID" Type="decimal" />
+    <Property Name="CREATED_DATE" Type="DATE" />
+    <Property Name="CREATED_BY_USER" Type="VARCHAR2" MaxLength="100" />
+  </EntityType>
+  <Association Name="JDE_WEB_AS_BRANCH_DEPOT_FK">
+    <End Role="AS_BRANCH" Type="ASJDEModel.Store.AS_BRANCH" Multiplicity="0..1" />
+    <End Role="AS_DEPOT" Type="ASJDEModel.Store.AS_DEPOT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_BRANCH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_DEPOT">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_BU_BRANCH_FK">
+    <End Role="AS_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="AS_BRANCH" Type="ASJDEModel.Store.AS_BRANCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_BRANCH">
+        <PropertyRef Name="BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_CAUSECAT_CAUSE_FK">
+    <End Role="AS_S_I_CAUSE_CATEGORY" Type="ASJDEModel.Store.AS_S_I_CAUSE_CATEGORY" Multiplicity="0..1" />
+    <End Role="AS_S_I_CAUSE" Type="ASJDEModel.Store.AS_S_I_CAUSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_CAUSE_CATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_S_I_CAUSE">
+        <PropertyRef Name="CASUE_CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_COMPANY_SBU_FK">
+    <End Role="AS_COMPANY" Type="ASJDEModel.Store.AS_COMPANY" Multiplicity="0..1" />
+    <End Role="AS_STRATEGIC_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_STRATEGIC_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_STRATEGIC_BUSINESS_UNIT">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_COUNTRY_HOURS_FK">
+    <End Role="AS_COUNTRY" Type="ASJDEModel.Store.AS_COUNTRY" Multiplicity="0..1" />
+    <End Role="AS_HOURS_WORKED" Type="ASJDEModel.Store.AS_HOURS_WORKED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_COUNTRY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_HOURS_WORKED">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_COUNTRY_LOC_FK">
+    <End Role="AS_COUNTRY" Type="ASJDEModel.Store.AS_COUNTRY" Multiplicity="0..1" />
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_COUNTRY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_LOCATION">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_COUNTRY_SAFETY_FK">
+    <End Role="AS_COUNTRY" Type="ASJDEModel.Store.AS_COUNTRY" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_COUNTRY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_CURRENCY_LOC_FK">
+    <End Role="AS_CURRENCY" Type="ASJDEModel.Store.AS_CURRENCY" Multiplicity="0..1" />
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_CURRENCY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_LOCATION">
+        <PropertyRef Name="CURRENCY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENT_STATUS_FK">
+    <End Role="AS_ENTITY_STATUS" Type="ASJDEModel.Store.AS_ENTITY_STATUS" Multiplicity="0..1" />
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_ENTITY">
+        <PropertyRef Name="STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_BRANCH_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_BRANCH" Type="ASJDEModel.Store.AS_BRANCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_BRANCH">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_BU_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_BUSINESS_UNIT">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_COMPANY_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_COMPANY" Type="ASJDEModel.Store.AS_COMPANY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_COMPANY">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_DEPOT_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_DEPOT" Type="ASJDEModel.Store.AS_DEPOT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_DEPOT">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_OBU_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_OP_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_OP_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_OP_BUSINESS_UNIT">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_ENTITY_SBU_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_STRATEGIC_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_STRATEGIC_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_STRATEGIC_BUSINESS_UNIT">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_Hours_Entity_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_HOURS_WORKED" Type="ASJDEModel.Store.AS_HOURS_WORKED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_HOURS_WORKED">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_LOC_ENTY_FK">
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="0..1" />
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_ENTITY">
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_LOC_STATUS_LOC_FK">
+    <End Role="AS_LOCATION_STATUS" Type="ASJDEModel.Store.AS_LOCATION_STATUS" Multiplicity="0..1" />
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_LOCATION_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_LOCATION">
+        <PropertyRef Name="LOCATION_STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_LOCATION_HOURS_FK">
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="0..1" />
+    <End Role="AS_HOURS_WORKED" Type="ASJDEModel.Store.AS_HOURS_WORKED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_HOURS_WORKED">
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_LOCATION_SAFETY_FK">
+    <End Role="AS_LOCATION" Type="ASJDEModel.Store.AS_LOCATION" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_OBU_BU_FK">
+    <End Role="AS_OP_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_OP_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="AS_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_OP_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_BUSINESS_UNIT">
+        <PropertyRef Name="OPERATIONAL_BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SBU_OBU_FK">
+    <End Role="AS_STRATEGIC_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_STRATEGIC_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="AS_OP_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_OP_BUSINESS_UNIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_STRATEGIC_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_OP_BUSINESS_UNIT">
+        <PropertyRef Name="STRATEGIC_BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_CATEGORY_FK">
+    <End Role="AS_S_I_SITE_CATEGORY" Type="ASJDEModel.Store.AS_S_I_SITE_CATEGORY" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_SITE_CATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="SITE_CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_CAUSE_FK">
+    <End Role="AS_S_I_CAUSE" Type="ASJDEModel.Store.AS_S_I_CAUSE" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_CAUSE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="CAUSE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_CAUSECAT_FK">
+    <End Role="AS_S_I_CAUSE_CATEGORY" Type="ASJDEModel.Store.AS_S_I_CAUSE_CATEGORY" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_CAUSE_CATEGORY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="CAUSE_CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_EMPLOYEE_TYPE_FK">
+    <End Role="AS_S_I_EMPLOYEE_TYPE" Type="ASJDEModel.Store.AS_S_I_EMPLOYEE_TYPE" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_EMPLOYEE_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="EMPLOYEE_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_Entity_FK">
+    <End Role="AS_ENTITY" Type="ASJDEModel.Store.AS_ENTITY" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_ENTITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="ENTITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_OUTCOME_FK">
+    <End Role="AS_S_I_OUTCOME" Type="ASJDEModel.Store.AS_S_I_OUTCOME" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_OUTCOME">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="OUTCOME_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_STATUS_FK">
+    <End Role="AS_S_I_STATUS" Type="ASJDEModel.Store.AS_S_I_STATUS" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_STATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="STATUS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_TYPE_FK">
+    <End Role="AS_S_I_TYPE" Type="ASJDEModel.Store.AS_S_I_TYPE" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_TYPE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_SI_UNSAFE_FK">
+    <End Role="AS_S_I_UNSAFE_ACT" Type="ASJDEModel.Store.AS_S_I_UNSAFE_ACT" Multiplicity="0..1" />
+    <End Role="AS_SAFETY_INCIDENT" Type="ASJDEModel.Store.AS_SAFETY_INCIDENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_S_I_UNSAFE_ACT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AS_SAFETY_INCIDENT">
+        <PropertyRef Name="UNSAFE_ACT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_BRANCH_FK">
+    <End Role="AS_BRANCH" Type="ASJDEModel.Store.AS_BRANCH" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_BRANCH">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="BRANCH_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_BU_FK">
+    <End Role="AS_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_CO_FK">
+    <End Role="AS_COMPANY" Type="ASJDEModel.Store.AS_COMPANY" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_DEPOT_FK">
+    <End Role="AS_DEPOT" Type="ASJDEModel.Store.AS_DEPOT" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_DEPOT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="DEPOT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_GROUP_FK">
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="0..1" />
+    <End Role="VIDEO_GROUP" Type="ASJDEModel.Store.VIDEO_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VIDEO_AREA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_GROUP">
+        <PropertyRef Name="VIDEO_AREA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_OBU_FK">
+    <End Role="AS_OP_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_OP_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_OP_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="OPERATIONAL_BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_AREA_SBU_FK">
+    <End Role="AS_STRATEGIC_BUSINESS_UNIT" Type="ASJDEModel.Store.AS_STRATEGIC_BUSINESS_UNIT" Multiplicity="0..1" />
+    <End Role="VIDEO_AREA" Type="ASJDEModel.Store.VIDEO_AREA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AS_STRATEGIC_BUSINESS_UNIT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_AREA">
+        <PropertyRef Name="STATEGIC_BUSINESS_UNIT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JDE_WEB_AS_VIDEO_GROUP_VIDEO_FK">
+    <End Role="VIDEO_GROUP" Type="ASJDEModel.Store.VIDEO_GROUP" Multiplicity="0..1" />
+    <End Role="VIDEO_VIDEO" Type="ASJDEModel.Store.VIDEO_VIDEO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VIDEO_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VIDEO_VIDEO">
+        <PropertyRef Name="VIDEO_GROUP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="FN_GL_EXTRACT_HYP" ReturnType="decimal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="JDE_PKG">
+    <Parameter Name="D_MONTH_I" Type="decimal" Mode="In" />
+    <Parameter Name="D_YEAR_I" Type="decimal" Mode="In" />
+    <Parameter Name="D_LEDGER_I" Type="VARCHAR2" Mode="In" />
+    <Parameter Name="N_CALL_I" Type="decimal" Mode="In" />
+  </Function>
+</Schema>

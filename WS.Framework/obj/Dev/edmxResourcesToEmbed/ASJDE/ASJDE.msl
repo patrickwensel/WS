@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASJDEModelStoreContainer" CdmEntityContainer="ASJDE">
+    <EntitySetMapping Name="VideoAreas">
+      <EntityTypeMapping TypeName="ASJDEModel.VideoArea">
+        <MappingFragment StoreEntitySet="VIDEO_AREA">
+          <ScalarProperty Name="DepotID" ColumnName="DEPOT_ID" />
+          <ScalarProperty Name="BranchID" ColumnName="BRANCH_ID" />
+          <ScalarProperty Name="BusinessUnitID" ColumnName="BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="OperationalBusinessUnitID" ColumnName="OPERATIONAL_BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="StrategicBusinessUnitID" ColumnName="STATEGIC_BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoGroups">
+      <EntityTypeMapping TypeName="ASJDEModel.VideoGroup">
+        <MappingFragment StoreEntitySet="VIDEO_GROUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VideoAreaID" ColumnName="VIDEO_AREA_ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoLogs">
+      <EntityTypeMapping TypeName="ASJDEModel.VideoLog">
+        <MappingFragment StoreEntitySet="VIDEO_LOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VideoID" ColumnName="VIDEO_VIDEO_ID" />
+          <ScalarProperty Name="User" ColumnName="USER" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TIMESTAMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="ASJDEModel.Video">
+        <MappingFragment StoreEntitySet="VIDEO_VIDEO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VideoGroupID" ColumnName="VIDEO_GROUP_ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ReferenceID" ColumnName="REFERENCE_ID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentCauses">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentCause">
+        <MappingFragment StoreEntitySet="AS_S_I_CAUSE">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="CauseCategoryID" ColumnName="CASUE_CATEGORY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentCauseCategories">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentCauseCategory">
+        <MappingFragment StoreEntitySet="AS_S_I_CAUSE_CATEGORY">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentEmployeeTypes">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentEmployeeType">
+        <MappingFragment StoreEntitySet="AS_S_I_EMPLOYEE_TYPE">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentOutcomes">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentOutcome">
+        <MappingFragment StoreEntitySet="AS_S_I_OUTCOME">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentSiteCategories">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentSiteCategory">
+        <MappingFragment StoreEntitySet="AS_S_I_SITE_CATEGORY">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentStatus">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentStatus">
+        <MappingFragment StoreEntitySet="AS_S_I_STATUS">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentTypes">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentType">
+        <MappingFragment StoreEntitySet="AS_S_I_TYPE">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidentUnsafeActs">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncidentUnsafeAct">
+        <MappingFragment StoreEntitySet="AS_S_I_UNSAFE_ACT">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SafetyIncidents">
+      <EntityTypeMapping TypeName="ASJDEModel.SafetyIncident">
+        <MappingFragment StoreEntitySet="AS_SAFETY_INCIDENT">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="LocationSite" ColumnName="LOCATION_SITE" />
+          <ScalarProperty Name="LocationID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="CountryID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="PIBID" ColumnName="PIBID" />
+          <ScalarProperty Name="DateReturnedToWorkRestricted" ColumnName="DATE_RETURN_TO_WORK_RESTRICTED" />
+          <ScalarProperty Name="CreatedByUserName" ColumnName="CREATED_BY_USER_NAME" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+          <ScalarProperty Name="Recordable" ColumnName="RECORDABLE" />
+          <ScalarProperty Name="Complete" ColumnName="COMPLETE" />
+          <ScalarProperty Name="Deadline" ColumnName="DEADLINE" />
+          <ScalarProperty Name="ResponsiblePerson" ColumnName="RESPONSIBLE_PERSON" />
+          <ScalarProperty Name="CorrectiveAction" ColumnName="CORRECTIVE_ACTION" />
+          <ScalarProperty Name="RootCause" ColumnName="ROOT_CAUSE" />
+          <ScalarProperty Name="DateReturnedToWork" ColumnName="DATE_RETURNED_TO_WORK" />
+          <ScalarProperty Name="ReturnToWork" ColumnName="RETURN_TO_WORK" />
+          <ScalarProperty Name="DaysTransferredRestricted" ColumnName="DAYS_TRANSFERRED_RESTRICTED" />
+          <ScalarProperty Name="DaysAwayFromWork" ColumnName="DAYS_AWAY_FROM_WORK" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="WorkRelated" ColumnName="WORK_RELATED" />
+          <ScalarProperty Name="Title" ColumnName="TITLE" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EMPLOYEE_NAME" />
+          <ScalarProperty Name="DateOfIncident" ColumnName="DATE_OF_INCIDENT" />
+          <ScalarProperty Name="CauseID" ColumnName="CAUSE_ID" />
+          <ScalarProperty Name="CauseCategoryID" ColumnName="CAUSE_CATEGORY_ID" />
+          <ScalarProperty Name="UnsafeActID" ColumnName="UNSAFE_ACT_ID" />
+          <ScalarProperty Name="OutcomeID" ColumnName="OUTCOME_ID" />
+          <ScalarProperty Name="TypeID" ColumnName="TYPE_ID" />
+          <ScalarProperty Name="SiteCategoryID" ColumnName="SITE_CATEGORY_ID" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EMPLOYEE_TYPE_ID" />
+          <ScalarProperty Name="StatusID" ColumnName="STATUS_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entities">
+      <EntityTypeMapping TypeName="ASJDEModel.Entity">
+        <MappingFragment StoreEntitySet="AS_ENTITY">
+          <ScalarProperty Name="CostCenter" ColumnName="COST_CENTER" />
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="StatusID" ColumnName="STATUS_ID" />
+          <ScalarProperty Name="LocationID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityStatus">
+      <EntityTypeMapping TypeName="ASJDEModel.EntityStatus">
+        <MappingFragment StoreEntitySet="AS_ENTITY_STATUS">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="ASJDEModel.Branch">
+        <MappingFragment StoreEntitySet="AS_BRANCH">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="BusinessUnitID" ColumnName="BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessUnits">
+      <EntityTypeMapping TypeName="ASJDEModel.BusinessUnit">
+        <MappingFragment StoreEntitySet="AS_BUSINESS_UNIT">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="OperationalBusinessUnitID" ColumnName="OPERATIONAL_BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="ASJDEModel.Company">
+        <MappingFragment StoreEntitySet="AS_COMPANY">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ASJDEModel.Country">
+        <MappingFragment StoreEntitySet="AS_COUNTRY">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="ASJDEModel.Currency">
+        <MappingFragment StoreEntitySet="AS_CURRENCY">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Depots">
+      <EntityTypeMapping TypeName="ASJDEModel.Depot">
+        <MappingFragment StoreEntitySet="AS_DEPOT">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="BranchID" ColumnName="BRANCH_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoursWorkeds">
+      <EntityTypeMapping TypeName="ASJDEModel.HoursWorked">
+        <MappingFragment StoreEntitySet="AS_HOURS_WORKED">
+          <ScalarProperty Name="EditedByName" ColumnName="EDITED_BY_NAME" />
+          <ScalarProperty Name="EditedByDate" ColumnName="EDITED_BY_DATE" />
+          <ScalarProperty Name="EditedByUserName" ColumnName="EDITED_BY_USER_NAME" />
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="CreatedByDate" ColumnName="CREATED_BY_DATE" />
+          <ScalarProperty Name="CreatedByUserName" ColumnName="CREATED_BY_USER_NAME" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="Hours" ColumnName="HOURS" />
+          <ScalarProperty Name="Year" ColumnName="YEAR" />
+          <ScalarProperty Name="Month" ColumnName="MONTH" />
+          <ScalarProperty Name="LocationID" ColumnName="LOCATION_ID" />
+          <ScalarProperty Name="CountryID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="ASJDEModel.Location">
+        <MappingFragment StoreEntitySet="AS_LOCATION">
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PostalCode" ColumnName="POSTAL_CODE" />
+          <ScalarProperty Name="State" ColumnName="STATE" />
+          <ScalarProperty Name="City" ColumnName="CITY" />
+          <ScalarProperty Name="Address2" ColumnName="ADDRESS_2" />
+          <ScalarProperty Name="Address1" ColumnName="ADDRESS_1" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="CountryID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CURRENCY_ID" />
+          <ScalarProperty Name="LocationStatusID" ColumnName="LOCATION_STATUS_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationStatus">
+      <EntityTypeMapping TypeName="ASJDEModel.LocationStatus">
+        <MappingFragment StoreEntitySet="AS_LOCATION_STATUS">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperationalBusinessUnits">
+      <EntityTypeMapping TypeName="ASJDEModel.OperationalBusinessUnit">
+        <MappingFragment StoreEntitySet="AS_OP_BUSINESS_UNIT">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="StrategicBusinessUnitID" ColumnName="STRATEGIC_BUSINESS_UNIT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StrategicBusinessUnits">
+      <EntityTypeMapping TypeName="ASJDEModel.StrategicBusinessUnit">
+        <MappingFragment StoreEntitySet="AS_STRATEGIC_BUSINESS_UNIT">
+          <ScalarProperty Name="EntityID" ColumnName="ENTITY_ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

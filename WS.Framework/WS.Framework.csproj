@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8302D74B-6041-47CA-AF5C-7C74CCCC7683}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WS.Framework</RootNamespace>
+    <AssemblyName>WS.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\Dev\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.0.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.0.2\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.847.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Devart.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle, Version=8.1.55.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Devart.Data.Oracle.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.Oracle.Entity, Version=8.1.55.6, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Devart.Data.Oracle.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToLdap">
+      <HintPath>..\packages\LinqToLdap.3.3.1\lib\net45\LinqToLdap.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToLdap.Contrib">
+      <HintPath>..\packages\LinqToLdap.3.3.1\lib\net45\LinqToLdap.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\packages\morelinq.2.0.0-alpha01\lib\net35\MoreLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASJDE\ASJDE.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASJDE.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\ASJDE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\ASJDE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASJDE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Branch.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\BusinessUnit.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Company.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Country.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Currency.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Depot.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Entity.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\EntityStatus.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\HoursWorked.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Location.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\LocationStatus.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\OperationalBusinessUnit.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncident.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentCause.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentCauseCategory.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentEmployeeType.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentOutcome.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentSiteCategory.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentStatus.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentType.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\SafetyIncidentUnsafeAct.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\StrategicBusinessUnit.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\Video.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\VideoArea.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\VideoGroup.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASJDE\VideoLog.cs">
+      <DependentUpon>ASJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\Extentions.cs" />
+    <Compile Include="Infrastructure\DependencyInjection\ServiceModule.cs" />
+    <Compile Include="Objects\AccountNumberLookUpResult.cs" />
+    <Compile Include="Objects\ActiveDirectory\User.cs" />
+    <Compile Include="Objects\BOATransactionResult.cs" />
+    <Compile Include="Objects\CustomerLedger.Invoice.cs" />
+    <Compile Include="Objects\Emails\BOATransactionEmail.cs" />
+    <Compile Include="Objects\Emails\HoursITEmail.cs" />
+    <Compile Include="Objects\Emails\SafetyIncidentEmail.cs" />
+    <Compile Include="Objects\Emails\PaperlessInvoiceEmail.cs" />
+    <Compile Include="Objects\Emails\UpdateAttributesEmail.cs" />
+    <Compile Include="Objects\Employees\EmployeeSearch.cs" />
+    <Compile Include="Objects\Employees\EmployeeStatus.cs" />
+    <Compile Include="Objects\Enums\AccountNumberLookUpResultCode.cs" />
+    <Compile Include="Objects\Enums\BOATransactionReturnCode.cs" />
+    <Compile Include="Objects\Enums\LogType.cs" />
+    <Compile Include="Objects\Enums\SequenceNumber.cs" />
+    <Compile Include="Objects\Enums\WorkOrderType.cs" />
+    <Compile Include="Objects\Extentions.cs" />
+    <Compile Include="Objects\Item.Part.cs" />
+    <Compile Include="Objects\JDEBusinessFunction.cs" />
+    <Compile Include="Objects\JDEBusinessFunctionResponse.cs" />
+    <Compile Include="Objects\LDAP\Site.cs" />
+    <Compile Include="Objects\LDAP\Service.cs" />
+    <Compile Include="Objects\LDAP\Country.cs" />
+    <Compile Include="Objects\LDAP\HoursWorkedAccess.cs" />
+    <Compile Include="Objects\LDAP\NameCountrySearch.cs" />
+    <Compile Include="Objects\LDAP\SafetyIncidentAccess.cs" />
+    <Compile Include="Objects\LDAP\TestWS.cs" />
+    <Compile Include="Objects\LDAP\User.cs" />
+    <Compile Include="Objects\LDAP\UserGroup.cs" />
+    <Compile Include="Objects\MobileWorkOrder\MobileWorkOrder.cs" />
+    <Compile Include="Objects\SalesForce\Lead.cs" />
+    <Compile Include="Objects\SalesForce\Lead_Q_A__c.cs" />
+    <Compile Include="Objects\SalesForce\SFLead.cs" />
+    <Compile Include="Objects\WorkOrder\Attribute.cs" />
+    <Compile Include="Objects\WorkOrder\ImageByteResponse.cs" />
+    <Compile Include="Objects\WorkOrder\MobileWorkOrderActivity.cs" />
+    <Compile Include="Objects\WorkOrder\MobileWorkOrderImage.cs" />
+    <Compile Include="Objects\WorkOrder\MobileWorkOrderPart.cs" />
+    <Compile Include="Objects\RequestQuote.cs" />
+    <Compile Include="Objects\Security\Security.Application.cs" />
+    <Compile Include="Objects\UserDefinedCode.WorkOrder.cs" />
+    <Compile Include="Objects\WorkOrder\OMBOrder.cs" />
+    <Compile Include="Objects\WorkOrder\WorkOrderCommonObjects.cs" />
+    <Compile Include="Objects\WorkOrder\WorkOrderImageResponse.cs" />
+    <Compile Include="Objects\WorkOrder\WorkOrderMessage.cs" />
+    <Compile Include="Objects\WorkOrder\WorkOrderResponse.cs" />
+    <Compile Include="ServicesInterfaceImplementation\AddressBookService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ApplicationLogCodeService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ApplicationLogService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ApplicationService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\CustomerLedgerService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\EmailService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\EmployeeService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\EquipmentService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\FeithService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\HierarchyService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\HyperionService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\JDEService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\LDAPService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\OMBWorkOrderService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\OracleHelperService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ProductCategoryService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ProductService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\QuoteService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\SalesForceService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\SecurityLevelService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\UserDefinedCodeService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\WorkOrderService.cs" />
+    <Compile Include="ServicesInterface\IAddressBookService.cs" />
+    <Compile Include="ServicesInterface\IApplicationLogCodeService.cs" />
+    <Compile Include="ServicesInterface\IApplicationLogService.cs" />
+    <Compile Include="ServicesInterface\IApplicationService.cs" />
+    <Compile Include="ServicesInterface\ICustomerLedgerService.cs" />
+    <Compile Include="ServicesInterface\IEmailService.cs" />
+    <Compile Include="ServicesInterface\IEmployeeService.cs" />
+    <Compile Include="ServicesInterface\IEquipmentService.cs" />
+    <Compile Include="ServicesInterface\IFeithService.cs" />
+    <Compile Include="ServicesInterface\IHierarchyService.cs" />
+    <Compile Include="ServicesInterface\IHyperionService.cs" />
+    <Compile Include="ServicesInterface\IJDEService.cs" />
+    <Compile Include="ServicesInterface\ILDAPService.cs" />
+    <Compile Include="ServicesInterface\IOMBWorkOrderService.cs" />
+    <Compile Include="ServicesInterface\IOracleHelperService.cs" />
+    <Compile Include="ServicesInterface\IProductCategoryService.cs" />
+    <Compile Include="ServicesInterface\IProductService.cs" />
+    <Compile Include="ServicesInterface\IQuoteService.cs" />
+    <Compile Include="ServicesInterface\ISalesForceService.cs" />
+    <Compile Include="ServicesInterface\ISecurityLevelService.cs" />
+    <Compile Include="ServicesInterface\IUserDefinedCodeService.cs" />
+    <Compile Include="ServicesInterface\IWorkOrderService.cs" />
+    <Compile Include="Objects\Item.Activity.cs" />
+    <Compile Include="Objects\Security\Security.Tablet.cs" />
+    <Compile Include="Objects\Unit.cs" />
+    <Compile Include="Objects\UnitAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesInterfaceImplementation\ItemService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\BusinessUnitService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\HelperService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\SecurityService.cs" />
+    <Compile Include="ServicesInterfaceImplementation\UnitService.cs" />
+    <Compile Include="ServicesInterface\IItemService.cs" />
+    <Compile Include="ServicesInterface\IBusinessUnitService.cs" />
+    <Compile Include="ServicesInterface\IHelperService.cs" />
+    <Compile Include="ServicesInterface\ISecurityService.cs" />
+    <Compile Include="ServicesInterface\IUnitService.cs" />
+    <Compile Include="Validators\EmailAttribute.cs" />
+    <Compile Include="WSJDEData\AddressBook.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APIRequest.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APIRequestData.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APIRequestDataKey.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APIRequestDataKeyClass.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APIRequestSource.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APISFProduct.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\APISource.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Application.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Asset.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\BusinessUnit.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\CustomAsset.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Employee.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Equipment.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\FleetAttribute.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Inventory.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\InventoryProduct.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Item.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\ItemBranch.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\ItemCost.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\LaborActivity.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Location.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\MWOFeithImage.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\OMBFleetCategory.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\OMBLookup.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\OMBOrderHeader.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\OMBUnit.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\OMBWorkOrder.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\PaperlessRequest.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\PaperlessRequestOrder.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\PartExtension.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Product.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\ProductCategory.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\ProductCategoryStatus.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\ProductStatus.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\RoutingExtension.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\Security.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\SecurityLevel.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\TemporaryWorkOrderNumber.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\UserDefinedCode.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\UserDefinedCodeType.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WorkOrder.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WorkOrderActivity.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WorkOrderInstruction.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WorkOrderMasterTag.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WorkOrderPart.cs">
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WSJDEContext.cs" />
+    <Compile Include="WSJDEData\WSJDE.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSJDE.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WSJDE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSJDE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSJDEData\WSJDE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSJDE.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>Library\AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Library\Devart.Data.dll" />
+    <Content Include="Library\Devart.Data.Oracle.dll" />
+    <Content Include="Library\Devart.Data.Oracle.Entity.dll" />
+    <Content Include="Scripts\additional-methods.js" />
+    <Content Include="Scripts\additional-methods.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="ASJDE\ASJDE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ASJDE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ASJDE\ASJDE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ASJDE.edmx</DependentUpon>
+      <LastGenOutput>ASJDE.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ASJDE\ASJDE.edmx.diagram">
+      <DependentUpon>ASJDE.edmx</DependentUpon>
+    </None>
+    <None Include="ASJDE\ASJDE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ASJDE.edmx</DependentUpon>
+      <LastGenOutput>ASJDE.cs</LastGenOutput>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Objects\BusinessUnit.Short.cs" />
+    <Compile Include="Objects\CustomerLedger.Invoice.PDF.cs" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="WSJDEData\WSJDE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WSJDE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WSJDEData\WSJDE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSJDE.edmx</DependentUpon>
+      <LastGenOutput>WSJDE.Context.cs</LastGenOutput>
+    </None>
+    <None Include="WSJDEData\WSJDE.edmx.diagram">
+      <DependentUpon>WSJDE.edmx</DependentUpon>
+    </None>
+    <None Include="WSJDEData\WSJDE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSJDE.edmx</DependentUpon>
+      <LastGenOutput>WSJDE.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

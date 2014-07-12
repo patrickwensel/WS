@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9369b358669f4835be15421b9292c564" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="WSJDEModel.Location" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WSJDEModel.UserDefinedCodeType" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WSJDEModel.UserDefinedCode" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WSJDEModel.BusinessUnit" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WSJDEModel.OMBOrderHeader" Width="1.5" PointX="7.125" PointY="1" />
+        <EntityTypeShape EntityType="WSJDEModel.OMBUnit" Width="1.5" PointX="11.272550699893642" PointY="13.932464010050737" />
+        <EntityTypeShape EntityType="WSJDEModel.AddressBook" Width="1.5" PointX="6.9297149306767221" PointY="21.031841660398918" />
+        <EntityTypeShape EntityType="WSJDEModel.Asset" Width="1.5" PointX="1.6406425412933543" PointY="14.453780240590582" />
+        <EntityTypeShape EntityType="WSJDEModel.Equipment" Width="1.5" PointX="4.7109535898598622" PointY="16.157096974624832" />
+        <EntityTypeShape EntityType="WSJDEModel.WorkOrderPart" Width="1.5" PointX="1.869003397351598" PointY="11.398386960569019" />
+        <EntityTypeShape EntityType="WSJDEModel.WorkOrderActivity" Width="1.5" PointX="7.6778376138200226" PointY="13.801510712970751" />
+        <EntityTypeShape EntityType="WSJDEModel.PartExtension" Width="1.5" PointX="9.4475652917509727" PointY="27.987309454003029" />
+        <EntityTypeShape EntityType="WSJDEModel.RoutingExtension" Width="1.5" PointX="11.458543857307426" PointY="9.882093419265976" />
+        <EntityTypeShape EntityType="WSJDEModel.Item" Width="1.5" PointX="5.1892005825364969" PointY="15.37890041590617" />
+        <EntityTypeShape EntityType="WSJDEModel.ItemBranch" Width="1.5" PointX="32.5" PointY="5.625" />
+        <EntityTypeShape EntityType="WSJDEModel.ItemCost" Width="1.5" PointX="3.2394570946877161" PointY="17.66364356207831" />
+        <EntityTypeShape EntityType="WSJDEModel.WorkOrder" Width="1.5" PointX="11.886615307948839" PointY="2.9151168926223727" />
+        <EntityTypeShape EntityType="WSJDEModel.WorkOrderMasterTag" Width="1.5" PointX="4.28674942640902" PointY="1.6267738498872024" />
+        <EntityTypeShape EntityType="WSJDEModel.WorkOrderInstruction" Width="1.5" PointX="7.466090198357632" PointY="10.901773502538807" />
+        <EntityTypeShape EntityType="WSJDEModel.CustomAsset" Width="1.5" PointX="11.880149664301495" PointY="6.8420020373733728" />
+        <EntityTypeShape EntityType="WSJDEModel.LaborActivity" Width="1.5" PointX="4.0552330129105751" PointY="3.7996490019371962" />
+        <EntityTypeShape EntityType="WSJDEModel.OMBWorkOrder" Width="1.5" PointX="1.0160237369202188" PointY="7.9267746992068249" />
+        <AssociationConnector Association="WSJDEModel.SISR_SYS_C0013005" />
+        <EntityTypeShape EntityType="WSJDEModel.Employee" Width="1.5" PointX="8.46658034644396" PointY="27.30129790087291" />
+        <EntityTypeShape EntityType="WSJDEModel.OMBFleetCategory" Width="1.5" PointX="9.4704867459230524" PointY="22.4465418860533" />
+        <EntityTypeShape EntityType="WSJDEModel.FleetAttribute" Width="1.5" PointX="9.02363779257221" PointY="10.434769501180746" />
+        <EntityTypeShape EntityType="WSJDEModel.Application" Width="1.5" PointX="8.9409801852614521" PointY="29.747701316023107" />
+        <EntityTypeShape EntityType="WSJDEModel.Security" Width="1.5" PointX="5.0031906557284254" PointY="18.057892628972368" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_FK_WEB_SECURITY_001" />
+        <EntityTypeShape EntityType="WSJDEModel.MWOFeithImage" Width="1.5" PointX="8.87614604685276" PointY="24.895838436156435" />
+        <EntityTypeShape EntityType="WSJDEModel.OMBLookup" Width="1.5" PointX="0.20575484643026948" PointY="23.5962716599909" />
+        <EntityTypeShape EntityType="WSJDEModel.TemporaryWorkOrderNumber" Width="1.5" PointX="0.74100400541955791" PointY="10.564841141255965" />
+        <EntityTypeShape EntityType="WSJDEModel.PaperlessRequest" Width="1.5" PointX="0.707750888870913" PointY="0.20899575958447333" />
+        <EntityTypeShape EntityType="WSJDEModel.PaperlessRequestOrder" Width="1.5" PointX="7.0669432706511319" PointY="7.5430943106967465" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_PAPERLESS_REQUEST_FK" />
+        <EntityTypeShape EntityType="WSJDEModel.APIRequestData" Width="1.5" PointX="4.1256687436838018" PointY="6.2434583186374315" />
+        <EntityTypeShape EntityType="WSJDEModel.APIRequestDataKey" Width="1.5" PointX="7.807490970849754" PointY="28.652506141295891" />
+        <EntityTypeShape EntityType="WSJDEModel.APIRequestDataKeyClass" Width="1.5" PointX="7.1286507356579651" PointY="18.765198626911825" />
+        <EntityTypeShape EntityType="WSJDEModel.APIRequestSource" Width="1.5" PointX="11.708097131786914" PointY="18.755789854915715" />
+        <EntityTypeShape EntityType="WSJDEModel.APISource" Width="1.5" PointX="0.49287125677469712" PointY="23.752924736474139" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_REQ_DATA_KEY_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_REQ_DATA_KEY_CLASS_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_REQUEST_SRC_LEAD_FK1" />
+        <EntityTypeShape EntityType="WSJDEModel.APIRequest" Width="1.5" PointX="7.8936832937848207" PointY="11.146207218592151" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_REQUEST_DATA_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_REQUEST_SRC_REQUEST_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_SOURCE__REQUEST_FK" />
+        <EntityTypeShape EntityType="WSJDEModel.APISFProduct" Width="1.5" PointX="6.3292717702357439" PointY="23.019640039196069" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_API_SF_PROD_REQ_DATA_KEY" />
+        <EntityTypeShape EntityType="WSJDEModel.Inventory" Width="1.5" PointX="1.71963355211524" PointY="23.504727046706122" />
+        <EntityTypeShape EntityType="WSJDEModel.InventoryProduct" Width="1.5" PointX="1.2910342259756449" PointY="8.3416302242975817" />
+        <EntityTypeShape EntityType="WSJDEModel.Product" Width="1.5" PointX="1.4848192341089339" PointY="4.8504083030160556" />
+        <EntityTypeShape EntityType="WSJDEModel.ProductCategory" Width="1.5" PointX="4.2898047251113711" PointY="19.287727186124645" />
+        <EntityTypeShape EntityType="WSJDEModel.ProductCategoryStatus" Width="1.5" PointX="7.8189340121200939" PointY="31.075748189853385" />
+        <EntityTypeShape EntityType="WSJDEModel.ProductStatus" Width="1.5" PointX="2.7002853223589649" PointY="22.309338565128549" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_VI_INVENTORY_ID_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_VI_PRODUCT_ID_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_VI_PRODUCT_CATAGORY_ID_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_VI_PRODUCT_STATUS_ID_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_VI_PRODUCT_CAT_STATUS_ID_FK" />
+        <EntityTypeShape EntityType="WSJDEModel.SecurityLevel" Width="1.5" PointX="14.75" PointY="40" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_WEB_SECURITY_LEVELS_FK" />
+        <AssociationConnector Association="WSJDEModel.JDE_WEB_WEB_APPLICATION_FK" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

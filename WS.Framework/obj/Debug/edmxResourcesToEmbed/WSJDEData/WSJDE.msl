@@ -1,0 +1,2236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WSJDEModelStoreContainer" CdmEntityContainer="WSJDE">
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="WSJDEModel.Location">
+        <MappingFragment StoreEntitySet="T_LOCATIONDIR">
+          <ScalarProperty Name="ID" ColumnName="LOC_ID" />
+          <ScalarProperty Name="Name" ColumnName="LOC_NAME" />
+          <ScalarProperty Name="Number" ColumnName="LOC_CC" />
+          <ScalarProperty Name="Code" ColumnName="LOC_CODE" />
+          <ScalarProperty Name="UpLevelID" ColumnName="UPLEVELID" />
+          <ScalarProperty Name="TypeID" ColumnName="TYPE_ID" />
+          <ScalarProperty Name="StatusID" ColumnName="STATUS_ID" />
+          <ScalarProperty Name="Address1" ColumnName="ADDR1" />
+          <ScalarProperty Name="Address2" ColumnName="ADDR2" />
+          <ScalarProperty Name="City" ColumnName="CITY" />
+          <ScalarProperty Name="State" ColumnName="STATE" />
+          <ScalarProperty Name="Zip" ColumnName="ZIP" />
+          <ScalarProperty Name="MainPhoneID" ColumnName="MPHONE_ID" />
+          <ScalarProperty Name="FaxPhoneID" ColumnName="FPHONE_ID" />
+          <ScalarProperty Name="System" ColumnName="SYSTEM" />
+          <ScalarProperty Name="Description" ColumnName="LOC_DESC" />
+          <ScalarProperty Name="ManagerID" ColumnName="MGR_ID" />
+          <ScalarProperty Name="ManagerOffsite" ColumnName="MGR_OFFSITE" />
+          <ScalarProperty Name="ContantID" ColumnName="CNTCT_ID" />
+          <ScalarProperty Name="EmployeeAdd" ColumnName="EMPL_ADD" />
+          <ScalarProperty Name="EmployeeHide" ColumnName="EMPL_HID" />
+          <ScalarProperty Name="ReportInclude" ColumnName="RPT_INCLUDE" />
+          <ScalarProperty Name="ReportOrder" ColumnName="RPT_ORDER" />
+          <ScalarProperty Name="CompanyID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LAST_MOD" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LAST_MOD_EMP" />
+          <ScalarProperty Name="LocationIDAddress" ColumnName="LOC_ID_ADDR" />
+          <ScalarProperty Name="LocationIDPhone" ColumnName="LOC_ID_PHONE" />
+          <ScalarProperty Name="LocationIDNet" ColumnName="LOC_ID_NET" />
+          <ScalarProperty Name="BranchLevel" ColumnName="BRANCH_LEVEL" />
+          <ScalarProperty Name="AreaLocationID" ColumnName="AREA_LOC_ID" />
+          <ScalarProperty Name="RegionLocationID" ColumnName="REGION_LOC_ID" />
+          <ScalarProperty Name="ReportLevel" ColumnName="RPT_LEVEL" />
+          <ScalarProperty Name="CountryID" ColumnName="COUNTRY_ID" />
+          <ScalarProperty Name="Lattitude" ColumnName="LATITUDE" />
+          <ScalarProperty Name="Longitude" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="InternetFlag" ColumnName="INTERNET_FLAG" />
+          <ScalarProperty Name="InternetDisplayName" ColumnName="INTERNET_DISPLAY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDefinedCodeTypes">
+      <EntityTypeMapping TypeName="WSJDEModel.UserDefinedCodeType">
+        <MappingFragment StoreEntitySet="F0004">
+          <ScalarProperty Name="ProductCode" ColumnName="DTSY" />
+          <ScalarProperty Name="UserDefinedCodeTypeID" ColumnName="DTRT" />
+          <ScalarProperty Name="Description" ColumnName="DTDL01" />
+          <ScalarProperty Name="UserDefinedCodeSequenceNumber" ColumnName="DTUSEQ" />
+          <ScalarProperty Name="UserDefinedCodeClassCode1" ColumnName="DTUCD1" />
+          <ScalarProperty Name="CodeLength" ColumnName="DTCDL" />
+          <ScalarProperty Name="Line2DesiredYN" ColumnName="DTLN2" />
+          <ScalarProperty Name="NumericYN" ColumnName="DTCNUM" />
+          <ScalarProperty Name="EnterpriseOneMergeControl" ColumnName="DTMRCT" />
+          <ScalarProperty Name="MergeType" ColumnName="DTMRTY" />
+          <ScalarProperty Name="UserID" ColumnName="DTUSER" />
+          <ScalarProperty Name="ProgramID" ColumnName="DTPID" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DTUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="DTJOBN" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="DTUPMT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDefinedCodes">
+      <EntityTypeMapping TypeName="WSJDEModel.UserDefinedCode">
+        <MappingFragment StoreEntitySet="F0005">
+          <ScalarProperty Name="ProductCode" ColumnName="DRSY" />
+          <ScalarProperty Name="UserDefinedCodeTypeID" ColumnName="DRRT" />
+          <ScalarProperty Name="UserDefinedCodeID" ColumnName="DRKY" />
+          <ScalarProperty Name="Description1" ColumnName="DRDL01" />
+          <ScalarProperty Name="Description2" ColumnName="DRDL02" />
+          <ScalarProperty Name="SpecialHandlingCodeUserDefCodes" ColumnName="DRSPHD" />
+          <ScalarProperty Name="OwnershipFlagUserDefinedCodes" ColumnName="DRUDCO" />
+          <ScalarProperty Name="HardCodedYN" ColumnName="DRHRDC" />
+          <ScalarProperty Name="UserID" ColumnName="DRUSER" />
+          <ScalarProperty Name="ProgramID" ColumnName="DRPID" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DRUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="DRJOBN" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="DRUPMT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessUnits">
+      <EntityTypeMapping TypeName="WSJDEModel.BusinessUnit">
+        <MappingFragment StoreEntitySet="F0006">
+          <ScalarProperty Name="ID" ColumnName="MCMCU" />
+          <ScalarProperty Name="BusinessUnitType" ColumnName="MCSTYL" />
+          <ScalarProperty Name="DescriptionCompressed" ColumnName="MCDC" />
+          <ScalarProperty Name="LevelofDetailBusinessUnit" ColumnName="MCLDM" />
+          <ScalarProperty Name="Company" ColumnName="MCCO" />
+          <ScalarProperty Name="AddressNumber" ColumnName="MCAN8" />
+          <ScalarProperty Name="AddressNumberJobAR" ColumnName="MCAN8O" />
+          <ScalarProperty Name="County" ColumnName="MCCNTY" />
+          <ScalarProperty Name="State" ColumnName="MCADDS" />
+          <ScalarProperty Name="ModelAccountsandConsolidationFlag" ColumnName="MCFMOD" />
+          <ScalarProperty Name="Description" ColumnName="MCDL01" />
+          <ScalarProperty Name="Description02" ColumnName="MCDL02" />
+          <ScalarProperty Name="Description03" ColumnName="MCDL03" />
+          <ScalarProperty Name="Description04" ColumnName="MCDL04" />
+          <ScalarProperty Name="Division" ColumnName="MCRP01" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit02" ColumnName="MCRP02" />
+          <ScalarProperty Name="Area" ColumnName="MCRP03" />
+          <ScalarProperty Name="Group" ColumnName="MCRP04" />
+          <ScalarProperty Name="BranchOffice" ColumnName="MCRP05" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit06" ColumnName="MCRP06" />
+          <ScalarProperty Name="LineofBusiness" ColumnName="MCRP07" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit08" ColumnName="MCRP08" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit09" ColumnName="MCRP09" />
+          <ScalarProperty Name="MajorProjectGroup" ColumnName="MCRP10" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit11" ColumnName="MCRP11" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit12" ColumnName="MCRP12" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit13" ColumnName="MCRP13" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit14" ColumnName="MCRP14" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit15" ColumnName="MCRP15" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit16" ColumnName="MCRP16" />
+          <ScalarProperty Name="MajorProjectType" ColumnName="MCRP17" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="MCRP18" />
+          <ScalarProperty Name="DefaultCompanyNumber" ColumnName="MCRP19" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit20" ColumnName="MCRP20" />
+          <ScalarProperty Name="DivisionManager" ColumnName="MCRP21" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit22" ColumnName="MCRP22" />
+          <ScalarProperty Name="AreaManager" ColumnName="MCRP23" />
+          <ScalarProperty Name="GroupManager" ColumnName="MCRP24" />
+          <ScalarProperty Name="BranchManager" ColumnName="MCRP25" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit26" ColumnName="MCRP26" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit27" ColumnName="MCRP27" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit28" ColumnName="MCRP28" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit29" ColumnName="MCRP29" />
+          <ScalarProperty Name="CategoryCodeBusinessUnit30" ColumnName="MCRP30" />
+          <ScalarProperty Name="TaxArea" ColumnName="MCTA" />
+          <ScalarProperty Name="TaxEntity" ColumnName="MCTXJS" />
+          <ScalarProperty Name="TaxRateArea" ColumnName="MCTXA1" />
+          <ScalarProperty Name="TaxExplCode1" ColumnName="MCEXR1" />
+          <ScalarProperty Name="TaxDeductionCodes01" ColumnName="MCTC01" />
+          <ScalarProperty Name="TaxDeductionCodes02" ColumnName="MCTC02" />
+          <ScalarProperty Name="TaxDeductionCodes03" ColumnName="MCTC03" />
+          <ScalarProperty Name="TaxDeductionCodes04" ColumnName="MCTC04" />
+          <ScalarProperty Name="TaxDeductionCodes05" ColumnName="MCTC05" />
+          <ScalarProperty Name="TaxDeductionCodes06" ColumnName="MCTC06" />
+          <ScalarProperty Name="TaxDeductionCodes07" ColumnName="MCTC07" />
+          <ScalarProperty Name="TaxDeductionCodes08" ColumnName="MCTC08" />
+          <ScalarProperty Name="TaxDeductionCodes09" ColumnName="MCTC09" />
+          <ScalarProperty Name="TaxDeductionCodes10" ColumnName="MCTC10" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode01" ColumnName="MCND01" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode02" ColumnName="MCND02" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode03" ColumnName="MCND03" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode04" ColumnName="MCND04" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode05" ColumnName="MCND05" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode06" ColumnName="MCND06" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode07" ColumnName="MCND07" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode08" ColumnName="MCND08" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode09" ColumnName="MCND09" />
+          <ScalarProperty Name="TaxDistributableNonDistrCode10" ColumnName="MCND10" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode01" ColumnName="MCCC01" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode02" ColumnName="MCCC02" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode03" ColumnName="MCCC03" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode04" ColumnName="MCCC04" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode05" ColumnName="MCCC05" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode06" ColumnName="MCCC06" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode07" ColumnName="MCCC07" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode08" ColumnName="MCCC08" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode09" ColumnName="MCCC09" />
+          <ScalarProperty Name="TaxorDeductionComputeStatusCode10" ColumnName="MCCC10" />
+          <ScalarProperty Name="PostingEditBusinessUnit" ColumnName="MCPECC" />
+          <ScalarProperty Name="AllocationSummarizationMethod" ColumnName="MCALS" />
+          <ScalarProperty Name="InvoiceStmtSummarizationMethod" ColumnName="MCISS" />
+          <ScalarProperty Name="GLBankAccount" ColumnName="MCGLBA" />
+          <ScalarProperty Name="AllocationLevel" ColumnName="MCALCL" />
+          <ScalarProperty Name="LaborDistributionMethod" ColumnName="MCLMTH" />
+          <ScalarProperty Name="LaborDistributionMultiplier" ColumnName="MCLF" />
+          <ScalarProperty Name="ObjectAccountLaborAccount" ColumnName="MCOBJ1" />
+          <ScalarProperty Name="ObjectAccountPremiumAccount" ColumnName="MCOBJ2" />
+          <ScalarProperty Name="ObjectAccountBurden" ColumnName="MCOBJ3" />
+          <ScalarProperty Name="SubsidiaryBurdenCostCode" ColumnName="MCSUB1" />
+          <ScalarProperty Name="UnitsTotal" ColumnName="MCTOU" />
+          <ScalarProperty Name="SubledgerInactiveCode" ColumnName="MCSBLI" />
+          <ScalarProperty Name="Supervisor" ColumnName="MCANPA" />
+          <ScalarProperty Name="ContractType" ColumnName="MCCT" />
+          <ScalarProperty Name="CertifiedJob" ColumnName="MCCERT" />
+          <ScalarProperty Name="BusinessUnitSubsequent" ColumnName="MCMCUS" />
+          <ScalarProperty Name="BillingTypeBusinessUnit" ColumnName="MCBTYP" />
+          <ScalarProperty Name="PercentComplete" ColumnName="MCPC" />
+          <ScalarProperty Name="PercentCompleteAggregateDetail" ColumnName="MCPCA" />
+          <ScalarProperty Name="AmountCosttoCompleteobsolete" ColumnName="MCPCC" />
+          <ScalarProperty Name="InterestComputationCodeAR" ColumnName="MCINTA" />
+          <ScalarProperty Name="InterestCompLateRevenue" ColumnName="MCINTL" />
+          <ScalarProperty Name="v" ColumnName="MCD1J" />
+          <ScalarProperty Name="DateActualStart" ColumnName="MCD2J" />
+          <ScalarProperty Name="DatePlannedComplete" ColumnName="MCD3J" />
+          <ScalarProperty Name="DateActualComplete" ColumnName="MCD4J" />
+          <ScalarProperty Name="DateOther5" ColumnName="MCD5J" />
+          <ScalarProperty Name="DateOther6" ColumnName="MCD6J" />
+          <ScalarProperty Name="DateFinalPaymentJulian" ColumnName="MCFPDJ" />
+          <ScalarProperty Name="AmountCostatCompletion" ColumnName="MCCAC" />
+          <ScalarProperty Name="AmountProfitatCompletion" ColumnName="MCPAC" />
+          <ScalarProperty Name="EqualEmploymentOpportunity" ColumnName="MCEEO" />
+          <ScalarProperty Name="EquipmentRateCode" ColumnName="MCERC" />
+          <ScalarProperty Name="UserID" ColumnName="MCUSER" />
+          <ScalarProperty Name="ProgramID" ColumnName="MCPID" />
+          <ScalarProperty Name="DateUpdated" ColumnName="MCUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="MCJOBN" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="MCUPMT" />
+          <ScalarProperty Name="BranchType" ColumnName="MCBPTP" />
+          <ScalarProperty Name="APSBusinessUnit" ColumnName="MCAPSB" />
+          <ScalarProperty Name="TargetBusinessUnit" ColumnName="MCTSBU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OMBOrderHeaders">
+      <EntityTypeMapping TypeName="WSJDEModel.OMBOrderHeader">
+        <MappingFragment StoreEntitySet="OMB_ORDER_HEADER">
+          <ScalarProperty Name="FinalBillDate" ColumnName="FINAL_BILL_DATE" />
+          <ScalarProperty Name="CCSubscription" ColumnName="CC_SUBSCRIPTION" />
+          <ScalarProperty Name="DeliverDateAtBilling" ColumnName="DELIV_DT_AT_BILLING" />
+          <ScalarProperty Name="GSAFlag" ColumnName="GSA_FLAG" />
+          <ScalarProperty Name="BMQuoteProdID" ColumnName="BM_QUOTE_PROD_ID" />
+          <ScalarProperty Name="SubleasedItems" ColumnName="SUBLEASED_ITEMS" />
+          <ScalarProperty Name="InitialBillGLDate" ColumnName="INIT_BILL_GL_DATE" />
+          <ScalarProperty Name="BMSeqenceNumber" ColumnName="BM_SEQ_NUM" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PREPARED_BY" />
+          <ScalarProperty Name="BMQuoteNumber" ColumnName="BM_QUOTE_NUMBER" />
+          <ScalarProperty Name="Mileage" ColumnName="MILEAGE" />
+          <ScalarProperty Name="TMPBillAttention" ColumnName="TMP_BILL_ATTENTION" />
+          <ScalarProperty Name="OriginatingSystem" ColumnName="ORIGINATING_SYSTEM" />
+          <ScalarProperty Name="NAICSCode" ColumnName="NAICS_CODE" />
+          <ScalarProperty Name="SFDCPrimaryQuoteProdID" ColumnName="SFDC_PRIMARY_QUOTE_PROD_ID" />
+          <ScalarProperty Name="SFDCQuoteID" ColumnName="SFDC_QUOTE_ID" />
+          <ScalarProperty Name="SFDCOpportunityID" ColumnName="SFDC_OPPORTUNITY_ID" />
+          <ScalarProperty Name="AttentionToIdln" ColumnName="ATTENTION_TO_IDLN" />
+          <ScalarProperty Name="CybersourceSubscriptionID" ColumnName="CYBERSOURCE_SUBSCRIPTIONID" />
+          <ScalarProperty Name="InsuranceNote" ColumnName="INSURANCE_NOTE" />
+          <ScalarProperty Name="DeliveryUnitCount" ColumnName="DELIV_UNIT_COUNT" />
+          <ScalarProperty Name="DeliverModelCode" ColumnName="DELIV_MODEL_CODE" />
+          <ScalarProperty Name="InitialBillDate" ColumnName="INIT_BILL_DATE" />
+          <ScalarProperty Name="DeliveryRevenueLocation" ColumnName="DELIV_REVENUE_LOCATION" />
+          <ScalarProperty Name="OriginalRevenueLocation" ColumnName="ORIG_REVENUE_LOCATION" />
+          <ScalarProperty Name="CCGroupID" ColumnName="CC_GROUP_ID" />
+          <ScalarProperty Name="CCEnrID" ColumnName="CC_ENRID" />
+          <ScalarProperty Name="ACHAccountSuffix" ColumnName="ACH_ACCOUNT_SUFFIX" />
+          <ScalarProperty Name="ProjectNumber" ColumnName="PROJECT_NBR" />
+          <ScalarProperty Name="WSPurchaseAgreement" ColumnName="WS_PURCH_AGREEMENT" />
+          <ScalarProperty Name="WSBusSectorRef" ColumnName="WS_BUS_SECTOR_REF" />
+          <ScalarProperty Name="CreditCardSuffix" ColumnName="CREDIT_CARD_SUFFIX" />
+          <ScalarProperty Name="CreditCardCrypt" ColumnName="CREDIT_CARD_CRYPT" />
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CREATE_USER_ID" />
+          <ScalarProperty Name="MaintenanceDate" ColumnName="MAINT_DATE" />
+          <ScalarProperty Name="MaintenanceUserID" ColumnName="MAINT_USER_ID" />
+          <ScalarProperty Name="FederalID" ColumnName="FEDERAL_ID" />
+          <ScalarProperty Name="FinalPackageFlag" ColumnName="FINAL_PACKAGE_FLAG" />
+          <ScalarProperty Name="EditValidationFlag" ColumnName="EDIT_VALIDATION_FLAG" />
+          <ScalarProperty Name="ContractNote" ColumnName="CONTRACT_NOTE" />
+          <ScalarProperty Name="BypassDocumentFlag" ColumnName="BYPASS_DOCUMENT_FLAG" />
+          <ScalarProperty Name="PurchaseOptionID" ColumnName="PURCHASE_OPTION_ID" />
+          <ScalarProperty Name="AdvanceBillID" ColumnName="ADVANCE_BILL_ID" />
+          <ScalarProperty Name="UCC1FilingID" ColumnName="UCC1_FILING_ID" />
+          <ScalarProperty Name="RequestInsuranceCertificateID" ColumnName="REQUEST_INS_CERT_ID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LEASE_AGREEMENT_ID" />
+          <ScalarProperty Name="InsuranceRequestedDate" ColumnName="INSURANCE_REQUESTED_DATE" />
+          <ScalarProperty Name="SFAUpdatesCompleteFlag" ColumnName="SFA_UPDATES_COMPLETE_FLAG" />
+          <ScalarProperty Name="WSMktPromRef" ColumnName="WS_MKT_PROM_REF" />
+          <ScalarProperty Name="ShipRck7" ColumnName="SHIP_RCK7" />
+          <ScalarProperty Name="Ship_Idln" ColumnName="SHIP_IDLN" />
+          <ScalarProperty Name="TaxFrequencyID" ColumnName="TAX_FREQUENCY_ID" />
+          <ScalarProperty Name="UseCreditCardID" ColumnName="USE_CREDIT_CARD_ID" />
+          <ScalarProperty Name="BranchRRIEExemptDate" ColumnName="BRANCH_RRI_EXEMPT_DATE" />
+          <ScalarProperty Name="EOYExclusion" ColumnName="EOY_EXCLUSION" />
+          <ScalarProperty Name="PurchasingAgentRCK7" ColumnName="PURCHASING_AGENT_RCK7" />
+          <ScalarProperty Name="SiteContactRCK7" ColumnName="SITE_CONTACT_RCK7" />
+          <ScalarProperty Name="BillRCK7" ColumnName="BILL_RCK7" />
+          <ScalarProperty Name="BillIdln" ColumnName="BILL_IDLN" />
+          <ScalarProperty Name="ModularBuildingFlag" ColumnName="MODULAR_BUILDING_FLAG" />
+          <ScalarProperty Name="SpecialProjectFlag" ColumnName="SPECIAL_PROJECT_FLAG" />
+          <ScalarProperty Name="InvoiceHandleID" ColumnName="INVOICE_HANDLE_ID" />
+          <ScalarProperty Name="SpecialNotes" ColumnName="SPECIAL_NOTES" />
+          <ScalarProperty Name="BillNotes" ColumnName="BILL_NOTES" />
+          <ScalarProperty Name="BranchRRIEExemptUser" ColumnName="BRANCH_RRI_EXEMPT_USER" />
+          <ScalarProperty Name="BranchRRIEExemptFlag" ColumnName="BRANCH_RRI_EXEMPT_FLAG" />
+          <ScalarProperty Name="AffiliateProgramID" ColumnName="AFFILIATE_PROGRAM_ID" />
+          <ScalarProperty Name="PPTRate" ColumnName="PPT_RATE" />
+          <ScalarProperty Name="TaxNotes" ColumnName="TAX_NOTES" />
+          <ScalarProperty Name="ExemptPPTUserID" ColumnName="EXEMPT_PPT_USER_ID" />
+          <ScalarProperty Name="ExemptPPTID" ColumnName="EXEMPT_PPT_ID" />
+          <ScalarProperty Name="CostPerSqaureFoot" ColumnName="COST_PER_SQFT" />
+          <ScalarProperty Name="SalesPercentNetDays" ColumnName="SALES_PERCENT_NET_DAYS" />
+          <ScalarProperty Name="SalesPercentNet" ColumnName="SALES_PERCENT_NET" />
+          <ScalarProperty Name="SalesPercentPreDelivery" ColumnName="SALES_PERCENT_PRE_DELIVERY" />
+          <ScalarProperty Name="SalesPercentDown" ColumnName="SALES_PERCENT_DOWN" />
+          <ScalarProperty Name="InitialInvoiceCODFlag" ColumnName="INIT_INVOICE_COD_FLAG" />
+          <ScalarProperty Name="NumberOfMonthsUpFront" ColumnName="NBR_MONTHS_UPFRONT" />
+          <ScalarProperty Name="LastMonthFlag" ColumnName="LAST_MONTH_FLAG" />
+          <ScalarProperty Name="EntireContractFlag" ColumnName="ENTIRE_CONTRACT_FLAG" />
+          <ScalarProperty Name="FinalChargesFlag" ColumnName="FINAL_CHARGES_FLAG" />
+          <ScalarProperty Name="InitialChargesFlag" ColumnName="INIT_CHARGES_FLAG" />
+          <ScalarProperty Name="CreditRequestDate" ColumnName="CREDIT_REQUESTED_DATE" />
+          <ScalarProperty Name="CreditRequirementsFlag" ColumnName="CREDIT_RQMTS_FLAG" />
+          <ScalarProperty Name="LetterOfGoodStandingFlag" ColumnName="LETTER_OF_GOOD_STD_FLAG" />
+          <ScalarProperty Name="ArticlesOfIncFlag" ColumnName="ARTICLES_OF_INC_FLAG" />
+          <ScalarProperty Name="CreditComment" ColumnName="CREDIT_COMMENT" />
+          <ScalarProperty Name="BranchComment" ColumnName="BRANCH_COMMENT" />
+          <ScalarProperty Name="CreditUpdatedDate" ColumnName="CREDIT_UPDATED_DATE" />
+          <ScalarProperty Name="CreditUpdatedBy" ColumnName="CREDIT_UPDATED_BY" />
+          <ScalarProperty Name="CreditStatusReasonID" ColumnName="CREDIT_STATUS_REASON_ID" />
+          <ScalarProperty Name="CreditStatus" ColumnName="CREDIT_STATUS" />
+          <ScalarProperty Name="MarketingUseID" ColumnName="MARKETING_USE_ID" />
+          <ScalarProperty Name="CancelReasonDescription" ColumnName="CANCEL_REASON_DESC" />
+          <ScalarProperty Name="NumberOfInvoices" ColumnName="NBR_OF_INVOICES" />
+          <ScalarProperty Name="ACQCode" ColumnName="ACQ_CODE" />
+          <ScalarProperty Name="SiteWorkMaterials" ColumnName="SITE_WORK_MATERIALS" />
+          <ScalarProperty Name="DeliveryDirections" ColumnName="DELIVERY_DIRECTIONS" />
+          <ScalarProperty Name="NationalAccountJobNumber" ColumnName="NATL_ACCT_JOB_NBR" />
+          <ScalarProperty Name="BondAmount" ColumnName="BOND_AMT" />
+          <ScalarProperty Name="BondNumber" ColumnName="BOND_NUM" />
+          <ScalarProperty Name="BillDay" ColumnName="BILL_DAY" />
+          <ScalarProperty Name="FreeMonth" ColumnName="FREE_MONTH" />
+          <ScalarProperty Name="Certificate" ColumnName="CERTIFICATE" />
+          <ScalarProperty Name="ExemptRRIFlag" ColumnName="EXEMPT_RRI_FLAG" />
+          <ScalarProperty Name="WSQuoteRevisionNumber" ColumnName="WS_QUOTE_REVISION_NUM" />
+          <ScalarProperty Name="WSQuoteNumber" ColumnName="WS_QUOTE_NUM" />
+          <ScalarProperty Name="ExemptLicenseFeeFlag" ColumnName="EXEMPT_LICENSE_FEE_FLAG" />
+          <ScalarProperty Name="CreditCardExpirationDate" ColumnName="CREDIT_CARD_EXPIRATION_DATE" />
+          <ScalarProperty Name="CreditCardNumber" ColumnName="CREDIT_CARD_NO" />
+          <ScalarProperty Name="JDEMPJobNumber" ColumnName="JDE_MP_JOB_NBR" />
+          <ScalarProperty Name="BillThruDate" ColumnName="BILL_THRU_DATE" />
+          <ScalarProperty Name="DealerID" ColumnName="DEALER_ID" />
+          <ScalarProperty Name="ThirdPartyID" ColumnName="THIRD_PARTY_ID" />
+          <ScalarProperty Name="QDateTime" ColumnName="Q_DATE_TIME" />
+          <ScalarProperty Name="InvoiceInAdvance" ColumnName="INVOICE_IN_ADVANCE" />
+          <ScalarProperty Name="BillInAreaRS" ColumnName="BILL_IN_ARREARS" />
+          <ScalarProperty Name="RevenueLocation" ColumnName="REVENUE_LOCATION" />
+          <ScalarProperty Name="PurchasingAgentIDLN" ColumnName="PURCHASING_AGENT_IDLN" />
+          <ScalarProperty Name="SourceSKey" ColumnName="SOURCE_SKEY" />
+          <ScalarProperty Name="SICCode" ColumnName="SIC_CODE" />
+          <ScalarProperty Name="AddressBookID" ColumnName="SHIP_AN8" />
+          <ScalarProperty Name="SiteContactIDLN" ColumnName="SITE_CONTACT_IDLN" />
+          <ScalarProperty Name="TMPBillCountry" ColumnName="TMP_BILL_COUNTRY" />
+          <ScalarProperty Name="TMPBillZip" ColumnName="TMP_BILL_ZIP" />
+          <ScalarProperty Name="TMPBillState" ColumnName="TMP_BILL_STATE" />
+          <ScalarProperty Name="TMPBillCity" ColumnName="TMP_BILL_CITY" />
+          <ScalarProperty Name="TMPBillAddress3" ColumnName="TMP_BILL_ADDR3" />
+          <ScalarProperty Name="TMPBillAddress2" ColumnName="TMP_BILL_ADDR2" />
+          <ScalarProperty Name="TMPBillAddress1" ColumnName="TMP_BILL_ADDR1" />
+          <ScalarProperty Name="TMPBillPhone" ColumnName="TMP_BILL_PHONE" />
+          <ScalarProperty Name="OELocation" ColumnName="OE_LOCATION" />
+          <ScalarProperty Name="OECompany" ColumnName="OE_COMPANY" />
+          <ScalarProperty Name="BillGroupSKey" ColumnName="BILL_GROUP_SKEY" />
+          <ScalarProperty Name="QStatusID" ColumnName="Q_STATUS_ID" />
+          <ScalarProperty Name="OrderTypeID" ColumnName="ORDER_TYPE_ID" />
+          <ScalarProperty Name="SISOrderKey" ColumnName="SIS_ORDER_KEY" />
+          <ScalarProperty Name="SequenceNumber" ColumnName="SEQ_NUM" />
+          <ScalarProperty Name="ID" ColumnName="ORDER_SKEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OMBUnits">
+      <EntityTypeMapping TypeName="WSJDEModel.OMBUnit">
+        <MappingFragment StoreEntitySet="OMB_UNIT">
+          <ScalarProperty Name="TmpStories" ColumnName="TMP_STORIES" />
+          <ScalarProperty Name="PhysicalDeliveryDate" ColumnName="PHYSICAL_DELIVERY_DATE" />
+          <ScalarProperty Name="QuotedNewUsed" ColumnName="QUOTED_NEW_USED" />
+          <ScalarProperty Name="QuotedModel" ColumnName="QUOTED_MODEL" />
+          <ScalarProperty Name="QuotedWidth" ColumnName="QUOTED_WIDTH" />
+          <ScalarProperty Name="QuotedLength" ColumnName="QUOTED_LENGTH" />
+          <ScalarProperty Name="PreOrComments" ColumnName="PRE_OR_COMMENTS" />
+          <ScalarProperty Name="PreOrRequestedPU" ColumnName="PRE_OR_REQUESTED_PU" />
+          <ScalarProperty Name="PreOrContactFax" ColumnName="PRE_OR_CONTACT_FAX" />
+          <ScalarProperty Name="PreOrContactPhone" ColumnName="PRE_OR_CONTACT_PHONE" />
+          <ScalarProperty Name="PreOrContactEmail" ColumnName="PRE_OR_CONTACT_EMAIL" />
+          <ScalarProperty Name="PreOrContact" ColumnName="PRE_OR_CONTACT" />
+          <ScalarProperty Name="PreOrCallerPhone" ColumnName="PRE_OR_CALLER_PHONE" />
+          <ScalarProperty Name="PreOrCaller" ColumnName="PRE_OR_CALLER" />
+          <ScalarProperty Name="OrigUnitCount" ColumnName="ORIG_UNIT_COUNT" />
+          <ScalarProperty Name="OrigModelCode" ColumnName="ORIG_MODEL_CODE" />
+          <ScalarProperty Name="OrigTmpModelType" ColumnName="ORIG_TMP_MODEL_TYPE" />
+          <ScalarProperty Name="OffRentMTInvThruDate" ColumnName="OFF_RENT_MT_INV_THRU_DATE" />
+          <ScalarProperty Name="OffRentMTInvFromDate" ColumnName="OFF_RENT_MT_INV_FROM_DATE" />
+          <ScalarProperty Name="OffRentMTBillThruDate" ColumnName="OFF_RENT_MT_BILL_THRU_DATE" />
+          <ScalarProperty Name="DeliveryConfirmationNotes" ColumnName="DELIVERY_CONFIRMATION_NOTES" />
+          <ScalarProperty Name="DeliveryConfirmationDate" ColumnName="DELIVERY_CONFIRMATION_DATE" />
+          <ScalarProperty Name="DeliveryConfirmation" ColumnName="DELIVERY_CONFIRMATION" />
+          <ScalarProperty Name="OffRentConfInstructions" ColumnName="OFF_RENT_CONF_INSTRUCTIONS" />
+          <ScalarProperty Name="OffRentConfFreight" ColumnName="OFF_RENT_CONF_FREIGHT" />
+          <ScalarProperty Name="OffRentConfKnockdown" ColumnName="OFF_RENT_CONF_KNOCKDOWN" />
+          <ScalarProperty Name="OffRentConfSiteHours" ColumnName="OFF_RENT_CONF_SITE_HOURS" />
+          <ScalarProperty Name="OffRentConfSiteType" ColumnName="OFF_RENT_CONF_SITE_TYPE" />
+          <ScalarProperty Name="OffRentConfFaxMessage" ColumnName="OFF_RENT_CONF_FAX_MSG" />
+          <ScalarProperty Name="OffRentConfFax" ColumnName="OFF_RENT_CONF_FAX" />
+          <ScalarProperty Name="OffRentConfEmail" ColumnName="OFF_RENT_CONF_EMAIL" />
+          <ScalarProperty Name="OffRentConfMethod" ColumnName="OFF_RENT_CONF_METHOD" />
+          <ScalarProperty Name="OffRentConfDate" ColumnName="OFF_RENT_CONF_DATE" />
+          <ScalarProperty Name="OffRentConfUser" ColumnName="OFF_RENT_CONF_USER" />
+          <ScalarProperty Name="RelocationChargeDate" ColumnName="RELOCATION_CHG_DATE" />
+          <ScalarProperty Name="RelocationChargeUser" ColumnName="RELOCATION_CHG_USER" />
+          <ScalarProperty Name="Relocation" ColumnName="RELOCATION" />
+          <ScalarProperty Name="OffRentInvInstruction" ColumnName="OFF_RENT_INV_INSTRUCT" />
+          <ScalarProperty Name="OffRentDefaulBTDate" ColumnName="OFF_RENT_DEFAULT_BT_DATE" />
+          <ScalarProperty Name="OffRentSuspendDate" ColumnName="OFF_RENT_SUSPEND_DATE" />
+          <ScalarProperty Name="OffRentUndepTimaAmount" ColumnName="OFF_RENT_UNDEP_TIMA_AMT" />
+          <ScalarProperty Name="OffRentACTSettleAmount" ColumnName="OFF_RENT_ACT_SETTLE_AMT" />
+          <ScalarProperty Name="OffRentMinSettleAmount" ColumnName="OFF_RENT_MIN_SETTLE_AMT" />
+          <ScalarProperty Name="OffRentUnbilledAmount" ColumnName="OFF_RENT_UNBILLED_AMT" />
+          <ScalarProperty Name="EarlyTermReasonID" ColumnName="EARLY_TERM_REASON_ID" />
+          <ScalarProperty Name="UnitNotes" ColumnName="UNIT_NOTES" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CREATE_USER_ID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="MaintenanceUserID" ColumnName="MAINT_USER_ID" />
+          <ScalarProperty Name="MaintenanceDate" ColumnName="MAINT_DATE" />
+          <ScalarProperty Name="LastRRIDate" ColumnName="LAST_RRI_DATE" />
+          <ScalarProperty Name="InsuranceMessageCode" ColumnName="INSURANCE_MESSAGE_CODE" />
+          <ScalarProperty Name="OffRentInstruction" ColumnName="OFF_RENT_INSTRUCTION" />
+          <ScalarProperty Name="VendorPickup" ColumnName="VENDOR_PICKUP" />
+          <ScalarProperty Name="PickupBranch" ColumnName="PICKUP_BRANCH" />
+          <ScalarProperty Name="BillThruDate" ColumnName="BILL_THRU_DATE" />
+          <ScalarProperty Name="MakeAvailableFlag" ColumnName="MAKE_AVAILABLE_FLAG" />
+          <ScalarProperty Name="EarleyTermReason" ColumnName="EARLY_TERM_REASON" />
+          <ScalarProperty Name="OnSiteTakeoverFlag" ColumnName="ON_SITE_TAKEOVER_FLAG" />
+          <ScalarProperty Name="OffRentNote" ColumnName="OFF_RENT_NOTE" />
+          <ScalarProperty Name="OffRentActualPickupDate" ColumnName="OFF_RENT_ACTUAL_PICKUP_DATE" />
+          <ScalarProperty Name="OffRentScheduledPickupDate" ColumnName="OFF_RENT_SCHEDULED_PICKUP_DATE" />
+          <ScalarProperty Name="OffRentRequestPickupDate" ColumnName="OFF_RENT_REQUEST_PICKUP_DATE" />
+          <ScalarProperty Name="OffRentRequestRECDDate" ColumnName="OFF_RENT_REQUEST_RECD_DATE" />
+          <ScalarProperty Name="OffRentRequestPhone" ColumnName="OFF_RENT_REQUEST_PHONE" />
+          <ScalarProperty Name="OffRentRequestContact" ColumnName="OFF_RENT_REQUEST_CONTACT" />
+          <ScalarProperty Name="OffRentQDate" ColumnName="OFF_RENT_Q_DATE" />
+          <ScalarProperty Name="OffRentQStatusID" ColumnName="OFF_RENT_Q_STATUS_ID" />
+          <ScalarProperty Name="OffRentCHGDate" ColumnName="OFF_RENT_CHG_DATE" />
+          <ScalarProperty Name="OffRentAddDate" ColumnName="OFF_RENT_ADD_DATE" />
+          <ScalarProperty Name="OffRentCHGUser" ColumnName="OFF_RENT_CHG_USER" />
+          <ScalarProperty Name="OffRentAddUser" ColumnName="OFF_RENT_ADD_USER" />
+          <ScalarProperty Name="OffRentQUser" ColumnName="OFF_RENT_Q_USER" />
+          <ScalarProperty Name="CommissionOverrideDate" ColumnName="COMMISSION_OVERRIDE_DATE" />
+          <ScalarProperty Name="CommissionOverrideReason" ColumnName="COMMISSION_OVERRIDE_REASON" />
+          <ScalarProperty Name="CommissionOverrideRequestor" ColumnName="COMMISSION_OVERRIDE_REQUESTOR" />
+          <ScalarProperty Name="CommissionOverrideFlag" ColumnName="COMMISSION_OVERRIDE_FLAG" />
+          <ScalarProperty Name="PurchaseOptionStatusID" ColumnName="PURCHASE_OPTION_STATUS_ID" />
+          <ScalarProperty Name="ThirdPartyVendorAN8" ColumnName="THIRD_PARTY_VENDOR_AN8" />
+          <ScalarProperty Name="TmpUnitCount" ColumnName="TMP_UNIT_COUNT" />
+          <ScalarProperty Name="TmpBoxLength" ColumnName="TMP_BOX_LENGTH" />
+          <ScalarProperty Name="TmpModelDescription" ColumnName="TMP_MODEL_DESCRIPTION" />
+          <ScalarProperty Name="TmpModelLength" ColumnName="TMP_MODEL_LENGTH" />
+          <ScalarProperty Name="TmpModelWidth" ColumnName="TMP_MODEL_WIDTH" />
+          <ScalarProperty Name="TmpModelType" ColumnName="TMP_MODEL_TYPE" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UNIT_NBR" />
+          <ScalarProperty Name="UnitStatusID" ColumnName="UNIT_STATUS_ID" />
+          <ScalarProperty Name="RentRecapPercent" ColumnName="RENT_RECAP_PERCENT" />
+          <ScalarProperty Name="RRICode" ColumnName="RRI_CODE" />
+          <ScalarProperty Name="TransportExpDate" ColumnName="TRANSPORT_EXP_DATE" />
+          <ScalarProperty Name="TransportEffDate" ColumnName="TRANSPORT_EFF_DATE" />
+          <ScalarProperty Name="Carrier" ColumnName="CARRIER" />
+          <ScalarProperty Name="ReturnBranch" ColumnName="RETURN_BRANCH" />
+          <ScalarProperty Name="SellPrice" ColumnName="SELL_PRICE" />
+          <ScalarProperty Name="ReplacementValue" ColumnName="REPLACEMENT_VALUE" />
+          <ScalarProperty Name="LeasePurchaseAmount" ColumnName="LEASE_PURCHASE_AMT" />
+          <ScalarProperty Name="ActLease" ColumnName="ACT_LEASE" />
+          <ScalarProperty Name="MinLease" ColumnName="MIN_LEASE" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DELIVERY_DATE" />
+          <ScalarProperty Name="NewUsedFlag" ColumnName="NEW_USED_FLAG" />
+          <ScalarProperty Name="AssetID" ColumnName="FANUMB" />
+          <ScalarProperty Name="ItemID" ColumnName="ITEM_SKEY" />
+          <ScalarProperty Name="OMBOrderHeaderID" ColumnName="ORDER_SKEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddressBooks">
+      <EntityTypeMapping TypeName="WSJDEModel.AddressBook">
+        <MappingFragment StoreEntitySet="F0101">
+          <ScalarProperty Name="ServerStatus" ColumnName="ABCAAD" />
+          <ScalarProperty Name="PreviousErrorStatus" ColumnName="ABPERRS" />
+          <ScalarProperty Name="SynchronizationStatus" ColumnName="ABSYNCS" />
+          <ScalarProperty Name="Revenuerange" ColumnName="ABREVRNG" />
+          <ScalarProperty Name="FutureUseIndicator" ColumnName="ABACTIN" />
+          <ScalarProperty Name="EmployeeGroupApprovals" ColumnName="ABAEMPGP" />
+          <ScalarProperty Name="YearStarted" ColumnName="ABYEARSTAR" />
+          <ScalarProperty Name="GrowthRate" ColumnName="ABGROWTHR" />
+          <ScalarProperty Name="NumberOfEmployee" ColumnName="ABNOE" />
+          <ScalarProperty Name="ClassificationCode05" ColumnName="ABCLASS05" />
+          <ScalarProperty Name="ClassificationCode04" ColumnName="ABCLASS04" />
+          <ScalarProperty Name="ClassificationCode03" ColumnName="ABCLASS03" />
+          <ScalarProperty Name="ClassificationCode02" ColumnName="ABCLASS02" />
+          <ScalarProperty Name="ClassificationCode01" ColumnName="ABCLASS01" />
+          <ScalarProperty Name="DUNSNumber" ColumnName="ABDUNS" />
+          <ScalarProperty Name="StockExchange" ColumnName="ABEXCHG" />
+          <ScalarProperty Name="Ticker" ColumnName="ABTICKER" />
+          <ScalarProperty Name="ShortcutClientTypefuture" ColumnName="ABSCCLTP" />
+          <ScalarProperty Name="PurgeFlag" ColumnName="ABPRGF" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="ABUPMT" />
+          <ScalarProperty Name="WorkStationID" ColumnName="ABJOBN" />
+          <ScalarProperty Name="DateUpdated" ColumnName="ABUPMJ" />
+          <ScalarProperty Name="ProgramID" ColumnName="ABPID" />
+          <ScalarProperty Name="UserID" ColumnName="ABUSER" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="ABURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="ABURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="ABURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="ABURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="ABURCD" />
+          <ScalarProperty Name="SecondaryAlphaName" ColumnName="ABALP1" />
+          <ScalarProperty Name="TaxIDAdditionalIndividual" ColumnName="ABTX2" />
+          <ScalarProperty Name="CertificateTaxExemption" ColumnName="ABTXCT" />
+          <ScalarProperty Name="NameRemark" ColumnName="ABRMK" />
+          <ScalarProperty Name="ActionMessageControl" ColumnName="ABMSGA" />
+          <ScalarProperty Name="DateScheduledIn" ColumnName="ABPDI" />
+          <ScalarProperty Name="TimeScheduledIn" ColumnName="ABPTI" />
+          <ScalarProperty Name="GLBankAccount" ColumnName="ABGLBA" />
+          <ScalarProperty Name="CategoryCodeAddressBook30" ColumnName="ABAC30" />
+          <ScalarProperty Name="CategoryCodeAddressBook29" ColumnName="ABAC29" />
+          <ScalarProperty Name="CategoryCodeAddressBook28" ColumnName="ABAC28" />
+          <ScalarProperty Name="CategoryCodeAddressBook27" ColumnName="ABAC27" />
+          <ScalarProperty Name="CategoryCodeAddressBook26" ColumnName="ABAC26" />
+          <ScalarProperty Name="CategoryCodeAddressBook25" ColumnName="ABAC25" />
+          <ScalarProperty Name="CategoryCodeAddressBook24" ColumnName="ABAC24" />
+          <ScalarProperty Name="CategoryCodeAddressBook23" ColumnName="ABAC23" />
+          <ScalarProperty Name="CategoryCodeAddressBook22" ColumnName="ABAC22" />
+          <ScalarProperty Name="CategoryCodeAddressBook21" ColumnName="ABAC21" />
+          <ScalarProperty Name="CategoryCodeAddressBook20" ColumnName="ABAC20" />
+          <ScalarProperty Name="CategoryCodeAddressBook19" ColumnName="ABAC19" />
+          <ScalarProperty Name="CategoryCodeAddressBook18" ColumnName="ABAC18" />
+          <ScalarProperty Name="MailFlagSpecialHandling" ColumnName="ABAC17" />
+          <ScalarProperty Name="TrailerNewUsed" ColumnName="ABAC16" />
+          <ScalarProperty Name="BillFrequency" ColumnName="ABAC15" />
+          <ScalarProperty Name="ContractType" ColumnName="ABAC14" />
+          <ScalarProperty Name="OrderType" ColumnName="ABAC13" />
+          <ScalarProperty Name="CustomerType" ColumnName="ABAC12" />
+          <ScalarProperty Name="AllowCommission" ColumnName="ABAC11" />
+          <ScalarProperty Name="RiskManagementFlag" ColumnName="ABAC10" />
+          <ScalarProperty Name="W9Compliance" ColumnName="ABAC09" />
+          <ScalarProperty Name="W9Branch" ColumnName="ABAC08" />
+          <ScalarProperty Name="ReportIng1099" ColumnName="ABAC07" />
+          <ScalarProperty Name="SupplierClass" ColumnName="ABAC06" />
+          <ScalarProperty Name="CategoryCodeAddressBook05" ColumnName="ABAC05" />
+          <ScalarProperty Name="CategoryCodeAddressBook04" ColumnName="ABAC04" />
+          <ScalarProperty Name="CategoryCodeAddressBook03" ColumnName="ABAC03" />
+          <ScalarProperty Name="CategoryCodeAddressBook02" ColumnName="ABAC02" />
+          <ScalarProperty Name="CategoryCodeAddressBook01" ColumnName="ABAC01" />
+          <ScalarProperty Name="FactorSpecialPayee" ColumnName="ABAN85" />
+          <ScalarProperty Name="AddressNumber5th" ColumnName="ABAN86" />
+          <ScalarProperty Name="AddressNumber4th" ColumnName="ABAN84" />
+          <ScalarProperty Name="AddressNumber3rd" ColumnName="ABAN83" />
+          <ScalarProperty Name="AddressNumber2nd" ColumnName="ABAN82" />
+          <ScalarProperty Name="AddressNumber1st" ColumnName="ABAN81" />
+          <ScalarProperty Name="DateBeginningEffective" ColumnName="ABEFTB" />
+          <ScalarProperty Name="SubledgerInactiveCode" ColumnName="ABSBLI" />
+          <ScalarProperty Name="AddressTypeEmployee" ColumnName="ABATE" />
+          <ScalarProperty Name="AddressBookMiscellaneousCodefuture" ColumnName="ABAB3" />
+          <ScalarProperty Name="AddressTypeCodePurchaser" ColumnName="ABATPR" />
+          <ScalarProperty Name="AddressTypeReceivables" ColumnName="ABATR" />
+          <ScalarProperty Name="AddressTypePayables" ColumnName="ABATP" />
+          <ScalarProperty Name="AddressType5" ColumnName="ABAT5" />
+          <ScalarProperty Name="AddressType4" ColumnName="ABAT4" />
+          <ScalarProperty Name="HRMRecordsExist" ColumnName="ABAT3" />
+          <ScalarProperty Name="ARAPNettingIndicator" ColumnName="ABAT2" />
+          <ScalarProperty Name="PersonCorporationCode" ColumnName="ABTAXC" />
+          <ScalarProperty Name="CreditMessage" ColumnName="ABCM" />
+          <ScalarProperty Name="SearchType" ColumnName="ABAT1" />
+          <ScalarProperty Name="Language" ColumnName="ABLNGP" />
+          <ScalarProperty Name="IndustryClassificationCode" ColumnName="ABSIC" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="ABMCU" />
+          <ScalarProperty Name="DescriptionCompressed" ColumnName="ABDC" />
+          <ScalarProperty Name="NameAlpha" ColumnName="ABALPH" />
+          <ScalarProperty Name="TaxID" ColumnName="ABTAX" />
+          <ScalarProperty Name="LongAddressNumber" ColumnName="ABALKY" />
+          <ScalarProperty Name="ID" ColumnName="ABAN8" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assets">
+      <EntityTypeMapping TypeName="WSJDEModel.Asset">
+        <MappingFragment StoreEntitySet="F1201">
+          <ScalarProperty Name="DateWarrantyExpirationJulian" ColumnName="FAWARJ" />
+          <ScalarProperty Name="WarrantyFlag" ColumnName="FAWRFL" />
+          <ScalarProperty Name="Criticality" ColumnName="FACRTL" />
+          <ScalarProperty Name="AllowWorkOrderYN" ColumnName="FAWOYN" />
+          <ScalarProperty Name="CategoryCodeFA23" ColumnName="FAFA23" />
+          <ScalarProperty Name="CategoryCodeFA22" ColumnName="FAFA22" />
+          <ScalarProperty Name="CategoryCodeFA21" ColumnName="FAFA21" />
+          <ScalarProperty Name="CategoryCodeFA19" ColumnName="FAFA9" />
+          <ScalarProperty Name="CategoryCodeFA18" ColumnName="FAFA8" />
+          <ScalarProperty Name="CategoryCodeFA17" ColumnName="FAFA7" />
+          <ScalarProperty Name="CategoryCodeFA16" ColumnName="FAFA6" />
+          <ScalarProperty Name="CategoryCodeFA15" ColumnName="FAFA5" />
+          <ScalarProperty Name="CategoryCodeFA14" ColumnName="FAFA4" />
+          <ScalarProperty Name="CategoryCodeFA13" ColumnName="FAFA3" />
+          <ScalarProperty Name="CategoryCodeFA12" ColumnName="FAFA2" />
+          <ScalarProperty Name="CategoryCodeFA11" ColumnName="FAFA1" />
+          <ScalarProperty Name="CategoryCodeFA20" ColumnName="FAFA0" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="FAUPMT" />
+          <ScalarProperty Name="WorkStationID" ColumnName="FAJOBN" />
+          <ScalarProperty Name="DateUpdated" ColumnName="FAUPMJ" />
+          <ScalarProperty Name="SubledgerInactiveCode" ColumnName="FASBLI" />
+          <ScalarProperty Name="UnionCode" ColumnName="FAUN" />
+          <ScalarProperty Name="JobStep" ColumnName="FAJBST" />
+          <ScalarProperty Name="JobTypeCraftCode" ColumnName="FAJBCD" />
+          <ScalarProperty Name="AFENumber" ColumnName="FAAFE" />
+          <ScalarProperty Name="Kit2ndItemNumber" ColumnName="FAKITL" />
+          <ScalarProperty Name="v" ColumnName="FAKIT" />
+          <ScalarProperty Name="Unit" ColumnName="FAUNIT" />
+          <ScalarProperty Name="DisposalAccumulatedDepreciationSub" ColumnName="FADADS" />
+          <ScalarProperty Name="DisposalAccumulatedDepreciationObj" ColumnName="FADADO" />
+          <ScalarProperty Name="DisposalAccumulatedDepreciationBU" ColumnName="FADADC" />
+          <ScalarProperty Name="StandardFuelConsumption" ColumnName="FASFC" />
+          <ScalarProperty Name="CategoryCodeFA10RateGroup" ColumnName="FAACL0" />
+          <ScalarProperty Name="CategoryCodeFA9" ColumnName="FAACL9" />
+          <ScalarProperty Name="CategoryCodeFA8" ColumnName="FAACL8" />
+          <ScalarProperty Name="BoxLength" ColumnName="FAACL7" />
+          <ScalarProperty Name="BoxWidth" ColumnName="FAACL6" />
+          <ScalarProperty Name="AddressNumber" ColumnName="FAAN8" />
+          <ScalarProperty Name="NameRemarkExplanation" ColumnName="FAEXR" />
+          <ScalarProperty Name="NameExplanation" ColumnName="FAEX" />
+          <ScalarProperty Name="ActionMessageControl" ColumnName="FAMSGA" />
+          <ScalarProperty Name="DateExpectedReturn" ColumnName="FADER" />
+          <ScalarProperty Name="DateBeginningEffective" ColumnName="FAEFTB" />
+          <ScalarProperty Name="ProgramID" ColumnName="FAPID" />
+          <ScalarProperty Name="State" ColumnName="FAADDS" />
+          <ScalarProperty Name="BusinessUnitLocation" ColumnName="FALOC" />
+          <ScalarProperty Name="DateLastChanged" ColumnName="FALCT" />
+          <ScalarProperty Name="UserID" ColumnName="FAUSER" />
+          <ScalarProperty Name="InsuranceValueIndexfutureuse" ColumnName="FAINSI" />
+          <ScalarProperty Name="AmountInsuranceValue" ColumnName="FAAIV" />
+          <ScalarProperty Name="AmountInsurancePremium" ColumnName="FAINSA" />
+          <ScalarProperty Name="PolicyRenewalMonth" ColumnName="FAINSM" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="FAINSC" />
+          <ScalarProperty Name="InsurancePolicyNumber" ColumnName="FAINSP" />
+          <ScalarProperty Name="NameRemark2" ColumnName="FARMK2" />
+          <ScalarProperty Name="NameRemark1" ColumnName="FARMK" />
+          <ScalarProperty Name="AmountMonthlyPayment" ColumnName="FAAMF" />
+          <ScalarProperty Name="DateExpiredJulian" ColumnName="FADEXJ" />
+          <ScalarProperty Name="DateContractDate" ColumnName="FAJCD" />
+          <ScalarProperty Name="AddressNumberLessorRentorMortgagor" ColumnName="FALANO" />
+          <ScalarProperty Name="AmountPurchaseOptionMaximumCredit" ColumnName="FAAPOM" />
+          <ScalarProperty Name="PurchaseOptionCreditPercentage" ColumnName="FAPURP" />
+          <ScalarProperty Name="AmountPurchaseOptionPrice" ColumnName="FAAPUR" />
+          <ScalarProperty Name="PurchaseOption" ColumnName="FAPURO" />
+          <ScalarProperty Name="ITCOwnedYN" ColumnName="FAITCO" />
+          <ScalarProperty Name="FinancingMethod" ColumnName="FAFINC" />
+          <ScalarProperty Name="AmountInvestmentTaxCreditPYE" ColumnName="FAAITP" />
+          <ScalarProperty Name="AmountInvestmentTaxCredit" ColumnName="FAAITY" />
+          <ScalarProperty Name="TaxEntity" ColumnName="FATXJS" />
+          <ScalarProperty Name="AssetItemOriginalQuantity" ColumnName="FAAROQ" />
+          <ScalarProperty Name="AssetItemCurrentQuantity" ColumnName="FAARCQ" />
+          <ScalarProperty Name="AssetRevenueSubsidiary" ColumnName="FARSUB" />
+          <ScalarProperty Name="AssetRevenueObject" ColumnName="FAROBJ" />
+          <ScalarProperty Name="AssetRevenueBusinessUnit" ColumnName="FARMCU" />
+          <ScalarProperty Name="DepreciationExpenseSubsidiary" ColumnName="FAXSUB" />
+          <ScalarProperty Name="DepreciationExpenseObject" ColumnName="FAXOBJ" />
+          <ScalarProperty Name="DepreciationExpenseBU" ColumnName="FAXMCU" />
+          <ScalarProperty Name="AccumulatedDepreciationAccountSub" ColumnName="FADSUB" />
+          <ScalarProperty Name="AccumulatedDepreciationAccountObjct" ColumnName="FADOBJ" />
+          <ScalarProperty Name="AccumulatedDepreciationAccountBU" ColumnName="FADMCU" />
+          <ScalarProperty Name="AssetCostAccountSubsidiary" ColumnName="FAASUB" />
+          <ScalarProperty Name="AssetCostAccountObject" ColumnName="FAAOBJ" />
+          <ScalarProperty Name="AssetCostAccountBusinessUnit" ColumnName="FAAMCU" />
+          <ScalarProperty Name="AmountLastYearsReplacementCost" ColumnName="FAALRC" />
+          <ScalarProperty Name="AmountReplacementCost" ColumnName="FAARPC" />
+          <ScalarProperty Name="AmountEstimatedSalvageValue" ColumnName="FAAESV" />
+          <ScalarProperty Name="NeworUsedonAcquisition" ColumnName="FANORU" />
+          <ScalarProperty Name="EquipmentStatus" ColumnName="FAEQST" />
+          <ScalarProperty Name="DateDisposedorRetired" ColumnName="FADSP" />
+          <ScalarProperty Name="DateAcquired" ColumnName="FADAJ" />
+          <ScalarProperty Name="DescriptionCompressed" ColumnName="FADSCC" />
+          <ScalarProperty Name="Description3" ColumnName="FADL03" />
+          <ScalarProperty Name="Description2" ColumnName="FADL02" />
+          <ScalarProperty Name="Description1" ColumnName="FADL01" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="FAMCU" />
+          <ScalarProperty Name="TotalLength" ColumnName="FAACL5" />
+          <ScalarProperty Name="ModelYear" ColumnName="FAACL4" />
+          <ScalarProperty Name="Manufacturer" ColumnName="FAACL3" />
+          <ScalarProperty Name="EquipmentClass" ColumnName="FAACL2" />
+          <ScalarProperty Name="MajorAccountingClass" ColumnName="FAACL1" />
+          <ScalarProperty Name="SequenceNumber" ColumnName="FASEQ" />
+          <ScalarProperty Name="SerialNumber" ColumnName="FAASID" />
+          <ScalarProperty Name="ParentNumber" ColumnName="FAAAID" />
+          <ScalarProperty Name="UnitNumber" ColumnName="FAAPID" />
+          <ScalarProperty Name="ID" ColumnName="FANUMB" />
+          <ScalarProperty Name="Company" ColumnName="FACO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="WSJDEModel.Equipment">
+        <MappingFragment StoreEntitySet="F1217">
+          <ScalarProperty Name="EquipmentPartsNumber" ColumnName="WREQPN" />
+          <ScalarProperty Name="Distributor" ColumnName="WRAN8DR" />
+          <ScalarProperty Name="Manufacturer" ColumnName="WRVMRS34" />
+          <ScalarProperty Name="ComponentCodeAssembly" ColumnName="WRVMRS32" />
+          <ScalarProperty Name="ComponentCodeSystem" ColumnName="WRVMRS31" />
+          <ScalarProperty Name="RegistrationStatus" ColumnName="WRREGSTS" />
+          <ScalarProperty Name="MeterReadingRequired" ColumnName="WRMRRYN" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="WRMCU" />
+          <ScalarProperty Name="InServiceDate" ColumnName="WRINSDTE" />
+          <ScalarProperty Name="SalesType" ColumnName="WRSATYP" />
+          <ScalarProperty Name="TermsAcceptedFlag" ColumnName="WRTERMYN" />
+          <ScalarProperty Name="AssessorNumber" ColumnName="WRAN8AS" />
+          <ScalarProperty Name="DefaultDealer" ColumnName="WRAN8DL" />
+          <ScalarProperty Name="EffectiveFromDate" ColumnName="WREFFF" />
+          <ScalarProperty Name="BillRevisionLevel" ColumnName="WRBREV" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WRWOD" />
+          <ScalarProperty Name="Location" ColumnName="WRLOCN" />
+          <ScalarProperty Name="LotSerialNumber" ColumnName="WRLOTN" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="WRUPMT" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WRUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WRJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WRPID" />
+          <ScalarProperty Name="UserID" ColumnName="WRUSER" />
+          <ScalarProperty Name="Createdbyuser" ColumnName="WRCRTU" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="WRURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="WRURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="WRURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="WRURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="WRURCD" />
+          <ScalarProperty Name="CategoryCodeEquipment10" ColumnName="WRZE10" />
+          <ScalarProperty Name="CategoryCodeEquipment09" ColumnName="WRZE09" />
+          <ScalarProperty Name="CategoryCodeEquipment08" ColumnName="WRZE08" />
+          <ScalarProperty Name="CategoryCodeEquipment07" ColumnName="WRZE07" />
+          <ScalarProperty Name="CategoryCodeEquipment06" ColumnName="WRZE06" />
+          <ScalarProperty Name="SquareFootage" ColumnName="WRZE05" />
+          <ScalarProperty Name="CategoryCodeEquipment04" ColumnName="WRZE04" />
+          <ScalarProperty Name="CategoryCodeEquipment03" ColumnName="WRZE03" />
+          <ScalarProperty Name="CategoryCodeEquipment02" ColumnName="WRZE02" />
+          <ScalarProperty Name="CategoryCodeEquipment01" ColumnName="WRZE01" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="WRREFN" />
+          <ScalarProperty Name="VehicleIdentificatonNumber" ColumnName="WRVINNU" />
+          <ScalarProperty Name="InstallKey" ColumnName="WRSYEM" />
+          <ScalarProperty Name="ConfiguredModel" ColumnName="WRCMOD" />
+          <ScalarProperty Name="ProductComponent" ColumnName="WRPRODC" />
+          <ScalarProperty Name="ProductModel" ColumnName="WRPRODM" />
+          <ScalarProperty Name="ProductFamily" ColumnName="WRPRODF" />
+          <ScalarProperty Name="OriginalLineNumber" ColumnName="WROGNO" />
+          <ScalarProperty Name="OrderSuffix" ColumnName="WRSFXO" />
+          <ScalarProperty Name="DocumentCompanyOriginalOrder" ColumnName="WROKCO" />
+          <ScalarProperty Name="OriginalOrderType" ColumnName="WROCTO" />
+          <ScalarProperty Name="OriginalOrderNumber" ColumnName="WROORN" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="WRVEND" />
+          <ScalarProperty Name="DateCompletionJulian" ColumnName="WRSTRX" />
+          <ScalarProperty Name="RelatedPOSOWOOrderType" ColumnName="WRRCTO" />
+          <ScalarProperty Name="RelatedPOSOWONumber" ColumnName="WRRORN" />
+          <ScalarProperty Name="AddressNumberOwnerBilling" ColumnName="WRANOB" />
+          <ScalarProperty Name="Salesperson01" ColumnName="WRSLSM" />
+          <ScalarProperty Name="AddressNumberParent" ColumnName="WRPA8" />
+          <ScalarProperty Name="AddressNumberShipTo" ColumnName="WRSHAN" />
+          <ScalarProperty Name="DateActualShipDate" ColumnName="WRADDJ" />
+          <ScalarProperty Name="DateShippedJulian" ColumnName="WRSHPJ" />
+          <ScalarProperty Name="DateOrderedJulian" ColumnName="WRORDJ" />
+          <ScalarProperty Name="LineNumber" ColumnName="WRLNID" />
+          <ScalarProperty Name="OrderCompanyOrderNumber" ColumnName="WRKCOO" />
+          <ScalarProperty Name="OrderType" ColumnName="WRDCTO" />
+          <ScalarProperty Name="DocumentOrderNoInvoiceetc" ColumnName="WRDOCO" />
+          <ScalarProperty Name="Branch" ColumnName="WRMMCU" />
+          <ScalarProperty Name="CompanyOwned" ColumnName="WRCOOWN" />
+          <ScalarProperty Name="Country" ColumnName="WRCTR" />
+          <ScalarProperty Name="ID" ColumnName="WRNUMB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderParts">
+      <EntityTypeMapping TypeName="WSJDEModel.WorkOrderPart">
+        <MappingFragment StoreEntitySet="F3111">
+          <ScalarProperty Name="BubbleSequenceAlphaNumeric" ColumnName="WMBSEQAN" />
+          <ScalarProperty Name="ComponentLineNumberBOM" ColumnName="WMCPNB" />
+          <ScalarProperty Name="CriticalHoldPropagation" ColumnName="WMCHPP" />
+          <ScalarProperty Name="CostComponent" ColumnName="WMCOST" />
+          <ScalarProperty Name="LotEffectivityDate" ColumnName="WMDLEJ" />
+          <ScalarProperty Name="PickSlipNumber" ColumnName="WMPSN" />
+          <ScalarProperty Name="ConstraintsFlag" ColumnName="WMAPSC" />
+          <ScalarProperty Name="UnitofMeasureSecondary" ColumnName="WMUOM2" />
+          <ScalarProperty Name="SecondaryQuantityIssuedCompleted" ColumnName="WMSSTQ" />
+          <ScalarProperty Name="ActiveIngredientFlag" ColumnName="WMAING" />
+          <ScalarProperty Name="PartsListSubstituteFlag" ColumnName="WMSBFL" />
+          <ScalarProperty Name="GLDate" ColumnName="WMGLD" />
+          <ScalarProperty Name="UnitsUnaccountedScrap" ColumnName="WMCTS8" />
+          <ScalarProperty Name="AmountUnaccountedScrap" ColumnName="WMCTS7" />
+          <ScalarProperty Name="AmountUnaccountedDirectLabor" ColumnName="WMCTS4" />
+          <ScalarProperty Name="IssueandReceipt" ColumnName="WMPOC" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="WMVEND" />
+          <ScalarProperty Name="ID" ColumnName="WMUKID" />
+          <ScalarProperty Name="TimeofDay" ColumnName="WMTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WMUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WMJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WMPID" />
+          <ScalarProperty Name="UserID" ColumnName="WMUSER" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="WMURAB" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="WMURRF" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="WMURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="WMURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="WMURCD" />
+          <ScalarProperty Name="CommittedHS" ColumnName="WMCOMM" />
+          <ScalarProperty Name="NumberParentWONumber" ColumnName="WMPARS" />
+          <ScalarProperty Name="DateCompletionJulian" ColumnName="WMSTRX" />
+          <ScalarProperty Name="ComponentRevisionLevel" ColumnName="WMCMRV" />
+          <ScalarProperty Name="Subsidiary" ColumnName="WMSUB" />
+          <ScalarProperty Name="ObjectAccount" ColumnName="WMOBJ" />
+          <ScalarProperty Name="ProjectBusinessUnit" ColumnName="WMOMCU" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="WMMCU" />
+          <ScalarProperty Name="MessageNumber" ColumnName="WMSHNO" />
+          <ScalarProperty Name="DocumentType" ColumnName="WMDCT" />
+          <ScalarProperty Name="MaterialStatusCodeWO" ColumnName="WMMTST" />
+          <ScalarProperty Name="RouteSheetN" ColumnName="WMRTG" />
+          <ScalarProperty Name="AmountEstimatedCost" ColumnName="WMEA" />
+          <ScalarProperty Name="UnitofMeasure" ColumnName="WMUM" />
+          <ScalarProperty Name="UnitsQuantityCommited" ColumnName="WMQNTA" />
+          <ScalarProperty Name="HoursUnaccountedDirectLabor" ColumnName="WMCTS1" />
+          <ScalarProperty Name="UnitsQtyBackorderedHeld" ColumnName="WMSOBK" />
+          <ScalarProperty Name="UnitsQuantityCanceledScrapped" ColumnName="WMSOCN" />
+          <ScalarProperty Name="QuantityAvailable" ColumnName="WMTRQT" />
+          <ScalarProperty Name="UnitsOrderTransactionQuantity" ColumnName="WMUORG" />
+          <ScalarProperty Name="DateRequested" ColumnName="WMDRQJ" />
+          <ScalarProperty Name="DateOrderTransaction" ColumnName="WMTRDJ" />
+          <ScalarProperty Name="SerialNumberLot" ColumnName="WMSERN" />
+          <ScalarProperty Name="LineType" ColumnName="WMLNTY" />
+          <ScalarProperty Name="AddressNumber" ColumnName="WMAN8" />
+          <ScalarProperty Name="LotSerialNumber" ColumnName="WMLOTN" />
+          <ScalarProperty Name="Location" ColumnName="WMLOCN" />
+          <ScalarProperty Name="DescriptionLine2" ColumnName="WMDSC2" />
+          <ScalarProperty Name="Description" ColumnName="WMDSC1" />
+          <ScalarProperty Name="ComponentBranch" ColumnName="WMCMCU" />
+          <ScalarProperty Name="Component3rdItemNumber" ColumnName="WMCPIA" />
+          <ScalarProperty Name="Component2ndItemNumber" ColumnName="WMCPIL" />
+          <ScalarProperty Name="ComponentItemNumberShort" ColumnName="WMCPIT" />
+          <ScalarProperty Name="LeadtimeOffsetDays" ColumnName="WMLOVD" />
+          <ScalarProperty Name="OperationScrapPercent" ColumnName="WMSTPP" />
+          <ScalarProperty Name="PercentCumulativePlannedYield" ColumnName="WMCPYP" />
+          <ScalarProperty Name="PercentAsis" ColumnName="WMASIP" />
+          <ScalarProperty Name="PercentRework" ColumnName="WMREWP" />
+          <ScalarProperty Name="PercentPercentofScrap" ColumnName="WMSCRP" />
+          <ScalarProperty Name="ResourcePercent" ColumnName="WMRSCP" />
+          <ScalarProperty Name="SequenceBubbleSequence" ColumnName="WMBSEQ" />
+          <ScalarProperty Name="SequenceNumberOperations" ColumnName="WMOPSQ" />
+          <ScalarProperty Name="RelatedPOSOLineNumber" ColumnName="WMRLLN" />
+          <ScalarProperty Name="RelatedPOSOWOOrderType" ColumnName="WMRCTO" />
+          <ScalarProperty Name="RelatedPOSOWONumber" ColumnName="WMRORN" />
+          <ScalarProperty Name="CompanyKeyRelatedOrder" ColumnName="WMRKCO" />
+          <ScalarProperty Name="ThruGrade" ColumnName="WMTHGD" />
+          <ScalarProperty Name="FromGrade" ColumnName="WMFRGD" />
+          <ScalarProperty Name="ThruPotency" ColumnName="WMTHRP" />
+          <ScalarProperty Name="FromPotency" ColumnName="WMFRMP" />
+          <ScalarProperty Name="ComponentLineNumber" ColumnName="WMCPNT" />
+          <ScalarProperty Name="ComponentType" ColumnName="WMCOTY" />
+          <ScalarProperty Name="CoProductsByProductsIntermediate" ColumnName="WMCOBY" />
+          <ScalarProperty Name="IssueTypeCode" ColumnName="WMITC" />
+          <ScalarProperty Name="FixedorVariableQuantity" ColumnName="WMFORQ" />
+          <ScalarProperty Name="TypeBillofMaterial" ColumnName="WMTBM" />
+          <ScalarProperty Name="OrderSuffix" ColumnName="WMSFXO" />
+          <ScalarProperty Name="OrderType" ColumnName="WMDCTO" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WMDOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderActivities">
+      <EntityTypeMapping TypeName="WSJDEModel.WorkOrderActivity">
+        <MappingFragment StoreEntitySet="F3112">
+          <ScalarProperty Name="ResourcesAssigned" ColumnName="WLTRAF" />
+          <ScalarProperty Name="MaintenanceScheduleFlag" ColumnName="WLWSCHF" />
+          <ScalarProperty Name="AddressNumberAssignedTo" ColumnName="WLANP" />
+          <ScalarProperty Name="Supervisor" ColumnName="WLANPA" />
+          <ScalarProperty Name="AddressNumberManager" ColumnName="WLANSA" />
+          <ScalarProperty Name="RuleMatchFlag" ColumnName="WLCMRQ" />
+          <ScalarProperty Name="CompetencyLevelTo" ColumnName="WLCPLVLTO" />
+          <ScalarProperty Name="CompetencyLevelFrom" ColumnName="WLCPLVLFR" />
+          <ScalarProperty Name="CompetencyCode" ColumnName="WLCMPC" />
+          <ScalarProperty Name="CompetencyType" ColumnName="WLCMPE" />
+          <ScalarProperty Name="TimeStartHHMMSS" ColumnName="WLSTTI" />
+          <ScalarProperty Name="DateActualStart" ColumnName="WLD2J" />
+          <ScalarProperty Name="TimeCompleted" ColumnName="WLTMCO" />
+          <ScalarProperty Name="TimeScheduledEndHHMMSS" ColumnName="WLSEET" />
+          <ScalarProperty Name="TimeScheduledStartHHMMSS" ColumnName="WLSEST" />
+          <ScalarProperty Name="ConstraintsFlag" ColumnName="WLAPSC" />
+          <ScalarProperty Name="SetupLaborRate" ColumnName="WLSETR" />
+          <ScalarProperty Name="RunMachineRate" ColumnName="WLMACR" />
+          <ScalarProperty Name="RunLaborRate" ColumnName="WLLABP" />
+          <ScalarProperty Name="HoursUnaccountedDirectLabor" ColumnName="WLCTS9" />
+          <ScalarProperty Name="UnitsUnaccountedScrap" ColumnName="WLCTS8" />
+          <ScalarProperty Name="AmountUnaccountedScrap" ColumnName="WLCTS7" />
+          <ScalarProperty Name="AssetItemNumber" ColumnName="WLNUMB" />
+          <ScalarProperty Name="ActivityBasedCostingActivityCode" ColumnName="WLACTB" />
+          <ScalarProperty Name="CostComponent" ColumnName="WLCOST" />
+          <ScalarProperty Name="SetupLaborCurrent" ColumnName="WLCSHR" />
+          <ScalarProperty Name="RunLaborCurrent" ColumnName="WLCLHR" />
+          <ScalarProperty Name="RunMachineCurrent" ColumnName="WLCMHR" />
+          <ScalarProperty Name="WorkcenterBranch" ColumnName="WLWMCU" />
+          <ScalarProperty Name="CapacityUnitofmeasure" ColumnName="WLCAPU" />
+          <ScalarProperty Name="ResourceUnitsConsumed" ColumnName="WLRUC" />
+          <ScalarProperty Name="Location" ColumnName="WLLOCN" />
+          <ScalarProperty Name="TimeofDay" ColumnName="WLTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WLUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WLJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WLPID" />
+          <ScalarProperty Name="UserID" ColumnName="WLUSER" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="WLURAB" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="WLURRF" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="WLURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="WLURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="WLURCD" />
+          <ScalarProperty Name="DocumentType" ColumnName="WLDCT" />
+          <ScalarProperty Name="RelatedPOSOLineNumber" ColumnName="WLRLLN" />
+          <ScalarProperty Name="RelatedPOSOWOOrderType" ColumnName="WLRCTO" />
+          <ScalarProperty Name="RelatedPOSOWONumber" ColumnName="WLRORN" />
+          <ScalarProperty Name="CompanyKeyRelatedOrder" ColumnName="WLRKCO" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="WLVEND" />
+          <ScalarProperty Name="Subsidiary" ColumnName="WLSUB" />
+          <ScalarProperty Name="ObjectAccount" ColumnName="WLOBJ" />
+          <ScalarProperty Name="ProjectBusinessUnit" ColumnName="WLOMCU" />
+          <ScalarProperty Name="MessageNumber" ColumnName="WLSHNO" />
+          <ScalarProperty Name="UnitorTagNumber" ColumnName="WLAPID" />
+          <ScalarProperty Name="AmountUnaccountedMachine" ColumnName="WLCTS6" />
+          <ScalarProperty Name="AmountUnaccountedSetupLabor" ColumnName="WLCTS5" />
+          <ScalarProperty Name="AmountUnaccountedDirectLabor" ColumnName="WLCTS4" />
+          <ScalarProperty Name="HoursUnaccountedMachineHours" ColumnName="WLCTS3" />
+          <ScalarProperty Name="HoursUnaccountedSetupLabor" ColumnName="WLCTS2" />
+          <ScalarProperty Name="UnitofMeasureasInput" ColumnName="WLUOM" />
+          <ScalarProperty Name="RatePiecework" ColumnName="WLPWRT" />
+          <ScalarProperty Name="UnitsQuantityatOperation" ColumnName="WLQMTO" />
+          <ScalarProperty Name="QuantityShipped" ColumnName="WLSOQS" />
+          <ScalarProperty Name="UnitsQuantityCanceledScrapped" ColumnName="WLSOCN" />
+          <ScalarProperty Name="UnitsOrderTransactionQuantity" ColumnName="WLUORG" />
+          <ScalarProperty Name="FactorOperationShrinkageFactor" ColumnName="WLOPSR" />
+          <ScalarProperty Name="HoursSetupLaborHoursActual" ColumnName="WLSETA" />
+          <ScalarProperty Name="RunLaborActual" ColumnName="WLLABA" />
+          <ScalarProperty Name="RunMachineActual" ColumnName="WLMACA" />
+          <ScalarProperty Name="SetupLaborStandard" ColumnName="WLSETL" />
+          <ScalarProperty Name="ActivityHours" ColumnName="WLRUNL" />
+          <ScalarProperty Name="RunMachineStandard" ColumnName="WLRUNM" />
+          <ScalarProperty Name="QueueHoursStandard" ColumnName="WLQUED" />
+          <ScalarProperty Name="MoveHoursStandard" ColumnName="WLMOVD" />
+          <ScalarProperty Name="Quantity" ColumnName="WLSETC" />
+          <ScalarProperty Name="SequenceNumberNextOperation" ColumnName="WLNXOP" />
+          <ScalarProperty Name="PercentCumulativePlannedYield" ColumnName="WLCPYP" />
+          <ScalarProperty Name="PercentOperationalPlannedYield" ColumnName="WLOPYP" />
+          <ScalarProperty Name="PercentOverlap" ColumnName="WLPOVR" />
+          <ScalarProperty Name="PercentLeadtimeOverlap" ColumnName="WLLTPC" />
+          <ScalarProperty Name="ShiftCodeCompleted" ColumnName="WLCSFT" />
+          <ScalarProperty Name="ShiftCodeStart" ColumnName="WLSSFT" />
+          <ScalarProperty Name="ShiftCodeRequested" ColumnName="WLRSFT" />
+          <ScalarProperty Name="DateCompletionJulian" ColumnName="WLSTRX" />
+          <ScalarProperty Name="DateStartJulian" ColumnName="WLSTRT" />
+          <ScalarProperty Name="DateRequested" ColumnName="WLDRQJ" />
+          <ScalarProperty Name="DateOrderTransaction" ColumnName="WLTRDJ" />
+          <ScalarProperty Name="SlackTimeRatio" ColumnName="WLSLTR" />
+          <ScalarProperty Name="CriticalRatio" ColumnName="WLCRTR" />
+          <ScalarProperty Name="AddressNumber" ColumnName="WLAN8" />
+          <ScalarProperty Name="JobTypeCraftCode" ColumnName="WLJBCD" />
+          <ScalarProperty Name="PayPointStatus" ColumnName="WLPPRF" />
+          <ScalarProperty Name="PayPointCode" ColumnName="WLBFPF" />
+          <ScalarProperty Name="LabororMachine" ColumnName="WLLAMC" />
+          <ScalarProperty Name="TimeBasisCode" ColumnName="WLTIMB" />
+          <ScalarProperty Name="InspectionCode" ColumnName="WLINPE" />
+          <ScalarProperty Name="OperationStatusCodeWO" ColumnName="WLOPST" />
+          <ScalarProperty Name="TypeOperationCode" ColumnName="WLOPSC" />
+          <ScalarProperty Name="SequenceNumberOperations" ColumnName="WLOPSQ" />
+          <ScalarProperty Name="Description" ColumnName="WLDSC1" />
+          <ScalarProperty Name="AutoLoadDescription" ColumnName="WLALD" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="WLMCU" />
+          <ScalarProperty Name="LineCellIdentifier" ColumnName="WLLINE" />
+          <ScalarProperty Name="Branch" ColumnName="WLMMCU" />
+          <ScalarProperty Name="ThirdItemNumberKit" ColumnName="WLKITA" />
+          <ScalarProperty Name="Kit2ndItemNumber" ColumnName="WLKITL" />
+          <ScalarProperty Name="ParentshortItemNumber" ColumnName="WLKIT" />
+          <ScalarProperty Name="TypeofRouting" ColumnName="WLTRT" />
+          <ScalarProperty Name="OrderSuffix" ColumnName="WLSFXO" />
+          <ScalarProperty Name="OrderType" ColumnName="WLDCTO" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WLDOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartExtensions">
+      <EntityTypeMapping TypeName="WSJDEModel.PartExtension">
+        <MappingFragment StoreEntitySet="F31171">
+          <ScalarProperty Name="ComponentCodeAssembly" ColumnName="WSVMRS32" />
+          <ScalarProperty Name="ComponentCodeSystem" ColumnName="WSVMRS31" />
+          <ScalarProperty Name="UniqueKeyPricing" ColumnName="WSUKIDP" />
+          <ScalarProperty Name="SalesTaxableYN" ColumnName="WSTAX1" />
+          <ScalarProperty Name="CausalPartBusinessUnit" ColumnName="WSMCUCSL" />
+          <ScalarProperty Name="SupplierLotNumber" ColumnName="WSRLOT" />
+          <ScalarProperty Name="SupplierRecoveryVendorNumber" ColumnName="WSSRVEND" />
+          <ScalarProperty Name="ComponentCodePart" ColumnName="WSVMRS33" />
+          <ScalarProperty Name="CausalPart" ColumnName="WSCSLPRT" />
+          <ScalarProperty Name="TimeSubmitted" ColumnName="WSTMSUB" />
+          <ScalarProperty Name="DateSubmitted" ColumnName="WSDTSUB" />
+          <ScalarProperty Name="ReturnPolicy" ColumnName="WSRETPOL" />
+          <ScalarProperty Name="DefectCode" ColumnName="WSFAILCD" />
+          <ScalarProperty Name="ForeignActualPayableAmount" ColumnName="WSFPAAP" />
+          <ScalarProperty Name="ForeignActualPayableUnitRate" ColumnName="WSFACUNP" />
+          <ScalarProperty Name="ForeignEstimatedPayableAmount" ColumnName="WSFEPAAP" />
+          <ScalarProperty Name="ForeignEstimatedPayableUnitRate" ColumnName="WSFESUNP" />
+          <ScalarProperty Name="PayableCurrencyMode" ColumnName="WSPCRRM" />
+          <ScalarProperty Name="PayableExchangeRate" ColumnName="WSPCRR" />
+          <ScalarProperty Name="PayableCurrency" ColumnName="WSPCRCD" />
+          <ScalarProperty Name="ForeignActualBillableAmount" ColumnName="WSFTOTB" />
+          <ScalarProperty Name="ForeignActualBillableUnitRate" ColumnName="WSFACUNB" />
+          <ScalarProperty Name="ForeignEstimatedBillableAmount" ColumnName="WSFEBILL" />
+          <ScalarProperty Name="ForeignEstimatedBillableUnitRate" ColumnName="WSFESUNB" />
+          <ScalarProperty Name="BillableCurrencyMode" ColumnName="WSBCRRM" />
+          <ScalarProperty Name="BillableExchangeRate" ColumnName="WSBCRR" />
+          <ScalarProperty Name="BillableCurrency" ColumnName="WSBCRCD" />
+          <ScalarProperty Name="CurrencyCodeTo" ColumnName="WSCRDC" />
+          <ScalarProperty Name="PayServiceProviderforParts" ColumnName="WSPYPRT" />
+          <ScalarProperty Name="PayPricingMethod" ColumnName="WSPMTHP" />
+          <ScalarProperty Name="CoverageGroup" ColumnName="WSCOVGR" />
+          <ScalarProperty Name="ProductModel" ColumnName="WSPRODM" />
+          <ScalarProperty Name="ProductFamily" ColumnName="WSPRODF" />
+          <ScalarProperty Name="ServiceAddressNumber" ColumnName="WSSAID" />
+          <ScalarProperty Name="MethodofPricing" ColumnName="WSMTHPR" />
+          <ScalarProperty Name="PercentCovered" ColumnName="WSPCOVR" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleService" ColumnName="WSASN2" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleFour" ColumnName="WSASN4" />
+          <ScalarProperty Name="TimeofDay" ColumnName="WSTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WSUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WSJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WSPID" />
+          <ScalarProperty Name="UserID" ColumnName="WSUSER" />
+          <ScalarProperty Name="Reference2" ColumnName="WSVR02" />
+          <ScalarProperty Name="EntitlementCheck" ColumnName="WSENTCK" />
+          <ScalarProperty Name="CategoryGLCovered" ColumnName="WSGLCCV" />
+          <ScalarProperty Name="CategoryGLNonCovered" ColumnName="WSGLCNC" />
+          <ScalarProperty Name="CostComponent" ColumnName="WSCOST" />
+          <ScalarProperty Name="DateBilled" ColumnName="WSDTBIL" />
+          <ScalarProperty Name="DatePaid" ColumnName="WSDTPAY" />
+          <ScalarProperty Name="BillableYN" ColumnName="WSBILL" />
+          <ScalarProperty Name="PayableYN" ColumnName="WSPAYAB" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="WSVEND" />
+          <ScalarProperty Name="ClaimAmount" ColumnName="WSCLAMT" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="WSPAAP" />
+          <ScalarProperty Name="TotalBilled" ColumnName="WSTOTB" />
+          <ScalarProperty Name="AmountActual" ColumnName="WSAMTA" />
+          <ScalarProperty Name="ActualUnitPayable" ColumnName="WSACUNP" />
+          <ScalarProperty Name="ActualUnitBillable" ColumnName="WSACUNB" />
+          <ScalarProperty Name="ActualUnitCost" ColumnName="WSACUNC" />
+          <ScalarProperty Name="EstimatedAmount" ColumnName="WSEBILL" />
+          <ScalarProperty Name="AmountEstimated" ColumnName="WSAMTO" />
+          <ScalarProperty Name="EstimatedPaymentAmount" ColumnName="WSEPAAP" />
+          <ScalarProperty Name="EstimatedUnitPayable" ColumnName="WSESUNP" />
+          <ScalarProperty Name="EstimatedUnitBillable" ColumnName="WSESUNB" />
+          <ScalarProperty Name="EstimatedUnitCost" ColumnName="WSESUNC" />
+          <ScalarProperty Name="WorkOrderPartID" ColumnName="WSUKID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoutingExtensions">
+      <EntityTypeMapping TypeName="WSJDEModel.RoutingExtension">
+        <MappingFragment StoreEntitySet="F31172">
+          <ScalarProperty Name="SourceforLaborLine" ColumnName="WSLSRCE" />
+          <ScalarProperty Name="ComponentCodePart" ColumnName="WSVMRS33" />
+          <ScalarProperty Name="ComponentCodeSystem" ColumnName="WSVMRS31" />
+          <ScalarProperty Name="DefectCode" ColumnName="WSFAILCD" />
+          <ScalarProperty Name="UniqueKeyPricing" ColumnName="WSUKIDP" />
+          <ScalarProperty Name="SupplierRecoveryVendorNumber" ColumnName="WSSRVEND" />
+          <ScalarProperty Name="SupplierLotNumber" ColumnName="WSRLOT" />
+          <ScalarProperty Name="CausalPartBusinessUnit" ColumnName="WSMCUCSL" />
+          <ScalarProperty Name="ComponentCodeAssembly" ColumnName="WSVMRS32" />
+          <ScalarProperty Name="InvoiceReceived" ColumnName="WSINVREC" />
+          <ScalarProperty Name="InvoiceRequired" ColumnName="WSINVREQ" />
+          <ScalarProperty Name="CausalPart" ColumnName="WSCSLPRT" />
+          <ScalarProperty Name="TimeSubmitted" ColumnName="WSTMSUB" />
+          <ScalarProperty Name="DateSubmitted" ColumnName="WSDTSUB" />
+          <ScalarProperty Name="ForeignActualPayableAmount" ColumnName="WSFPAAP" />
+          <ScalarProperty Name="ForeignActualPayableUnitRate" ColumnName="WSFACUNP" />
+          <ScalarProperty Name="ForeignEstimatedPayableAmount" ColumnName="WSFEPAAP" />
+          <ScalarProperty Name="ForeignEstimatedPayableUnitRate" ColumnName="WSFESUNP" />
+          <ScalarProperty Name="PayableCurrencyMode" ColumnName="WSPCRRM" />
+          <ScalarProperty Name="PayableExchangeRate" ColumnName="WSPCRR" />
+          <ScalarProperty Name="PayableCurrency" ColumnName="WSPCRCD" />
+          <ScalarProperty Name="ForeignActualBillableAmount" ColumnName="WSFTOTB" />
+          <ScalarProperty Name="ForeignActualBillableUnitRate" ColumnName="WSFACUNB" />
+          <ScalarProperty Name="ForeignEstimatedBillableAmount" ColumnName="WSFEBILL" />
+          <ScalarProperty Name="ForeignEstimatedBillableUnitRate" ColumnName="WSFESUNB" />
+          <ScalarProperty Name="BillableCurrencyMode" ColumnName="WSBCRRM" />
+          <ScalarProperty Name="BillableExchangeRate" ColumnName="WSBCRR" />
+          <ScalarProperty Name="BillableCurrency" ColumnName="WSBCRCD" />
+          <ScalarProperty Name="CurrencyCodeTo" ColumnName="WSCRDC" />
+          <ScalarProperty Name="PayServiceProviderforParts" ColumnName="WSPYPRT" />
+          <ScalarProperty Name="PayPricingMethod" ColumnName="WSPMTHP" />
+          <ScalarProperty Name="CoverageGroup" ColumnName="WSCOVGR" />
+          <ScalarProperty Name="ProductModel" ColumnName="WSPRODM" />
+          <ScalarProperty Name="ProductFamily" ColumnName="WSPRODF" />
+          <ScalarProperty Name="ServiceAddressNumber" ColumnName="WSSAID" />
+          <ScalarProperty Name="MethodofPricing" ColumnName="WSMTHPR" />
+          <ScalarProperty Name="PercentCovered" ColumnName="WSPCOVR" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleService" ColumnName="WSASN2" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleFour" ColumnName="WSASN4" />
+          <ScalarProperty Name="TimeofDay" ColumnName="WSTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WSUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WSJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WSPID" />
+          <ScalarProperty Name="UserID" ColumnName="WSUSER" />
+          <ScalarProperty Name="CategoryGLCovered" ColumnName="WSGLCCV" />
+          <ScalarProperty Name="CategoryGLNonCovered" ColumnName="WSGLCNC" />
+          <ScalarProperty Name="EntitlementCheck" ColumnName="WSENTCK" />
+          <ScalarProperty Name="CostComponent" ColumnName="WSCOST" />
+          <ScalarProperty Name="EstimateTimeEndingHHMMSS" ColumnName="WSEPETM" />
+          <ScalarProperty Name="TimeStartHHMMSS" ColumnName="WSSTTI" />
+          <ScalarProperty Name="DateActualStart" ColumnName="WSD2J" />
+          <ScalarProperty Name="RateLaborPerHour" ColumnName="WSLBR1" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="WSPAAP" />
+          <ScalarProperty Name="DatePaid" ColumnName="WSDTPAY" />
+          <ScalarProperty Name="DateBilled" ColumnName="WSDTBIL" />
+          <ScalarProperty Name="ClaimAmount" ColumnName="WSCLAMT" />
+          <ScalarProperty Name="TotalBilled" ColumnName="WSTOTB" />
+          <ScalarProperty Name="EstimatedPaymentAmount" ColumnName="WSEPAAP" />
+          <ScalarProperty Name="EstimatedPayableRate" ColumnName="WSESRTP" />
+          <ScalarProperty Name="EstimatedBillableRate" ColumnName="WSESRTB" />
+          <ScalarProperty Name="AmountEstimated" ColumnName="WSAMTO" />
+          <ScalarProperty Name="AmountActual" ColumnName="WSAMTA" />
+          <ScalarProperty Name="EstimatedAmount" ColumnName="WSEBILL" />
+          <ScalarProperty Name="ActualPayableRate" ColumnName="WSACRTP" />
+          <ScalarProperty Name="ActualBillableRate" ColumnName="WSACRTB" />
+          <ScalarProperty Name="BillableYN" ColumnName="WSBILL" />
+          <ScalarProperty Name="PayableYN" ColumnName="WSPAYAB" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="WSMCU" />
+          <ScalarProperty Name="TypeOperationCode" ColumnName="WSOPSC" />
+          <ScalarProperty Name="SequenceNumberOperation" ColumnName="WSOPSQ" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WSDOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="WSJDEModel.Item">
+        <MappingFragment StoreEntitySet="F4101">
+          <ScalarProperty Name="SellableItem" ColumnName="IMSCPSELL" />
+          <ScalarProperty Name="KanbanExplodetoLowerLevel" ColumnName="IMKANEXLL" />
+          <ScalarProperty Name="DemandFlowEndItemFlag" ColumnName="IMDFENDITM" />
+          <ScalarProperty Name="KanbanItem" ColumnName="IMKBIT" />
+          <ScalarProperty Name="TotalProductCycleTime" ColumnName="IMDFTPCT" />
+          <ScalarProperty Name="LineCellIdentifier" ColumnName="IMLINE" />
+          <ScalarProperty Name="LeanManufacturingFlag" ColumnName="IMLMFG" />
+          <ScalarProperty Name="ThresholdUnitofMeasure" ColumnName="IMUMTH" />
+          <ScalarProperty Name="CumulativeThreshold" ColumnName="IMCUTH" />
+          <ScalarProperty Name="OperationalThreshold" ColumnName="IMOPTH" />
+          <ScalarProperty Name="ExplodeItem" ColumnName="IMEXPI" />
+          <ScalarProperty Name="MethodConfiguratorCosting" ColumnName="IMCMETH" />
+          <ScalarProperty Name="VendorManagedInventory" ColumnName="IMVMINV" />
+          <ScalarProperty Name="AllowShippingofHeldLots" ColumnName="IMASHL" />
+          <ScalarProperty Name="PriorityTwoAlertLevel" ColumnName="IMPRI2" />
+          <ScalarProperty Name="PriorityOneAlertLevel" ColumnName="IMPRI1" />
+          <ScalarProperty Name="Composition" ColumnName="IMGCMP" />
+          <ScalarProperty Name="Consumable" ColumnName="IMCONB" />
+          <ScalarProperty Name="APSPlanningUOM" ColumnName="IMAUOM" />
+          <ScalarProperty Name="ConstraintsFlag" ColumnName="IMAPSC" />
+          <ScalarProperty Name="LotStatusCodeExpanded" ColumnName="IMLOTC" />
+          <ScalarProperty Name="LotNumberPreAssignment" ColumnName="IMLNPA" />
+          <ScalarProperty Name="RestrictWorkOrderLotAssignment" ColumnName="IMRWLA" />
+          <ScalarProperty Name="SpecialLotFormat" ColumnName="IMLTFM" />
+          <ScalarProperty Name="LotAuditFlag" ColumnName="IMLAF" />
+          <ScalarProperty Name="CrossDockingFlag" ColumnName="IMXDCK" />
+          <ScalarProperty Name="DualUnitOfMeasureItem" ColumnName="IMDUAL" />
+          <ScalarProperty Name="DualPickingProcessOption" ColumnName="IMDPPO" />
+          <ScalarProperty Name="DualTolerance" ColumnName="IMDLTL" />
+          <ScalarProperty Name="UserLotDate5DefaultDays" ColumnName="IMU5DD" />
+          <ScalarProperty Name="UserLotDate4DefaultDays" ColumnName="IMU4DD" />
+          <ScalarProperty Name="UserLotDate3DefaultDays" ColumnName="IMU3DD" />
+          <ScalarProperty Name="UserLotDate2DefaultDays" ColumnName="IMU2DD" />
+          <ScalarProperty Name="UserLotDate1DefaultDays" ColumnName="IMU1DD" />
+          <ScalarProperty Name="SellByDefaultDays" ColumnName="IMSBDD" />
+          <ScalarProperty Name="PurchasingEffectiveDays" ColumnName="IMPEFD" />
+          <ScalarProperty Name="LotEffectiveDefaultDays" ColumnName="IMLEDD" />
+          <ScalarProperty Name="LotExpiratonDateCalculationMethod" ColumnName="IMLECM" />
+          <ScalarProperty Name="CommitmentDateMethod" ColumnName="IMCMDM" />
+          <ScalarProperty Name="BestBeforeDefaultDays" ColumnName="IMBBDD" />
+          <ScalarProperty Name="ActiveIngredientFlag" ColumnName="IMAING" />
+          <ScalarProperty Name="MatrixControlled" ColumnName="IMMIC" />
+          <ScalarProperty Name="Segment10" ColumnName="IMSEG0" />
+          <ScalarProperty Name="Segment9" ColumnName="IMSEG9" />
+          <ScalarProperty Name="Segment8" ColumnName="IMSEG8" />
+          <ScalarProperty Name="Segment7" ColumnName="IMSEG7" />
+          <ScalarProperty Name="Segment6" ColumnName="IMSEG6" />
+          <ScalarProperty Name="Segment5" ColumnName="IMSEG5" />
+          <ScalarProperty Name="Segment4" ColumnName="IMSEG4" />
+          <ScalarProperty Name="Segment3" ColumnName="IMSEG3" />
+          <ScalarProperty Name="Segment2" ColumnName="IMSEG2" />
+          <ScalarProperty Name="Segment1" ColumnName="IMSEG1" />
+          <ScalarProperty Name="Template" ColumnName="IMTMPL" />
+          <ScalarProperty Name="ItemWeightRequiredYN" ColumnName="IMWTRQ" />
+          <ScalarProperty Name="ContainerCode" ColumnName="IMEQTY" />
+          <ScalarProperty Name="ReplenishmentHoursStandard" ColumnName="IMAVRT" />
+          <ScalarProperty Name="IssueandReceipt" ColumnName="IMPOC" />
+          <ScalarProperty Name="UnitofMeasureSCCPI8" ColumnName="IMUMS8" />
+          <ScalarProperty Name="UnitofMeasureSCCPI7" ColumnName="IMUMS7" />
+          <ScalarProperty Name="UnitofMeasureSCCPI6" ColumnName="IMUMS6" />
+          <ScalarProperty Name="UnitofMeasureSCCPI5" ColumnName="IMUMS5" />
+          <ScalarProperty Name="UnitofMeasureSCCPI4" ColumnName="IMUMS4" />
+          <ScalarProperty Name="UnitofMeasureSCCPI3" ColumnName="IMUMS3" />
+          <ScalarProperty Name="UnitofMeasureSCCPI2" ColumnName="IMUMS2" />
+          <ScalarProperty Name="UnitofMeasureSCCPI1" ColumnName="IMUMS1" />
+          <ScalarProperty Name="UnitofMeasureSCCPI0" ColumnName="IMUMS0" />
+          <ScalarProperty Name="UnitofMeasureAggregateUPC" ColumnName="IMUMDF" />
+          <ScalarProperty Name="UnitofMeasureUPC" ColumnName="IMUMUP" />
+          <ScalarProperty Name="AggregateSCCCodePI0" ColumnName="IMSCC0" />
+          <ScalarProperty Name="UPCNumber" ColumnName="IMUPCN" />
+          <ScalarProperty Name="TimeofDay" ColumnName="IMTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="IMUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="IMJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="IMPID" />
+          <ScalarProperty Name="UserID" ColumnName="IMUSER" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="IMURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="IMURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="IMURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="IMURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="IMURCD" />
+          <ScalarProperty Name="CommitmentSpecificDays" ColumnName="IMCOMH" />
+          <ScalarProperty Name="CommitmentMethod" ColumnName="IMCMGL" />
+          <ScalarProperty Name="LowLevelCode" ColumnName="IMLLX" />
+          <ScalarProperty Name="CoProductsByProductsIntermediate" ColumnName="IMCOBY" />
+          <ScalarProperty Name="MakeBuyCode" ColumnName="IMMAKE" />
+          <ScalarProperty Name="SafetyLeadtime" ColumnName="IMSFLT" />
+          <ScalarProperty Name="DeferDamperDays" ColumnName="IMDEFD" />
+          <ScalarProperty Name="ExpediteDamperDays" ColumnName="IMEXPD" />
+          <ScalarProperty Name="ShipmentLeadtimeOffset" ColumnName="IMMTF5" />
+          <ScalarProperty Name="MPSMRPTimeFence4" ColumnName="IMMTF4" />
+          <ScalarProperty Name="MessageTimeFenceDays" ColumnName="IMMTF3" />
+          <ScalarProperty Name="FreezeTimeFenceDays" ColumnName="IMMTF2" />
+          <ScalarProperty Name="PlanningTimeFenceDays" ColumnName="IMMTF1" />
+          <ScalarProperty Name="OrderWith" ColumnName="IMORDW" />
+          <ScalarProperty Name="IssueTypeCode" ColumnName="IMITC" />
+          <ScalarProperty Name="FixedorVariableLeadtime" ColumnName="IMMRPP" />
+          <ScalarProperty Name="PlanningTimeFenceRule" ColumnName="IMMPSP" />
+          <ScalarProperty Name="LeadtimePerUnit" ColumnName="IMLTPU" />
+          <ScalarProperty Name="QuantityMFGLeadtime" ColumnName="IMMLQ" />
+          <ScalarProperty Name="QuantityAccountingCost" ColumnName="IMACQ" />
+          <ScalarProperty Name="ValueOrderPolicy" ColumnName="IMOPV" />
+          <ScalarProperty Name="OrderPolicyCode" ColumnName="IMOPC" />
+          <ScalarProperty Name="LeadtimeCumulative" ColumnName="IMLTCM" />
+          <ScalarProperty Name="LeadtimeMFG" ColumnName="IMLTMF" />
+          <ScalarProperty Name="LeadtimeLevel" ColumnName="IMLTLV" />
+          <ScalarProperty Name="RoundtoWholeNumber" ColumnName="IMSNS" />
+          <ScalarProperty Name="MaterialStatus" ColumnName="IMPTSC" />
+          <ScalarProperty Name="MarginMaintenancePercent" ColumnName="IMMMPC" />
+          <ScalarProperty Name="PercentMargin" ColumnName="IMPCTM" />
+          <ScalarProperty Name="PlanningCode" ColumnName="IMMPST" />
+          <ScalarProperty Name="PlannerNumber" ColumnName="IMANPL" />
+          <ScalarProperty Name="DaysShelfLifeDays" ColumnName="IMSLD" />
+          <ScalarProperty Name="LotStatusCode" ColumnName="IMLOTS" />
+          <ScalarProperty Name="FIFOProcessing" ColumnName="IMFIFO" />
+          <ScalarProperty Name="MethodKitConfiguratorPricing" ColumnName="IMPMTH" />
+          <ScalarProperty Name="SerialNumberRequired" ColumnName="IMSRNR" />
+          <ScalarProperty Name="CommissionCategory" ColumnName="IMCMCG" />
+          <ScalarProperty Name="TypeWarranty" ColumnName="IMWARR" />
+          <ScalarProperty Name="ABCCodeOverrideIndicator" ColumnName="IMOVR" />
+          <ScalarProperty Name="ABCCode3InvestmentInventory" ColumnName="IMABCI" />
+          <ScalarProperty Name="ABCCode1MarginInventory" ColumnName="IMABCM" />
+          <ScalarProperty Name="ABCCode1SalesInventory" ColumnName="IMABCS" />
+          <ScalarProperty Name="PrintMessage" ColumnName="IMINMG" />
+          <ScalarProperty Name="StandardUnitofMeasureConversion" ColumnName="IMTFLA" />
+          <ScalarProperty Name="ItemFlashMessage" ColumnName="IMIFLA" />
+          <ScalarProperty Name="BackordersAllowedYN" ColumnName="IMBACK" />
+          <ScalarProperty Name="ContractItem" ColumnName="IMCONT" />
+          <ScalarProperty Name="LineType" ColumnName="IMLNTY" />
+          <ScalarProperty Name="StockingType" ColumnName="IMSTKT" />
+          <ScalarProperty Name="ComponentType" ColumnName="IMCOTY" />
+          <ScalarProperty Name="ThruGrade" ColumnName="IMTHGD" />
+          <ScalarProperty Name="FromGrade" ColumnName="IMFRGD" />
+          <ScalarProperty Name="StandardGrade" ColumnName="IMSTDG" />
+          <ScalarProperty Name="ThruPotency" ColumnName="IMTHRP" />
+          <ScalarProperty Name="FromPotency" ColumnName="IMFRMP" />
+          <ScalarProperty Name="StandardPotency" ColumnName="IMSTDP" />
+          <ScalarProperty Name="GradeControl" ColumnName="IMOT2Y" />
+          <ScalarProperty Name="PotencyControl" ColumnName="IMOT1Y" />
+          <ScalarProperty Name="LayerCodeSource" ColumnName="IMSRCE" />
+          <ScalarProperty Name="BulkPackedFlag" ColumnName="IMBPFG" />
+          <ScalarProperty Name="CheckAvailabilityYN" ColumnName="IMCKAV" />
+          <ScalarProperty Name="GradePotencyPricing" ColumnName="IMPRPO" />
+          <ScalarProperty Name="LevelInventoryCost" ColumnName="IMCLEV" />
+          <ScalarProperty Name="LevelPurchasePrice" ColumnName="IMPPLV" />
+          <ScalarProperty Name="LevelSalesBasePrice" ColumnName="IMPLEV" />
+          <ScalarProperty Name="CategoryGL" ColumnName="IMGLPT" />
+          <ScalarProperty Name="CycleCountCategory" ColumnName="IMCYCL" />
+          <ScalarProperty Name="UnitofMeasureVolumeorWeight" ColumnName="IMUMVW" />
+          <ScalarProperty Name="UnitofMeasureStocking" ColumnName="IMSUTM" />
+          <ScalarProperty Name="UnitofMeasureVolume" ColumnName="IMUVM1" />
+          <ScalarProperty Name="UnitofMeasureWeight" ColumnName="IMUWUM" />
+          <ScalarProperty Name="UnitofMeasureComponent" ColumnName="IMUOM9" />
+          <ScalarProperty Name="UnitofMeasureProduction" ColumnName="IMUOM8" />
+          <ScalarProperty Name="UnitofMeasureShipping" ColumnName="IMUOM6" />
+          <ScalarProperty Name="UnitofMeasurePricing" ColumnName="IMUOM4" />
+          <ScalarProperty Name="UnitofMeasurePurchasing" ColumnName="IMUOM3" />
+          <ScalarProperty Name="UnitofMeasureSecondary" ColumnName="IMUOM2" />
+          <ScalarProperty Name="UnitofMeasurePrimary" ColumnName="IMUOM1" />
+          <ScalarProperty Name="ShippingCommodityClass" ColumnName="IMSHCM" />
+          <ScalarProperty Name="ShippingConditionsCode" ColumnName="IMSHCN" />
+          <ScalarProperty Name="PreferredCarrierPurchasing" ColumnName="IMCARP" />
+          <ScalarProperty Name="CarrierNumber" ColumnName="IMCARS" />
+          <ScalarProperty Name="CubicDimensionsVolume" ColumnName="IMVCUD" />
+          <ScalarProperty Name="DrawingSize" ColumnName="IMDSZE" />
+          <ScalarProperty Name="LastRevisionNo" ColumnName="IMRVNO" />
+          <ScalarProperty Name="DrawingNumber" ColumnName="IMDRAW" />
+          <ScalarProperty Name="BuyerNumber" ColumnName="IMBUYR" />
+          <ScalarProperty Name="OrderRepriceCategory" ColumnName="IMORPR" />
+          <ScalarProperty Name="RepriceBasketPriceCategory" ColumnName="IMRPRC" />
+          <ScalarProperty Name="ItemPriceGroup" ColumnName="IMPRGR" />
+          <ScalarProperty Name="DispatchGroup" ColumnName="IMDSGP" />
+          <ScalarProperty Name="ProductGroup" ColumnName="IMPDGR" />
+          <ScalarProperty Name="CommodityCode" ColumnName="IMCDCD" />
+          <ScalarProperty Name="ItemPool" ColumnName="IMPRP0" />
+          <ScalarProperty Name="GroupWarehouseProcess3" ColumnName="IMPRP9" />
+          <ScalarProperty Name="GroupWarehouseProcess2" ColumnName="IMPRP8" />
+          <ScalarProperty Name="GroupWarehouseProcess1" ColumnName="IMPRP7" />
+          <ScalarProperty Name="GroupItemDimension" ColumnName="IMPRP6" />
+          <ScalarProperty Name="PurchasingCategoryCode5" ColumnName="IMPRP5" />
+          <ScalarProperty Name="MasterPlanningFamily" ColumnName="IMPRP4" />
+          <ScalarProperty Name="SupplierRebateCode" ColumnName="IMPRP3" />
+          <ScalarProperty Name="CommoditySubClass" ColumnName="IMPRP2" />
+          <ScalarProperty Name="CommodityClass" ColumnName="IMPRP1" />
+          <ScalarProperty Name="CategoryCode10" ColumnName="IMSRP0" />
+          <ScalarProperty Name="CategoryCode9" ColumnName="IMSRP9" />
+          <ScalarProperty Name="CategoryCode8" ColumnName="IMSRP8" />
+          <ScalarProperty Name="CategoryCode7" ColumnName="IMSRP7" />
+          <ScalarProperty Name="CategoryCode6" ColumnName="IMSRP6" />
+          <ScalarProperty Name="SalesCategoryCode5" ColumnName="IMSRP5" />
+          <ScalarProperty Name="SalesCategoryCode4" ColumnName="IMSRP4" />
+          <ScalarProperty Name="SalesCategoryCode3" ColumnName="IMSRP3" />
+          <ScalarProperty Name="SubSection" ColumnName="IMSRP2" />
+          <ScalarProperty Name="SalesCatalogSection" ColumnName="IMSRP1" />
+          <ScalarProperty Name="SearchTextCompressed" ColumnName="IMALN" />
+          <ScalarProperty Name="SearchText" ColumnName="IMSRTX" />
+          <ScalarProperty Name="DescriptionLine2" ColumnName="IMDSC2" />
+          <ScalarProperty Name="Description" ColumnName="IMDSC1" />
+          <ScalarProperty Name="ThirdItemNumber" ColumnName="IMAITM" />
+          <ScalarProperty Name="SecondItemNumber" ColumnName="IMLITM" />
+          <ScalarProperty Name="ID" ColumnName="IMITM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemBranches">
+      <EntityTypeMapping TypeName="WSJDEModel.ItemBranch">
+        <MappingFragment StoreEntitySet="F4102">
+          <ScalarProperty Name="SellableItem" ColumnName="IBSCPSELL" />
+          <ScalarProperty Name="KanbanExplodetoLowerLevel" ColumnName="IBKANEXLL" />
+          <ScalarProperty Name="DemandFlowEndItemFlag" ColumnName="IBDFENDITM" />
+          <ScalarProperty Name="KanbanItem" ColumnName="IBKBIT" />
+          <ScalarProperty Name="TotalProductCycleTime" ColumnName="IBDFTPCT" />
+          <ScalarProperty Name="LineCellIdentifier" ColumnName="IBLINE" />
+          <ScalarProperty Name="LeanManufacturingFlag" ColumnName="IBLMFG" />
+          <ScalarProperty Name="ThresholdUnitofMeasure" ColumnName="IBUMTH" />
+          <ScalarProperty Name="CumulativeThreshold" ColumnName="IBCUTH" />
+          <ScalarProperty Name="OperationalThreshold" ColumnName="IBOPTH" />
+          <ScalarProperty Name="AllowShippingofHeldLots" ColumnName="IBASHL" />
+          <ScalarProperty Name="LeadtimeConversionFactor" ColumnName="IBLTCV" />
+          <ScalarProperty Name="PriorityTwoAlertLevel" ColumnName="IBPRI2" />
+          <ScalarProperty Name="PriorityOneAlertLevel" ColumnName="IBPRI1" />
+          <ScalarProperty Name="ConstraintsFlag" ColumnName="IBAPSC" />
+          <ScalarProperty Name="LotStatusCodeExpanded" ColumnName="IBLOTC" />
+          <ScalarProperty Name="LotNumberPreAssignment" ColumnName="IBLNPA" />
+          <ScalarProperty Name="RestrictWorkOrderLotAssignment" ColumnName="IBRWLA" />
+          <ScalarProperty Name="SpecialLotFormat" ColumnName="IBLTFM" />
+          <ScalarProperty Name="LotAuditFlag" ColumnName="IBLAF" />
+          <ScalarProperty Name="CrossDockingFlag" ColumnName="IBXDCK" />
+          <ScalarProperty Name="UserLotDate5DefaultDays" ColumnName="IBU5DD" />
+          <ScalarProperty Name="UserLotDate4DefaultDays" ColumnName="IBU4DD" />
+          <ScalarProperty Name="UserLotDate3DefaultDays" ColumnName="IBU3DD" />
+          <ScalarProperty Name="UserLotDate2DefaultDays" ColumnName="IBU2DD" />
+          <ScalarProperty Name="UserLotDate1DefaultDays" ColumnName="IBU1DD" />
+          <ScalarProperty Name="SellByDefaultDays" ColumnName="IBSBDD" />
+          <ScalarProperty Name="PurchasingEffectiveDays" ColumnName="IBPEFD" />
+          <ScalarProperty Name="MixDatesLotsYN" ColumnName="IBMLOT" />
+          <ScalarProperty Name="LotEffectiveDefaultDays" ColumnName="IBLEDD" />
+          <ScalarProperty Name="LotExpiratonDateCalculationMethod" ColumnName="IBLECM" />
+          <ScalarProperty Name="CommitmentDateMethod" ColumnName="IBCMDM" />
+          <ScalarProperty Name="BestBeforeDefaultDays" ColumnName="IBBBDD" />
+          <ScalarProperty Name="ActiveIngredientFlag" ColumnName="IBAING" />
+          <ScalarProperty Name="IssueandReceipt" ColumnName="IBPOC" />
+          <ScalarProperty Name="ReplenishmentHoursStandard" ColumnName="IBAVRT" />
+          <ScalarProperty Name="CommitmentSpecificDays" ColumnName="IBCOMH" />
+          <ScalarProperty Name="StandardUnitofMeasureConversion" ColumnName="IBTFLA" />
+          <ScalarProperty Name="TimeofDay" ColumnName="IBTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="IBUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="IBJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="IBPID" />
+          <ScalarProperty Name="UserID" ColumnName="IBUSER" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="IBURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="IBURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="IBURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="IBURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="IBURCD" />
+          <ScalarProperty Name="CommitmentMethod" ColumnName="IBCMGL" />
+          <ScalarProperty Name="LowLevelCode" ColumnName="IBLLX" />
+          <ScalarProperty Name="DateFutureUse" ColumnName="IBLFDJ" />
+          <ScalarProperty Name="MakeBuyCode" ColumnName="IBMAKE" />
+          <ScalarProperty Name="SafetyLeadtime" ColumnName="IBSFLT" />
+          <ScalarProperty Name="QuantityOrderMultiplesMRP" ColumnName="IBMULT" />
+          <ScalarProperty Name="DeferDamperDays" ColumnName="IBDEFD" />
+          <ScalarProperty Name="ExpediteDamperDays" ColumnName="IBEXPD" />
+          <ScalarProperty Name="OrderWith" ColumnName="IBORDW" />
+          <ScalarProperty Name="UnitsBatchQuantity" ColumnName="IBBQTY" />
+          <ScalarProperty Name="TimeBasisCode" ColumnName="IBTIMB" />
+          <ScalarProperty Name="ShrinkFactorMethod" ColumnName="IBSRKF" />
+          <ScalarProperty Name="ShrinkFactor" ColumnName="IBSRNK" />
+          <ScalarProperty Name="SetupLaborStandard" ColumnName="IBSETL" />
+          <ScalarProperty Name="QueueHoursStandard" ColumnName="IBQUED" />
+          <ScalarProperty Name="MoveHoursStandard" ColumnName="IBMOVD" />
+          <ScalarProperty Name="ShipmentLeadtimeOffset" ColumnName="IBMTF5" />
+          <ScalarProperty Name="MPSMRPTimeFence4" ColumnName="IBMTF4" />
+          <ScalarProperty Name="MessageTimeFenceDays" ColumnName="IBMTF3" />
+          <ScalarProperty Name="FreezeTimeFenceDays" ColumnName="IBMTF2" />
+          <ScalarProperty Name="PlanningTimeFenceDays" ColumnName="IBMTF1" />
+          <ScalarProperty Name="DateEngineeringChangeDate" ColumnName="IBECOD" />
+          <ScalarProperty Name="EngineeringChangeReason" ColumnName="IBECTY" />
+          <ScalarProperty Name="ECONumber" ColumnName="IBECO" />
+          <ScalarProperty Name="IssueTypeCode" ColumnName="IBITC" />
+          <ScalarProperty Name="FixedorVariableLeadtime" ColumnName="IBMRPP" />
+          <ScalarProperty Name="PlanningTimeFenceRule" ColumnName="IBMPSP" />
+          <ScalarProperty Name="LeadtimePerUnit" ColumnName="IBLTPU" />
+          <ScalarProperty Name="QuantityMFGLeadtime" ColumnName="IBMLQ" />
+          <ScalarProperty Name="QuantityAccountingCost" ColumnName="IBACQ" />
+          <ScalarProperty Name="ValueOrderPolicy" ColumnName="IBOPV" />
+          <ScalarProperty Name="OrderPolicyCode" ColumnName="IBOPC" />
+          <ScalarProperty Name="LeadtimeCumulative" ColumnName="IBLTCM" />
+          <ScalarProperty Name="LeadtimeMFG" ColumnName="IBLTMF" />
+          <ScalarProperty Name="LeadtimeLevel" ColumnName="IBLTLV" />
+          <ScalarProperty Name="ItemRevisionLevel" ColumnName="IBMERL" />
+          <ScalarProperty Name="RoundtoWholeNumber" ColumnName="IBSNS" />
+          <ScalarProperty Name="UnitsPerContainer" ColumnName="IBUPC" />
+          <ScalarProperty Name="FlagNetChange" ColumnName="IBMRPC" />
+          <ScalarProperty Name="ItemDisplayCode" ColumnName="IBMRPD" />
+          <ScalarProperty Name="PlanningCode" ColumnName="IBMPST" />
+          <ScalarProperty Name="SalesTaxableYN" ColumnName="IBTAX1" />
+          <ScalarProperty Name="PurchasingTaxableYN" ColumnName="IBTX" />
+          <ScalarProperty Name="AIADocumentFlag" ColumnName="IBFUF1" />
+          <ScalarProperty Name="CommissionCategory" ColumnName="IBCMCG" />
+          <ScalarProperty Name="PercentMargin" ColumnName="IBPCTM" />
+          <ScalarProperty Name="SerialNumberRequired" ColumnName="IBSRNR" />
+          <ScalarProperty Name="TypeWarranty" ColumnName="IBWARR" />
+          <ScalarProperty Name="PrintMessage" ColumnName="IBINMG" />
+          <ScalarProperty Name="CycleCountCategory" ColumnName="IBCYCL" />
+          <ScalarProperty Name="FIFOProcessing" ColumnName="IBFIFO" />
+          <ScalarProperty Name="LineType" ColumnName="IBLNTY" />
+          <ScalarProperty Name="StockingType" ColumnName="IBSTKT" />
+          <ScalarProperty Name="ShippingConditionsCode" ColumnName="IBSHCN" />
+          <ScalarProperty Name="PreferredCarrierPurchasing" ColumnName="IBCARP" />
+          <ScalarProperty Name="CarrierNumber" ColumnName="IBCARS" />
+          <ScalarProperty Name="ShippingCommodityClass" ColumnName="IBSHCM" />
+          <ScalarProperty Name="ABCCodeOverrideIndicator" ColumnName="IBOVR" />
+          <ScalarProperty Name="ABCCode3InvestmentInventory" ColumnName="IBABCI" />
+          <ScalarProperty Name="ABCCode1MarginInventory" ColumnName="IBABCM" />
+          <ScalarProperty Name="ABCCode1SalesInventory" ColumnName="IBABCS" />
+          <ScalarProperty Name="ItemFlashMessage" ColumnName="IBIFLA" />
+          <ScalarProperty Name="BackordersAllowedYN" ColumnName="IBBACK" />
+          <ScalarProperty Name="OrderRepriceCategory" ColumnName="IBORPR" />
+          <ScalarProperty Name="RepriceBasketPriceCategory" ColumnName="IBRPRC" />
+          <ScalarProperty Name="ItemPriceGroup" ColumnName="IBPRGR" />
+          <ScalarProperty Name="MarginMaintenance" ColumnName="IBMMPC" />
+          <ScalarProperty Name="ComponentType" ColumnName="IBCOTY" />
+          <ScalarProperty Name="ThruGrade" ColumnName="IBTHGD" />
+          <ScalarProperty Name="FromGrade" ColumnName="IBFRGD" />
+          <ScalarProperty Name="StandardGrade" ColumnName="IBSTDG" />
+          <ScalarProperty Name="ThruPotency" ColumnName="IBTHRP" />
+          <ScalarProperty Name="FromPotency" ColumnName="IBFRMP" />
+          <ScalarProperty Name="StandardPotency" ColumnName="IBSTDP" />
+          <ScalarProperty Name="GradeControl" ColumnName="IBOT2Y" />
+          <ScalarProperty Name="PotencyControl" ColumnName="IBOT1Y" />
+          <ScalarProperty Name="LotStatusCode" ColumnName="IBLOTS" />
+          <ScalarProperty Name="LayerCodeSource" ColumnName="IBSRCE" />
+          <ScalarProperty Name="CheckAvailabilityYN" ColumnName="IBCKAV" />
+          <ScalarProperty Name="DaysShelfLifeDays" ColumnName="IBSLD" />
+          <ScalarProperty Name="SafetyStock" ColumnName="IBSAFE" />
+          <ScalarProperty Name="ServiceLevel" ColumnName="IBSERV" />
+          <ScalarProperty Name="QuantityOrderMultiplesSOPO" ColumnName="IBWOMO" />
+          <ScalarProperty Name="ReorderQuantityMinimum" ColumnName="IBRQMN" />
+          <ScalarProperty Name="ReorderQuantityMaximum" ColumnName="IBRQMX" />
+          <ScalarProperty Name="ReorderQuantityInput" ColumnName="IBROQI" />
+          <ScalarProperty Name="ReorderPointInput" ColumnName="IBROPI" />
+          <ScalarProperty Name="CountryofOrigin" ColumnName="IBORIG" />
+          <ScalarProperty Name="CategoryGL" ColumnName="IBGLPT" />
+          <ScalarProperty Name="BuyerNumber" ColumnName="IBBUYR" />
+          <ScalarProperty Name="PlannerNumber" ColumnName="IBANPL" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="IBVEND" />
+          <ScalarProperty Name="DispatchGroup" ColumnName="IBDSGP" />
+          <ScalarProperty Name="ProductGroup" ColumnName="IBPDGR" />
+          <ScalarProperty Name="CommodityCode" ColumnName="IBCDCD" />
+          <ScalarProperty Name="ItemPool" ColumnName="IBPRP0" />
+          <ScalarProperty Name="GroupWarehouseProcess3" ColumnName="IBPRP9" />
+          <ScalarProperty Name="GroupWarehouseProcess2" ColumnName="IBPRP8" />
+          <ScalarProperty Name="GroupWarehouseProcess1" ColumnName="IBPRP7" />
+          <ScalarProperty Name="GroupItemDimension" ColumnName="IBPRP6" />
+          <ScalarProperty Name="PurchasingCategoryCode5" ColumnName="IBPRP5" />
+          <ScalarProperty Name="MasterPlanningFamily" ColumnName="IBPRP4" />
+          <ScalarProperty Name="SupplierRebateCode" ColumnName="IBPRP3" />
+          <ScalarProperty Name="CommoditySubClass" ColumnName="IBPRP2" />
+          <ScalarProperty Name="CommodityClass" ColumnName="IBPRP1" />
+          <ScalarProperty Name="CategoryCode10" ColumnName="IBSRP0" />
+          <ScalarProperty Name="CategoryCode9" ColumnName="IBSRP9" />
+          <ScalarProperty Name="CategoryCode8" ColumnName="IBSRP8" />
+          <ScalarProperty Name="CategoryCode7" ColumnName="IBSRP7" />
+          <ScalarProperty Name="CategoryCode6" ColumnName="IBSRP6" />
+          <ScalarProperty Name="Region" ColumnName="IBSRP5" />
+          <ScalarProperty Name="SalesCategoryCode4" ColumnName="IBSRP4" />
+          <ScalarProperty Name="SalesCategoryCode3" ColumnName="IBSRP3" />
+          <ScalarProperty Name="SubSection" ColumnName="IBSRP2" />
+          <ScalarProperty Name="SalesCatalogSection" ColumnName="IBSRP1" />
+          <ScalarProperty Name="BusinessUnitID" ColumnName="IBMCU" />
+          <ScalarProperty Name="ThirdItemNumber" ColumnName="IBAITM" />
+          <ScalarProperty Name="SecondItemNumber" ColumnName="IBLITM" />
+          <ScalarProperty Name="ID" ColumnName="IBITM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemCosts">
+      <EntityTypeMapping TypeName="WSJDEModel.ItemCost">
+        <MappingFragment StoreEntitySet="F4105">
+          <ScalarProperty Name="StockoutCost" ColumnName="COSTOC" />
+          <ScalarProperty Name="OverstockCost" ColumnName="COOSTC" />
+          <ScalarProperty Name="CarryingCost" ColumnName="COCRCS" />
+          <ScalarProperty Name="CostChangedFlag" ColumnName="COCCFL" />
+          <ScalarProperty Name="TimeofDay" ColumnName="COTDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="COUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="COJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="COPID" />
+          <ScalarProperty Name="UserID" ColumnName="COUSER" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="COURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="COURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="COURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="COURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="COURCD" />
+          <ScalarProperty Name="CostingSelectionInventory" ColumnName="COCSIN" />
+          <ScalarProperty Name="CostingSelectionPurchasing" ColumnName="COCSPO" />
+          <ScalarProperty Name="AmountUnitCost" ColumnName="COUNCS" />
+          <ScalarProperty Name="CostMethod" ColumnName="COLEDG" />
+          <ScalarProperty Name="LotGrade" ColumnName="COLOTG" />
+          <ScalarProperty Name="LotSerialNumber" ColumnName="COLOTN" />
+          <ScalarProperty Name="Location" ColumnName="COLOCN" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="COMCU" />
+          <ScalarProperty Name="ThirdItemNumber" ColumnName="COAITM" />
+          <ScalarProperty Name="SecondItemNumber" ColumnName="COLITM" />
+          <ScalarProperty Name="ItemNumberShort" ColumnName="COITM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrders">
+      <EntityTypeMapping TypeName="WSJDEModel.WorkOrder">
+        <MappingFragment StoreEntitySet="F4801">
+          <ScalarProperty Name="AmountActualMaterial" ColumnName="WAMTAM" />
+          <ScalarProperty Name="AmountActualLabor" ColumnName="WALBAM" />
+          <ScalarProperty Name="AmountEstimatedOther" ColumnName="WAAMOT" />
+          <ScalarProperty Name="AmountEstimatedMaterial" ColumnName="WAAMMC" />
+          <ScalarProperty Name="AmountEstimatedLabor" ColumnName="WAAMLC" />
+          <ScalarProperty Name="ApprovalType" ColumnName="WAAPRT" />
+          <ScalarProperty Name="MeterPosition" ColumnName="WAMPOS" />
+          <ScalarProperty Name="ServiceAddressNumber" ColumnName="WASAID" />
+          <ScalarProperty Name="ActualDowntimeHours" ColumnName="WAACDN" />
+          <ScalarProperty Name="EstimatedDowntimeHours" ColumnName="WAESDN" />
+          <ScalarProperty Name="CriticalityWorkOrder" ColumnName="WAXRTO" />
+          <ScalarProperty Name="NextStatusWO" ColumnName="WANTST" />
+          <ScalarProperty Name="ParentNumber" ColumnName="WAAAID" />
+          <ScalarProperty Name="TimeofDay" ColumnName="WATDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="WAUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="WAJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="WAPID" />
+          <ScalarProperty Name="UserID" ColumnName="WAUSER" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="WAURRF" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="WAURAB" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="WAURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="WAURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="WAURCD" />
+          <ScalarProperty Name="BOMChange" ColumnName="WABOMC" />
+          <ScalarProperty Name="ExistingDisposition" ColumnName="WAXDSP" />
+          <ScalarProperty Name="PhaseIn" ColumnName="WAPHSE" />
+          <ScalarProperty Name="ReasonforECO" ColumnName="WAREAS" />
+          <ScalarProperty Name="NewPartNumber" ColumnName="WAPNRQ" />
+          <ScalarProperty Name="RoutingChange" ColumnName="WARTCH" />
+          <ScalarProperty Name="DrawingChange" ColumnName="WADRWC" />
+          <ScalarProperty Name="RoutingRevisionLevel" ColumnName="WARREV" />
+          <ScalarProperty Name="BillRevisionLevel" ColumnName="WABREV" />
+          <ScalarProperty Name="CompanyKeyRelatedOrder" ColumnName="WARKCO" />
+          <ScalarProperty Name="SubledgerInactiveCode" ColumnName="WASBLI" />
+          <ScalarProperty Name="DocumentType" ColumnName="WADCT" />
+          <ScalarProperty Name="RatioCriticalRatioPriority2" ColumnName="WARAT2" />
+          <ScalarProperty Name="RatioCriticalRatioPriority1" ColumnName="WARAT1" />
+          <ScalarProperty Name="LotGrade" ColumnName="WALOTG" />
+          <ScalarProperty Name="LotPotency" ColumnName="WALOTP" />
+          <ScalarProperty Name="LotSerialNumber" ColumnName="WALOTN" />
+          <ScalarProperty Name="HoursUnaccountedDirectLabor" ColumnName="WACTS1" />
+          <ScalarProperty Name="LeadtimeCumulative" ColumnName="WALTCM" />
+          <ScalarProperty Name="LeadtimeLevel" ColumnName="WALTLV" />
+          <ScalarProperty Name="PercentComplete" ColumnName="WAPC" />
+          <ScalarProperty Name="AmountMemoBudgetChanges" ColumnName="WAPOU" />
+          <ScalarProperty Name="DateScheduledTickler" ColumnName="WATDT" />
+          <ScalarProperty Name="AmountMilesorHours" ColumnName="WAMOH" />
+          <ScalarProperty Name="ResequenceCode" ColumnName="WARESC" />
+          <ScalarProperty Name="IndentedCode" ColumnName="WAINDC" />
+          <ScalarProperty Name="WorkOrderFreezeCode" ColumnName="WAUNCD" />
+          <ScalarProperty Name="WorkOrderFlashMessage" ColumnName="WASPRT" />
+          <ScalarProperty Name="RouteSheetN" ColumnName="WARTG" />
+          <ScalarProperty Name="BillofMaterialN" ColumnName="WABM" />
+          <ScalarProperty Name="VarianceFlag" ColumnName="WAPPFG" />
+          <ScalarProperty Name="PostingEdit" ColumnName="WAPEC" />
+          <ScalarProperty Name="WOPickListPrinted" ColumnName="WASHTY" />
+          <ScalarProperty Name="TypeofRouting" ColumnName="WATRT" />
+          <ScalarProperty Name="TypeBillofMaterial" ColumnName="WATBM" />
+          <ScalarProperty Name="TimeBeginning" ColumnName="WAPBTM" />
+          <ScalarProperty Name="MessageNumber" ColumnName="WASHNO" />
+          <ScalarProperty Name="UnitofMeasureasInput" ColumnName="WAUOM" />
+          <ScalarProperty Name="UnitsShippedtoDate" ColumnName="WAQTYT" />
+          <ScalarProperty Name="QuantityShipped" ColumnName="WASOQS" />
+          <ScalarProperty Name="UnitsQuantityCanceledScrapped" ColumnName="WASOCN" />
+          <ScalarProperty Name="UnitsQtyBackorderedHeld" ColumnName="WASOBK" />
+          <ScalarProperty Name="UnitsOrderTransactionQuantity" ColumnName="WAUORG" />
+          <ScalarProperty Name="UnitorTagNumber" ColumnName="WAAPID" />
+          <ScalarProperty Name="AssetItemNumber" ColumnName="WANUMB" />
+          <ScalarProperty Name="SecondItemNumber" ColumnName="WALITM" />
+          <ScalarProperty Name="ThirdItemNumber" ColumnName="WAAITM" />
+          <ScalarProperty Name="ItemNumberShort" ColumnName="WAITM" />
+          <ScalarProperty Name="HoursActual" ColumnName="WAHRSA" />
+          <ScalarProperty Name="AmountActual" ColumnName="WAAMTA" />
+          <ScalarProperty Name="HoursChangetoOriginalHours" ColumnName="WAHRSC" />
+          <ScalarProperty Name="HoursEstimated" ColumnName="WAHRSO" />
+          <ScalarProperty Name="AmountChangetoOriginalDollars" ColumnName="WAAMTC" />
+          <ScalarProperty Name="PayDeductionBenefitType" ColumnName="WAPAYT" />
+          <ScalarProperty Name="RevenueRateMarkupOverride" ColumnName="WABRT" />
+          <ScalarProperty Name="CrewSize" ColumnName="WASETC" />
+          <ScalarProperty Name="AmountEstimated" ColumnName="WAAMTO" />
+          <ScalarProperty Name="Reference2" ColumnName="WAVR02" />
+          <ScalarProperty Name="Reference" ColumnName="WAVR01" />
+          <ScalarProperty Name="CategoriesWorkOrder10" ColumnName="WAWR10" />
+          <ScalarProperty Name="E1ConsultingExperienceLevel" ColumnName="WAWR09" />
+          <ScalarProperty Name="EnterpriseOneConsultingSkillType" ColumnName="WAWR08" />
+          <ScalarProperty Name="EnterpriseOneConsultingServiceType" ColumnName="WAWR07" />
+          <ScalarProperty Name="EnterpriseOneConsultingStatus" ColumnName="WAWR06" />
+          <ScalarProperty Name="CategoriesWorkOrder05" ColumnName="WAWR05" />
+          <ScalarProperty Name="CategoriesWorkOrder04" ColumnName="WAWR04" />
+          <ScalarProperty Name="CategoriesWorkOrder03" ColumnName="WAWR03" />
+          <ScalarProperty Name="CategoriesWorkOrder02" ColumnName="WAWR02" />
+          <ScalarProperty Name="CategoriesWorkOrder01" ColumnName="WAWR01" />
+          <ScalarProperty Name="DatePaperPrintedDate" ColumnName="WAPPDT" />
+          <ScalarProperty Name="DateAssignedtoInspector" ColumnName="WADAT" />
+          <ScalarProperty Name="DateAssignedto" ColumnName="WADAP" />
+          <ScalarProperty Name="DateCompletion" ColumnName="WASTRX" />
+          <ScalarProperty Name="DateRequested" ColumnName="WADRQJ" />
+          <ScalarProperty Name="DateStart" ColumnName="WASTRT" />
+          <ScalarProperty Name="DateOrderTransaction" ColumnName="WATRDJ" />
+          <ScalarProperty Name="NextAddressNumber" ColumnName="WANAN8" />
+          <ScalarProperty Name="AddressNumberInspector" ColumnName="WAANT" />
+          <ScalarProperty Name="DateWOPlannedCompleted" ColumnName="WADPL" />
+          <ScalarProperty Name="AddressNumberAssignedTo" ColumnName="WAANP" />
+          <ScalarProperty Name="Supervisor" ColumnName="WAANPA" />
+          <ScalarProperty Name="AddressNumberManager" ColumnName="WAANSA" />
+          <ScalarProperty Name="AddressNumberOriginator" ColumnName="WAANO" />
+          <ScalarProperty Name="AddressNumber" ColumnName="WAAN8" />
+          <ScalarProperty Name="Subsidiary" ColumnName="WASUB" />
+          <ScalarProperty Name="DateStatusChanged" ColumnName="WADCG" />
+          <ScalarProperty Name="StatusCodeWO" ColumnName="WASRST" />
+          <ScalarProperty Name="Bin" ColumnName="WABIN" />
+          <ScalarProperty Name="Aisle" ColumnName="WAAISL" />
+          <ScalarProperty Name="Location" ColumnName="WALOCN" />
+          <ScalarProperty Name="Branch" ColumnName="WAMMCU" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="WAMCU" />
+          <ScalarProperty Name="Company" ColumnName="WACO" />
+          <ScalarProperty Name="StatusComment" ColumnName="WASTCM" />
+          <ScalarProperty Name="AdditionalWork" ColumnName="WADL01" />
+          <ScalarProperty Name="PriorityWO" ColumnName="WAPRTS" />
+          <ScalarProperty Name="TypeWO" ColumnName="WATYPS" />
+          <ScalarProperty Name="ParentWONumber" ColumnName="WAPARS" />
+          <ScalarProperty Name="PegtoWorkOrder" ColumnName="WAPTWO" />
+          <ScalarProperty Name="LineNumber" ColumnName="WALNID" />
+          <ScalarProperty Name="RelatedPOSOWONumber" ColumnName="WARORN" />
+          <ScalarProperty Name="RelatedPOSOWOOrderType" ColumnName="WARCTO" />
+          <ScalarProperty Name="OrderSuffix" ColumnName="WASFXO" />
+          <ScalarProperty Name="ID" ColumnName="WADOCO" />
+          <ScalarProperty Name="OrderType" ColumnName="WADCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderMasterTags">
+      <EntityTypeMapping TypeName="WSJDEModel.WorkOrderMasterTag">
+        <MappingFragment StoreEntitySet="F4801T">
+          <ScalarProperty Name="MaintenanceScheduleFlag" ColumnName="WAWSCHF" />
+          <ScalarProperty Name="LeadCraft" ColumnName="WAMCULT" />
+          <ScalarProperty Name="ExternalEventFlag" ColumnName="WAXEVT" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="WACRTU" />
+          <ScalarProperty Name="LineNumber" ColumnName="WALNID" />
+          <ScalarProperty Name="ContractChangeNumber" ColumnName="WACOCH" />
+          <ScalarProperty Name="DocumentCompany" ColumnName="WAKCO" />
+          <ScalarProperty Name="DocumentType" ColumnName="WADCT" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="WADOC" />
+          <ScalarProperty Name="ReimbursementMethod" ColumnName="WARMTHD" />
+          <ScalarProperty Name="IssueNumber" ColumnName="WAISNO" />
+          <ScalarProperty Name="CallBacks" ColumnName="WASCALL" />
+          <ScalarProperty Name="ComponentCodePart" ColumnName="WAVMRS33" />
+          <ScalarProperty Name="HeldPartsListFlag" ColumnName="WAHPLF" />
+          <ScalarProperty Name="AmountCommittedRemaining" ColumnName="WARACM" />
+          <ScalarProperty Name="AmountCommittedOriginal" ColumnName="WAOACM" />
+          <ScalarProperty Name="ActualSpecialUnits" ColumnName="WAACSU" />
+          <ScalarProperty Name="ActualSpecialAmount" ColumnName="WAACSA" />
+          <ScalarProperty Name="EstimatedSpecialUnits" ColumnName="WAESSU" />
+          <ScalarProperty Name="EstimatedSpecialAmount" ColumnName="WAESSA" />
+          <ScalarProperty Name="PlannedSpecialUnits" ColumnName="WAPLSU" />
+          <ScalarProperty Name="PlannedSpecialAmount" ColumnName="WAPLSA" />
+          <ScalarProperty Name="TotalPlanned" ColumnName="WATOPL" />
+          <ScalarProperty Name="TotalEstimated" ColumnName="WATOEM" />
+          <ScalarProperty Name="BudgetedCost" ColumnName="WABGTC" />
+          <ScalarProperty Name="PlannedOther" ColumnName="WAPLOS" />
+          <ScalarProperty Name="PlannedLabor" ColumnName="WAPLLB" />
+          <ScalarProperty Name="PlannedMaterial" ColumnName="WAPLMR" />
+          <ScalarProperty Name="SequenceNumber" ColumnName="WASEQN" />
+          <ScalarProperty Name="ComponentCodeAssembly" ColumnName="WAVMRS32" />
+          <ScalarProperty Name="ComponentCodeSystem" ColumnName="WAVMRS31" />
+          <ScalarProperty Name="CurrencyConversionRateSpotRate" ColumnName="WACRR" />
+          <ScalarProperty Name="CurrencyModeForeignorDomesticEntry" ColumnName="WACRRM" />
+          <ScalarProperty Name="CurrencyCodeTo" ColumnName="WACRDC" />
+          <ScalarProperty Name="CurrentBalanceofMeter3" ColumnName="WACURBALM3" />
+          <ScalarProperty Name="CurrentBalanceofMeter2" ColumnName="WACURBALM2" />
+          <ScalarProperty Name="CurrentBalanceofMeter1" ColumnName="WACURBALM1" />
+          <ScalarProperty Name="EntitlementCheckSupplier" ColumnName="WAENTCKS" />
+          <ScalarProperty Name="EligibleSupplierRecovery" ColumnName="WASRYN" />
+          <ScalarProperty Name="SupplierRecoveryManagerNumber" ColumnName="WAAN8SRM" />
+          <ScalarProperty Name="AssessorNumber" ColumnName="WAAN8AS" />
+          <ScalarProperty Name="PrimaryLastSupplierNumber" ColumnName="WAVEND" />
+          <ScalarProperty Name="RepairTime" ColumnName="WAREPTM" />
+          <ScalarProperty Name="RepairDate" ColumnName="WAREPDT" />
+          <ScalarProperty Name="FailureTime" ColumnName="WAFAILTM" />
+          <ScalarProperty Name="FailureDate" ColumnName="WAFAILDT" />
+          <ScalarProperty Name="DefectCode" ColumnName="WAFAILCD" />
+          <ScalarProperty Name="SupplierLotNumber" ColumnName="WARLOT" />
+          <ScalarProperty Name="CausalPartBusinessUnit" ColumnName="WAMCUCSL" />
+          <ScalarProperty Name="CausalPart" ColumnName="WACSLPRT" />
+          <ScalarProperty Name="ProductFamily" ColumnName="WAPRODF" />
+          <ScalarProperty Name="TimeZoneList" ColumnName="WATIMEZONES" />
+          <ScalarProperty Name="DaylightSavingsRuleName" ColumnName="WADSAVNAME" />
+          <ScalarProperty Name="TimeScheduledEndHHMMSS" ColumnName="WASEET" />
+          <ScalarProperty Name="TimeScheduledStartHHMMSS" ColumnName="WASEST" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleService" ColumnName="WAASN2" />
+          <ScalarProperty Name="PriceandAdjustmentScheduleFour" ColumnName="WAASN4" />
+          <ScalarProperty Name="CoverageGroup" ColumnName="WACOVGR" />
+          <ScalarProperty Name="CategoryGLNonCovered" ColumnName="WAGLCNC" />
+          <ScalarProperty Name="CategoryGLCovered" ColumnName="WAGLCCV" />
+          <ScalarProperty Name="Language" ColumnName="WALNGP" />
+          <ScalarProperty Name="TaxExplCode1" ColumnName="WAEXR1" />
+          <ScalarProperty Name="TaxRateArea" ColumnName="WATXA1" />
+          <ScalarProperty Name="GeographicRegionCode" ColumnName="WAREGION" />
+          <ScalarProperty Name="Country" ColumnName="WACTR" />
+          <ScalarProperty Name="TimeGuaranteedResponse" ColumnName="WARSTM" />
+          <ScalarProperty Name="PaymentInstrument" ColumnName="WARYIN" />
+          <ScalarProperty Name="EntitlementCheck" ColumnName="WAENTCK" />
+          <ScalarProperty Name="MethodofPricing" ColumnName="WAMTHPR" />
+          <ScalarProperty Name="TimeCompleted" ColumnName="WATMCO" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="WAPHN1" />
+          <ScalarProperty Name="PhonePrefix" ColumnName="WAAR1" />
+          <ScalarProperty Name="ContactName2" ColumnName="WAWHO2" />
+          <ScalarProperty Name="ProductModel" ColumnName="WAPRODM" />
+          <ScalarProperty Name="ProblemDescription" ColumnName="WAISSUE" />
+          <ScalarProperty Name="PromotionID" ColumnName="WAPMTN" />
+          <ScalarProperty Name="FirmWorkOrder" ColumnName="WAVFWO" />
+          <ScalarProperty Name="JobTypeCraftCode" ColumnName="WAJBCD" />
+          <ScalarProperty Name="CategoriesWorkOrder20" ColumnName="WAWR20" />
+          <ScalarProperty Name="CategoriesWorkOrder19" ColumnName="WAWR19" />
+          <ScalarProperty Name="CategoriesWorkOrder18" ColumnName="WAWR18" />
+          <ScalarProperty Name="CategoriesWorkOrder17" ColumnName="WAWR17" />
+          <ScalarProperty Name="CategoriesWorkOrder16" ColumnName="WAWR16" />
+          <ScalarProperty Name="CategoriesWorkOrder15" ColumnName="WAWR15" />
+          <ScalarProperty Name="CategoriesWorkOrder14" ColumnName="WAWR14" />
+          <ScalarProperty Name="CategoriesWorkOrder13" ColumnName="WAWR13" />
+          <ScalarProperty Name="CategoriesWorkOrder12" ColumnName="WAWR12" />
+          <ScalarProperty Name="CategoriesWorkOrder11" ColumnName="WAWR11" />
+          <ScalarProperty Name="UnitofMeasureSecondary" ColumnName="WAUOM2" />
+          <ScalarProperty Name="ResourcesAssigned" ColumnName="WATRAF" />
+          <ScalarProperty Name="SecondaryQuantityCompleted" ColumnName="WASSOQ" />
+          <ScalarProperty Name="ShrinkFactor" ColumnName="WASRNK" />
+          <ScalarProperty Name="ShrinkFactorMethod" ColumnName="WASRKF" />
+          <ScalarProperty Name="UnitsSecondaryQuantityOrdered" ColumnName="WASQOR" />
+          <ScalarProperty Name="ShipThisPhase" ColumnName="WASHPP" />
+          <ScalarProperty Name="DirectProjectRelationship" ColumnName="WAPRRP" />
+          <ScalarProperty Name="ProjectNumber" ColumnName="WAPRJM" />
+          <ScalarProperty Name="AmountActualOther" ColumnName="WAOTAM" />
+          <ScalarProperty Name="ObjectAccount" ColumnName="WAOBJ" />
+          <ScalarProperty Name="ChangestoPartsAndRoutingsAllowed" ColumnName="WAMPRC" />
+          <ScalarProperty Name="ProductionCostsExist" ColumnName="WAMPCE" />
+          <ScalarProperty Name="DualUnitOfMeasureItem" ColumnName="WADUAL" />
+          <ScalarProperty Name="DrawingNumber" ColumnName="WADRAW" />
+          <ScalarProperty Name="DateOther6" ColumnName="WAD6J" />
+          <ScalarProperty Name="DateOther5" ColumnName="WAD5J" />
+          <ScalarProperty Name="CurrencyCodeOrigin" ColumnName="WACRCF" />
+          <ScalarProperty Name="CurrencyCodeSource" ColumnName="WACRCE" />
+          <ScalarProperty Name="CurrencyCodeFrom" ColumnName="WACRCD" />
+          <ScalarProperty Name="ChargeCosttoProjectAccount" ColumnName="WACHPR" />
+          <ScalarProperty Name="SequenceBubbleSequence" ColumnName="WABSEQ" />
+          <ScalarProperty Name="DateActualStartJulian" ColumnName="WAATST" />
+          <ScalarProperty Name="SerialNumber" ColumnName="WAASID" />
+          <ScalarProperty Name="AlertSensitiveTask" ColumnName="WAALSE" />
+          <ScalarProperty Name="AccountID" ColumnName="WAAID" />
+          <ScalarProperty Name="UnitsUnaccountedScrap" ColumnName="WACTS8" />
+          <ScalarProperty Name="AmountUnaccountedScrap" ColumnName="WACTS7" />
+          <ScalarProperty Name="AmountUnaccountedDirectLabor" ColumnName="WACTS4" />
+          <ScalarProperty Name="CostMethod" ColumnName="WALEDG" />
+          <ScalarProperty Name="Serializedcomponents" ColumnName="WASRCN" />
+          <ScalarProperty Name="ShiftCode" ColumnName="WASHFT" />
+          <ScalarProperty Name="ScheduleSpread" ColumnName="WASCSP" />
+          <ScalarProperty Name="MonthWeekDayShift" ColumnName="WAMWDH" />
+          <ScalarProperty Name="LineCellIdentifier" ColumnName="WALINE" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WADOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderInstructions">
+      <EntityTypeMapping TypeName="WSJDEModel.WorkOrderInstruction">
+        <MappingFragment StoreEntitySet="F4802">
+          <ScalarProperty Name="AssociatedWOItem3" ColumnName="WBANM3" />
+          <ScalarProperty Name="AssociatedWOItem2" ColumnName="WBANM2" />
+          <ScalarProperty Name="AssociatedWOItem1" ColumnName="WBANM1" />
+          <ScalarProperty Name="DescriptionWorkOrder" ColumnName="WBSRDS" />
+          <ScalarProperty Name="DateAssociatedSar" ColumnName="WBDAA" />
+          <ScalarProperty Name="WorkOrderLineNumber" ColumnName="WBLINS" />
+          <ScalarProperty Name="RecordType" ColumnName="WBTYPR" />
+          <ScalarProperty Name="OrderSuffix" ColumnName="WBSFXO" />
+          <ScalarProperty Name="OrderType" ColumnName="WBDCTO" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WBDOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomAssets">
+      <EntityTypeMapping TypeName="WSJDEModel.CustomAsset">
+        <MappingFragment StoreEntitySet="F551201">
+          <ScalarProperty Name="UserID" ColumnName="ATUSER" />
+          <ScalarProperty Name="WorkStationID" ColumnName="ATJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="ATPID" />
+          <ScalarProperty Name="TimeLastUpdated" ColumnName="ATUPMT" />
+          <ScalarProperty Name="DateUpdated2" ColumnName="ATUPMJ" />
+          <ScalarProperty Name="DateUpdated1" ColumnName="ATMUPM" />
+          <ScalarProperty Name="UpdatedByUser" ColumnName="ATUPMB" />
+          <ScalarProperty Name="EquipmentCostAmount" ColumnName="ATECAMT" />
+          <ScalarProperty Name="InServiceDate" ColumnName="ATINSDTE" />
+          <ScalarProperty Name="GenericNumeric6" ColumnName="ATGNUM6" />
+          <ScalarProperty Name="GenericNumeric5" ColumnName="ATGNUM5" />
+          <ScalarProperty Name="GenericNumeric4" ColumnName="ATGNUM4" />
+          <ScalarProperty Name="GenericNumeric3" ColumnName="ATGNUM3" />
+          <ScalarProperty Name="GenericNumeric2" ColumnName="ATGNUM2" />
+          <ScalarProperty Name="GenericNumeric1" ColumnName="ATGNUM1" />
+          <ScalarProperty Name="GenericString01" ColumnName="ATA301" />
+          <ScalarProperty Name="MathNumeric05" ColumnName="ATMATH05" />
+          <ScalarProperty Name="MathNumeric04" ColumnName="ATMATH04" />
+          <ScalarProperty Name="MathNumeric03" ColumnName="ATMATH03" />
+          <ScalarProperty Name="MathNumeric02" ColumnName="ATMATH02" />
+          <ScalarProperty Name="MathNumeric01" ColumnName="ATMATH01" />
+          <ScalarProperty Name="DepreciationFormulaAmount" ColumnName="ATDFAM" />
+          <ScalarProperty Name="TotalActualCost" ColumnName="ATTAWE1" />
+          <ScalarProperty Name="AmountListPrice" ColumnName="ATLIST" />
+          <ScalarProperty Name="AmountTax2" ColumnName="ATBY02" />
+          <ScalarProperty Name="AmountTax1" ColumnName="ATBY01" />
+          <ScalarProperty Name="AmountFinalforCost" ColumnName="ATCFAM" />
+          <ScalarProperty Name="AmountBest" ColumnName="ATANBT" />
+          <ScalarProperty Name="CostActual" ColumnName="ATCACU" />
+          <ScalarProperty Name="TotalDollars" ColumnName="ATTOTD" />
+          <ScalarProperty Name="ExpenseAmount" ColumnName="ATEXPFAMT" />
+          <ScalarProperty Name="Amount2" ColumnName="ATAA2" />
+          <ScalarProperty Name="Amount1" ColumnName="ATAA1" />
+          <ScalarProperty Name="YTDDepreciation" ColumnName="ATOLYTD" />
+          <ScalarProperty Name="CurrentPeriodDepreciation" ColumnName="ATOLPTD" />
+          <ScalarProperty Name="AddressNumber" ColumnName="ATAN8" />
+          <ScalarProperty Name="TotalBilledToDate" ColumnName="ATBLTD" />
+          <ScalarProperty Name="AmountNet" ColumnName="ATNAMT" />
+          <ScalarProperty Name="AmountGross" ColumnName="ATAG" />
+          <ScalarProperty Name="PurchaseAmount" ColumnName="ATPOA" />
+          <ScalarProperty Name="GenericStringx50" ColumnName="ATGS5B" />
+          <ScalarProperty Name="DDPScriptComments" ColumnName="ATDSTX" />
+          <ScalarProperty Name="HoursWorked" ColumnName="ATHOURS" />
+          <ScalarProperty Name="OEBillingSeqSkey" ColumnName="AT#WSBLSQN" />
+          <ScalarProperty Name="QuoteRevisionNumber" ColumnName="AT#WSQRN" />
+          <ScalarProperty Name="QuoteNumber" ColumnName="AT#WSQNM" />
+          <ScalarProperty Name="PromotionName" ColumnName="ATPRNAME" />
+          <ScalarProperty Name="ScheduledEndDate" ColumnName="ATSCHJBENDT" />
+          <ScalarProperty Name="ScheduledStartDate" ColumnName="ATSCHJBSTDT" />
+          <ScalarProperty Name="UserTheJobWillBeLaunchedWith" ColumnName="ATSCHUSER" />
+          <ScalarProperty Name="Exempt" ColumnName="ATSAXMPT" />
+          <ScalarProperty Name="FeeCode" ColumnName="AT#WSFEECD" />
+          <ScalarProperty Name="DateAction" ColumnName="ATACDT" />
+          <ScalarProperty Name="LicensePowerOfAttorny" ColumnName="ATLPOA" />
+          <ScalarProperty Name="LicenseCOLocation" ColumnName="AT#COLC" />
+          <ScalarProperty Name="LicenseCODate" ColumnName="ATCDTL" />
+          <ScalarProperty Name="ID" ColumnName="ATNUMB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaborActivities">
+      <EntityTypeMapping TypeName="WSJDEModel.LaborActivity">
+        <MappingFragment StoreEntitySet="F553003">
+          <ScalarProperty Name="UserID" ColumnName="LAUSER" />
+          <ScalarProperty Name="TimeofDay" ColumnName="LATDAY" />
+          <ScalarProperty Name="DateUpdated" ColumnName="LAUPMJ" />
+          <ScalarProperty Name="WorkStationID" ColumnName="LAJOBN" />
+          <ScalarProperty Name="ProgramID" ColumnName="LAPID" />
+          <ScalarProperty Name="UserReservedNumber" ColumnName="LAURAB" />
+          <ScalarProperty Name="UserReservedReference" ColumnName="LAURRF" />
+          <ScalarProperty Name="UserReservedAmount" ColumnName="LAURAT" />
+          <ScalarProperty Name="UserReservedDate" ColumnName="LAURDT" />
+          <ScalarProperty Name="UserReservedCode" ColumnName="LAURCD" />
+          <ScalarProperty Name="CrewSize" ColumnName="LASETC" />
+          <ScalarProperty Name="RunLaborStandard" ColumnName="LARUNL" />
+          <ScalarProperty Name="ActivityKey" ColumnName="LAAITM" />
+          <ScalarProperty Name="CostComponent" ColumnName="LACOST" />
+          <ScalarProperty Name="EffectiveThruDate" ColumnName="LAEFFT" />
+          <ScalarProperty Name="EffectiveFromDate" ColumnName="LAEFFF" />
+          <ScalarProperty Name="Description" ColumnName="LADSC1" />
+          <ScalarProperty Name="TypeOperationCode" ColumnName="LAOPSC" />
+          <ScalarProperty Name="BusinessUnit" ColumnName="LAMCU" />
+          <ScalarProperty Name="Branch" ColumnName="LAMMCU" />
+          <ScalarProperty Name="Region" ColumnName="LALITM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OMBWorkOrders">
+      <EntityTypeMapping TypeName="WSJDEModel.OMBWorkOrder">
+        <MappingFragment StoreEntitySet="F5548OMB">
+          <ScalarProperty Name="AdditionalWork" ColumnName="OMMC01" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="OMAN8" />
+          <ScalarProperty Name="UpdateUser" ColumnName="OMUSER" />
+          <ScalarProperty Name="UpdateTime" ColumnName="OMTDAY" />
+          <ScalarProperty Name="UpdateDate" ColumnName="OMUPMJ" />
+          <ScalarProperty Name="JobNumber" ColumnName="OMJOBN" />
+          <ScalarProperty Name="ID" ColumnName="OMPID" />
+          <ScalarProperty Name="Ukurab" ColumnName="OMUKURAB" />
+          <ScalarProperty Name="Urrf" ColumnName="OMURRF" />
+          <ScalarProperty Name="Urat" ColumnName="OMURAT" />
+          <ScalarProperty Name="Urdt" ColumnName="OMURDT" />
+          <ScalarProperty Name="Urcd" ColumnName="OMURCD" />
+          <ScalarProperty Name="OMBOrderOutbound" ColumnName="OMPTWO" />
+          <ScalarProperty Name="OMBOrderInbound" ColumnName="OMRORN" />
+          <ScalarProperty Name="OrderType" ColumnName="OMDCTO" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="OMDOCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="WSJDEModel.Employee">
+        <MappingFragment StoreEntitySet="T_HR_EMPLOYEE">
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EMPLOYEE_TYPE" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TERM_DATE" />
+          <ScalarProperty Name="TitleCode" ColumnName="TITLE_CODE" />
+          <ScalarProperty Name="ReportsToEmployeeID" ColumnName="REPORTS_TO_KEY" />
+          <ScalarProperty Name="ReportsToEmployeeNumber" ColumnName="REPORTS_TO_NUM" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="HireDate" ColumnName="HIRE_DATE" />
+          <ScalarProperty Name="Birthdate" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="ReportLocationID" ColumnName="REPORT_LOC_NUMERIC" />
+          <ScalarProperty Name="ID" ColumnName="EMPLOYEE_KEY" />
+          <ScalarProperty Name="ExemptStatus" ColumnName="EXEMPT_STATUS" />
+          <ScalarProperty Name="EmployeeStatusID" ColumnName="EMPLOYMENT_STATUS" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="ADUserName" ColumnName="NT_USER_ID" />
+          <ScalarProperty Name="CostCenter" ColumnName="COST_CENTER" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EMP_NUM" />
+          <ScalarProperty Name="Title" ColumnName="TITLE" />
+          <ScalarProperty Name="NewPassword" ColumnName="NEW_PWD" />
+          <ScalarProperty Name="PreferredName" ColumnName="PREFERRED_NAME" />
+          <ScalarProperty Name="LastName" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="MiddleName" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="FirstName" ColumnName="FIRST_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OMBFleetCategories">
+      <EntityTypeMapping TypeName="WSJDEModel.OMBFleetCategory">
+        <MappingFragment StoreEntitySet="OMB_FLEET_CATEGORY">
+          <ScalarProperty Name="SortSequence" ColumnName="SORT_SEQ" />
+          <ScalarProperty Name="Flag" ColumnName="FLAG" />
+          <ScalarProperty Name="ID" ColumnName="DTRT" />
+          <ScalarProperty Name="SystemCode" ColumnName="DTSY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetAttributes">
+      <EntityTypeMapping TypeName="WSJDEModel.FleetAttribute">
+        <MappingFragment StoreEntitySet="F551217">
+          <ScalarProperty Name="UpdateTime" ColumnName="CAUPMT" />
+          <ScalarProperty Name="UpdateDate" ColumnName="CAUPMJ" />
+          <ScalarProperty Name="UpdatePID" ColumnName="CAPID" />
+          <ScalarProperty Name="UpdateUser" ColumnName="CAUSER" />
+          <ScalarProperty Name="EV01" ColumnName="CAEV01" />
+          <ScalarProperty Name="Description" ColumnName="CADL" />
+          <ScalarProperty Name="LookupKey" ColumnName="CAKY" />
+          <ScalarProperty Name="RT" ColumnName="CART" />
+          <ScalarProperty Name="SystemKey" ColumnName="CASY" />
+          <ScalarProperty Name="ID" ColumnName="CANUMB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="WSJDEModel.Application">
+        <MappingFragment StoreEntitySet="WEB_APPLICATION">
+          <ScalarProperty Name="Status" ColumnName="STATUS" />
+          <ScalarProperty Name="Name" ColumnName="APPLICATION_NAME" />
+          <ScalarProperty Name="ID" ColumnName="APPLICATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Securities">
+      <EntityTypeMapping TypeName="WSJDEModel.Security">
+        <MappingFragment StoreEntitySet="WEB_SECURITY">
+          <ScalarProperty Name="SecurityLevelID" ColumnName="SECURITY_LEVEL_ID" />
+          <ScalarProperty Name="MaintenanceID" ColumnName="MAINT_ID" />
+          <ScalarProperty Name="CreateID" ColumnName="CREATE_ID" />
+          <ScalarProperty Name="MaintenanceDate" ColumnName="MAINT_DATE" />
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="ApplicationID" ColumnName="APPLICATION_ID" />
+          <ScalarProperty Name="ChangeFlag" ColumnName="CHANGE_FLAG" />
+          <ScalarProperty Name="ActiveSession" ColumnName="ACTIVE_SESSION" />
+          <ScalarProperty Name="SecurityLevelLevelID" ColumnName="SECURITY_LEVEL" />
+          <ScalarProperty Name="Password" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EMP_KEY" />
+          <ScalarProperty Name="ID" ColumnName="SECURITY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWOFeithImages">
+      <EntityTypeMapping TypeName="WSJDEModel.MWOFeithImage">
+        <MappingFragment StoreEntitySet="MWO_FEITH_IMAGES">
+          <ScalarProperty Name="ImageTypeID" ColumnName="IMAGE_TYPE_ID" />
+          <ScalarProperty Name="WorkOrderGUID" ColumnName="WORK_ORDER_GUID" />
+          <ScalarProperty Name="DateAdded" ColumnName="DATE_ADDED" />
+          <ScalarProperty Name="Damaged" ColumnName="DAMAGED" />
+          <ScalarProperty Name="Location" ColumnName="LOCATION" />
+          <ScalarProperty Name="OMBOrderInbound" ColumnName="OMBORDERINBOUND" />
+          <ScalarProperty Name="ComplexUnitNumber" ColumnName="COMPLEXUNITNUMBER" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UNITNUMBER" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="HR_EMPLOYEE_NUMBER" />
+          <ScalarProperty Name="MWOImageID" ColumnName="MWO_IMAGE_ID" />
+          <ScalarProperty Name="WorkOrderID" ColumnName="WORK_ORDER_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OMBLookups">
+      <EntityTypeMapping TypeName="WSJDEModel.OMBLookup">
+        <MappingFragment StoreEntitySet="OMB_LOOKUP">
+          <ScalarProperty Name="SFDCReferenceID" ColumnName="SFDC_REF_ID" />
+          <ScalarProperty Name="MemberCategoryCode4" ColumnName="MEMBER_CATEGORY_CODE_4" />
+          <ScalarProperty Name="MemberCategoryCode3" ColumnName="MEMBER_CATEGORY_CODE_3" />
+          <ScalarProperty Name="MemberCategoryCode2" ColumnName="MEMBER_CATEGORY_CODE_2" />
+          <ScalarProperty Name="MemberCategoryCode1" ColumnName="MEMBER_CATEGORY_CODE" />
+          <ScalarProperty Name="SortSequence" ColumnName="SORT_SEQ" />
+          <ScalarProperty Name="MemberDescription" ColumnName="MEMBER_DESC" />
+          <ScalarProperty Name="MemberCode" ColumnName="MEMBER_CODE" />
+          <ScalarProperty Name="CategoryID" ColumnName="CATEGORY_SKEY" />
+          <ScalarProperty Name="ID" ColumnName="LOOKUP_SKEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemporaryWorkOrderNumbers">
+      <EntityTypeMapping TypeName="WSJDEModel.TemporaryWorkOrderNumber">
+        <MappingFragment StoreEntitySet="TEMP_WO_NUMBER">
+          <ScalarProperty Name="TimeStamp" ColumnName="TIME_STAMP" />
+          <ScalarProperty Name="WorkOrderGUID" ColumnName="WO_GUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaperlessRequests">
+      <EntityTypeMapping TypeName="WSJDEModel.PaperlessRequest">
+        <MappingFragment StoreEntitySet="PAPERLESS_REQUEST">
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="SendToEmail" ColumnName="SEND_TO_EMAIL" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PHONE_NUMBER" />
+          <ScalarProperty Name="RequesterEmail" ColumnName="REQUESTER_EMAIL" />
+          <ScalarProperty Name="LastName" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FirstName" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="AccountNumber" ColumnName="ACCOUNT_NUMBER" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaperlessRequestOrders">
+      <EntityTypeMapping TypeName="WSJDEModel.PaperlessRequestOrder">
+        <MappingFragment StoreEntitySet="PAPERLESS_REQUEST_ORDER">
+          <ScalarProperty Name="Zip" ColumnName="ZIP" />
+          <ScalarProperty Name="State" ColumnName="STATE" />
+          <ScalarProperty Name="City" ColumnName="CITY" />
+          <ScalarProperty Name="UnitNumber" ColumnName="UNIT_NUMBER" />
+          <ScalarProperty Name="Attention" ColumnName="ATTENTION" />
+          <ScalarProperty Name="OrderNumber" ColumnName="ORDER_NUMBER" />
+          <ScalarProperty Name="PaperlessRequestID" ColumnName="PAPERLESS_REQUEST_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APIRequestDatas">
+      <EntityTypeMapping TypeName="WSJDEModel.APIRequestData">
+        <MappingFragment StoreEntitySet="API_REQUEST_DATA">
+          <ScalarProperty Name="Value" ColumnName="VALUE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="APIRequestDataKeyID" ColumnName="API_REQUEST_DATA_KEY_ID" />
+          <ScalarProperty Name="APIRequestID" ColumnName="API_REQUEST_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APIRequestDataKeys">
+      <EntityTypeMapping TypeName="WSJDEModel.APIRequestDataKey">
+        <MappingFragment StoreEntitySet="API_REQUEST_DATA_KEY">
+          <ScalarProperty Name="APISFProductID" ColumnName="API_SF_PRODUCT_ID" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ValueRequired" ColumnName="VALUE_REQUIRED" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="APIRequestDataKeyClassID" ColumnName="API_REQ_DATA_KEY_CLASS_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APIRequestDataKeyClasses">
+      <EntityTypeMapping TypeName="WSJDEModel.APIRequestDataKeyClass">
+        <MappingFragment StoreEntitySet="API_REQUEST_DATA_KEY_CLASS">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APIRequestSources">
+      <EntityTypeMapping TypeName="WSJDEModel.APIRequestSource">
+        <MappingFragment StoreEntitySet="API_REQUEST_SOURCE">
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APISources">
+      <EntityTypeMapping TypeName="WSJDEModel.APISource">
+        <MappingFragment StoreEntitySet="API_SOURCE">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Token" ColumnName="TOKEN" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APIRequests">
+      <EntityTypeMapping TypeName="WSJDEModel.APIRequest">
+        <MappingFragment StoreEntitySet="API_REQUEST">
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="Phone" ColumnName="PHONE" />
+          <ScalarProperty Name="Zip" ColumnName="ZIP" />
+          <ScalarProperty Name="State" ColumnName="STATE" />
+          <ScalarProperty Name="City" ColumnName="CITY" />
+          <ScalarProperty Name="Address2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="Address1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="Company" ColumnName="COMPANY" />
+          <ScalarProperty Name="LastName" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FirstName" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="APIRequestSourceID" ColumnName="API_REQUEST_SOURCE_ID" />
+          <ScalarProperty Name="APISourceID" ColumnName="API_SOURCE_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APISFProducts">
+      <EntityTypeMapping TypeName="WSJDEModel.APISFProduct">
+        <MappingFragment StoreEntitySet="API_SF_PRODUCT">
+          <ScalarProperty Name="Order" ColumnName="ORDER" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="WSJDEModel.Inventory">
+        <MappingFragment StoreEntitySet="VI_INVENTORY">
+          <ScalarProperty Name="ModifiedTime" ColumnName="MODIFIED_TIME" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CREATED_TIME" />
+          <ScalarProperty Name="ModifiedByUser" ColumnName="MODIFIED_BY_USER" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+          <ScalarProperty Name="Year" ColumnName="YEAR" />
+          <ScalarProperty Name="Month" ColumnName="MONTH" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LOCATION_CC" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryProducts">
+      <EntityTypeMapping TypeName="WSJDEModel.InventoryProduct">
+        <MappingFragment StoreEntitySet="VI_INVENTORY_PRODUCT">
+          <ScalarProperty Name="ModifiedTime" ColumnName="MODIFIED_TIME" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CREATED_TIME" />
+          <ScalarProperty Name="ModifiedByUser" ColumnName="MODIFIED_BY_USER" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+          <ScalarProperty Name="Repairable" ColumnName="REPAIRABLE" />
+          <ScalarProperty Name="Usable" ColumnName="USABLE" />
+          <ScalarProperty Name="ProductID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="InventoryID" ColumnName="INVENTORY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="WSJDEModel.Product">
+        <MappingFragment StoreEntitySet="VI_PRODUCT">
+          <ScalarProperty Name="ModifiedTime" ColumnName="MODIFIED_TIME" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CREATED_TIME" />
+          <ScalarProperty Name="ModifiedByUser" ColumnName="MODIFIED_BY_USER" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="StatusID" ColumnName="PRODUCT_STATUS_ID" />
+          <ScalarProperty Name="ProductCategoryID" ColumnName="PRODUCT_CATEGORY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategories">
+      <EntityTypeMapping TypeName="WSJDEModel.ProductCategory">
+        <MappingFragment StoreEntitySet="VI_PRODUCT_CATEGORY">
+          <ScalarProperty Name="ModifiedTime" ColumnName="MODIFIED_TIME" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CREATED_TIME" />
+          <ScalarProperty Name="ModifiedByUser" ColumnName="MODIFIED_BY_USER" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CREATED_BY_USER" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="StatusID" ColumnName="PRODUCT_CATEGORY_STATUS_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategoryStatuses">
+      <EntityTypeMapping TypeName="WSJDEModel.ProductCategoryStatus">
+        <MappingFragment StoreEntitySet="VI_PRODUCT_CATEGORY_STATUS">
+          <ScalarProperty Name="Status" ColumnName="STATUS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductStatuses">
+      <EntityTypeMapping TypeName="WSJDEModel.ProductStatus">
+        <MappingFragment StoreEntitySet="VI_PRODUCT_STATUS">
+          <ScalarProperty Name="Status" ColumnName="STATUS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityLevels">
+      <EntityTypeMapping TypeName="WSJDEModel.SecurityLevel">
+        <MappingFragment StoreEntitySet="WEB_SECURITY_LEVELS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubApplicationID" ColumnName="SUB_APPLICATION_ID" />
+          <ScalarProperty Name="Description" ColumnName="LEVEL_DESC" />
+          <ScalarProperty Name="LevelID" ColumnName="SECURITY_LEVEL" />
+          <ScalarProperty Name="ApplicationID" ColumnName="APPLICATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

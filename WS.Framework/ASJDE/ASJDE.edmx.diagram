@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2da476050bff423a8cd531f81de38ce8" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="ASJDEModel.VideoArea" Width="1.5" PointX="15" PointY="1" />
+        <EntityTypeShape EntityType="ASJDEModel.VideoGroup" Width="1.5" PointX="17.125" PointY="1.125" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_VIDEO_AREA_GROUP_FK" />
+        <EntityTypeShape EntityType="ASJDEModel.VideoLog" Width="1.5" PointX="22.125" PointY="1.125" />
+        <EntityTypeShape EntityType="ASJDEModel.Video" Width="1.5" PointX="19.625" PointY="1.125" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_VIDEO_GROUP_VIDEO_FK" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentCause" Width="3.875" PointX="35.5" PointY="10.375" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentCauseCategory" Width="3.875" PointX="34.875" PointY="6.75" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentEmployeeType" Width="3.875" PointX="35.25" PointY="3.75" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentOutcome" Width="1.5" PointX="37.375" PointY="1.5" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentSiteCategory" Width="3.875" PointX="24.75" PointY="5.375" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentStatus" Width="3.875" PointX="24.625" PointY="7.875" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentType" Width="3.875" PointX="24.625" PointY="10.125" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncidentUnsafeAct" Width="3.875" PointX="27.25" PointY="12.875" />
+        <EntityTypeShape EntityType="ASJDEModel.SafetyIncident" Width="2.625" PointX="30" PointY="1.5" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP51" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP91" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP71" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_S_I_EMPLOYEE_TYPE_FK1" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP52" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP310" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_S_I_STATUS_FK1" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP47" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP61" />
+        <EntityTypeShape EntityType="ASJDEModel.Entity" Width="1.5" PointX="5.75" PointY="4.125" />
+        <EntityTypeShape EntityType="ASJDEModel.EntityStatus" Width="1.5" PointX="8.875" PointY="6" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENT_STATUS_FK" />
+        <EntityTypeShape EntityType="ASJDEModel.Branch" Width="1.5" PointX="15" PointY="9.625" />
+        <EntityTypeShape EntityType="ASJDEModel.BusinessUnit" Width="1.5" PointX="18" PointY="11.125" />
+        <EntityTypeShape EntityType="ASJDEModel.Company" Width="1.5" PointX="0.5" PointY="12.625" />
+        <EntityTypeShape EntityType="ASJDEModel.Country" Width="1.5" PointX="3" PointY="14.125" />
+        <EntityTypeShape EntityType="ASJDEModel.Currency" Width="1.5" PointX="6" PointY="15.625" />
+        <EntityTypeShape EntityType="ASJDEModel.Depot" Width="1.5" PointX="9" PointY="17.125" />
+        <EntityTypeShape EntityType="ASJDEModel.HoursWorked" Width="1.5" PointX="12" PointY="18.625" />
+        <EntityTypeShape EntityType="ASJDEModel.Location" Width="1.5" PointX="15" PointY="20.125" />
+        <EntityTypeShape EntityType="ASJDEModel.LocationStatus" Width="1.5" PointX="18" PointY="21.625" />
+        <EntityTypeShape EntityType="ASJDEModel.OperationalBusinessUnit" Width="1.5" PointX="0.5" PointY="23.125" />
+        <EntityTypeShape EntityType="ASJDEModel.StrategicBusinessUnit" Width="1.5" PointX="3" PointY="24.625" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_BRANCH_DEPOT_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_BU_BRANCH_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_BRANCH_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP33" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_BU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_OBU_BU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP32" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_COMPANY_SBU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_COMPANY_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP29" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP103" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP21" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP20" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_DEPOT_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP34" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_OBU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_ENTITY_SBU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_LOC_ENTY_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP104" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP19" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_SBU_OBU_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP31" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP30" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP101" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_RELATIONSHIP102" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_Hours_Entity_FK" />
+        <AssociationConnector Association="ASJDEModel.JDE_WEB_AS_SI_Entity_FK" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
