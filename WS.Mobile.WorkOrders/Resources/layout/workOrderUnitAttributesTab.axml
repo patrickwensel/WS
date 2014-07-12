@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,3">
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="WS Serial Number:"
+                    android:layout_column="0" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:id="@+id/workOrderSerialNumberLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Branch Number:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderBranchNumberLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Date Acquired:"
+                    android:layout_column="0"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:id="@+id/workOrderDateAcquiredLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Manufacturer Serial Number:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderManufacturerSerialNumberLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Equipment Class:"
+                    android:layout_column="0" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:id="@+id/workOrderEquipmentClassLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Manufacturer:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderManufacturerLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Model Year:"
+                    android:layout_column="0" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:id="@+id/workOrderModelYearLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Box Length:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderBoxLengthLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Square Footage:"
+                    android:layout_column="0" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:id="@+id/workOrderSquareFootageLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Box Width:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderBoxWidthLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Description1:"
+                    android:layout_column="0" />
+                <EditText
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="1"
+                    android:maxLength="30"
+                    android:id="@+id/workOrderDescriptionLabel" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Total Length:"
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text="Small Text"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderTotalLengthLabel" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text="Description2:"
+                    android:layout_column="0" />
+                <EditText
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text=""
+                    android:layout_column="1"
+                    android:maxLength="30"
+                    android:id="@+id/workOrderDescriptionLabel2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldName"
+                    android:text=""
+                    android:layout_column="2" />
+                <TextView
+                    style="@style/WS.Theme.TableFieldValue"
+                    android:text=""
+                    android:layout_column="3" />
+            </TableRow>
+            <TableRow>
+            </TableRow>
+            <TableRow>
+                <FrameLayout
+                    style="@style/WS.Theme.ButtonBar"
+                    android:layout_span="5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:padding="5dp"
+                    android:id="@+id/frameLayout1">
+                    <Button
+                        android:id="@+id/attributeAddButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/attributeAddButtonText"
+                        android:layout_gravity="right" />
+                </FrameLayout>
+            </TableRow>
+            <TableRow>
+            </TableRow>
+        </TableLayout>
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/workOrderDescriptionTable"
+            android:stretchColumns="0,1,2,3">
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Category"
+                    android:layout_column="0"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Attribute"
+                    android:layout_column="1"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Item Desc"
+                    android:layout_column="2"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Description"
+                    android:layout_column="3"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text=""
+                    android:layout_column="4"
+                    android:layout_gravity="left" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

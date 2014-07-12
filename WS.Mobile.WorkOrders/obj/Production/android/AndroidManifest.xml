@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.willscot.workorders" android:versionName="1.2.2.1380" android:versionCode="2">
+  <uses-sdk android:minSdkVersion="15" />
+  <supports-screens android:requiresSmallestWidthDp="720" />
+  <application android:hardwareAccelerated="true" android:label="@string/app_name" android:icon="@drawable/app_icon" android:theme="@style/WS.Theme" android:name="ws.mobile.workorders.WorkOrderApplication">
+    <activity android:screenOrientation="landscape" android:name="ws.mobile.workorders.activities.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderActivitiesTabActivity" />
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderActivity" />
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderImagesTabActivity" />
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderDetailTabActivity" />
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderPartsTabActivity" />
+    <activity android:name="ws.mobile.workorders.activities.WorkOrderUnitAttributesTabActivity" />
+    <activity android:name="ws.mobile.workorders.activities.LoginActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.willscot.workorders.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

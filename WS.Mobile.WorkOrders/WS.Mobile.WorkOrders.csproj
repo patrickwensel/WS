@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C35433A-1841-4F01-9C98-99061A50CD81}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WS.Mobile.WorkOrders</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>WS.Mobile.WorkOrders</AssemblyName>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>.</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Testing|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>.</OutputPath>
+    <DefineConstants>TESTING;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>.</OutputPath>
+    <DefineConstants>PRODUCTION;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp.MonoDroid">
+      <HintPath>Library\RestSharp.MonoDroid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Json" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Data" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Backend\WorkOrdersClient.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Backend\JsonObject.cs" />
+    <Compile Include="Model\Branch.cs" />
+    <Compile Include="Model\WorkOrderType.cs" />
+    <Compile Include="Model\ActivityType.cs" />
+    <Compile Include="Model\PartType.cs" />
+    <Compile Include="WorkOrderApplication.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\WorkOrderActivitiesTabActivity.cs" />
+    <Compile Include="Activities\WorkOrderActivity.cs" />
+    <Compile Include="Activities\WorkOrderImagesTabActivity.cs" />
+    <Compile Include="Activities\WorkOrderDetailTabActivity.cs" />
+    <Compile Include="Activities\WorkOrderPartsTabActivity.cs" />
+    <Compile Include="Activities\WorkOrderUnitAttributesTabActivity.cs" />
+    <Compile Include="Activities\LoginActivity.cs" />
+    <Compile Include="Activities\AbstractActivity.cs" />
+    <Compile Include="Activities\AbstractTabItemActivity.cs" />
+    <Compile Include="Activities\AbstractTabActivity.cs" />
+    <Compile Include="Data\WorkOrderRepository.cs" />
+    <Compile Include="Data\CacheRepository.cs" />
+    <Compile Include="Backend\ByteArrayExtensions.cs" />
+    <Compile Include="Model\AttributeCategory.cs" />
+    <Compile Include="Model\Image.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\layout\login.axml" />
+    <AndroidResource Include="Resources\layout\main.axml" />
+    <AndroidResource Include="Resources\layout\workOrder.axml" />
+    <AndroidResource Include="Resources\layout\workOrderDetailTab.axml" />
+    <AndroidResource Include="Resources\layout\workOrderUnitAttributesTab.axml" />
+    <AndroidResource Include="Resources\layout\workOrderImagesTab.axml" />
+    <AndroidResource Include="Resources\layout\workOrderPartsTab.axml" />
+    <AndroidResource Include="Resources\layout\workOrderActivitiesTab.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi-v5\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi-v5\app_icon.png" />
+    <AndroidResource Include="Resources\menu\main_activity.axml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\login_activity.axml" />
+    <AndroidResource Include="Resources\menu\workorder_activity.axml" />
+    <AndroidResource Include="Resources\layout\menu_loggedInUser.axml" />
+    <AndroidResource Include="Resources\drawable\refresh_btn_25.png" />
+    <AndroidResource Include="Resources\Anim\rotate_center.xml" />
+    <AndroidResource Include="Resources\drawable\refresh_btn_25_Grey.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\Anim\" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <ItemGroup>
+    <Content Include="Library\Newtonsoft.Json.MonoDroid.dll" />
+    <Content Include="Library\RestSharp.MonoDroid.dll" />
+  </ItemGroup>
+</Project>

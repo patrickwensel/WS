@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <TextView
+            style="@style/WS.Theme.FieldName"
+            android:text="Work Order Type" />
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/workOrderTypeSpinner" />
+        <TextView
+            style="@style/WS.Theme.FieldName"
+            android:text="Branch" />
+        <TextView
+            android:id="@+id/branchName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="test"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp" />
+        <TextView
+            style="@style/WS.Theme.FieldName"
+            android:text="Revenue Branch" />
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/workOrderRevenueBranchSpinner" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <TextView
+            style="@style/WS.Theme.FieldName"
+            android:text="Additional Work" />
+        <EditText
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_width="fill_parent"
+            android:layout_height="117.3dp"
+            android:id="@+id/additionalWorkText"
+            android:maxLength="250"
+            android:maxLines="5"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:gravity="top" />
+    </LinearLayout>
+</LinearLayout>

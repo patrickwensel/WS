@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/workOrderActivitiesTable"
+            android:stretchColumns="4">
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="Location"
+                    android:layout_column="0"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Activity"
+                    android:layout_column="1"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Qty"
+                    android:layout_column="2"
+                    android:layout_gravity="right" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="DB %"
+                    android:layout_column="3"
+                    android:layout_gravity="right" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Activity Type"
+                    android:layout_column="4"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10px" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:layout_column="5"
+                    android:layout_width="100dp" />
+            </TableRow>
+            <TableRow>
+                <RadioGroup
+                    android:id="@+id/workOrderActivityLocationGroup"
+                    android:layout_column="0"
+                    android:layout_width="100dp">
+                    <RadioButton
+                        android:checked="true"
+                        android:text="@string/workOrder_interior"
+                        android:id="@+id/workOrderActivityInteriorRadio" />
+                    <RadioButton
+                        android:text="@string/workOrder_exterior"
+                        android:id="@+id/workOrderActivityExteriorRadio" />
+                </RadioGroup>
+                <Spinner
+                    android:layout_column="1"
+                    android:id="@+id/workOrderActivityTypeSpinner" />
+                <EditText
+                    android:inputType="number"
+                    android:layout_column="2"
+                    android:id="@+id/workOrderQtyNumber"
+                    android:maxLength="7"
+                    android:layout_height="65dp"
+                    android:textSize="30dp"
+                    android:minWidth="75dp"
+                    android:maxWidth="150dp"
+                    android:layout_width="75dp"
+                    android:imeOptions="actionNext" />
+                <EditText
+                    android:inputType="number"
+                    android:layout_column="3"
+                    android:id="@+id/workOrderDamageBillingPercentageNumber"
+                    android:hint="0"
+                    android:maxLength="3"
+                    android:layout_height="65dp"
+                    android:textSize="30dp"
+                    android:layout_width="75dp"
+                    android:imeOptions="actionNext" />
+                <RadioGroup
+                    android:id="@+id/workOrderActivityTypeGroup"
+                    android:layout_column="4">
+                    <RadioButton
+                        android:text="@string/workOrder_add"
+                        android:id="@+id/workOrderActivityAddCheck" />
+                    <RadioButton
+                        android:text="@string/workOrder_remove"
+                        android:id="@+id/workOrderActivityRemoveCheck" />
+                    <RadioButton
+                        android:text="@string/workOrder_replace"
+                        android:id="@+id/workOrderActivityReplaceCheck" />
+                    <RadioButton
+                        android:text="@string/workOrder_repair"
+                        android:id="@+id/workOrderActivityRepairCheck" />
+                    <RadioButton
+                        android:text="@string/workOrder_service"
+                        android:id="@+id/workOrderActivityServiceCheck" />
+                </RadioGroup>
+            </TableRow>
+            <TableRow>
+                <FrameLayout
+                    style="@style/WS.Theme.ButtonBar"
+                    android:layout_span="6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:padding="5dp">
+                    <Button
+                        android:id="@+id/workOrderActivityAddButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/workOrder_add"
+                        android:layout_gravity="right" />
+                </FrameLayout>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Location"
+                    android:layout_column="0"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Activity"
+                    android:layout_column="1"
+                    android:layout_gravity="left" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Qty"
+                    android:layout_column="2"
+                    android:layout_gravity="right" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="DB %"
+                    android:layout_column="3"
+                    android:layout_gravity="right" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:text="Activity Type"
+                    android:layout_column="4"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10px" />
+                <TextView
+                    style="@style/WS.Theme.TableHeader"
+                    android:layout_column="5"
+                    android:layout_width="100dp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

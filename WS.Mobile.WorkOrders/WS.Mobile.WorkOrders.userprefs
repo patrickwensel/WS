@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="3. Production" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Properties\AssemblyInfo.cs">
+    <Files>
+      <File FileName="Activities\MainActivity.cs" Line="599" Column="35" />
+      <File FileName="Activities\WorkOrderImagesTabActivity.cs" Line="154" Column="53" />
+      <File FileName="c:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\WorkOrderActivitiesTabActivity.cs" Line="116" Column="1" />
+      <File FileName="Properties\AssemblyInfo.cs" Line="37" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\MainActivity.cs" line="576" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\MainActivity.cs" line="594" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\WorkOrderImagesTabActivity.cs" line="146" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\WorkOrderImagesTabActivity.cs" line="44" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\WorkOrderImagesTabActivity.cs" line="142" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\WorkOrderImagesTabActivity.cs" line="138" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\MainActivity.cs" line="588" column="1" />
+      <Breakpoint file="C:\Code\Trunk\WS\WS.Mobile.WorkOrders\Activities\MainActivity.cs" line="592" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="d:\WSCott\AndroidApp\svn\ws\trunk\WS\WS.Mobile.WorkOrders\Activities\OutBoundWorkOrderUnitAttributesTabActivity.cs" line="32" offsetX="364" offsetY="527" expression="unit" liveUpdate="False" />
+    <Watch file="d:\WSCott\AndroidApp\svn\ws\trunk\WS\WS.Mobile.WorkOrders\Data\WorkOrderRepository.cs" line="79" offsetX="770" offsetY="1326" expression="values" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.ItemProperties.WS.Mobile.WorkOrders AndroidDeviceId-Testing="C6OKCT105226" AndroidDeviceId-Debug="C7OKCT121285" MonoForAntroid.PreferredDevice="10.1&quot; WXGA (Tablet)" AndroidDeviceId-Production="C7OKCT121285" />
+</Properties>

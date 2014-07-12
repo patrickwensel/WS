@@ -1,0 +1,3 @@
+C:\Code\WS\trunk\WS.Mobile.WorkOrders\WS.Mobile.WorkOrders.dll
+C:\Code\WS\trunk\WS.Mobile.WorkOrders\Library\Newtonsoft.Json.dll
+C:\Code\WS\trunk\WS.Mobile.WorkOrders\Library\RestSharp.MonoDroid.dll
