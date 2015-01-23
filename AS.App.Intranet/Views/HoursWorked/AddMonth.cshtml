@@ -1,0 +1,149 @@
+﻿@model AS.App.Intranet.ViewModels.HoursWorked.AddMonthViewModel
+
+@{
+    ViewBag.Title = "Add Month";
+    Layout = "~/Views/Shared/_WindowLayout.cshtml";
+}
+
+
+
+<div style="margin-top: 30px; margin-right: 30px; margin-left: 30px;">
+
+    <h2>Add Month</h2>
+
+    @using (Html.BeginForm(new { id = "addForm", name = "addForm" }))
+    {
+        <table>
+            <tr>
+                <td>@(Html.LabelFor(m => m.CountryID))</td>
+                <td>
+                    @(Html.Kendo().DropDownListFor(m => m.CountryID)
+                .AutoBind(false)
+                .OptionLabel(" ")
+                .DataTextField("Name")
+                .DataValueField("ID")
+                .HtmlAttributes(new { data_value_primitive = true, style = "width:200px" })
+                .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllCountries", "Hierarchy")).ServerFiltering(true))
+                )
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ValidationMessageFor(m => m.CountryID)</td>
+            </tr>
+            <tr>
+                <td>@(Html.LabelFor(m => m.Year))</td>
+                <td>@(Html.Kendo().DropDownListFor(m => m.Year)
+                      .Name("Year")
+                      .OptionLabel("Select year...")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .HtmlAttributes(new { data_value_primitive = true, style = "width:200px" })
+                      .DataSource(source => source.Read(read => read.Action("GetAddMonthYear", "HoursWorked").Data("filterYears")).ServerFiltering(true))
+                      .CascadeFrom("CountryID")
+                      .AutoBind(false)
+                      )</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ValidationMessageFor(m => m.Year)</td>
+            </tr>
+            <tr>
+                <td>@(Html.LabelFor(m => m.Month))</td>
+                <td>@(Html.Kendo().DropDownListFor(m => m.Month)
+                      .Name("Month")
+                      .OptionLabel("Select month...")
+                      .DataTextField("Name")
+                      .DataValueField("ID")
+                      .HtmlAttributes(new { data_value_primitive = true, style = "width:200px" })
+                      .DataSource(source => source.Read(read => read.Action("GetAddMonthMonth", "HoursWorked").Data("filterMonths")).ServerFiltering(true))
+                      .CascadeFrom("Year")
+                      .AutoBind(false)
+                      .Enable(false)
+                      )</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ValidationMessageFor(m => m.Month)</td>
+            </tr>
+            <tr>
+                <td>
+                    @* <button type="button" id="save">Add</button>*@
+                    <span id="addInventory" class="k-button">Add</span>
+                </td>
+            </tr>
+
+        </table>
+
+    }
+</div>
+
+<script type="text/javascript">
+
+    function filterYears() {
+        return {
+            countryID: $("#CountryID").val()
+        };
+    }
+
+    function filterMonths() {
+        return {
+            countryID: $("#CountryID").val(),
+            year: $("#Year").val()
+        };
+    }
+
+    $("#save").on("click", function () {
+        alert("valid: " + $("form").valid());
+    });
+
+    $(document).ready(function () {
+        $("#addInventory")
+            .bind("click", function () {
+                //if ($("form").valid()) {
+
+                var addMonthViewModel = {
+                    CountryID: parseInt($("#CountryID").data("kendoDropDownList").value()),
+                    Year: parseInt($("#Year").data("kendoDropDownList").value()),
+                    Month: parseInt($("#Month").data("kendoDropDownList").value())
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddMonth", "HoursWorked")',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(addMonthViewModel),
+                        dataType: "json",
+                        success: function (data) {
+
+                            var grid = window.parent.$("#grid").data("kendoGrid");
+                            grid.dataSource.read();
+
+                            var win = window.parent.$("#addMonthWindowDiv").data("kendoWindow");
+                            win.close();
+
+                        },
+                        error: function (request, status, error) {
+
+                            onError(error);
+                        }
+                    });
+                //}
+            });
+    });
+
+            function onError(e, status) {
+                if (e.errors) {
+                    var message = "The following errors have occurred:\n";
+
+                    $.each(e.errors, function (key, value) {
+                        if (value.errors) {
+                            message += value.errors.join("\n");
+                        }
+                    });
+
+                    var gridProd = $("#ProductGrid").data("kendoGrid");
+                    gridProd.dataSource.read();
+
+                    alert(message);
+                }
+            }
+
+</script>

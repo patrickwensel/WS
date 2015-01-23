@@ -1,0 +1,61 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@model AS.App.Intranet.ViewModels.Company.AdminViewModel
+
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+@(Html.Kendo().TabStrip()
+          .Name("tabstrip")
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("Hierarchy")
+                  .Selected(true)
+                  .Content(@<text>
+                                @Html.Partial("_Hierarchy", Model.Hierarchy)
+                            </text>);
+              tabstrip.Add().Text("Company")
+                      .Content(@<text>
+                                    @Html.Partial("_Company")
+                                </text>);
+              tabstrip.Add().Text("SBU")
+                      .Content(@<text>
+                                    @Html.Partial("_SBU")
+                                </text>);
+              tabstrip.Add().Text("OBU")
+                      .Content(@<text>
+                                    @Html.Partial("_OBU")
+                                </text>);
+              tabstrip.Add().Text("BU")
+                      .Content(@<text></text>);
+              tabstrip.Add().Text("Branch")
+                      .Content(@<text></text>);
+              tabstrip.Add().Text("Depot")
+                  .Content(@<text></text>);
+              tabstrip.Add().Text("Entity")
+                      .Content(@<text>
+                                    @Html.Partial("_Entity")
+                                </text>);
+              tabstrip.Add().Text("Location")
+                      .Content(@<text>
+                                    @Html.Partial("_Location")
+                                </text>);
+          })
+      )
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        var ts = $(tabstrip).data().kendoTabStrip;
+
+        ts.tabGroup.on('click', 'li', function (e) {
+            ts.reload($(this));
+        });
+    });
+
+</script>

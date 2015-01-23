@@ -1,0 +1,32 @@
+﻿@model AS.App.Intranet.ViewModels.HoursWorked.HoursWorkedViewModel
+
+@(Html.TextBoxFor(m => m.LocationID, new { @style = "display: none;" }))
+<table>
+    <tr>
+        <td>
+            @(Html.LabelFor(m => m.EntityID))
+            @(Html.Kendo().DropDownListFor(m => m.EntityID)
+                  .AutoBind(false)
+                  .OptionLabel("Choose Entity ...  ")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("GetEntitiesFilteredByLocationID", "Hierarchy").Data("filterEntities")).ServerFiltering(true))
+                  .CascadeFrom("LocationID")
+                  )
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(Html.LabelFor(m => m.Hours))
+            @(Html.TextBoxFor(m => m.Hours, new { @style = "width:150px" }))
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+
+    $("#EntityID").data("kendoDropDownList").list.width(300);
+
+</script>

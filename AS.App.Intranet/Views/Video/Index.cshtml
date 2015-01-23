@@ -1,0 +1,166 @@
+﻿@using AS.App.Intranet.ViewModels.Video
+
+@{
+    ViewBag.Title = "Videos";
+    //Layout = "~/Views/Shared/_ASLayout.cshtml";
+}
+
+<h2>Videos</h2>
+@Html.Partial("_Menu")
+
+@(Html.Kendo().Grid<VideoViewModel>()
+    .Name("videoGrid")
+    .Columns(columns =>
+    {
+        columns.ForeignKey(p => p.CompanyID, (System.Collections.IEnumerable)ViewData["companies"], "ID", "Name")
+               .Title("Company")
+               .Width(75)
+               .EditorTemplateName("CompanyID");
+        columns.ForeignKey(p => p.StrategicBusinessUnitID, (System.Collections.IEnumerable)ViewData["strategicBusinessUnits"], "ID", "Name")
+               .Title("SBU")
+               .Width(75)
+               .EditorTemplateName("SBUID");
+        columns.ForeignKey(p => p.OperationalBusinessUnitID, (System.Collections.IEnumerable)ViewData["operationalBusinessUnits"], "ID", "Name")
+               .Title("OBU")
+               .Width(75)
+               .EditorTemplateName("OBUID");
+        columns.ForeignKey(p => p.BusinessUnitID, (System.Collections.IEnumerable)ViewData["businessUnits"], "ID", "Name")
+               .Title("BU")
+               .Width(75)
+               .EditorTemplateName("BUID");
+        columns.ForeignKey(p => p.BranchID, (System.Collections.IEnumerable)ViewData["branchViewModels"], "ID", "Name")
+               .Title("Branch")
+               .Width(75)
+               .EditorTemplateName("BranchID");
+        columns.ForeignKey(p => p.DepotID, (System.Collections.IEnumerable)ViewData["depotViewModels"], "ID", "Name")
+               .Title("Depot")
+               .Width(75)
+               .EditorTemplateName("DepotID");
+        columns.ForeignKey(p => p.AreaID, (System.Collections.IEnumerable)ViewData["areas"], "ID", "Name")
+                .Title("Area")
+                .Width(75)
+                .EditorTemplateName("AreaIDFiltered");
+        columns.ForeignKey(p => p.GroupID, (System.Collections.IEnumerable)ViewData["groups"], "ID", "Name")
+                .Title("Group")
+                .Width(75)
+                .EditorTemplateName("GroupID");
+        columns.Bound(p => p.Name);
+        columns.Bound(p => p.ReferenceID);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(90);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+
+    .Sortable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ID).Editable(false);
+
+            })
+        .Create(update => update.Action("VideoCreate", "Video"))
+        .Read(read => read.Action("VideoRead", "Video"))
+        .Update(update => update.Action("VideoUpdate", "Video"))
+        .Destroy(update => update.Action("VideoDestroy", "Video"))
+    )
+)
+<script type="text/javascript">
+    
+    function filterGroup() {
+        return {
+            areaId: $("#AreaID").data("kendoDropDownList").value()
+        };
+    }
+    
+    function sbuChange() {
+        updateAreaID();
+    }
+
+    function obuChange() {
+        updateAreaID();
+    }
+
+    function buChange() {
+        updateAreaID();
+    }
+
+    function branchChange() {
+        updateAreaID();
+    }
+
+    function depotChange() {
+        updateAreaID();
+    }
+
+    function updateAreaID() {
+        var area = $("#AreaID").data("kendoDropDownList");
+        area.dataSource.read();
+    }
+
+    function filterSBUs() {
+        return {
+            companyID: $("#CompanyID").val()
+        };
+    }
+
+    function filterOBUs() {
+        return {
+            sbuID: $("#StrategicBusinessUnitID").val()
+        };
+    }
+
+    function filterBUs() {
+        return {
+            obuID: $("#OperationalBusinessUnitID").val()
+        };
+    }
+
+    function filterBranchs() {
+        return {
+            buID: $("#BusinessUnitID").val()
+        };
+    }
+
+    function filterDepots() {
+        return {
+            branchID: $("#BranchID").val()
+        };
+    }
+    
+    function filterAreas() {
+
+        var areaFilter = {
+            CompanyID: $("#CompanyID").val(),
+            StrategicBusinessUnitID: $("#StrategicBusinessUnitID").val(),
+            OperationalBusinessUnitID: $("#OperationalBusinessUnitID").val(),
+            BusinessUnitID: $("#BusinessUnitID").val(),
+            BranchID: $("#BranchID").val(),
+            DepotID: $("#DepotID").val()
+        };
+        return areaFilter;
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

@@ -1,0 +1,79 @@
+﻿@using AS.App.Intranet.ViewModels.Hierarchy
+
+@{
+    ViewBag.Title = "SBU";
+}
+
+<br>
+
+@(Html.Kendo().Grid<OperationalBusinessUnitViewModel>()
+    .Name("obuGrid")
+    .Columns(columns =>
+    {
+        columns.ForeignKey(p => p.CompanyID, (System.Collections.IEnumerable) ViewData["companyViewModels"], "ID", "Name")
+               .Title("Company")
+               .Sortable(true)
+               .Width(200);
+        columns.ForeignKey(p => p.StrategicBusinessUnitID, (System.Collections.IEnumerable) ViewData["strategicBusinessUnits"], "ID", "Name")
+               .Title("SBU")
+               .Sortable(true)
+               .Width(200)
+               .EditorTemplateName("SBUID");
+        columns.ForeignKey(p => p.EntityID, (System.Collections.IEnumerable) ViewData["entityViewModels"], "ID", "Name")
+               .Title("Entity")
+               .Sortable(true)
+               .Width(200)
+               .EditorTemplateName("EntityID");
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+    //.Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model => model.Id(p => p.ID))
+        .Create(update => update.Action("OBUCreate", "Company"))
+        .Read(read => read.Action("OBURead", "Company"))
+        .Update(update => update.Action("OBUUpdate", "Company"))
+        .Destroy(update => update.Action("OBUDestroy", "Company"))
+    )
+      )
+<br>
+
+<script type="text/javascript">
+    
+    function sbuChange() { }
+
+
+    function filterSBUs() {
+        return {
+            companyID: $("#CompanyID").val()
+        };
+    }
+
+   
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+</script>

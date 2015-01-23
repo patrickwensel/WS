@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+@Styles.Render("~/Content/css/popup.css")
+
+
+<link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.algecoscotsman.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/as_screen.css")" rel="stylesheet" type="text/css" />
+
+<script src="@Url.Content("~/Scripts/kendo/2013.3.1324/jquery.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo/2013.3.1324/kendo.all.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo/2013.3.1324/kendo.aspnetmvc.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo/2013.3.1324/cultures/kendo.culture.en-GB.min.js")"></script>
+<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+<script type='text/javascript'>
+    $.ajaxSetup({ cache: false });
+    kendo.culture("en-GB");
+</script>
+
+<div id="body">
+
+        @RenderBody()
+
+</div>
+
+

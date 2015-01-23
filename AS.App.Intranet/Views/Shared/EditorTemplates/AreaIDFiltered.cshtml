@@ -1,0 +1,11 @@
+﻿@model decimal
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel(" ")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("GetAreas", "Video").Data("filterAreas")).ServerFiltering(true))
+                  .CascadeFrom("CompanyID")
+            )
+@Html.ValidationMessageFor(m => m)

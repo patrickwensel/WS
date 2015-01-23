@@ -1,0 +1,66 @@
+﻿@using WS.Framework.ASJDE
+@{
+    ViewBag.Title = "Company";
+}
+
+<br>
+
+@(Html.Kendo().Grid<Company>()
+    .Name("companyGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.ID)
+            .Width(50);
+        columns.ForeignKey(p => p.EntityID, (System.Collections.IEnumerable)ViewData["entityViewModels"], "ID", "Name")
+            .Title("Entity")
+            .Sortable(true)
+            .Width(200)
+            .EditorTemplateName("EntityID"); ;
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+    })
+    //.ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                //model.Field(p => p.ID).Editable(false);
+
+            })
+        //.Create(update => update.Action("CompanyCreate", "Company"))
+        .Read(read => read.Action("CompanyRead", "Company"))
+        .Update(update => update.Action("CompanyUpdate", "Company"))
+        .Destroy(update => update.Action("CompanyDestroy", "Company"))
+    )
+      )
+<br>
+
+<script type="text/javascript">
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+</script>

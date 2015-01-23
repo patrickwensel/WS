@@ -1,0 +1,46 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@using AS.App.Intranet.ViewModels.Hierarchy
+@using Kendo.Mvc.UI.Fluent
+@{
+    ViewBag.Title = "AlgecoScotsman";
+    //Layout = "~/Views/Shared/_ASLayout.cshtml";
+}
+
+<h2>Algeco Scotsman</h2>
+
+
+@(
+ Html.Kendo().TreeView()
+            .Name("treeview-right")
+            .BindTo((IEnumerable<SBUViewModel>)Model.SBUViewModels, (NavigationBindingFactory<TreeViewItem> mappings) =>
+            {
+                mappings.For<SBUViewModel>(binding => binding.ItemDataBound((item, sbu) =>
+                    {
+                        item.Text = sbu.Name;
+                    })
+                    .Children(sbu => sbu.OBUViewModels));
+
+                mappings.For<OBUViewModel>(binding => binding.ItemDataBound((item, obu) =>
+                    {
+                        item.Text = obu.Name;
+                    })
+                    .Children(obu => obu.BUViewModels));
+
+                mappings.For<BUViewModel>(binding => binding.ItemDataBound((item, bu) =>
+                    {
+                        item.Text = bu.Name;
+                    })
+                    .Children(bu => bu.BranchViewModels));
+
+                mappings.For<BranchViewModel>(binding => binding.ItemDataBound((item, branch) =>
+                    {
+                        item.Text = branch.Name;
+                    })
+                    .Children(branch => branch.DepotViewModels));
+
+                mappings.For<DepotViewModel>(binding => binding.ItemDataBound((item, depot) =>
+                    {
+                        item.Text = depot.Name;
+                    }));
+            })
+    )

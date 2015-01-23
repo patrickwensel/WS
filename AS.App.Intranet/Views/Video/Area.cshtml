@@ -1,0 +1,129 @@
+﻿@using AS.App.Intranet.ViewModels.Video
+
+
+@{
+    ViewBag.Title = "Area";
+}
+
+<h2>Area</h2>
+@Html.Partial("_Menu")
+@(Html.Kendo().Grid<AreaViewModel>()
+    .Name("areaGrid")
+    .Columns(columns =>
+        {
+            columns.ForeignKey(p => p.CompanyID, (System.Collections.IEnumerable) ViewData["companies"], "ID", "Name")
+                   .Title("Company")
+                   .Width(100)
+                   .EditorTemplateName("CompanyID");
+            columns.ForeignKey(p => p.StrategicBusinessUnitID, (System.Collections.IEnumerable)ViewData["strategicBusinessUnits"], "ID", "Name")
+                   .Title("SBU")
+                   .Width(100)
+                   .EditorTemplateName("SBUID");
+            columns.ForeignKey(p => p.OperationalBusinessUnitID, (System.Collections.IEnumerable)ViewData["operationalBusinessUnits"], "ID", "Name")
+                   .Title("OBU")
+                   .Width(100)
+                   .EditorTemplateName("OBUID");
+            columns.ForeignKey(p => p.BusinessUnitID, (System.Collections.IEnumerable)ViewData["businessUnits"], "ID", "Name")
+                   .Title("BU")
+                   .Width(100)
+                   .EditorTemplateName("BUID");
+            columns.ForeignKey(p => p.BranchID, (System.Collections.IEnumerable)ViewData["branchViewModels"], "ID", "Name")
+                   .Title("Branch")
+                   .Width(100)
+                   .EditorTemplateName("BranchID");
+            columns.ForeignKey(p => p.DepotID, (System.Collections.IEnumerable)ViewData["depotViewModels"], "ID", "Name")
+                   .Title("Depot")
+                   .Width(100)
+                   .EditorTemplateName("DepotID");
+            columns.Bound(p => p.Name)
+                .Width(100);
+            columns.Command(command =>
+                {
+                    command.Edit();
+                    command.Destroy();
+                }).Width(90);
+        })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                       .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+                       
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ID).Editable(false);
+
+            })
+        .Create(update => update.Action("AreaCreate", "Video"))
+        .Read(read => read.Action("AreaRead", "Video"))
+        .Update(update => update.Action("AreaUpdate", "Video"))
+        .Destroy(update => update.Action("AreaDestroy", "Video"))
+    )
+
+)
+<script type="text/javascript">
+
+    function sbuChange() {}
+    
+    function obuChange() {}
+
+    function buChange() {}
+
+    function branchChange() {}
+
+    function depotChange() {}
+
+    function filterSBUs() {
+        return {
+            companyID: $("#CompanyID").val()
+        };
+    }
+
+    function filterOBUs() {
+        return {
+            strategicBusinessUnitID: $("#StrategicBusinessUnitID").val()
+        };
+    }
+    
+    function filterBUs() {
+        return {
+            operationalBusinessUnitID: $("#OperationalBusinessUnitID").val()
+        };
+    }
+    
+    function filterBranchs() {
+        return {
+            businessUnitID: $("#BusinessUnitID").val()
+        };
+    }
+    
+    function filterDepots() {
+        return {
+            branchID: $("#BranchID").val()
+        };
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

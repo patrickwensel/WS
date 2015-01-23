@@ -1,0 +1,275 @@
+﻿@using AS.App.Intranet.ViewModels.SafetyIncident
+@using WS.Framework.Objects.ActiveDirectory 
+@model IncidentViewModel
+@{
+    ViewBag.Title = "Incident";
+}
+
+@{ User user = (User)HttpContext.Current.Session["user"]; }
+
+<h2>Incident</h2>
+
+<style type="text/css">
+    .k-edit-form-container {
+        width: 600px;
+    }
+</style>
+
+    <div id="window">
+    </div>
+
+    @(Html.Kendo().Grid<SafetyIncidentViewModel>()
+          .Name("grid")
+          .Columns(columns =>
+              {
+                  columns.Bound(p => p.ID)
+                      .Sortable(true)
+                         .Width(20);
+                  columns.Bound(p => p.DateOfIncident)
+                      .Sortable(true)
+                         .Width(30);
+                  columns.Bound(p => p.CreatedByUser)
+                      .Sortable(true)
+                         .Width(100);
+                  columns.ForeignKey(p => p.StatusID, (System.Collections.IEnumerable)ViewData["statuss"], "ID", "Name")
+                         .Title("Status")
+                         .Sortable(true)
+                         .Width(30)
+                         .EditorTemplateName("Incident");
+                  columns.ForeignKey(p => p.CountryID, (System.Collections.IEnumerable)ViewData["countries"], "ID", "Name")
+                      .Title("Country")
+                      .Sortable(false)
+                      .Width(50);
+                  columns.ForeignKey(p => p.LocationID, (System.Collections.IEnumerable)ViewData["locations"], "ID", "Name")
+                         .Title("Location")
+                         .Sortable(false)
+                         .Width(50);
+                  columns.ForeignKey(p => p.EntityID, (System.Collections.IEnumerable)ViewData["entityViewModels"], "ID", "Name")
+                      .Title("Entity")
+                      .Sortable(false)
+                      .Width(50);
+                  columns.Command(command =>
+                      {
+                          command.Edit();
+                          command.Destroy();
+                      }).Width(100);
+              })
+          .ToolBar(toolbar => toolbar.Create())
+          .Events(events =>
+              {
+                  events.Save("onSave");
+                  events.Change("onSave");
+                  //events.Edit("onEdit");
+              })
+          .Editable(editable => editable.Mode(GridEditMode.PopUp))
+          .Pageable(paging => paging
+                                  .Input(false)
+                                  .Numeric(true)
+                                  .PreviousNext(true)
+                                  .PageSizes(new[] { 10, 25, 50 })
+                                  .Refresh(true))
+            .Sortable(sortable => sortable
+              .AllowUnsort(true)
+              .SortMode(GridSortMode.MultipleColumn))
+          .Filterable()
+          .DataSource(dataSource => dataSource
+                                        .Ajax()
+                                        .Sort(sort => sort.Add("ID").Descending())
+                                        .PageSize(10)
+                                        .Events(events =>
+                                            {
+                                                events.Error("error_handler");
+                                            })
+                                        .Model(model =>
+                                            {
+                                                model.Id(p => p.ID);
+                                                model.Field(p => p.ID).Editable(false);
+                                                model.Field(p => p.Recordable).DefaultValue("0");
+                                                model.Field(p => p.DaysAwayFromWork).DefaultValue(0);
+                                                model.Field(p => p.CreatedByUser).DefaultValue(@user.LastName + ", " + @user.FirstName);
+
+                                            })
+                                        .Create(update => update.Action("IncidentCreate", "SafetyIncident"))
+                                        .Read(read => read.Action("IncidentRead", "SafetyIncident"))
+                                        .Update(update => update.Action("IncidentUpdate", "SafetyIncident"))
+                                        .Destroy(update => update.Action("IncidentDestroy", "SafetyIncident"))
+          )
+          )
+
+<script type="text/javascript">
+
+    //function onEdit(e) {
+    //    var container = e.container;
+    //    this.editable.validatable.bind("validate", function (e) {
+    //        if (!e.result) {
+    //            var tabStrip = container.find("[data-role=tabstrip]").data("kendoTabStrip"),
+    //                selectedIndex = tabStrip.select().index(),
+    //                content = $(tabStrip.contentElement(selectedIndex));
+    //            if (content.find(".k-invalid").length === 0) {
+    //                tabStrip.select((selectedIndex + 1) % 2);
+    //            }
+    //        }
+    //    });
+    //}
+
+
+    function filterLocations() {
+        return {
+            countryID: $("#CountryID").val()
+        };
+    }
+    
+    function filterEntities() {
+        return {
+            locationID: $("#LocationID").val()
+        };
+    }
+
+    function filterCauses() {
+        return {
+            causeCategoryID: $("#CauseCategoryID").val()
+        };
+    }
+
+    function onSave(e) {
+        e.preventDefault();
+        $("#window").kendoWindow({
+            width: 250,
+            height: 150,
+            modal: true,
+            close: function () {
+                $('#grid').data('kendoGrid').saveChanges();
+            }
+        });
+        var dialog = $("#window").data("kendoWindow");
+        var recordable = $('#Recordable').val();
+        var message;
+        if (recordable == 1) {
+            message = "Recordable";
+        }
+        if (recordable == 0) {
+            message = "Not Recordable";
+        }
+        dialog.content("<p align='center'> This incident is " + message + " </p> <p align='center'><button class='k-button myButton'>Close</button></p> ");
+        dialog.open();
+        dialog.center();
+
+    }
+
+    $("#window").on("click", ".myButton", function () {
+        $("#window").data("kendoWindow").close();
+    });
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+    function recordableChange() {
+
+        var outcomeID = $("#OutcomeID").data("kendoDropDownList").value();
+        var workRelated = $("#WorkRelated").data("kendoDropDownList").value();
+        var employeeTypeID = $("#EmployeeTypeID").data("kendoDropDownList").value();
+
+        var recordableDDL = $("#Recordable").data("kendoDropDownList");
+
+        if ((outcomeID == 2 || outcomeID == 4) && workRelated == 1 && employeeTypeID == 1) {
+            recordableDDL.select(0);
+        } else {
+            recordableDDL.select(1);
+        }
+
+        recordableDDL.trigger("change");
+
+    };
+
+    function returnToWorkChange() {
+
+        var returnToWork = $("#ReturnToWork").data("kendoDropDownList").value();
+
+        var dateReturnedToWork = $("#DateReturnedToWork").data("kendoDatePicker");
+        var dateReturnedToWorkRestricted = $("#DateReturnedToWorkRestricted").data("kendoDatePicker");
+
+        if (returnToWork == 1) {
+            dateReturnedToWork.enable(true);
+            dateReturnedToWorkRestricted.enable(true);
+        } else {
+            dateReturnedToWork.value(null);
+            dateReturnedToWork.enable(false);
+            dateReturnedToWorkRestricted.value(null);
+            dateReturnedToWorkRestricted.enable(false);
+        }
+    }
+
+    function onDB() {
+        setTimeout(function () {
+            returnToWorkChange();
+        });
+    }
+
+    (function ($, kendo) {
+        $.extend(true, kendo.ui.validator, {
+            rules: {
+                greaterdate: function (input) {
+                    if (input.is("[data-val-greaterdate]") && input.val() != "") {
+                        var date = kendo.parseDate(input.val()), earlierDate = kendo.parseDate($("[name='" + input.attr("data-val-greaterdate-earlierdate") + "']").val());
+                        return !date || !earlierDate || earlierDate.getTime() <= date.getTime();
+                    }
+
+                    return true;
+                }
+            },
+            messages: {
+                greaterdate: function (input) {
+                    return input.attr("data-val-greaterdate");
+                }
+            }
+        });
+    })(jQuery, kendo);
+
+
+    (function ($, kendo) {
+        $.extend(true, kendo.ui.validator, {
+            rules: {
+
+                conditionalrequired: function (input) {
+                    if (input.is("[data-val-conditionalrequired]")) {
+                        var isFalse;
+                        var currentValue = $("[name='" + input.attr("data-val-conditionalrequired-fieldname") + "']").val();
+                        var desiredValue = input.attr("data-val-conditionalrequired-fieldvalue");
+                        var desiredValueArray = desiredValue.split(',');
+
+                        $.each(desiredValueArray, function (i, val) {
+                            if (currentValue == desiredValueArray[i] && input.val() == "") {
+                                isFalse = false;
+                                return false;
+                            }
+                        });
+
+                        if (isFalse == false) {
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    }
+                    return true;
+                }
+            },
+            messages: {
+                conditionalrequired: function (input) {
+                    return input.attr("data-val-conditionalrequired");
+                }
+            }
+        });
+    })(jQuery, kendo);
+
+</script>

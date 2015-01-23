@@ -1,0 +1,52 @@
+﻿@model AS.App.Intranet.ViewModels.Video.ListViewModel
+
+
+@*@Styles.Render("~/Content/css/screen.css")*@
+@Styles.Render("~/Content/kendo/kendo.common.min.css")
+@Styles.Render("~/Content/kendo/kendo.willscot.min.css")
+
+@Scripts.Render("~/Scripts/jquery-1.9.1.js")
+@Scripts.Render("~/Scripts/jquery-ui-1.10.1.js")
+@Scripts.Render("~/Scripts/kendo/kendo.web.min.js")
+@Scripts.Render("~/Scripts/kendo/kendo.aspnetmvc.min.js")
+
+@{
+    ViewBag.Title = "List";
+    //Layout = "~/Views/Shared/_ASLayout.cshtml";
+}
+
+@Html.HiddenFor(model => model.ID, new { id = "areaID" })
+@Html.TextBoxFor(model => model.Name, new { @readonly="readonly", @class = "textarea5"})
+
+@(Html.Kendo().TreeView()
+    .Name("treeview")
+    .DataTextField("Name")
+    .Events(events => events.Select("onSelect"))
+    .DataSource(dataSource => dataSource
+        .Read(read => read
+            .Action("VideoList", "Video").Data("readAdditionalData"))
+        )
+)
+
+
+<script type="text/javascript">
+
+    function onSelect(e) {
+        var dataItem = this.dataItem(e.node);
+        if (dataItem.type == "video") {
+
+            var videoID = dataItem.id;
+            var url = '@Url.Action("VideoPlayer", "Video", new { id = "val" })';
+            
+            window.location.href = url.replace('val', videoID);
+        }
+    }
+
+    function readAdditionalData() {
+        return {
+            areaID: $("#areaID").val()
+        };
+    }
+
+</script>
+

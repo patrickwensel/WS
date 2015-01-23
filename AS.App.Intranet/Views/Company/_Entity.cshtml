@@ -1,0 +1,74 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@using AS.App.Intranet.ViewModels.Hierarchy
+@{
+    ViewBag.Title = "Entity";
+}
+
+<br>
+
+@(Html.Kendo().Grid<EntityViewModel>()
+    .Name("entiyGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name)
+            .Width(200);
+        columns.ForeignKey(p => p.LocationID, (System.Collections.IEnumerable)ViewData["locations"], "ID", "Name")
+            .Title("Location")
+            .Sortable(true)
+            .Width(200)
+            .EditorTemplateName("LocationID");
+        columns.ForeignKey(p => p.StatusID, (System.Collections.IEnumerable) ViewData["entityStatuss"], "ID", "Name")
+               .Sortable(true)
+               .Width(100)
+               .EditorTemplateName("EntityStatusID");
+        columns.Bound(p => p.Code);
+        columns.Bound(p => p.CostCenter);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Sort(sort => sort.Add("Name").Ascending())
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ID).Editable(false);
+
+            })
+        .Create(update => update.Action("EntityCreate", "Company"))
+        .Read(read => read.Action("EntityRead", "Company"))
+        .Update(update => update.Action("EntityUpdate", "Company"))
+        .Destroy(update => update.Action("EntityDestroy", "Company"))
+    )
+      )
+<br>
+
+<script type="text/javascript">
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+</script>

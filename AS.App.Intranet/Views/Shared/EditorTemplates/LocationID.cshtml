@@ -1,0 +1,13 @@
+﻿@model decimal?
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .Name("LocationID")
+                  .AutoBind(false)
+                  .OptionLabel("Select Location...")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllLocations", "Hierarchy")).ServerFiltering(true))
+                  .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px"})
+            )
+
+                          

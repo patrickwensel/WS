@@ -1,0 +1,215 @@
+﻿@using AS.App.Intranet.ViewModels.HoursWorked
+@model HoursViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hours Worked</h2>
+
+<style type="text/css">
+    .k-window div.k-window-content {
+        overflow: hidden;
+    }
+</style>
+
+<div id="AddMonthByCountryWindow"></div>
+<div id="AddMonthByLocationWindow" class=""></div>
+
+
+
+
+
+<span id="addMonthByCountry" class="k-button">Add New Month By Country</span>
+<span id="addMonthByLocation" class="k-button">Add New Month By Location</span>
+
+<br />
+<br />
+@(Html.Kendo().Grid<HoursWorkedViewModel>()
+          .Name("grid")
+          .Columns(columns =>
+              {
+                  columns.ForeignKey(p => p.CountryID, (System.Collections.IEnumerable)ViewData["countries"], "ID", "Name")
+                         .Title("Country")
+                         .Sortable(false)
+                         .Width(50);
+                  columns.ForeignKey(p => p.LocationID, (System.Collections.IEnumerable)ViewData["locations"], "ID", "Name")
+                      .Title("Location")
+                         .Sortable(false)
+                         .Width(50);
+                  columns.Bound(p => p.Year)
+                         .Filterable(filterable => filterable.UI("yearFilter"))
+                         .Width(30);
+                  columns.Bound(p => p.Month)
+                         .Filterable(filterable => filterable.UI("monthFilter"))
+                         .Width(30);
+                  columns.ForeignKey(p => p.EntityID, (System.Collections.IEnumerable)ViewData["entityViewModels"], "ID", "Name")
+                         .Title("Entity")
+                         .EditorTemplateName("EntityIDFiltered")
+                         .Sortable(false)
+                         .Width(100);
+                  columns.Bound(p => p.Hours)
+                         .Width(30);
+                  columns.Bound(p => p.EditedBy)
+                         .Width(50);
+                  columns.Command(command => command.Edit()).Width(50);
+              })
+          .Editable(editable => editable.Mode(GridEditMode.InLine))
+          .Pageable(paging => paging
+                                  .Input(false)
+                                  .Numeric(true)
+                                  .PreviousNext(true)
+                                  .PageSizes(new[] { 10, 25, 50 })
+                                  .Refresh(true))
+          .Sortable(sortable => sortable
+                                    .AllowUnsort(true)
+                                    .SortMode(GridSortMode.MultipleColumn))
+          .Filterable(filterable => filterable
+                                        .Extra(false)
+                                        .Operators(operators => operators
+                                                                    .ForString(str => str.Clear()
+                                                                                         .StartsWith("Starts with")
+                                                                                         .IsEqualTo("Is equal to")
+                                                                                         .IsNotEqualTo("Is not equal to")
+                                                                    ))
+          )
+          .DataSource(dataSource => dataSource
+                                        .Ajax()
+                                        .PageSize(10)
+                                        .Events(events => events.Error("error_handler"))
+                                        .Model(model =>
+                                            {
+                                                model.Id(p => p.ID);
+                                                model.Field(p => p.ID).Editable(false);
+                                                model.Field(p => p.CountryID).Editable(false);
+                                                model.Field(p => p.LocationID).Editable(false);
+                                                model.Field(p => p.Year).Editable(false);
+                                                model.Field(p => p.Month).Editable(false);
+                                                model.Field(p => p.EditedBy).Editable(false);
+
+                                            })
+                                        .Read(read => read.Action("HoursWorkedRead", "HoursWorked"))
+                                        .Update(update => update.Action("HoursWorkedUpdate", "HoursWorked"))
+                                        .Destroy(update => update.Action("HoursWorkedDestroy", "HoursWorked"))
+                                        .Sort(sort =>
+                                            {
+                                                sort.Add(p => p.Year).Descending();
+                                                sort.Add(p => p.Month).Descending();
+                                            })
+          )
+          )
+
+
+<script type="text/javascript">
+    
+    function filterEntities() {
+        var grid = $("#grid").data("kendoGrid"),
+            uid = $("#EntityID").closest("[data-uid]").data("uid"),
+            item = grid.dataSource.getByUid(uid);
+        return {
+            locationID: item.LocationID
+        };
+    }
+    
+    function yearFilter(element) {
+        element.kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: "@Url.Action("FilterMenuCustomization_Years")"
+                }
+            },
+            optionLabel: "--Select Value--"
+        });
+    }
+    
+    function monthFilter(element) {
+        element.kendoDropDownList({
+            dataSource: {
+                transport: {
+                    read: "@Url.Action("FilterMenuCustomization_Months")"
+                }
+            },
+            optionLabel: "--Select Value--"
+        });
+    }
+
+    $(document).ready(function() {
+        $("#addMonthByCountry")
+            .bind("click", function() {
+                
+                $("#AddMonthByCountryWindow").html('');
+
+                var url = @Html.Raw(Json.Encode(Url.Action("AddMonth", "HoursWorked")));
+                var divName = 'addMonthWindowDiv';
+                $("#addMonthByCountry").append('<div id=' + divName + '></div>');
+                var kendoWindow = $("#" + divName).kendoWindow({
+                    title: "Add",
+                    width: "400px",
+                    height: "400px",
+                    visible: true,
+                    modal: true,
+                    resizable: false,
+                    actions: ["Close"],
+                    close: function () {
+                        this.destroy();
+                    }
+                }).data("kendoWindow");
+                    
+                kendoWindow.center();
+
+                kendoWindow.refresh({
+                    url: url,
+                    iframe: true
+                });
+
+                kendoWindow.open();
+            });
+    });
+    
+        $(document).ready(function() {
+            $("#addMonthByLocation")
+                .bind("click", function() {
+                
+                    $("#AddMonthByLocationWindow").html('');
+
+                    var url = @Html.Raw(Json.Encode(Url.Action("AddMonthLocation", "HoursWorked")));
+                var divName = 'addMonthWindowDiv';
+                $("#AddMonthByLocationWindow").append('<div id=' + divName + '></div>');
+                var kendoWindow = $("#" + divName).kendoWindow({
+                    title: "Add",
+                    width: "400px",
+                    height: "400px",
+                    visible: true,
+                    modal: true,
+                    resizable: false,
+                    actions: ["Close"],
+                    close: function () {
+                        this.destroy();
+                    }
+                }).data("kendoWindow");
+                    
+                kendoWindow.center();
+
+                kendoWindow.refresh({
+                    url: url,
+                    iframe: true
+                });
+
+                kendoWindow.open();
+            });
+    });
+
+        function error_handler(e) {
+            if (e.errors) {
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            }
+        }
+
+</script>

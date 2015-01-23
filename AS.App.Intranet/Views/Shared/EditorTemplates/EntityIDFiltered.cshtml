@@ -1,0 +1,17 @@
+﻿@model decimal?
+
+@(Html.Kendo().DropDownListFor(m => m)
+                          .AutoBind(false)
+                          .OptionLabel("Choose Entity ...  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("GetEntitiesFilteredByLocationIDHours", "Hierarchy").Data("filterEntities")).ServerFiltering(true))
+        //.CascadeFrom("LocationID")
+                          )
+
+<script type="text/javascript">
+
+    $("#EntityID").data("kendoDropDownList").list.width(300);
+
+</script>

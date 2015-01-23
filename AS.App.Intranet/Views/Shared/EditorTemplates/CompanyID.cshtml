@@ -1,0 +1,12 @@
+﻿@model decimal?
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .Name("CompanyID")
+                  .AutoBind(false)
+                  .OptionLabel("Select Company...")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllCompanies", "Hierarchy")).ServerFiltering(true))
+                  .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px"})
+            )
+@Html.ValidationMessageFor(m => m)

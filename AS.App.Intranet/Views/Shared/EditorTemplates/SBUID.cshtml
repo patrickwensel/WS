@@ -1,0 +1,13 @@
+﻿@model decimal?
+
+@(Html.Kendo().DropDownListFor(m => m)
+                  .AutoBind(false)
+                  .OptionLabel(" ")
+                  .DataTextField("Name")
+                  .DataValueField("ID")
+                  .HtmlAttributes(new { data_value_primitive = true })
+                  .DataSource(dataSource => dataSource.Read(read => read.Action("GetStrategicBusinessUnitsFilteredByCompanyID", "Hierarchy").Data("filterSBUs")).ServerFiltering(true))
+                  .CascadeFrom("CompanyID")
+                  .Events(e => e.Change("sbuChange"))
+            )
+@Html.ValidationMessageFor(m => m)

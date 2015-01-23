@@ -1,0 +1,72 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@{
+    ViewBag.Title = "Location";
+}
+
+<br>
+
+@(Html.Kendo().Grid<LocationViewModel>()
+    .Name("videoGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name);
+        columns.ForeignKey(p => p.LocationStatusID, (System.Collections.IEnumerable) ViewData["locationStatuss"], "ID", "Name")
+               .Title("Status")
+               .Sortable(true)
+               .Width(100);
+        columns.Bound(p => p.Address1);
+        columns.Bound(p => p.Address2);
+        columns.Bound(p => p.City);
+        columns.Bound(p => p.State);
+        columns.Bound(p => p.PostalCode);
+        columns.Bound(p => p.Description);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+                   .Pageable(paging => paging
+                                   .Input(false)
+                                   .Numeric(true)
+                                   .PreviousNext(true)
+                                   .PageSizes(new[] { 10, 25, 50 })
+                                   .Refresh(true))
+
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Sort(sort => sort.Add("Name").Ascending())
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+            {
+                model.Id(p => p.ID);
+                model.Field(p => p.ID).Editable(false);
+
+            })
+        .Create(update => update.Action("LocationCreate", "Company"))
+        .Read(read => read.Action("LocationRead", "Company"))
+        .Update(update => update.Action("LocationUpdate", "Company"))
+        .Destroy(update => update.Action("LocationDestroy", "Company"))
+    )
+      )
+<br>
+
+<script type="text/javascript">
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+    
+</script>

@@ -1,0 +1,450 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@model AS.App.Intranet.ViewModels.SafetyIncident.SafetyIncidentViewModel
+
+<div id="forecast">
+    @(Html.Kendo().TabStrip()
+          .Name("tabstrip")
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("Main")
+                  .Selected(true)
+                  .Content(@<text>
+
+    <table>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.StatusID))
+                @(Html.Kendo().DropDownListFor(m => m.StatusID)
+                          .Name("StatusID")
+                          .AutoBind(false)
+                          .OptionLabel("Select Status...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllStatuss", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          )
+                @Html.ValidationMessageFor(m => m.StatusID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.Recordable))
+                @(Html.Kendo().DropDownListFor(m => m.Recordable)
+                            .Name("Recordable")
+                            .DataTextField("Text")
+                            .Enable(false)
+                            .DataValueField("Value")
+                            .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                            .BindTo(new List<SelectListItem>()
+                            {
+                                new SelectListItem() {
+                                Text = "Yes", Value = "1"  
+                                },
+                                new SelectListItem() {
+                                Text = "No", Value = "0" 
+                                }
+                            })
+                          )
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.CreatedByUser))
+                @(Html.TextBoxFor(m => m.CreatedByUser, new { @style = "width:150px", @readonly = "readonly" }))
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.DateOfIncident))
+                @(Html.Kendo().DatePickerFor(m => m.DateOfIncident)
+                          .Name("DateOfIncident")
+                          .HtmlAttributes(new { @style = "width:150px" })
+                          .Culture("en-GB")
+                          )
+                @Html.ValidationMessageFor(m => m.DateOfIncident)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    @(Html.LabelFor(m => m.CountryID))
+                    @(Html.Kendo().DropDownListFor(m => m.CountryID)
+                          .Name("CountryID")
+                          .AutoBind(false)
+                          .OptionLabel("Select Country...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllCountriesExceptUS", "Hierarchy")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          )
+                    @Html.ValidationMessageFor(m => m.CountryID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.EmployeeTypeID))
+                @(Html.Kendo().DropDownListFor(m => m.EmployeeTypeID)
+                          .Name("EmployeeTypeID")
+                          .AutoBind(false)
+                          .OptionLabel("Select Employee Type...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllEmployeTypes", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          .Events(e => e.Change("recordableChange"))
+                          )
+                @Html.ValidationMessageFor(m => m.EmployeeTypeID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    @(Html.LabelFor(m => m.LocationID))
+                    @(Html.Kendo().DropDownListFor(m => m.LocationID)
+                          .Name("LocationID")
+                          .AutoBind(false)
+                          .OptionLabel("Choose Location...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:220px" })
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("GetLocationsFilteredByCountryID", "Location").Data("filterLocations")).ServerFiltering(true))
+                          .CascadeFrom("CountryID")
+                          )
+                    @Html.ValidationMessageFor(m => m.LocationID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.EmployeeName))
+                @(Html.TextBoxFor(m => m.EmployeeName, new { @style = "width:150px" }))
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    @(Html.LabelFor(m => m.EntityID))
+                    @(Html.Kendo().DropDownListFor(m => m.EntityID)
+                          .AutoBind(false)
+                          .OptionLabel("Choose Entity ...  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:220px" })
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("GetEntitiesFilteredByLocationIDSafety", "Hierarchy").Data("filterEntities")).ServerFiltering(true))
+                          .CascadeFrom("LocationID")
+                          )
+                    @Html.ValidationMessageFor(m => m.EntityID)
+
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.Title))
+                @(Html.TextBoxFor(m => m.Title, new { @style = "width:150px" }))
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.WorkRelated))
+                @(Html.Kendo().DropDownListFor(m => m.WorkRelated)
+                        .Name("WorkRelated")
+                        .OptionLabel(" ")
+                        .DataTextField("Text")
+                        .DataValueField("Value")
+                        .HtmlAttributes(new { data_value_primitive = true, style = "list.width:200px" })
+                        .BindTo(new List<SelectListItem>()
+                        {
+                            new SelectListItem() {
+                                Text = "Yes", Value = "1"  
+                            },
+                            new SelectListItem() {
+                                Text = "No", Value = "0"  
+                            }
+                        })
+                        .Events(e => e.Change("recordableChange"))
+                        )
+                @Html.ValidationMessageFor(m => m.WorkRelated)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.SiteCategoryID))
+                @(Html.Kendo().DropDownListFor(m => m.SiteCategoryID)
+                          .Name("SiteCategoryID")
+                          .AutoBind(false)
+                          .OptionLabel("Select ...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllSiteCategories", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          )
+                @Html.ValidationMessageFor(m => m.SiteCategoryID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.LocationSite))
+                @(Html.TextBoxFor(m => m.LocationSite, new { @style = "width:150px" }))
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @(Html.LabelFor(m => m.TypeID))
+                @(Html.Kendo().DropDownListFor(m => m.TypeID)
+                          .Name("TypeID")
+                          .AutoBind(false)
+                          .OptionLabel("Select ...")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllTypes", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:160px" })
+                          )
+                @Html.ValidationMessageFor(m => m.TypeID)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @(Html.LabelFor(m => m.Description))
+                @Html.TextAreaFor(
+            model => model.Description,
+            new { style = "width: 520px; height: 200px;" }
+             )
+            </td>
+        </tr>
+
+    </table>
+    </text>);
+        tabstrip.Add().Text("Details")
+        .Content(@<text>
+    <table>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.OutcomeID))
+                @(Html.Kendo().DropDownListFor(m => m.OutcomeID)
+                          .Name("OutcomeID")
+                          .AutoBind(false)
+                          .OptionLabel("  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllOutcomes", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "width:150px" })
+                          .Events(e => e.Change("recordableChange"))
+                          )
+                @Html.ValidationMessageFor(m => m.OutcomeID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.ReturnToWork))
+                @(Html.Kendo().DropDownListFor(m => m.ReturnToWork)
+                          .Name("ReturnToWork")
+                          .OptionLabel(" ")
+                          .DataTextField("Text")
+                          .DataValueField("Value")
+                          .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                          .BindTo(new List<SelectListItem>()
+                              {
+                                  new SelectListItem() {
+                                      Text = "Yes", Value = "1"  
+                                  },
+                                  new SelectListItem() {
+                                      Text = "No", Value = "0"  
+                                  }
+                              })
+                          .Events(e =>
+                              {
+                                  e.Change("returnToWorkChange");
+                                  e.DataBound("onDB");
+                              })
+                          )
+                @Html.ValidationMessageFor(m => m.ReturnToWork)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.DaysAwayFromWork))
+                @(Html.Kendo().NumericTextBoxFor(m => m.DaysAwayFromWork)
+                          .Name("DaysAwayFromWork")
+                          .Format("n0")
+                          .Decimals(0)
+                          .Placeholder("Enter value")
+                          )
+                @Html.ValidationMessageFor(m => m.DaysAwayFromWork)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.UnsafeActID))
+                @(Html.Kendo().DropDownListFor(m => m.UnsafeActID)
+                          .Name("UnsafeActID")
+                          .AutoBind(false)
+                          .OptionLabel(" ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllUnsafeActs", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                          )
+                @Html.ValidationMessageFor(m => m.UnsafeActID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.DateReturnedToWork))
+                @(Html.Kendo().DatePickerFor(m => m.DateReturnedToWork)
+                          .Name("DateReturnedToWork")
+                          .HtmlAttributes(new { style = "width:150px" })
+                          .Culture("en-GB")
+                          )
+                @Html.ValidationMessageFor(m => m.DateReturnedToWork)
+            </td>
+            <td>
+                <p style="font-size: xx-small; width: 150px;">EMEA users enter either elapsed calendar days or business days upon local regulations/needs. NA users enter elapsed calendar days</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.CauseCategoryID))
+                @(Html.Kendo().DropDownListFor(m => m.CauseCategoryID)
+                          .Name("CauseCategoryID")
+                          .AutoBind(false)
+                          .OptionLabel("  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("ReadAllCauseCategories", "SafetyIncident")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                          )
+                @Html.ValidationMessageFor(m => m.CauseCategoryID)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.DateReturnedToWorkRestricted))
+                @(Html.Kendo().DatePickerFor(m => m.DateReturnedToWorkRestricted)
+                          .Name("DateReturnedToWorkRestricted")
+                          .HtmlAttributes(new { style = "width:150px" })
+                          .Culture("en-GB")
+                          )
+                @Html.ValidationMessageFor(m => m.DateReturnedToWorkRestricted)
+            </td>
+            <td>
+                @(Html.LabelFor(m => m.DaysTransferredRestricted))
+                @(Html.Kendo().NumericTextBoxFor(m => m.DaysTransferredRestricted)
+                          .Name("DaysTransferredRestricted")
+                          .Format("n0")
+                          .Decimals(0)
+                          .Placeholder("Enter value")
+                          )
+                @Html.ValidationMessageFor(m => m.DaysTransferredRestricted)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.CauseID))
+                @(Html.Kendo().DropDownListFor(m => m.CauseID)
+                          .Name("CauseID")
+                          .AutoBind(false)
+                          .OptionLabel("  ")
+                          .DataTextField("Name")
+                          .DataValueField("ID")
+                          .CascadeFrom("CauseCategoryID")
+                          .DataSource(dataSource => dataSource.Read(read => read.Action("GetCausesFilteredByCauseCategoryID", "SafetyIncident").Data("filterCauses")).ServerFiltering(true))
+                          .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                          )
+                @Html.ValidationMessageFor(m => m.CauseID)
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                @(Html.LabelFor(m => m.RootCause))
+                @Html.TextAreaFor(
+                        model => model.RootCause,
+                        new { style = "width: 520px; height: 150px;" }
+                         )
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.LabelFor(m => m.ResponsiblePerson))
+                @(Html.TextBoxFor(m => m.ResponsiblePerson, new { @style = "width:150px" }))
+                @Html.ValidationMessageFor(m => m.ResponsiblePerson)
+            </td>
+
+            <td>@(Html.LabelFor(m => m.Deadline))
+                @(Html.Kendo().DatePickerFor(m => m.Deadline)
+                          .Name("Deadline")
+                          .HtmlAttributes(new { style = "width:150px" })
+                          .Culture("en-GB")
+                          )
+                @Html.ValidationMessageFor(m => m.Deadline)</td>
+            <td>
+                @(Html.LabelFor(m => m.Complete))
+@*                @(Html.Kendo().DropDownListFor(m => m.Complete)
+                        .Name("Complete")
+                        .OptionLabel(" ")
+                        .DataTextField("Text")
+                        .DataValueField("Value")
+                        .BindTo(new List<SelectListItem>()
+                        {
+                            new SelectListItem() {
+                                Text = "Yes", Value = "1"  
+                            },
+                            new SelectListItem() {
+                                Text = "No", Value = "0"  
+                            }
+                        })
+                      )*@
+                
+                 @(Html.Kendo().DropDownListFor(m => m.Complete)
+                            .Name("Complete")
+                            .OptionLabel(" ")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .HtmlAttributes(new { data_value_primitive = true, style = "list.width:300px" })
+                            .BindTo(new List<SelectListItem>()
+                            {
+                                new SelectListItem() {
+                                Text = "Yes", Value = "1"  
+                                },
+                                new SelectListItem() {
+                                Text = "No", Value = "0" 
+                                }
+                            })
+                          )
+
+                @Html.ValidationMessageFor(m => m.Complete)
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="3">
+                @(Html.LabelFor(m => m.CorrectiveAction))
+                @Html.TextAreaFor(
+                        model => model.CorrectiveAction,
+                        new { style = "width: 520px; height: 150px;" }
+                    )
+
+            </td>
+        </tr>
+    </table>
+    </text>);
+
+          })
+    )
+</div>
+
+
+<script type="text/javascript">
+
+    $("#EntityID").data("kendoDropDownList").list.width(300);
+    $("#EmployeeTypeID").data("kendoDropDownList").list.width(200);
+    $("#CountryID").data("kendoDropDownList").list.width(300);
+    $("#LocationID").data("kendoDropDownList").list.width(300);
+    $("#TypeID").data("kendoDropDownList").list.width(200);
+    $("#OutcomeID").data("kendoDropDownList").list.width(200);
+    $("#UnsafeActID").data("kendoDropDownList").list.width(200);
+    $("#CauseCategoryID").data("kendoDropDownList").list.width(300);
+    $("#CauseID").data("kendoDropDownList").list.width(300);
+
+
+    $(document).ready(function () {
+        $("#tabstrip").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            }
+        });
+    });
+
+</script>

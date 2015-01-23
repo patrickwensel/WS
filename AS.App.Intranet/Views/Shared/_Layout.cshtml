@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - algeco scotsman</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2013.3.1324/kendo.algecoscotsman.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/as_screen.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1324/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1324/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1324/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.3.1324/cultures/kendo.culture.en-GB.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+
+    <script type="text/javascript">
+
+        kendo.culture("en-GB");
+
+    </script>
+
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header span-11 add-bottom-margin-5">
+                <div class="logoDiv">
+                    <a class="logoHeader">Algeco Scotsman</a>
+                </div>
+            </div>
+            <div class="span-11 pagetitle">
+                <span class="phoneright">@Html.Action("_LoggedInAs", "Shared")</span>
+            </div>
+            <div class="span-12">
+                <div id="body">
+                    @RenderSection("featured", required: false)
+                    <section class="content-wrapper main-content clear-fix">
+                        @RenderBody()
+                    </section>
+                </div>
+                <footer>
+                    <div class="content-wrapper">
+                    </div>
+                </footer>
+            </div>
+
+            <div class="span-4 last">
+            </div>
+            <div class="span-11 landingFooter">
+
+                <p class="company">Algeco Scotsman Corporate Headquarters </p>
+                <p class="address">901 S Bond Street Suite 600&nbsp;&nbsp;.&nbsp;&nbsp;Baltimore, MD&nbsp;&nbsp;.&nbsp;&nbsp;21231&nbsp;&nbsp;.&nbsp;&nbsp;Toll Free:  800.782.1500</p>
+                <p class="copyright">©2013 Algeco Scotsman, Inc., All Rights Reserved.</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,87 @@
+﻿@using AS.App.Intranet.ViewModels.Company
+@using AS.App.Intranet.ViewModels.Video
+@using Kendo.Mvc.UI.Fluent
+@{
+    ViewBag.Title = "Company";
+}
+
+<h2>Company</h2>
+
+AS
+
+@(
+ Html.Kendo().TreeView()
+            .Name("treeview-right")
+            .Events(events => events.Select("onSelect"))
+            .BindTo((IEnumerable<AreaViewModel>)Model.AreaViewModels, (NavigationBindingFactory<TreeViewItem> mappings) =>
+            {
+                mappings.For<AreaViewModel>(binding => binding.ItemDataBound((item, area) =>
+                    {
+                        item.Text = area.Name;
+
+                        
+                    })
+                    .Children(a => a.GroupViewModels));
+                
+                    mappings.For<GroupViewModel>(binding => binding.ItemDataBound((item, group) =>
+                    {
+                        item.Text = group.Name;
+                        
+
+                    })
+                    .Children(g => g.VideoViewModels));
+
+                mappings.For<VideoViewModel>(binding => binding.ItemDataBound((item, video) =>
+                    {
+                        item.Text = video.Name;
+                        item.HtmlAttributes["data-id"] = video.ID;
+                        item.HtmlAttributes["data-type"] = video.Type;
+                        
+                    }));
+            })
+      )
+SBUs
+
+@(
+ Html.Kendo().TreeView()
+            .Name("treeview")
+            .Events(events => events.Select("onSelect"))
+            .BindTo((IEnumerable<SBUVideoHierarchy>)Model.SBUVideoHierarchies, (NavigationBindingFactory<TreeViewItem> mappings) =>
+                {
+                    mappings.For<SBUVideoHierarchy>(binding => binding.ItemDataBound((item, sbu) =>
+                        {
+                            item.Text = sbu.Name;
+
+                        })
+                        .Children(a => a.OBUVideoHierarchies));
+
+                    mappings.For<OBUVideoHierarchy>(binding => binding.ItemDataBound((item, obu) =>
+                        {
+                            item.Text = obu.Name;
+
+                        }));
+                    //    .Children(g => g.VideoViewModels));
+
+                    //mappings.For<VideoViewModel>(binding => binding.ItemDataBound((item, video) =>
+                    //    {
+                    //        item.Text = video.Name;
+
+                    //    }));
+                })
+      )
+
+<script type="text/javascript">
+
+    function onSelect(e) {
+        var dataItem = this.dataItem(e.node);
+        var type = $(e.node).data("type");
+        if (type == "video")
+        {
+            var videoID = dataItem.id;
+            var url = '@Url.Action("VideoPlayer", "Video", new { id = "val" })';
+            
+            window.location.href = url.replace('val', videoID);
+        }
+    }
+
+</script>

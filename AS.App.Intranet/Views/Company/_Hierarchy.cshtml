@@ -1,0 +1,48 @@
+﻿@model Hierarchy
+@using AS.App.Intranet.ViewModels.Company
+@using AS.App.Intranet.ViewModels.Hierarchy
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@(
+ Html.Kendo().TreeView()
+            .Name("treeview-right")
+            .BindTo(Model.CompanyViewModels, ( mappings) =>
+                {
+                    mappings.For<CompanyViewModel>(binding => binding.ItemDataBound((item, sbu) =>
+                        {
+                            item.Text = sbu.Name;
+                        })
+                        .Children(sbu => sbu.StrategicBusinessUnitViews));
+                    mappings.For<StrategicBusinessUnitViewModel>(binding => binding.ItemDataBound((item, sbu) =>
+                        {
+                            item.Text = sbu.Name;
+                        })
+                        .Children(sbu => sbu.OBUViewModels));
+
+                    mappings.For<OperationalBusinessUnitViewModel>(binding => binding.ItemDataBound((item, obu) =>
+                        {
+                            item.Text = obu.Name;
+                        })
+                        .Children(obu => obu.BUViewModels));
+
+                    mappings.For<BusinessUnitViewModel>(binding => binding.ItemDataBound((item, bu) =>
+                        {
+                            item.Text = bu.Name;
+                        })
+                        .Children(bu => bu.BranchViewModels));
+
+                    mappings.For<BranchViewModel>(binding => binding.ItemDataBound((item, branch) =>
+                        {
+                            item.Text = branch.Name;
+                        })
+                        .Children(branch => branch.DepotViewModels));
+
+                    mappings.For<DepotViewModel>(binding => binding.ItemDataBound((item, depot) =>
+                        {
+                            item.Text = depot.Name;
+                        }));
+                })
+    )
